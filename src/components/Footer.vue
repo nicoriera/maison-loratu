@@ -17,7 +17,7 @@
             <li>
               <router-link
                 to="/mentions-legales"
-                class="text-gray-600 hover:text-terracotta-600 text-sm transition-colors"
+                class="footer-link text-gray-600 hover:text-terracotta-600 text-sm"
               >
                 Mentions légales
               </router-link>
@@ -25,7 +25,7 @@
             <li>
               <router-link
                 to="/politique-de-confidentialite"
-                class="text-gray-600 hover:text-terracotta-600 text-sm transition-colors"
+                class="footer-link text-gray-600 hover:text-terracotta-600 text-sm"
               >
                 Politique de confidentialité
               </router-link>
@@ -45,3 +45,34 @@
     </div>
   </footer>
 </template>
+
+<style scoped>
+.footer-link {
+  position: relative;
+  transition: color var(--duration-nav) var(--ease-warm-out);
+}
+.footer-link::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: currentColor;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform var(--duration-nav) var(--ease-warm-out);
+}
+.footer-link:hover::after {
+  transform: scaleX(1);
+}
+.footer-link:focus-visible {
+  outline: 2px solid #B85A36;
+  outline-offset: 2px;
+}
+@media (prefers-reduced-motion: reduce) {
+  .footer-link::after {
+    transition-duration: 0.01ms;
+  }
+}
+</style>

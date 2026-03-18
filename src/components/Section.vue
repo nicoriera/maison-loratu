@@ -1,4 +1,6 @@
 <script setup>
+import { ref, onMounted } from 'vue'
+
 defineProps({
   title: {
     type: String,
@@ -9,10 +11,35 @@ defineProps({
     default: '',
   },
 })
+
+const sectionRef = ref(null)
+const isVisible = ref(false)
+
+onMounted(() => {
+  if (!sectionRef.value || typeof IntersectionObserver === 'undefined') {
+    isVisible.value = true
+    return
+  }
+  const observer = new IntersectionObserver(
+    (entries) => {
+      if (entries[0].isIntersecting) {
+        isVisible.value = true
+      }
+    },
+    { threshold: 0.1, rootMargin: '0px 0px -20px 0px' }
+  )
+  observer.observe(sectionRef.value)
+})
 </script>
 
 <template>
-  <section class="py-16 px-4">
+  <section
+    ref="sectionRef"
+    class="py-16 px-4"
+    :class="[
+      isVisible ? 'section-reveal' : 'section-reveal-init',
+    ]"
+  >
     <div class="container mx-auto max-w-4xl">
       <h2
         v-if="title"
