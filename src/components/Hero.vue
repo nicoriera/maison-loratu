@@ -6,7 +6,7 @@
     <div class="container mx-auto px-4 py-12 md:py-20">
       <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center">
         <!-- Colonne gauche : Texte -->
-        <div class="space-y-4 md:space-y-6">
+        <div class="hero-fade-in space-y-4 md:space-y-6">
           <p class="text-sm md:text-base uppercase tracking-wider font-sans text-white/90">
             SOPHROLOGIE & ATELIERS
           </p>
@@ -15,13 +15,15 @@
           </h1>
         </div>
         
-        <!-- Colonne droite : Image -->
-        <div class="order-first md:order-last">
+        <!-- Colonne droite : Image (translation seule, pas d’opacité → évite le flash) -->
+        <div class="order-first md:order-last rounded-lg shadow-soft-lg overflow-hidden">
           <img
-            src="/images/home-hero.png"
-            alt="Groupe diversifié de femmes d'âges variés, souriantes et détendues, dans un contexte de bien-être et de sophrologie"
-            class="w-full h-auto rounded-lg shadow-xl object-cover"
+            src="/images/womens.jpg"
+            alt="Femmes réunies dans un moment de bien-être et de partage"
+            class="w-full h-auto object-cover hero-img-slide"
             loading="eager"
+            fetchpriority="high"
+            decoding="async"
           />
         </div>
       </div>

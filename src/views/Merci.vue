@@ -1,6 +1,10 @@
+<script setup>
+import ScrollReveal from '../components/ScrollReveal.vue'
+</script>
+
 <template>
   <div class="min-h-screen bg-gray-50 flex items-center justify-center py-12 px-4">
-    <div class="bg-white rounded-lg shadow-lg p-10 max-w-lg w-full text-center">
+    <ScrollReveal direction="scale" class="bg-white rounded-lg shadow-lg p-10 max-w-lg w-full text-center">
       <div class="w-16 h-16 bg-[#C16A46] rounded-full flex items-center justify-center mx-auto mb-6">
         <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
@@ -16,6 +20,6 @@
       >
         Retour à l'accueil
       </router-link>
-    </div>
+    </ScrollReveal>
   </div>
 </template>

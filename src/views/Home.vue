@@ -2,6 +2,8 @@
 import Hero from '../components/Hero.vue'
 import Section from '../components/Section.vue'
 import CTAButton from '../components/CTAButton.vue'
+import ScrollReveal from '../components/ScrollReveal.vue'
+import ScrollRevealStagger from '../components/ScrollRevealStagger.vue'
 </script>
 
 <template>
@@ -12,7 +14,7 @@ import CTAButton from '../components/CTAButton.vue'
       title="Qu'est-ce que la sophrologie ?"
       subtitle="Une méthode douce et efficace pour retrouver votre équilibre"
     >
-      <div class="space-y-6 text-gray-700">
+      <ScrollRevealStagger class="space-y-6 text-gray-700">
         <p class="text-lg leading-relaxed">
           La sophrologie est une méthode de relaxation et de développement personnel qui allie
           des techniques de respiration, de relaxation musculaire et de visualisation positive.
@@ -24,14 +26,14 @@ import CTAButton from '../components/CTAButton.vue'
           votre âge ou votre situation. Elle ne nécessite aucune tenue particulière ni matériel
           spécifique, et peut être pratiquée debout, assis ou allongé selon votre confort.
         </p>
-      </div>
+      </ScrollRevealStagger>
     </Section>
 
     <!-- Section Sophrologie Enfants -->
-    <section class="bg-cream-500 py-16 md:py-24 px-4">
+    <section class="bg-cream-500 py-16 md:py-24 px-4 overflow-hidden">
       <div class="container mx-auto max-w-6xl">
         <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center">
-          <div>
+          <ScrollReveal direction="left" tag="div">
             <h2 class="text-4xl md:text-5xl lg:text-6xl font-serif text-terracotta-500 mb-6">
               Sophrologie
             </h2>
@@ -43,32 +45,34 @@ import CTAButton from '../components/CTAButton.vue'
               Des séances spécialement conçues pour les plus jeunes, avec des exercices
               adaptés à leur âge et à leur développement.
             </p>
-          </div>
-          <div>
+          </ScrollReveal>
+          <ScrollReveal variant="image" tag="div" :delay="160" class="shadow-soft rounded-lg">
             <img
-              src="/images/home-hero.png"
-              alt="Plusieurs enfants méditant calmement, assis sur des coussins au sol, dans une pièce lumineuse"
-              class="w-full h-auto rounded-lg shadow-lg object-cover"
-              loading="lazy"
+              src="/images/children.jpg"
+              alt="Enfants dans un cadre apaisant, activités adaptées au bien-être"
+              class="w-full h-auto object-cover"
+              loading="eager"
+              decoding="async"
             />
-          </div>
+          </ScrollReveal>
         </div>
       </div>
     </section>
 
     <!-- Section Femmes Enceintes -->
-    <section class="bg-cream-500 py-16 md:py-24 px-4">
+    <section class="bg-cream-500 py-16 md:py-24 px-4 overflow-hidden">
       <div class="container mx-auto max-w-6xl">
         <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center">
-          <div class="order-last md:order-first">
+          <ScrollReveal variant="image" tag="div" class="order-last md:order-first shadow-soft rounded-lg">
             <img
-              src="/images/home-hero.png"
-              alt="Gros plan sur les mains d'une femme enceinte posées délicatement sur son ventre, évoquant la douceur et la bienveillance"
-              class="w-full h-auto rounded-lg shadow-lg object-cover"
-              loading="lazy"
+              src="/images/pregnant.jpg"
+              alt="Femme enceinte, moment de douceur et de lien avec le bébé"
+              class="w-full h-auto object-cover"
+              loading="eager"
+              decoding="async"
             />
-          </div>
-          <div>
+          </ScrollReveal>
+          <ScrollReveal direction="right" tag="div" :delay="140">
             <h2 class="text-4xl md:text-5xl lg:text-6xl font-serif text-terracotta-500 mb-6">
               Accompagnement Grossesse
             </h2>
@@ -80,7 +84,7 @@ import CTAButton from '../components/CTAButton.vue'
               Des techniques douces et adaptées pour vivre sereinement cette période unique
               de votre vie.
             </p>
-          </div>
+          </ScrollReveal>
         </div>
       </div>
     </section>
@@ -88,16 +92,18 @@ import CTAButton from '../components/CTAButton.vue'
     <!-- Section Mieux-être -->
     <section class="bg-cream-500 py-16 md:py-24 px-4">
       <div class="container mx-auto max-w-4xl text-center">
-        <h2 class="text-4xl md:text-5xl font-serif text-terracotta-500 mb-6">
-          Mieux-être
-        </h2>
-        <p class="text-lg text-gray-700 leading-relaxed mb-6">
-          Pour toute personne souhaitant améliorer son quotidien, gérer le stress,
-          retrouver un sommeil de qualité ou développer son potentiel.
-        </p>
-        <p class="text-lg text-gray-700 leading-relaxed">
-          Un accompagnement personnalisé adapté à vos besoins et à votre rythme.
-        </p>
+        <ScrollReveal direction="scale" tag="div">
+          <h2 class="text-4xl md:text-5xl font-serif text-terracotta-500 mb-6">
+            Mieux-être
+          </h2>
+          <p class="text-lg text-gray-700 leading-relaxed mb-6">
+            Pour toute personne souhaitant améliorer son quotidien, gérer le stress,
+            retrouver un sommeil de qualité ou développer son potentiel.
+          </p>
+          <p class="text-lg text-gray-700 leading-relaxed">
+            Un accompagnement personnalisé adapté à vos besoins et à votre rythme.
+          </p>
+        </ScrollReveal>
       </div>
     </section>
 
@@ -105,7 +111,7 @@ import CTAButton from '../components/CTAButton.vue'
       title="Les bénéfices de la sophrologie"
       subtitle="Découvrez ce que cette méthode peut vous apporter"
     >
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <ScrollRevealStagger class="grid grid-cols-1 md:grid-cols-2 gap-6">
         <div class="flex items-start gap-4">
           <div class="flex-shrink-0 w-8 h-8 bg-terracotta-100 rounded-full flex items-center justify-center">
             <span class="text-terracotta-600">✓</span>
@@ -172,14 +178,13 @@ import CTAButton from '../components/CTAButton.vue'
             </p>
           </div>
         </div>
-      </div>
+      </ScrollRevealStagger>
     </Section>
 
-    <section class="bg-cream-500 py-16 md:py-24 px-4">
+    <section class="bg-cream-500 py-16 md:py-24 px-4 overflow-hidden">
       <div class="container mx-auto max-w-6xl">
         <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center">
-          <!-- Colonne gauche : Texte -->
-          <div class="space-y-6">
+          <ScrollReveal direction="left" tag="div" class="space-y-6">
             <h2 class="text-3xl md:text-4xl lg:text-5xl font-serif text-terracotta-500">
               Maison Loratu
             </h2>
@@ -199,32 +204,36 @@ import CTAButton from '../components/CTAButton.vue'
                 Répondre au questionnaire
               </CTAButton>
             </div>
-          </div>
-          
-          <!-- Colonne droite : Image lifestyle -->
-          <div class="order-first md:order-last">
+          </ScrollReveal>
+
+          <ScrollReveal variant="image" tag="div" :delay="200" class="order-first md:order-last shadow-soft rounded-lg">
             <img
-              src="/images/about-lifestyle.png"
-              alt="Personne écrivant dans un carnet, ambiance lifestyle apaisante et réfléchie"
-              class="w-full h-auto rounded-lg shadow-lg object-cover"
-              loading="lazy"
+              src="/images/writing.jpg"
+              alt="Écriture dans un carnet, moment de réflexion et d'authenticité"
+              class="w-full h-auto object-cover"
+              loading="eager"
+              decoding="async"
             />
-          </div>
+          </ScrollReveal>
         </div>
       </div>
     </section>
 
     <section class="py-16 px-4 bg-white">
       <div class="container mx-auto max-w-2xl text-center">
-        <h2 class="text-3xl md:text-4xl font-serif text-terracotta-500 mb-6">
-          Prêt à commencer ?
-        </h2>
-        <p class="text-lg text-gray-600 mb-8">
-          Répondez à quelques questions pour découvrir l'accompagnement qui vous correspond le mieux
-        </p>
-        <CTAButton>
-          Accéder au questionnaire
-        </CTAButton>
+        <ScrollRevealStagger>
+          <h2 class="text-3xl md:text-4xl font-serif text-terracotta-500 mb-6">
+            Prêt à commencer ?
+          </h2>
+          <p class="text-lg text-gray-600 mb-8">
+            Répondez à quelques questions pour découvrir l'accompagnement qui vous correspond le mieux
+          </p>
+          <div class="flex justify-center">
+            <CTAButton>
+              Accéder au questionnaire
+            </CTAButton>
+          </div>
+        </ScrollRevealStagger>
       </div>
     </section>
   </div>

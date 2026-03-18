@@ -17,21 +17,25 @@ const router = createRouter({
       path: '/questionnaire',
       name: 'questionnaire',
       component: Questionnaire,
+      meta: { transition: 'page-slide-left' },
     },
     {
       path: '/merci',
       name: 'merci',
       component: Merci,
+      meta: { transition: 'page-slide-left' },
     },
     {
       path: '/mentions-legales',
       name: 'mentions-legales',
       component: MentionsLegales,
+      meta: { transition: 'page-slide-left' },
     },
     {
       path: '/politique-de-confidentialite',
       name: 'politique-confidentialite',
       component: PolitiqueConfidentialite,
+      meta: { transition: 'page-slide-left' },
     },
   ],
 })
