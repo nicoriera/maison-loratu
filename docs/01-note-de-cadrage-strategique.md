@@ -4,6 +4,8 @@
 **Statut :** document de travail à valider  
 **Périmètre :** site web public et acquisition de demandes
 
+> Les décisions renseignées par Sandra le 20/07/2026 sont synthétisées dans [02-synthese-des-decisions-sandra.md](02-synthese-des-decisions-sandra.md). En cas de divergence, cette synthèse fait foi pour la suite du cadrage.
+
 ## 1. Objet du projet
 
 Créer un site web chaleureux, illustré et accessible pour présenter l'activité de Maison Loratu, expliquer les bénéfices de la sophrologie et faciliter la prise de contact.
@@ -21,12 +23,15 @@ Le site doit répondre à deux usages principaux :
 - Les séances peuvent concerner des individus, des familles et des groupes.
 - Sandra souhaite également proposer des ateliers.
 - Des interventions sont envisagées dans les écoles, les centres de loisirs et les associations.
+- La mission principale est d'accompagner les femmes et les enfants en quête de sérénité et de bien-être.
+- L'offre comprend des ateliers en studio, des cours en plein air et de l'accompagnement individuel.
 
 ### Publics prioritaires
 
-- Enfants.
-- Seniors.
-- Familles.
+- Enfants de 4 à 18 ans.
+- Femmes de 18 à 100 ans.
+- Seniors, notamment dans le cadre des ateliers.
+- Duos et familles.
 - Écoles.
 - Centres de loisirs.
 - Associations.
@@ -46,7 +51,7 @@ Aucune décision technique ou développement ne doit commencer avant validation 
 
 ### Formulation de travail
 
-> Maison Loratu accompagne les enfants, les seniors et les familles avec une sophrologie douce, accessible et personnalisée.
+> Maison Loratu accompagne les femmes et les enfants vers davantage de sérénité et de bien-être grâce à une sophrologie naturelle, humaine et accessible.
 
 Cette formulation est une base de travail. Elle devra être précisée avec le territoire d'intervention, la méthode de Sandra et les bénéfices prioritaires.
 
@@ -60,6 +65,8 @@ Maison Loratu doit évoquer :
 - le lien entre les générations ;
 - la simplicité ;
 - le mieux-être concret au quotidien.
+- la féminité ;
+- le lien entre les générations.
 
 Le site ne doit pas donner une image médicale froide, ni promettre de résultats thérapeutiques. Il doit présenter la sophrologie comme un accompagnement encadré, complémentaire et adapté aux personnes.
 
@@ -104,9 +111,9 @@ Les intitulés et contenus restent à confirmer.
 
 ### Accompagnements individuels
 
-- Enfants.
-- Seniors.
-- Adultes et familles.
+- Enfants et adolescents de 4 à 18 ans.
+- Femmes adultes.
+- Seniors, selon les modalités à préciser.
 
 ### Ateliers et accompagnements collectifs
 
@@ -116,6 +123,13 @@ Les intitulés et contenus restent à confirmer.
 - Écoles.
 - Centres de loisirs.
 - Associations.
+
+### Tarifs déjà renseignés
+
+- Accompagnement individuel : 60 €.
+- Atelier en studio : 1 h 30, 38 €, 6 à 8 participants.
+- Cours de sophrologie en plein air : 45 min, 15 €, 8 participants.
+- Carnet de 10 cours en plein air : 135 €.
 
 ### Formats possibles à préciser
 
@@ -152,12 +166,14 @@ Les intitulés et contenus restent à confirmer.
 Ces éléments ne sont pas encore validés :
 
 - zone géographique exacte des séances ;
-- séances en cabinet, à domicile ou à distance ;
-- âge minimum pour les enfants ;
-- spécialités précises de Sandra ;
-- durée et tarifs des séances ;
-- modalités de réservation ;
-- présence ou non d'un appel découverte ;
+- modalités exactes des séances en studio, à domicile ou à distance ;
+- spécialités précises de Sandra pour chaque public ;
+- contenu détaillé et calendrier des ateliers ;
+- modalités d'annulation ;
+- outil de réservation en ligne : Resalib pressenti ;
+- paiement au lancement : sur place ;
+- paiement en ligne à étudier avec les exigences de sécurité et de RGPD ;
+- contenus éditoriaux et informations de contact à fournir ;
 - interventions auprès des seniors en établissement ;
 - capacité à gérer des groupes et des cycles ;
 - existence de témoignages, photos et illustrations disponibles ;
@@ -165,15 +181,16 @@ Ces éléments ne sont pas encore validés :
 
 ## 9. Décisions à prendre avant l'arborescence
 
-1. Quelle est la promesse principale de Maison Loratu ?
-2. Quel territoire géographique faut-il cibler ?
-3. Quels ateliers sont réellement disponibles au lancement ?
-4. Sandra intervient-elle auprès des seniors individuellement, en groupe, ou les deux ?
-5. Les ateliers scolaires concernent-ils uniquement les enfants ou aussi les équipes éducatives ?
-6. Les centres de loisirs et associations peuvent-ils réserver un atelier directement, ou doivent-ils demander un devis ?
-7. Les ateliers sont-ils proposés aux familles en individuel, en groupe ou selon les deux formats ?
-8. Quelle action doit être prioritaire : réserver, appeler, écrire ou demander un devis ?
-9. Les séances liées à la grossesse restent-elles dans le périmètre ?
+1. Quel territoire géographique faut-il cibler ?
+2. Quels ateliers et créneaux sont disponibles au lancement ?
+3. Sandra intervient-elle auprès des seniors individuellement, en groupe, ou les deux ?
+4. Quel outil de calendrier et de réservation faut-il utiliser ?
+5. Quelles sont les règles d'annulation et de paiement ?
+6. Quelles informations pratiques doivent apparaître sur le site ?
+7. Quels témoignages, photos, diplômes et illustrations sont disponibles ?
+8. Les interventions scolaires concernent-elles uniquement les enfants ou aussi les équipes éducatives ?
+9. Les centres de loisirs et associations doivent-ils toujours passer par une demande de devis ?
+10. Quelles fonctionnalités d'administration sont nécessaires dès le lancement ?
 
 ## 10. Critères de réussite
 
