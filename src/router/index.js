@@ -7,6 +7,7 @@ import PolitiqueConfidentialite from '../views/PolitiqueConfidentialite.vue'
 import Ateliers from '../views/Ateliers.vue'
 import Contact from '../views/Contact.vue'
 import DevisStructure from '../views/DevisStructure.vue'
+import Structures from '../views/Structures.vue'
 import Administration from '../views/Administration.vue'
 import { canAccessPrototypeRoute, siteConfig } from '../config/site.js'
 
@@ -40,6 +41,12 @@ const router = createRouter({
       path: '/devis-structure',
       name: 'devis-structure',
       component: DevisStructure,
+      meta: { transition: 'page-slide-left' },
+    },
+    {
+      path: '/structures',
+      name: 'structures',
+      component: Structures,
       meta: { transition: 'page-slide-left' },
     },
     {

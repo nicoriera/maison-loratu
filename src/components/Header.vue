@@ -9,10 +9,10 @@ const mobileMenuButton = ref(null)
 const firstMobileLink = ref(null)
 
 const navigation = [
-  { label: 'Accueil', to: '/' },
-  { label: 'Ateliers', to: '/ateliers' },
-  { label: 'Structures', to: { path: '/', hash: '#structures' } },
-  { label: 'Contact', to: '/contact' },
+  { label: 'Accueil', to: '/', activeRoute: 'home' },
+  { label: 'Ateliers', to: '/ateliers', activeRoute: 'ateliers' },
+  { label: 'Structures', to: '/structures', activeRoute: 'structures' },
+  { label: 'Contact', to: '/contact', activeRoute: 'contact' },
 ]
 
 const reservationTarget = siteConfig.reservationUrl || '/ateliers'
@@ -49,11 +49,7 @@ const toggleMobileMenu = async () => {
 }
 
 const isActive = (item) => {
-  if (typeof item.to === 'string') {
-    return route.path === item.to
-  }
-
-  return route.path === item.to.path && route.hash === item.to.hash
+  return route.name === item.activeRoute && !route.hash
 }
 
 watch(

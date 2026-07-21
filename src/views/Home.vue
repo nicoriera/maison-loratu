@@ -193,7 +193,7 @@ const steps = [
             Parlons de votre projet.
           </p>
           <div class="mt-7">
-            <CTAButton to="/contact" variant="secondary">Parler de mon projet</CTAButton>
+            <CTAButton to="/structures" variant="secondary">Découvrir les interventions</CTAButton>
           </div>
         </ScrollReveal>
         <ScrollReveal direction="right" tag="div" class="rounded-[2rem] bg-cream-100 p-8 text-terracotta-800 shadow-soft-lg">
@@ -259,7 +259,7 @@ const steps = [
             découvrez le projet et partagez votre besoin.
           </p>
           <div class="mt-8 flex flex-wrap justify-center gap-4">
-              <CTAButton to="/devis-structure">Partager mon besoin</CTAButton>
+              <CTAButton to="/structures">Découvrir les interventions</CTAButton>
             <a
               href="#accompagnements"
               class="rounded-full border-2 border-terracotta-500 px-7 py-3 font-semibold text-terracotta-700 transition duration-[var(--duration-ui)] ease-[var(--ease-warm-out)] hover:bg-cream-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-terracotta-500 focus-visible:ring-offset-2"

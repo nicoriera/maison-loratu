@@ -114,7 +114,7 @@ const offerings = [
             Cette version V1 reste volontairement simple, lisible et sans promesse d’agenda fictif.
           </p>
           <div class="mt-7">
-            <CTAButton to="/devis-structure" variant="secondary">Parler de mon projet</CTAButton>
+            <CTAButton to="/structures" variant="secondary">Découvrir les interventions</CTAButton>
           </div>
         </article>
       </div>
