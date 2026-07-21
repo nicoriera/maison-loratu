@@ -27,9 +27,10 @@ const schema = yup.object({
   email: yup.string().email("Email invalide").required("Email requis"),
   telephone: yup.string(),
   message: yup.string(),
+  consent: yup.boolean().oneOf([true], "Veuillez accepter l'utilisation de vos informations"),
 });
 
-const { handleSubmit, defineField, errors, values } = useForm({
+const { handleSubmit, defineField, validateField, errors } = useForm({
   validationSchema: schema,
   initialValues: {
     type: "",
@@ -39,6 +40,7 @@ const { handleSubmit, defineField, errors, values } = useForm({
     email: "",
     telephone: "",
     message: "",
+    consent: false,
   },
 });
 
@@ -49,6 +51,7 @@ const [frequence, frequenceAttrs] = defineField("frequence");
 const [email, emailAttrs] = defineField("email");
 const [telephone, telephoneAttrs] = defineField("telephone");
 const [message, messageAttrs] = defineField("message");
+const [consent, consentAttrs] = defineField("consent");
 
 const progress = computed(() => (currentStep.value / totalSteps) * 100);
 
@@ -62,7 +65,14 @@ const besoinsOptions = [
   { value: "autre", label: "Autre" },
 ];
 
-const nextStep = () => {
+const nextStep = async () => {
+  const fieldsByStep = {
+    1: type.value === "femme-enceinte" ? ["type", "situation"] : ["type"],
+    2: ["besoins"],
+    3: ["frequence"],
+  };
+  const results = await Promise.all((fieldsByStep[currentStep.value] || []).map((field) => validateField(field)));
+  if (results.some((result) => !result.valid)) return;
   if (currentStep.value < totalSteps) {
     currentStep.value++;
     window.scrollTo({ top: 0, behavior: "smooth" });
@@ -95,6 +105,7 @@ const onSubmit = handleSubmit(async (formValues) => {
         email: formValues.email,
         telephone: formValues.telephone,
         message: formValues.message || "",
+        consent: formValues.consent === true,
       }),
     });
 
@@ -109,14 +120,6 @@ const onSubmit = handleSubmit(async (formValues) => {
   }
 });
 
-const toggleBesoin = (besoinValue) => {
-  const current = besoins.value || [];
-  if (current.includes(besoinValue)) {
-    besoins.value = current.filter((b) => b !== besoinValue);
-  } else {
-    besoins.value = [...current, besoinValue];
-  }
-};
 </script>
 
 <template>
@@ -236,12 +239,12 @@ const toggleBesoin = (besoinValue) => {
                         option.value,
                       ),
                     }"
-                    @click="toggleBesoin(option.value)">
+                    >
                     <input
+                      v-model="besoins"
                       type="checkbox"
                       :value="option.value"
-                      :checked="(besoins || []).includes(option.value)"
-                      @change="toggleBesoin(option.value)"
+                      v-bind="besoinsAttrs"
                       class="mr-3" />
                     <span class="text-gray-700">{{ option.label }}</span>
                   </label>
@@ -387,6 +390,12 @@ const toggleBesoin = (besoinValue) => {
                   pour plus d'informations.
                 </p>
               </div>
+
+              <label for="consent" class="flex items-start gap-3 text-sm text-gray-700">
+                <input id="consent" v-model="consent" v-bind="consentAttrs" type="checkbox" class="mt-1" />
+                <span>J’accepte que Maison Loratu utilise ces informations uniquement pour répondre à ma demande. *</span>
+              </label>
+              <p v-if="errors.consent" class="text-sm text-red-600">{{ errors.consent }}</p>
             </div>
           </Transition>
 

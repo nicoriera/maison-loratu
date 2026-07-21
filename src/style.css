@@ -18,11 +18,32 @@
 }
 
 @layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
   body {
     @apply bg-cream-50 text-gray-900;
     @apply font-sans antialiased;
+    background-image:
+      radial-gradient(circle at top left, rgba(193, 106, 70, 0.06), transparent 32%),
+      radial-gradient(circle at top right, rgba(138, 170, 138, 0.08), transparent 28%);
   }
-  
+
+  section[id] {
+    scroll-margin-top: 7rem;
+  }
+
+  a,
+  button {
+    -webkit-tap-highlight-color: transparent;
+    cursor: pointer;
+  }
+
+  button:disabled {
+    cursor: not-allowed;
+  }
+
   h1, h2, h3, h4, h5, h6 {
     @apply font-serif;
   }
@@ -35,6 +56,15 @@
   
   .text-heading-large {
     @apply text-4xl md:text-5xl lg:text-6xl font-serif;
+  }
+
+  .form-label {
+    @apply mb-2 block text-sm font-semibold text-terracotta-800;
+  }
+
+  .form-input {
+    @apply w-full rounded-2xl border border-cream-700 bg-cream-50 px-4 py-3 text-gray-800 outline-none transition-colors;
+    @apply focus:border-terracotta-500 focus:ring-2 focus:ring-terracotta-200;
   }
 }
 

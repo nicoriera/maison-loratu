@@ -78,6 +78,7 @@ Chaque décision, exigence ou question utilise un seul statut :
 
 - `À analyser` — le sujet n’a pas encore été étudié ;
 - `À décider` — une réponse de Sandra ou un arbitrage est nécessaire ;
+- `Proposition V1` — un choix provisoire permet d’avancer, mais doit être validé avec les écrans ;
 - `Validé` — la décision est documentée et approuvée ;
 - `Bloqué` — le sujet empêche une étape suivante ;
 - `Obsolète` — l’élément ne s’applique plus.

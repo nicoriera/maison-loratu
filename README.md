@@ -12,7 +12,10 @@ Landing page pour le cabinet de sophrologie Maison Loratu.
 
 ## 📦 Installation
 
+Prérequis : **Node.js 20.19+** ou **22.12+** (Vite 7). Avec nvm :
+
 ```bash
+nvm use   # lit .nvmrc → Node 22
 npm install
 ```
 
