@@ -10,7 +10,7 @@ import CTAButton from '../components/CTAButton.vue'
         <h1 class="page-title mt-4">Parlons de votre besoin</h1>
         <p class="body-copy mx-auto mt-6 max-w-2xl">
           Les coordonnées de Sandra seront ajoutées dès qu’elles seront confirmées. En attendant,
-          le questionnaire permet de mieux comprendre votre projet, votre public et votre contexte.
+          le questionnaire permet de mieux comprendre votre besoin, votre public et le format souhaité.
         </p>
         <div class="mt-8 flex flex-wrap justify-center gap-4">
           <CTAButton to="/questionnaire">Partager mon besoin</CTAButton>
@@ -38,14 +38,13 @@ import CTAButton from '../components/CTAButton.vue'
         </article>
 
         <article class="rounded-[2rem] bg-terracotta-800 p-8 text-white shadow-soft-lg">
-          <p class="text-service-label text-cream-200">Pour les structures</p>
-          <h2 class="mt-4 text-3xl md:text-4xl">Une demande sur mesure</h2>
+          <p class="text-service-label text-cream-200">Une question ?</p>
+          <h2 class="mt-4 text-3xl md:text-4xl">Consulter les réponses</h2>
           <p class="mt-4 leading-relaxed text-cream-100">
-            Écoles, centres de loisirs, associations ou autres structures peuvent préciser leur cadre,
-            le nombre de participants et l’âge du groupe. Sandra reviendra ensuite vers vous avec une proposition adaptée.
+            Retrouvez les informations essentielles sur les séances, les ateliers, les enfants et les différents formats proposés.
           </p>
           <div class="mt-7">
-            <CTAButton to="/devis-structure" variant="secondary">Décrire ma structure</CTAButton>
+            <CTAButton to="/faq" variant="secondary">Voir la FAQ</CTAButton>
           </div>
         </article>
       </div>
@@ -56,12 +55,12 @@ import CTAButton from '../components/CTAButton.vue'
         <div class="rounded-[1.75rem] bg-white p-6 shadow-soft">
           <p class="text-sm font-semibold uppercase tracking-[0.16em] text-terracotta-600">Ce qu’il faut préciser</p>
           <h2 class="mt-3 text-2xl text-terracotta-800">Le public et l’âge</h2>
-          <p class="mt-2 text-gray-600">Enfants, femmes, duo, seniors ou groupe constitué.</p>
+          <p class="mt-2 text-gray-600">Enfants, adolescentes, femmes, duos, mamans ou grand-mères.</p>
         </div>
         <div class="rounded-[1.75rem] bg-white p-6 shadow-soft">
           <p class="text-sm font-semibold uppercase tracking-[0.16em] text-terracotta-600">Le contexte</p>
           <h2 class="mt-3 text-2xl text-terracotta-800">Le lieu et le format</h2>
-          <p class="mt-2 text-gray-600">Studio, plein air ou structure, selon ce qui est envisagé.</p>
+          <p class="mt-2 text-gray-600">Atelier collectif, séance en plein air ou accompagnement individuel.</p>
         </div>
         <div class="rounded-[1.75rem] bg-white p-6 shadow-soft">
           <p class="text-sm font-semibold uppercase tracking-[0.16em] text-terracotta-600">Coordonnées</p>

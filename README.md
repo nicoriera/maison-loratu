@@ -70,8 +70,10 @@ src/
 ├── views/              # Pages principales
 │   ├── Home.vue        # Landing page
 │   ├── Administration.vue # Prototype d’administration éditoriale
-│   ├── Structures.vue  # Présentation des interventions structures
-│   ├── DevisStructure.vue # Demande de devis structure
+│   ├── Ateliers.vue  # Formats collectifs, plein air et individuel
+│   ├── Accompagnement.vue # Accompagnement personnalisé
+│   ├── CarteCadeau.vue # Carte cadeau
+│   ├── FAQ.vue       # Questions fréquentes
 │   ├── Questionnaire.vue  # Page de questionnaire
 │   ├── MentionsLegales.vue  # Mentions légales
 │   └── PolitiqueConfidentialite.vue  # Politique de confidentialité RGPD

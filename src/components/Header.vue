@@ -11,7 +11,8 @@ const firstMobileLink = ref(null)
 const navigation = [
   { label: 'Accueil', to: '/', activeRoute: 'home' },
   { label: 'Ateliers', to: '/ateliers', activeRoute: 'ateliers' },
-  { label: 'Structures', to: '/structures', activeRoute: 'structures' },
+  { label: 'Accompagnement personnalisé', to: '/accompagnement', activeRoute: 'accompagnement' },
+  { label: 'Carte cadeau', to: '/carte-cadeau', activeRoute: 'carte-cadeau' },
   { label: 'Contact', to: '/contact', activeRoute: 'contact' },
 ]
 

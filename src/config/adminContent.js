@@ -63,22 +63,22 @@ export const createInitialPublicDraft = () => ({
 
 export const createInitialOffersDraft = () => ([
   {
-    id: 'offer-children',
-    title: 'Ateliers enfants',
-    audience: 'Enfants',
-    summary: 'Formats ludiques autour des émotions, du sommeil et de la confiance.',
+    id: 'offer-collective',
+    title: 'Ateliers collectifs & duos',
+    audience: '1 h 30 · 8 participantes · 38 €',
+    summary: 'Respiration, relaxation et visualisation positive dans une ambiance conviviale.',
   },
   {
-    id: 'offer-women',
-    title: 'Ateliers femmes & duos',
-    audience: 'Femmes et duos',
-    summary: 'Temps doux pour souffler, se retrouver et partager une expérience simple.',
+    id: 'offer-outdoor',
+    title: 'Séances en plein air',
+    audience: '45 min · 8 participantes · 15 €',
+    summary: 'Marcher, respirer, ressentir et se reconnecter à l’instant présent.',
   },
   {
-    id: 'offer-seniors',
-    title: 'Ateliers seniors',
-    audience: 'Seniors',
-    summary: 'Séances adaptées pour cultiver la sérénité, la mobilité douce et le lien.',
+    id: 'offer-individual',
+    title: 'Accompagnement individuel',
+    audience: '1 h · 60 €',
+    summary: 'Un accompagnement adapté au rythme, aux besoins et au parcours de chacun.',
   },
 ])
 
@@ -94,9 +94,9 @@ export const createInitialFaqDraft = () => ([
     answer: 'Le lieu précis est confirmé au cas par cas. N’ajoutez pas de codes d’accès ni d’informations internes.',
   },
   {
-    id: 'faq-structure',
-    question: 'Comment présenter une demande structure ?',
-    answer: 'Précisez le type de structure, le public accueilli, l’objectif et la période visée.',
+    id: 'faq-workshops',
+    question: 'Comment se déroulent les ateliers ?',
+    answer: 'Les ateliers durent 1 h 30, en petit groupe et sans prérequis. Sandra guide des exercices de respiration, relaxation et visualisation.',
   },
 ])
 
