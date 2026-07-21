@@ -1,8 +1,4 @@
 const RESALIB_HOSTNAME_PATTERN = /(^|\.)resalib\.fr$/i
-const PUBLIC_EMAIL_PATTERN = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
-const PUBLIC_PHONE_PATTERN = /^[+()\d\s.-]{6,20}$/
-const SENSITIVE_CONTENT_PATTERN =
-  /\b(password|mot de passe|secret|token|api[- _]?key|clé api|private key|clé privée|iban|carte bancaire|cvv|crypto|seed phrase)\b/i
 
 export const sanitizeReservationUrl = (value) => {
   if (typeof value !== 'string') {
@@ -29,39 +25,6 @@ export const sanitizeReservationUrl = (value) => {
     return parsedUrl.toString()
   } catch {
     return ''
-  }
-}
-
-export const validateAdminDraft = (draft = {}) => {
-  const sanitizedDraft = {
-    reservationUrl: typeof draft.reservationUrl === 'string' ? draft.reservationUrl.trim() : '',
-    location: typeof draft.location === 'string' ? draft.location.trim() : '',
-    email: typeof draft.email === 'string' ? draft.email.trim() : '',
-    phone: typeof draft.phone === 'string' ? draft.phone.trim() : '',
-  }
-  const issues = []
-
-  if (sanitizedDraft.location.length > 120) {
-    issues.push('La localisation doit rester courte et limitée à une information publique.')
-  }
-
-  if (sanitizedDraft.email && !PUBLIC_EMAIL_PATTERN.test(sanitizedDraft.email)) {
-    issues.push('L’email doit être une adresse de contact publique valide.')
-  }
-
-  if (sanitizedDraft.phone && !PUBLIC_PHONE_PATTERN.test(sanitizedDraft.phone)) {
-    issues.push('Le téléphone doit rester un numéro de contact public valide.')
-  }
-
-  const fieldsToInspect = [sanitizedDraft.location, sanitizedDraft.email, sanitizedDraft.phone]
-
-  if (fieldsToInspect.some((value) => SENSITIVE_CONTENT_PATTERN.test(value))) {
-    issues.push('Supprimez tout secret, mot de passe ou donnée sensible du brouillon.')
-  }
-
-  return {
-    sanitizedDraft,
-    issues,
   }
 }
 
