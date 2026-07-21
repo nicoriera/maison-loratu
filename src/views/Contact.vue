@@ -7,8 +7,8 @@ import CTAButton from '../components/CTAButton.vue'
     <section class="bg-gradient-to-b from-cream-200 to-cream-50 px-4 py-16 md:py-24">
       <div class="container mx-auto max-w-3xl text-center">
         <p class="text-service-label text-terracotta-600">Prendre contact</p>
-        <h1 class="mt-4 text-5xl text-terracotta-800 md:text-6xl">Parlons de votre besoin</h1>
-        <p class="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-gray-700">
+        <h1 class="page-title mt-4">Parlons de votre besoin</h1>
+        <p class="body-copy mx-auto mt-6 max-w-2xl">
           Les coordonnées de Sandra seront ajoutées dès qu’elles seront confirmées. En attendant,
           le questionnaire permet de mieux comprendre votre projet, votre public et votre contexte.
         </p>

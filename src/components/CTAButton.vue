@@ -22,7 +22,7 @@ const variantClass = computed(() =>
 )
 
 const buttonClasses = computed(() => [
-  'cta-button inline-flex min-h-11 items-center justify-center rounded-full px-8 py-3 text-center font-semibold leading-none transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-terracotta-500 focus-visible:ring-offset-2 active:scale-95',
+  'cta-button inline-flex min-h-11 w-full items-center justify-center rounded-full px-8 py-3 text-center font-semibold leading-none transition sm:w-auto focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-terracotta-500 focus-visible:ring-offset-2 active:scale-95',
   variantClass.value,
 ])
 </script>

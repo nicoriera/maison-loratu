@@ -63,12 +63,12 @@ watch(
 </script>
 
 <template>
-  <header class="sticky top-0 z-50 border-b border-terracotta-100/70 bg-white/92 shadow-sm backdrop-blur">
+  <header class="sticky top-0 z-50 border-b border-terracotta-100/70 bg-white/92 shadow-sm backdrop-blur safe-area-top">
     <nav class="container mx-auto px-4 py-3 md:py-4" aria-label="Navigation principale">
       <div class="flex items-center justify-between gap-4">
         <router-link
           to="/"
-          class="nav-logo text-2xl font-serif text-terracotta-500 transition-colors duration-[var(--duration-nav)] ease-[var(--ease-warm-out)] hover:text-terracotta-600 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-terracotta-500 focus-visible:ring-offset-2"
+          class="nav-logo inline-flex min-h-11 items-center text-2xl font-serif text-terracotta-500 transition-colors duration-[var(--duration-nav)] ease-[var(--ease-warm-out)] hover:text-terracotta-600 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-terracotta-500 focus-visible:ring-offset-2"
           @click="closeMobileMenu"
         >
           Maison Loratu
@@ -129,7 +129,7 @@ watch(
           <button
             type="button"
             ref="mobileMenuButton"
-            class="inline-flex h-11 w-11 items-center justify-center rounded-full border border-terracotta-200 bg-white text-terracotta-700 shadow-sm transition duration-[var(--duration-ui)] ease-[var(--ease-warm-out)] hover:border-terracotta-300 hover:bg-cream-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-terracotta-500 focus-visible:ring-offset-2"
+            class="inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-full border border-terracotta-200 bg-white text-terracotta-700 shadow-sm transition duration-[var(--duration-ui)] ease-[var(--ease-warm-out)] hover:border-terracotta-300 hover:bg-cream-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-terracotta-500 focus-visible:ring-offset-2"
             :aria-expanded="mobileMenuOpen"
             aria-controls="mobile-navigation"
             :aria-label="mobileMenuOpen ? 'Fermer le menu' : 'Ouvrir le menu'"
@@ -157,7 +157,7 @@ watch(
       <div
         v-show="mobileMenuOpen"
         id="mobile-navigation"
-        class="mt-3 rounded-[1.5rem] border border-terracotta-100 bg-white p-4 shadow-soft-lg lg:hidden"
+        class="mt-3 max-h-[calc(100dvh-6rem)] overflow-y-auto rounded-[1.5rem] border border-terracotta-100 bg-white p-4 shadow-soft-lg lg:hidden"
         @keydown.esc.prevent.stop="closeMobileMenu"
       >
         <div class="grid gap-2">
@@ -166,7 +166,7 @@ watch(
             :key="`mobile-${item.label}`"
             :to="item.to"
             :ref="item.label === navigation[0].label ? firstMobileLink : undefined"
-            class="rounded-2xl px-4 py-3 text-base font-medium text-gray-800 transition duration-[var(--duration-ui)] ease-[var(--ease-warm-out)] hover:bg-cream-100 hover:text-terracotta-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-terracotta-500 focus-visible:ring-offset-2"
+            class="flex min-h-11 items-center rounded-2xl px-4 py-3 text-base font-medium text-gray-800 transition duration-[var(--duration-ui)] ease-[var(--ease-warm-out)] hover:bg-cream-100 hover:text-terracotta-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-terracotta-500 focus-visible:ring-offset-2"
             :class="{ 'bg-cream-100 text-terracotta-700': isActive(item) }"
             :aria-current="isActive(item) ? 'page' : undefined"
             @click="closeMobileMenu"

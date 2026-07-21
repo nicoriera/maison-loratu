@@ -43,17 +43,17 @@ const offerings = [
     <section class="bg-gradient-to-b from-cream-200 to-cream-50 px-4 py-16 md:py-24">
       <div class="container mx-auto max-w-4xl text-center">
         <p class="text-service-label text-terracotta-600">Les ateliers</p>
-        <h1 class="mt-4 text-5xl text-terracotta-800 md:text-6xl">Des parenthèses pour respirer</h1>
-        <p class="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-gray-700">
+        <h1 class="page-title mt-4">Des parenthèses pour respirer</h1>
+        <p class="body-copy mx-auto mt-6 max-w-2xl">
           Les parcours sont pensés pour les enfants, les femmes, les seniors et les structures. Les dates, lieux et disponibilités seront affichés dès que le compte Resalib sera créé.
         </p>
-        <div class="mt-8 flex flex-wrap justify-center gap-4">
+        <div class="mt-8 flex flex-col justify-center gap-3 sm:flex-row sm:flex-wrap">
           <CTAButton to="/ateliers#formats">
             Découvrir les disponibilités
           </CTAButton>
           <a
             href="#formats"
-            class="rounded-full border-2 border-terracotta-300 px-7 py-3 font-semibold text-terracotta-700 transition duration-[var(--duration-ui)] ease-[var(--ease-warm-out)] hover:bg-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-terracotta-500 focus-visible:ring-offset-2"
+            class="inline-flex min-h-11 items-center justify-center rounded-full border-2 border-terracotta-300 px-7 py-3 text-center font-semibold text-terracotta-700 transition duration-[var(--duration-ui)] ease-[var(--ease-warm-out)] hover:bg-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-terracotta-500 focus-visible:ring-offset-2"
           >
             Voir les formats
           </a>

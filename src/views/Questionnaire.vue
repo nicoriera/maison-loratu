@@ -130,19 +130,17 @@ const onSubmit = handleSubmit(async (formValues) => {
 </script>
 
 <template>
-  <div class="min-h-screen bg-gray-50 py-12 px-4">
+  <div class="min-h-screen overflow-x-hidden bg-gray-50 px-4 py-8 md:py-12">
     <div class="container mx-auto max-w-2xl">
-      <ScrollReveal direction="up" class="bg-white rounded-lg shadow-lg p-8">
+      <ScrollReveal direction="up" class="rounded-2xl bg-white p-6 shadow-lg md:p-8">
         <div class="mb-8">
-          <h1
-            class="text-3xl md:text-4xl font-serif text-[#C16A46] mb-4 text-center">
+          <h1 class="mb-4 text-center text-3xl font-serif text-[#C16A46] md:text-4xl">
             Questionnaire de besoins
           </h1>
-          <p class="text-gray-600 text-center mb-6">
-            Répondez à quelques questions pour que nous puissions vous proposer
-            un accompagnement personnalisé
+          <p class="mb-6 text-center text-gray-600">
+            Répondez à quelques questions pour que nous puissions vous proposer un accompagnement personnalisé
           </p>
-          <p class="rounded-lg bg-cream-100 px-4 py-3 text-sm text-gray-700">
+          <p class="rounded-2xl bg-cream-100 px-4 py-3 text-sm text-gray-700">
             {{ submissionNotice }}
           </p>
 
@@ -420,12 +418,12 @@ const onSubmit = handleSubmit(async (formValues) => {
           </p>
 
           <!-- Boutons de navigation -->
-          <div class="flex justify-between mt-8 pt-6 border-t border-gray-200">
+          <div class="mt-8 flex flex-col-reverse gap-3 border-t border-gray-200 pt-6 sm:flex-row sm:justify-between">
             <button
               v-if="currentStep > 1"
               type="button"
               @click="prevStep"
-              class="px-6 py-3 text-gray-700 border-2 border-gray-300 rounded-lg hover:bg-gray-50 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#C16A46] focus-visible:ring-offset-2">
+              class="min-h-11 rounded-2xl border-2 border-gray-300 px-6 py-3 text-gray-700 transition-colors hover:bg-gray-50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#C16A46] focus-visible:ring-offset-2">
               Précédent
             </button>
             <div v-else></div>
@@ -434,14 +432,14 @@ const onSubmit = handleSubmit(async (formValues) => {
               v-if="currentStep < totalSteps"
               type="button"
               @click="nextStep"
-              class="px-6 py-3 bg-[#C16A46] text-white rounded-lg hover:bg-[#B85A36] transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#C16A46] focus-visible:ring-offset-2">
+              class="min-h-11 rounded-2xl bg-[#C16A46] px-6 py-3 text-white transition-colors hover:bg-[#B85A36] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#C16A46] focus-visible:ring-offset-2">
               Suivant
             </button>
             <button
               v-else
               type="submit"
               :disabled="isSubmitting"
-              class="px-6 py-3 bg-[#C16A46] text-white rounded-lg hover:bg-[#B85A36] transition-colors disabled:opacity-60 disabled:cursor-not-allowed focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#C16A46] focus-visible:ring-offset-2">
+              class="min-h-11 rounded-2xl bg-[#C16A46] px-6 py-3 text-white transition-colors hover:bg-[#B85A36] disabled:cursor-not-allowed disabled:opacity-60 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#C16A46] focus-visible:ring-offset-2">
               {{ isSubmitting ? "Envoi en cours..." : "Envoyer la demande" }}
             </button>
           </div>

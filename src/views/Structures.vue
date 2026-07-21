@@ -29,8 +29,8 @@ const steps = [
       <div class="container mx-auto grid max-w-6xl items-center gap-10 md:grid-cols-[1.05fr_0.95fr]">
         <div>
           <p class="text-service-label text-terracotta-600">Interventions sur mesure</p>
-          <h1 class="mt-4 text-5xl leading-tight text-terracotta-800 md:text-6xl">La sophrologie entre dans vos structures.</h1>
-          <p class="mt-6 max-w-2xl text-lg leading-relaxed text-gray-700">
+          <h1 class="page-title mt-4">La sophrologie entre dans vos structures.</h1>
+          <p class="body-copy mt-6 max-w-2xl">
             Maison Loratu imagine des ateliers simples, joyeux et adaptés aux écoles, centres de loisirs et associations.
             Le programme se construit avec vous, sans format imposé.
           </p>
@@ -47,7 +47,7 @@ const steps = [
       <div class="container mx-auto max-w-6xl">
         <div class="max-w-2xl">
           <p class="text-service-label text-terracotta-600">Pour qui ?</p>
-          <h2 class="mt-3 text-4xl text-terracotta-800 md:text-5xl">Un atelier pour chaque cadre</h2>
+          <h2 class="section-title mt-3">Un atelier pour chaque cadre</h2>
         </div>
         <div class="mt-10 grid gap-6 md:grid-cols-3">
           <article v-for="audience in audiences" :key="audience.title" class="rounded-[1.75rem] bg-white p-7 shadow-soft">
@@ -62,7 +62,7 @@ const steps = [
       <div class="container mx-auto grid max-w-6xl gap-10 md:grid-cols-[0.8fr_1.2fr]">
         <div>
           <p class="text-service-label text-terracotta-600">Comment ça se passe ?</p>
-          <h2 class="mt-3 text-4xl text-terracotta-800">Un premier échange pour bien cadrer votre besoin</h2>
+          <h2 class="section-title mt-3">Un premier échange pour bien cadrer votre besoin</h2>
         </div>
         <ol class="space-y-4">
           <li v-for="(step, index) in steps" :key="step" class="flex gap-4 rounded-2xl bg-white p-5 shadow-soft">
