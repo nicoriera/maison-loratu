@@ -40,7 +40,8 @@ const editingArticleId = ref('')
 const articleCounter = ref(1)
 
 const isAdmin = computed(() => {
-  const roles = Array.isArray(currentUser.value?.app_metadata?.roles) ? currentUser.value.app_metadata.roles : []
+  const metadata = currentUser.value?.appMetadata ?? currentUser.value?.app_metadata
+  const roles = Array.isArray(metadata?.roles) ? metadata.roles : []
   return roles.includes('admin')
 })
 

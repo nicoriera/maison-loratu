@@ -2,7 +2,8 @@ import { getUser } from '@netlify/identity'
 
 export const getAdminUser = async () => {
   const user = await getUser()
-  const roles = Array.isArray(user?.app_metadata?.roles) ? user.app_metadata.roles : []
+  const metadata = user?.appMetadata ?? user?.app_metadata
+  const roles = Array.isArray(metadata?.roles) ? metadata.roles : []
   return user && roles.includes('admin') ? user : null
 }
 
