@@ -5,10 +5,12 @@ import {
   buildArticlePreview,
   createEmptyArticleDraft,
   createInitialFaqDraft,
+  createInitialAdminContent,
   createInitialOffersDraft,
   createInitialPublicDraft,
   formatArticleDate,
   validateArticleDraft,
+  validateAdminContent,
   validateFaqItemsDraft,
   validateOffersDraft,
   validatePublicContentDraft,
@@ -136,4 +138,10 @@ test('buildArticlePreview exposes a readable local preview', () => {
 test('formatArticleDate falls back for invalid dates', () => {
   assert.equal(formatArticleDate(''), 'Date à confirmer')
   assert.equal(formatArticleDate('2026-02-30'), 'Date à confirmer')
+})
+
+test('validateAdminContent returns a server-safe content bundle', () => {
+  const result = validateAdminContent(createInitialAdminContent())
+  assert.equal(result.issues.length, 0)
+  assert.deepEqual(Object.keys(result.sanitizedContent), ['public', 'offers', 'faq', 'articles'])
 })

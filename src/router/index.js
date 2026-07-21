@@ -9,7 +9,6 @@ import Contact from '../views/Contact.vue'
 import DevisStructure from '../views/DevisStructure.vue'
 import Structures from '../views/Structures.vue'
 import Administration from '../views/Administration.vue'
-import { canAccessPrototypeRoute, siteConfig } from '../config/site.js'
 
 const router = createRouter({
   history: createWebHistory(),
@@ -53,14 +52,7 @@ const router = createRouter({
       path: '/administration',
       name: 'administration',
       component: Administration,
-      meta: { transition: 'page-slide-left', prototypeOnly: true },
-      beforeEnter: (to) => {
-        if (canAccessPrototypeRoute(to.meta, siteConfig)) {
-          return true
-        }
-
-        return { name: 'home', replace: true }
-      },
+      meta: { transition: 'page-slide-left', adminOnly: true },
     },
     {
       path: '/merci',

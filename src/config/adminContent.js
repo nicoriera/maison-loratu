@@ -300,3 +300,42 @@ export const buildArticlePreview = (draft = {}) => {
     paragraphs,
   }
 }
+
+export const createInitialAdminContent = () => ({
+  public: createInitialPublicDraft(),
+  offers: createInitialOffersDraft(),
+  faq: createInitialFaqDraft(),
+  articles: [],
+})
+
+export const validateAdminContent = (content = {}) => {
+  const publicResult = validatePublicContentDraft(content.public)
+  const offersResult = validateOffersDraft(content.offers)
+  const faqResult = validateFaqItemsDraft(content.faq)
+  const articleResults = Array.isArray(content.articles)
+    ? content.articles.map((article) => validateArticleDraft(article))
+    : [{ sanitizedDraft: {}, issues: ['Les articles doivent être une liste valide.'] }]
+  const issues = [
+    ...publicResult.issues,
+    ...(publicResult.sanitizedDraft.reservationUrl && !publicResult.sanitizedReservationUrl
+      ? ['Le lien de réservation doit utiliser https:// et pointer vers un domaine Resalib.']
+      : []),
+    ...offersResult.issues,
+    ...faqResult.issues,
+    ...articleResults.flatMap((result) => result.issues),
+  ]
+
+  return {
+    sanitizedContent: {
+      public: { ...publicResult.sanitizedDraft, reservationUrl: publicResult.sanitizedReservationUrl },
+      offers: offersResult.sanitizedDraft,
+      faq: faqResult.sanitizedDraft,
+      articles: articleResults.map((result, index) => ({
+        ...result.sanitizedDraft,
+        id: typeof content.articles?.[index]?.id === 'string' ? content.articles[index].id : `article-${index + 1}`,
+        updatedAt: typeof content.articles?.[index]?.updatedAt === 'string' ? content.articles[index].updatedAt : new Date().toISOString(),
+      })),
+    },
+    issues,
+  }
+}

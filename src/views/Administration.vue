@@ -1,5 +1,6 @@
 <script setup>
-import { computed, ref } from 'vue'
+import { computed, onBeforeUnmount, onMounted, ref } from 'vue'
+import { AuthError, getUser, handleAuthCallback, login, logout, onAuthChange } from '@netlify/identity'
 import {
   ADMIN_TABS,
   ARTICLE_STATUS_OPTIONS,
@@ -8,6 +9,7 @@ import {
   createInitialFaqDraft,
   createInitialOffersDraft,
   createInitialPublicDraft,
+  validateAdminContent,
   validateArticleDraft,
   validateFaqItemsDraft,
   validateOffersDraft,
@@ -15,6 +17,12 @@ import {
 } from '../config/adminContent.js'
 
 const activeTab = ref('public')
+const currentUser = ref(null)
+const authLoading = ref(true)
+const authEmail = ref('')
+const authPassword = ref('')
+const authMessage = ref('')
+const authUnsubscribe = ref(null)
 
 const publicContent = ref(createInitialPublicDraft())
 const publicMessage = ref({ type: '', text: '' })
@@ -30,6 +38,72 @@ const articleDraft = ref(createEmptyArticleDraft())
 const articleMessage = ref({ type: '', text: '' })
 const editingArticleId = ref('')
 const articleCounter = ref(1)
+
+const isAdmin = computed(() => {
+  const roles = Array.isArray(currentUser.value?.app_metadata?.roles) ? currentUser.value.app_metadata.roles : []
+  return roles.includes('admin')
+})
+
+const contentSnapshot = () => ({
+  public: publicContent.value,
+  offers: offers.value,
+  faq: faqItems.value,
+  articles: articles.value,
+})
+
+const loadRemoteContent = async () => {
+  const response = await fetch('/api/admin/content', { headers: { Accept: 'application/json' } })
+  if (!response.ok) throw new Error('Impossible de charger les contenus.')
+  const remoteContent = await response.json()
+  publicContent.value = remoteContent.public ?? createInitialPublicDraft()
+  offers.value = remoteContent.offers ?? createInitialOffersDraft()
+  faqItems.value = remoteContent.faq ?? createInitialFaqDraft()
+  articles.value = remoteContent.articles ?? []
+}
+
+const persistContent = async () => {
+  const { issues } = validateAdminContent(contentSnapshot())
+  if (issues.length) throw new Error(issues[0])
+  const response = await fetch('/api/admin/content', {
+    method: 'PUT',
+    headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+    body: JSON.stringify(contentSnapshot()),
+  })
+  const result = await response.json().catch(() => ({}))
+  if (!response.ok) throw new Error(result.issues?.[0] ?? 'Impossible d’enregistrer les contenus.')
+}
+
+const signIn = async () => {
+  authMessage.value = ''
+  try {
+    await login(authEmail.value.trim(), authPassword.value)
+    authPassword.value = ''
+    currentUser.value = await getUser()
+    if (isAdmin.value) await loadRemoteContent()
+  } catch (error) {
+    authMessage.value = error instanceof AuthError ? 'Connexion impossible. Vérifiez vos identifiants.' : 'Le service d’authentification est indisponible.'
+  }
+}
+
+const signOut = async () => {
+  await logout()
+  currentUser.value = null
+}
+
+onMounted(async () => {
+  try {
+    await handleAuthCallback()
+    currentUser.value = await getUser()
+    if (isAdmin.value) await loadRemoteContent()
+  } catch (error) {
+    authMessage.value = error instanceof Error ? error.message : 'Impossible de charger la session.'
+  } finally {
+    authLoading.value = false
+  }
+  authUnsubscribe.value = onAuthChange((_event, user) => { currentUser.value = user })
+})
+
+onBeforeUnmount(() => authUnsubscribe.value?.())
 
 const articlePreview = computed(() => buildArticlePreview(articleDraft.value))
 
@@ -52,7 +126,7 @@ const tabBadges = computed(() => ({
 
 const messageClass = (type) => (type === 'error' ? 'text-red-700' : 'text-terracotta-700')
 
-const savePublicContent = () => {
+const savePublicContent = async () => {
   const { sanitizedDraft, sanitizedReservationUrl, issues } = validatePublicContentDraft(publicContent.value)
 
   if (sanitizedDraft.reservationUrl && !sanitizedReservationUrl) {
@@ -74,10 +148,8 @@ const savePublicContent = () => {
     ...sanitizedDraft,
     reservationUrl: sanitizedReservationUrl,
   }
-  publicMessage.value = {
-    type: 'success',
-    text: 'Brouillon public vérifié localement. Rien n’est enregistré ni synchronisé.',
-  }
+  try { await persistContent(); publicMessage.value = { type: 'success', text: 'Paramètres enregistrés.' } }
+  catch (error) { publicMessage.value = { type: 'error', text: error.message } }
 }
 
 const resetPublicContent = () => {
@@ -88,7 +160,7 @@ const resetPublicContent = () => {
   }
 }
 
-const saveOffers = () => {
+const saveOffers = async () => {
   const { sanitizedDraft, issues } = validateOffersDraft(offers.value)
   offers.value = sanitizedDraft
 
@@ -97,10 +169,8 @@ const saveOffers = () => {
     return
   }
 
-  offersMessage.value = {
-    type: 'success',
-    text: 'Les offres restent en mémoire locale pour cette session uniquement.',
-  }
+  try { await persistContent(); offersMessage.value = { type: 'success', text: 'Offres enregistrées.' } }
+  catch (error) { offersMessage.value = { type: 'error', text: error.message } }
 }
 
 const resetOffers = () => {
@@ -111,7 +181,7 @@ const resetOffers = () => {
   }
 }
 
-const saveFaq = () => {
+const saveFaq = async () => {
   const { sanitizedDraft, issues } = validateFaqItemsDraft(faqItems.value)
   faqItems.value = sanitizedDraft
 
@@ -120,10 +190,8 @@ const saveFaq = () => {
     return
   }
 
-  faqMessage.value = {
-    type: 'success',
-    text: 'La FAQ reste en mémoire locale pour cette session uniquement.',
-  }
+  try { await persistContent(); faqMessage.value = { type: 'success', text: 'FAQ enregistrée.' } }
+  catch (error) { faqMessage.value = { type: 'error', text: error.message } }
 }
 
 const resetFaq = () => {
@@ -143,7 +211,7 @@ const resetArticleDraft = (messageText = 'Le brouillon d’article local a été
   }
 }
 
-const saveArticle = () => {
+const saveArticle = async () => {
   const { sanitizedDraft, issues } = validateArticleDraft(articleDraft.value)
   articleDraft.value = sanitizedDraft
 
@@ -163,17 +231,14 @@ const saveArticle = () => {
     articles.value = articles.value.map((article) =>
       article.id === editingArticleId.value ? record : article,
     )
-    articleMessage.value = {
-      type: 'success',
-      text: 'Le brouillon d’article a été mis à jour en mémoire locale.',
-    }
+    articleMessage.value = { type: 'success', text: 'Le brouillon d’article a été mis à jour.' }
   } else {
     articles.value = [record, ...articles.value]
-    articleMessage.value = {
-      type: 'success',
-      text: 'Le brouillon d’article a été ajouté en mémoire locale.',
-    }
+    articleMessage.value = { type: 'success', text: 'Le brouillon d’article a été ajouté.' }
   }
+
+  try { await persistContent() }
+  catch (error) { articleMessage.value = { type: 'error', text: error.message } }
 
   articleDraft.value = createEmptyArticleDraft()
   editingArticleId.value = ''
@@ -196,7 +261,7 @@ const editArticle = (article) => {
   }
 }
 
-const deleteArticle = (articleId) => {
+const deleteArticle = async (articleId) => {
   articles.value = articles.value.filter((article) => article.id !== articleId)
 
   if (editingArticleId.value === articleId) {
@@ -204,9 +269,11 @@ const deleteArticle = (articleId) => {
     editingArticleId.value = ''
   }
 
-  articleMessage.value = {
-    type: 'success',
-    text: 'Le brouillon d’article a été supprimé de la mémoire locale.',
+  try {
+    await persistContent()
+    articleMessage.value = { type: 'success', text: 'Le brouillon d’article a été supprimé.' }
+  } catch (error) {
+    articleMessage.value = { type: 'error', text: error.message }
   }
 }
 </script>
@@ -215,18 +282,36 @@ const deleteArticle = (articleId) => {
   <div class="min-h-screen bg-cream-50 px-4 py-12">
     <div class="mx-auto max-w-6xl space-y-8">
       <div class="rounded-3xl border border-terracotta-200 bg-cream-100 p-6 md:p-8">
-        <p class="text-service-label text-terracotta-600">Prototype d’administration</p>
-        <h1 class="mt-2 text-4xl text-terracotta-800">Préparer le contenu éditorial du site</h1>
-        <p class="mt-3 max-w-3xl leading-relaxed text-gray-700">
-          Cette interface reste locale, sans backend, sans authentification réelle, sans stockage persistant,
-          sans réservation propriétaire et sans paiement. Le route guard prototypeOnly demeure la seule barrière
-          d’accès prévue pour ce prototype.
-        </p>
-        <p class="mt-3 text-sm leading-relaxed text-terracotta-700">
-          N’ajoutez ni mot de passe, ni donnée de santé, ni information confidentielle. Toute donnée manifestement
-          sensible doit être refusée par la validation locale.
-        </p>
+        <div class="flex flex-wrap items-start justify-between gap-4">
+          <div>
+            <p class="text-service-label text-terracotta-600">Administration éditoriale</p>
+            <h1 class="mt-2 text-4xl text-terracotta-800">Gérer le contenu du site</h1>
+          </div>
+          <button v-if="isAdmin" type="button" class="min-h-11 rounded-full border border-terracotta-300 px-5 py-2 font-semibold text-terracotta-700" @click="signOut">Se déconnecter</button>
+        </div>
+        <p class="mt-3 max-w-3xl leading-relaxed text-gray-700">Les contenus sont accessibles aux administrateurs autorisés et sauvegardés côté serveur. Les rôles sont vérifiés par Netlify Identity et par la Function API.</p>
       </div>
+
+      <section v-if="authLoading" class="surface-card" aria-live="polite">Vérification de votre session…</section>
+
+      <section v-else-if="!currentUser" class="surface-card mx-auto max-w-lg">
+        <h2 class="text-2xl text-terracotta-800">Connexion administrateur</h2>
+        <p class="mt-3 text-gray-700">Utilisez le compte Netlify Identity auquel le rôle `admin` a été attribué.</p>
+        <form class="mt-6 space-y-5" @submit.prevent="signIn">
+          <label class="form-label">Email<input v-model.trim="authEmail" class="form-input mt-2" type="email" autocomplete="username" required /></label>
+          <label class="form-label">Mot de passe<input v-model="authPassword" class="form-input mt-2" type="password" autocomplete="current-password" required /></label>
+          <p v-if="authMessage" class="text-sm text-red-700" role="alert">{{ authMessage }}</p>
+          <button type="submit" class="inline-flex min-h-11 w-full items-center justify-center rounded-full bg-terracotta-500 px-7 py-3 font-semibold text-white hover:bg-terracotta-600">Se connecter</button>
+        </form>
+      </section>
+
+      <section v-else-if="!isAdmin" class="surface-card mx-auto max-w-lg" role="alert">
+        <h2 class="text-2xl text-terracotta-800">Accès refusé</h2>
+        <p class="mt-3 text-gray-700">Votre compte est authentifié, mais ne possède pas le rôle administrateur.</p>
+        <button type="button" class="mt-6 min-h-11 rounded-full border border-terracotta-300 px-6 py-3 font-semibold text-terracotta-700" @click="signOut">Se déconnecter</button>
+      </section>
+
+      <div v-else class="space-y-8">
 
       <div class="rounded-3xl bg-white p-3 shadow-soft">
         <div class="grid gap-3 md:grid-cols-4">
@@ -634,6 +719,7 @@ const deleteArticle = (articleId) => {
           </article>
         </div>
       </section>
+      </div>
     </div>
   </div>
 </template>
