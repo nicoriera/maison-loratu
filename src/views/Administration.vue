@@ -17,6 +17,7 @@ import {
 } from '../config/adminContent.js'
 
 const activeTab = ref('public')
+const isLocalPreview = import.meta.env.DEV && import.meta.env.VITE_ADMIN_LOCAL_PREVIEW === 'true'
 const currentUser = ref(null)
 const authLoading = ref(true)
 const authEmail = ref('')
@@ -65,6 +66,7 @@ const loadRemoteContent = async () => {
 const persistContent = async () => {
   const { issues } = validateAdminContent(contentSnapshot())
   if (issues.length) throw new Error(issues[0])
+  if (isLocalPreview) return
   const response = await fetch('/api/admin/content', {
     method: 'PUT',
     headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
@@ -76,6 +78,11 @@ const persistContent = async () => {
 
 const signIn = async () => {
   authMessage.value = ''
+  if (isLocalPreview) {
+    currentUser.value = { email: 'local-admin@example.test', appMetadata: { roles: ['admin'] } }
+    authPassword.value = ''
+    return
+  }
   try {
     await login(authEmail.value.trim(), authPassword.value)
     authPassword.value = ''
@@ -92,6 +99,10 @@ const signOut = async () => {
 }
 
 onMounted(async () => {
+  if (isLocalPreview) {
+    authLoading.value = false
+    return
+  }
   try {
     await handleAuthCallback()
     currentUser.value = await getUser()
@@ -297,12 +308,12 @@ const deleteArticle = async (articleId) => {
 
       <section v-else-if="!currentUser" class="surface-card mx-auto max-w-lg">
         <h2 class="text-2xl text-terracotta-800">Connexion administrateur</h2>
-        <p class="mt-3 text-gray-700">Utilisez le compte Netlify Identity auquel le rôle `admin` a été attribué.</p>
+        <p class="mt-3 text-gray-700">{{ isLocalPreview ? 'Mode aperçu local : aucune authentification ni donnée serveur n’est utilisée.' : 'Utilisez le compte Netlify Identity auquel le rôle `admin` a été attribué.' }}</p>
         <form class="mt-6 space-y-5" @submit.prevent="signIn">
-          <label class="form-label">Email<input v-model.trim="authEmail" class="form-input mt-2" type="email" autocomplete="username" required /></label>
-          <label class="form-label">Mot de passe<input v-model="authPassword" class="form-input mt-2" type="password" autocomplete="current-password" required /></label>
+          <label v-if="!isLocalPreview" class="form-label">Email<input v-model.trim="authEmail" class="form-input mt-2" type="email" autocomplete="username" required /></label>
+          <label v-if="!isLocalPreview" class="form-label">Mot de passe<input v-model="authPassword" class="form-input mt-2" type="password" autocomplete="current-password" required /></label>
           <p v-if="authMessage" class="text-sm text-red-700" role="alert">{{ authMessage }}</p>
-          <button type="submit" class="inline-flex min-h-11 w-full items-center justify-center rounded-full bg-terracotta-500 px-7 py-3 font-semibold text-white hover:bg-terracotta-600">Se connecter</button>
+          <button type="submit" class="inline-flex min-h-11 w-full items-center justify-center rounded-full bg-terracotta-500 px-7 py-3 font-semibold text-white hover:bg-terracotta-600">{{ isLocalPreview ? 'Ouvrir l’aperçu local' : 'Se connecter' }}</button>
         </form>
       </section>
 

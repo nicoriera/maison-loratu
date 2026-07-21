@@ -39,6 +39,16 @@ L’administration éditoriale utilise Netlify Identity, une Function API proté
 
 Les rôles sont vérifiés dans l’interface et dans la Function `/api/admin/content`. Les contenus sont persistés dans le store Blobs `maison-loratu-content`. L’admin ne gère ni les rendez-vous, ni le paiement. Identity ne fonctionne pas complètement avec `netlify dev` : utilisez un deploy preview Netlify pour tester le flux réel.
 
+#### Aperçu local de l’interface admin
+
+Pour tester uniquement les écrans et la validation sans Netlify Identity ni API :
+
+```bash
+cp .env.example .env.local
+```
+
+Puis mettez `VITE_ADMIN_LOCAL_PREVIEW=true` dans `.env.local` et lancez `npm run dev`. Ouvrez `/administration`, puis cliquez sur **Ouvrir l’aperçu local**. Ce mode est limité à `DEV`, ne sauvegarde rien et ne doit jamais être utilisé pour valider la sécurité ou la persistance.
+
 ## 🏗️ Build
 
 ```bash
