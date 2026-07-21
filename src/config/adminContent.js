@@ -22,6 +22,12 @@ export const ARTICLE_STATUS_OPTIONS = Object.freeze([
 
 const trimText = (value) => (typeof value === 'string' ? value.trim() : '')
 
+const sanitizeInternalOrReservationUrl = (value) => {
+  const href = trimText(value)
+  if (href.startsWith('/')) return href
+  return sanitizeReservationUrl(href)
+}
+
 const normalizeMultilineText = (value) => {
   if (typeof value !== 'string') {
     return ''
@@ -59,6 +65,14 @@ export const createInitialPublicDraft = () => ({
   location: '',
   email: '',
   phone: '',
+  atelierDuMoment: {
+    enabled: true,
+    label: 'En ce moment',
+    title: 'Ateliers collectifs & duos',
+    summary: '1 h 30 · 8 participantes maximum · 38 € — Une bulle de douceur pour ralentir, respirer et repartir avec des outils simples.',
+    ctaLabel: 'Voir les ateliers',
+    ctaHref: '/ateliers',
+  },
 })
 
 export const createInitialOffersDraft = () => ([
@@ -114,6 +128,14 @@ export const sanitizePublicContentDraft = (draft = {}) => ({
   location: trimText(draft.location),
   email: trimText(draft.email),
   phone: trimText(draft.phone),
+  atelierDuMoment: {
+    enabled: draft.atelierDuMoment?.enabled === true,
+    label: trimText(draft.atelierDuMoment?.label),
+    title: trimText(draft.atelierDuMoment?.title),
+    summary: trimText(draft.atelierDuMoment?.summary),
+    ctaLabel: trimText(draft.atelierDuMoment?.ctaLabel),
+    ctaHref: sanitizeInternalOrReservationUrl(draft.atelierDuMoment?.ctaHref),
+  },
 })
 
 export const validatePublicContentDraft = (draft = {}) => {
@@ -132,10 +154,24 @@ export const validatePublicContentDraft = (draft = {}) => {
     issues.push('Le téléphone doit rester un numéro de contact public valide.')
   }
 
+  const featuredWorkshop = sanitizedDraft.atelierDuMoment
+  if (featuredWorkshop.enabled) {
+    if (!featuredWorkshop.label || !featuredWorkshop.title || !featuredWorkshop.summary || !featuredWorkshop.ctaLabel || !featuredWorkshop.ctaHref) {
+      issues.push('L’atelier du moment doit comporter un libellé, un titre, un résumé et un lien valides.')
+    }
+    if (featuredWorkshop.label.length > 40 || featuredWorkshop.title.length > 80 || featuredWorkshop.summary.length > 220 || featuredWorkshop.ctaLabel.length > 30) {
+      issues.push('L’atelier du moment doit rester court et lisible.')
+    }
+  }
+
   issues.push(
     ...collectSensitiveContentIssues(
       [sanitizedDraft.location, sanitizedDraft.email, sanitizedDraft.phone],
       'Supprimez tout secret, mot de passe ou donnée sensible du brouillon.',
+    ),
+    ...collectSensitiveContentIssues(
+      Object.values(featuredWorkshop),
+      'Supprimez toute information sensible ou confidentielle de l’atelier du moment.',
     ),
   )
 

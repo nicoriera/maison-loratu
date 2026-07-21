@@ -22,6 +22,14 @@ test('create admin draft factories returns lightweight local defaults', () => {
     location: '',
     email: '',
     phone: '',
+    atelierDuMoment: {
+      enabled: true,
+      label: 'En ce moment',
+      title: 'Ateliers collectifs & duos',
+      summary: '1 h 30 · 8 participantes maximum · 38 € — Une bulle de douceur pour ralentir, respirer et repartir avec des outils simples.',
+      ctaLabel: 'Voir les ateliers',
+      ctaHref: '/ateliers',
+    },
   })
   assert.equal(createInitialOffersDraft().length, 3)
   assert.equal(createInitialFaqDraft().length, 3)
@@ -49,6 +57,14 @@ test('validatePublicContentDraft trims safe public fields without raising issues
       location: 'Cabinet Loratu - Nantes',
       email: 'contact@maison-loratu.fr',
       phone: '06 12 34 56 78',
+      atelierDuMoment: {
+        enabled: false,
+        label: '',
+        title: '',
+        summary: '',
+        ctaLabel: '',
+        ctaHref: '',
+      },
     },
     sanitizedReservationUrl: 'https://www.resalib.fr/praticien/maison-loratu',
     issues: [],

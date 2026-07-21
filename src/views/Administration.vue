@@ -405,6 +405,23 @@ const deleteArticle = async (articleId) => {
             </div>
           </div>
 
+          <fieldset class="space-y-5 rounded-[1.5rem] bg-sauge-100 p-6">
+            <legend class="text-xl font-semibold text-terracotta-800">Atelier du moment</legend>
+            <label class="flex min-h-11 items-center gap-3 text-sm font-semibold text-gray-700">
+              <input v-model="publicContent.atelierDuMoment.enabled" type="checkbox" class="h-5 w-5 accent-terracotta-500" />
+              Afficher cet encart sur l’accueil
+            </label>
+            <div class="grid gap-5 md:grid-cols-2">
+              <label for="featuredLabel" class="form-label">Libellé<input id="featuredLabel" v-model.trim="publicContent.atelierDuMoment.label" class="form-input mt-2" maxlength="40" placeholder="En ce moment" /></label>
+              <label for="featuredTitle" class="form-label">Titre<input id="featuredTitle" v-model.trim="publicContent.atelierDuMoment.title" class="form-input mt-2" maxlength="80" placeholder="Ateliers collectifs & duos" /></label>
+            </div>
+            <label for="featuredSummary" class="form-label">Résumé<textarea id="featuredSummary" v-model.trim="publicContent.atelierDuMoment.summary" class="form-input mt-2 min-h-24" maxlength="220" placeholder="Un texte court et public" /></label>
+            <div class="grid gap-5 md:grid-cols-2">
+              <label for="featuredCtaLabel" class="form-label">Libellé du bouton<input id="featuredCtaLabel" v-model.trim="publicContent.atelierDuMoment.ctaLabel" class="form-input mt-2" maxlength="30" placeholder="Voir les ateliers" /></label>
+              <label for="featuredCtaHref" class="form-label">Lien du bouton<input id="featuredCtaHref" v-model.trim="publicContent.atelierDuMoment.ctaHref" class="form-input mt-2" maxlength="200" placeholder="/ateliers ou lien Resalib" /></label>
+            </div>
+          </fieldset>
+
           <p class="rounded-2xl bg-cream-50 p-4 text-sm text-gray-700">
             Vérification locale uniquement : si un champ ressemble à un secret, à un mot de passe ou à une donnée
             non publique, le brouillon est refusé.

@@ -3,6 +3,7 @@ import CTAButton from '../components/CTAButton.vue'
 import ScrollReveal from '../components/ScrollReveal.vue'
 import ScrollRevealStagger from '../components/ScrollRevealStagger.vue'
 import { siteConfig } from '../config/site.js'
+import { computed, onMounted, ref } from 'vue'
 
 const shortcuts = [
   { label: 'Enfants', href: '#accompagnements' },
@@ -47,6 +48,64 @@ const workshops = [
   { title: 'Séances en plein air', detail: '45 min · 8 participantes maximum · 15 €' },
   { title: 'Accompagnement individuel', detail: '1 h · 60 €' },
 ]
+
+const momentOptions = [
+  {
+    id: 'child',
+    label: 'Pour un enfant',
+    title: 'Ateliers enfants',
+    text: 'Des exercices ludiques pour apprivoiser les émotions, mieux dormir et prendre confiance.',
+    to: '/ateliers',
+  },
+  {
+    id: 'duo',
+    label: 'À deux ou en famille',
+    title: 'Ateliers collectifs & duos',
+    text: 'Une parenthèse pour ralentir ensemble, respirer et créer un souvenir doux.',
+    to: '/ateliers',
+  },
+  {
+    id: 'self',
+    label: 'Pour moi',
+    title: 'Accompagnement personnalisé',
+    text: 'Un temps individuel pour avancer à votre rythme et selon ce que vous traversez.',
+    to: '/accompagnement',
+  },
+  {
+    id: 'gift',
+    label: 'Pour offrir',
+    title: 'Carte cadeau',
+    text: 'Deux ateliers à vivre dans un délai de deux mois, seule ou à partager.',
+    to: '/carte-cadeau',
+  },
+]
+
+const selectedMomentId = ref('')
+const selectedMoment = computed(() => momentOptions.find((option) => option.id === selectedMomentId.value))
+const featuredWorkshopFallback = {
+  enabled: true,
+  label: 'En ce moment',
+  title: 'Ateliers collectifs & duos',
+  summary: '1 h 30 · 8 participantes maximum · 38 € — Une bulle de douceur pour ralentir, respirer et repartir avec des outils simples.',
+  ctaLabel: 'Voir les ateliers',
+  ctaHref: '/ateliers',
+}
+const featuredWorkshop = ref(featuredWorkshopFallback)
+
+const loadPublicContent = async () => {
+  try {
+    const response = await fetch('/api/content', { headers: { Accept: 'application/json' } })
+    if (!response.ok) return
+    const content = await response.json()
+    if (content.public?.atelierDuMoment?.enabled && content.public.atelierDuMoment.title && content.public.atelierDuMoment.summary) {
+      featuredWorkshop.value = content.public.atelierDuMoment
+    }
+  } catch {
+    featuredWorkshop.value = featuredWorkshopFallback
+  }
+}
+
+onMounted(loadPublicContent)
 </script>
 
 <template>
@@ -97,6 +156,43 @@ const workshops = [
             class="relative w-full rounded-[2rem] object-cover shadow-soft-lg"
             fetchpriority="high"
           />
+        </div>
+      </div>
+    </section>
+
+    <section class="bg-white px-4 py-16 md:py-24">
+      <div class="container mx-auto max-w-6xl">
+        <div class="grid gap-8 md:grid-cols-[0.8fr_1.2fr] md:items-start">
+          <ScrollReveal direction="left" tag="div" class="max-w-md">
+            <p class="mb-3 text-service-label text-terracotta-600">Un premier repère</p>
+            <h2 class="text-3xl text-terracotta-800 sm:text-4xl md:text-5xl">Qu’est-ce qui vous ferait du bien aujourd’hui ?</h2>
+            <p class="mt-5 text-lg leading-relaxed text-gray-600">
+              Choisissez une porte d’entrée et découvrez le format qui correspond le mieux à votre envie du moment.
+            </p>
+          </ScrollReveal>
+
+          <div>
+            <div class="grid gap-3 sm:grid-cols-2" role="group" aria-label="Choisir un besoin">
+              <button
+                v-for="option in momentOptions"
+                :key="option.id"
+                type="button"
+                class="min-h-16 rounded-2xl border-2 bg-cream-50 px-5 py-4 text-left font-semibold text-terracotta-800 shadow-soft transition duration-[var(--duration-ui)] ease-[var(--ease-warm-out)] hover:-translate-y-0.5 hover:border-terracotta-300 hover:bg-cream-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-terracotta-500 focus-visible:ring-offset-2"
+                :class="selectedMomentId === option.id ? 'border-terracotta-500 bg-cream-100' : 'border-transparent'"
+                :aria-pressed="selectedMomentId === option.id"
+                @click="selectedMomentId = option.id"
+              >
+                {{ option.label }}
+              </button>
+            </div>
+
+            <div v-if="selectedMoment" class="mt-5 rounded-[1.5rem] bg-terracotta-800 p-6 text-white shadow-soft-lg" aria-live="polite">
+              <p class="text-service-label text-cream-200">Votre piste</p>
+              <h3 class="mt-3 text-2xl">{{ selectedMoment.title }}</h3>
+              <p class="mt-3 leading-relaxed text-cream-100">{{ selectedMoment.text }}</p>
+              <div class="mt-5"><CTAButton :to="selectedMoment.to" variant="secondary">Découvrir</CTAButton></div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -177,6 +273,17 @@ const workshops = [
             </article>
           </ScrollRevealStagger>
         </div>
+      </div>
+    </section>
+
+    <section class="bg-terracotta-800 px-4 py-16 text-white md:py-20">
+      <div class="container mx-auto grid max-w-6xl items-center gap-8 md:grid-cols-[1fr_auto]">
+        <div>
+          <p class="text-service-label text-cream-200">{{ featuredWorkshop.label }}</p>
+          <h2 class="mt-3 text-3xl sm:text-4xl">{{ featuredWorkshop.title }}</h2>
+          <p class="mt-3 max-w-2xl text-lg leading-relaxed text-cream-100">{{ featuredWorkshop.summary }}</p>
+        </div>
+        <CTAButton :to="featuredWorkshop.ctaHref" variant="secondary">{{ featuredWorkshop.ctaLabel }}</CTAButton>
       </div>
     </section>
 

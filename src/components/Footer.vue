@@ -2,7 +2,7 @@
 </script>
 
 <template>
-  <footer class="bg-gray-50 border-t border-gray-200 mt-auto">
+  <footer class="bg-gray-50 border-t border-gray-200 mt-auto pb-20 lg:pb-0">
     <div class="container mx-auto px-4 py-8">
       <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
         <div>
@@ -41,7 +41,7 @@
             Questions fréquentes
           </router-link>
           <p class="text-gray-600 text-sm">
-            <!-- À compléter avec les informations de contact -->
+            Coordonnées à venir
           </p>
         </div>
       </div>
