@@ -3,6 +3,15 @@
 @tailwind utilities;
 
 :root {
+  --space-unit: 0.25rem;
+  --space-page-x: 1rem;
+  --space-section-y: 4rem;
+  --space-section-y-lg: 6rem;
+  --content-readable: 42rem;
+  --content-wide: 72rem;
+  --text-body-size: 1rem;
+  --text-body-leading: 1.75;
+  --text-title-leading: 1.08;
   --ease-warm: cubic-bezier(0.33, 1, 0.68, 1);
   --ease-warm-out: cubic-bezier(0.4, 0, 0.2, 1);
   --duration-nav: 0.42s;
@@ -18,23 +27,95 @@
 }
 
 @layer base {
+  #app {
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
   body {
     @apply bg-cream-50 text-gray-900;
     @apply font-sans antialiased;
+    overflow-x: hidden;
+    background-image:
+      radial-gradient(circle at top left, rgba(193, 106, 70, 0.06), transparent 32%),
+      radial-gradient(circle at top right, rgba(138, 170, 138, 0.08), transparent 28%);
+    font-size: var(--text-body-size);
+    line-height: var(--text-body-leading);
   }
-  
+
+  section[id] {
+    scroll-margin-top: 7rem;
+  }
+
+  a,
+  button {
+    -webkit-tap-highlight-color: transparent;
+    cursor: pointer;
+  }
+
+  :where(a, button, input, select, textarea, summary, [role='button']):focus-visible {
+    outline: 2px solid #b85a36;
+    outline-offset: 3px;
+  }
+
+  button:disabled {
+    cursor: not-allowed;
+  }
+
   h1, h2, h3, h4, h5, h6 {
     @apply font-serif;
+    line-height: var(--text-title-leading);
   }
 }
 
 @layer components {
+  .page-container {
+    @apply container mx-auto max-w-6xl px-4;
+  }
+
+  .section-padding {
+    @apply px-4 py-16 md:py-24;
+  }
+
+  .page-title {
+    @apply text-4xl leading-tight text-terracotta-800 sm:text-5xl md:text-6xl;
+  }
+
+  .section-title {
+    @apply text-3xl leading-tight text-terracotta-800 sm:text-4xl md:text-5xl;
+  }
+
+  .body-copy {
+    @apply text-base leading-7 text-gray-700 md:text-lg;
+  }
+
+  .surface-card {
+    @apply rounded-[1.75rem] bg-white p-6 shadow-soft md:p-8;
+  }
+
   .text-service-label {
     @apply text-sm md:text-base uppercase tracking-wider font-sans;
   }
   
   .text-heading-large {
-    @apply text-4xl md:text-5xl lg:text-6xl font-serif;
+    @apply text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-serif;
+  }
+
+  .safe-area-top {
+    padding-top: env(safe-area-inset-top);
+  }
+
+  .form-label {
+    @apply mb-2 block text-sm font-semibold text-terracotta-800;
+  }
+
+  .form-input {
+    @apply w-full rounded-2xl border border-cream-700 bg-cream-50 px-4 py-3 text-gray-800 outline-none transition-colors;
+    @apply focus:border-terracotta-500 focus:ring-2 focus:ring-terracotta-200;
   }
 }
 

@@ -43,6 +43,11 @@ export default {
           800: '#5d2a1c',
           900: '#3d1a12',
         },
+        sauge: {
+          100: '#E7EBDD',
+          500: '#9BA78C',
+          800: '#53614B',
+        },
       },
       fontFamily: {
         serif: ['Georgia', 'serif'],
@@ -52,4 +57,3 @@ export default {
   },
   plugins: [],
 }
-

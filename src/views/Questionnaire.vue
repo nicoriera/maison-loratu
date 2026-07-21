@@ -11,6 +11,8 @@ const currentStep = ref(1);
 const totalSteps = 4;
 const isSubmitting = ref(false);
 const submitError = ref("");
+const submissionNotice =
+  "Ce questionnaire envoie réellement votre demande à Maison Loratu via notre formulaire de contact sécurisé. Aucun rendez-vous n’est réservé automatiquement.";
 
 const schema = yup.object({
   type: yup.string().required("Veuillez sélectionner une option"),
@@ -25,11 +27,17 @@ const schema = yup.object({
     .required(),
   frequence: yup.string().required("Veuillez sélectionner une fréquence"),
   email: yup.string().email("Email invalide").required("Email requis"),
-  telephone: yup.string(),
-  message: yup.string(),
+  telephone: yup
+    .string()
+    .matches(/^[+()\d\s.-]*$/, "Téléphone invalide")
+    .max(20, "Téléphone trop long"),
+  message: yup.string().max(1000, "Message trop long"),
+  consent: yup
+    .boolean()
+    .oneOf([true], "Veuillez accepter l'utilisation de vos informations"),
 });
 
-const { handleSubmit, defineField, errors, values } = useForm({
+const { handleSubmit, defineField, validateField, errors } = useForm({
   validationSchema: schema,
   initialValues: {
     type: "",
@@ -39,6 +47,7 @@ const { handleSubmit, defineField, errors, values } = useForm({
     email: "",
     telephone: "",
     message: "",
+    consent: false,
   },
 });
 
@@ -49,6 +58,7 @@ const [frequence, frequenceAttrs] = defineField("frequence");
 const [email, emailAttrs] = defineField("email");
 const [telephone, telephoneAttrs] = defineField("telephone");
 const [message, messageAttrs] = defineField("message");
+const [consent, consentAttrs] = defineField("consent");
 
 const progress = computed(() => (currentStep.value / totalSteps) * 100);
 
@@ -62,7 +72,14 @@ const besoinsOptions = [
   { value: "autre", label: "Autre" },
 ];
 
-const nextStep = () => {
+const nextStep = async () => {
+  const fieldsByStep = {
+    1: type.value === "femme-enceinte" ? ["type", "situation"] : ["type"],
+    2: ["besoins"],
+    3: ["frequence"],
+  };
+  const results = await Promise.all((fieldsByStep[currentStep.value] || []).map((field) => validateField(field)));
+  if (results.some((result) => !result.valid)) return;
   if (currentStep.value < totalSteps) {
     currentStep.value++;
     window.scrollTo({ top: 0, behavior: "smooth" });
@@ -95,6 +112,7 @@ const onSubmit = handleSubmit(async (formValues) => {
         email: formValues.email,
         telephone: formValues.telephone,
         message: formValues.message || "",
+        consent: formValues.consent === true,
       }),
     });
 
@@ -109,28 +127,21 @@ const onSubmit = handleSubmit(async (formValues) => {
   }
 });
 
-const toggleBesoin = (besoinValue) => {
-  const current = besoins.value || [];
-  if (current.includes(besoinValue)) {
-    besoins.value = current.filter((b) => b !== besoinValue);
-  } else {
-    besoins.value = [...current, besoinValue];
-  }
-};
 </script>
 
 <template>
-  <div class="min-h-screen bg-gray-50 py-12 px-4">
+  <div class="min-h-screen overflow-x-hidden bg-gray-50 px-4 py-8 md:py-12">
     <div class="container mx-auto max-w-2xl">
-      <ScrollReveal direction="up" class="bg-white rounded-lg shadow-lg p-8">
+      <ScrollReveal direction="up" class="rounded-2xl bg-white p-6 shadow-lg md:p-8">
         <div class="mb-8">
-          <h1
-            class="text-3xl md:text-4xl font-serif text-[#C16A46] mb-4 text-center">
+          <h1 class="mb-4 text-center text-3xl font-serif text-[#C16A46] md:text-4xl">
             Questionnaire de besoins
           </h1>
-          <p class="text-gray-600 text-center mb-6">
-            Répondez à quelques questions pour que nous puissions vous proposer
-            un accompagnement personnalisé
+          <p class="mb-6 text-center text-gray-600">
+            Répondez à quelques questions pour que nous puissions vous proposer un accompagnement personnalisé
+          </p>
+          <p class="rounded-2xl bg-cream-100 px-4 py-3 text-sm text-gray-700">
+            {{ submissionNotice }}
           </p>
 
           <!-- Barre de progression -->
@@ -154,7 +165,7 @@ const toggleBesoin = (besoinValue) => {
                 </label>
                 <div class="space-y-3">
                   <label
-                    class="flex items-center p-4 border-2 rounded-lg cursor-pointer hover:bg-gray-50 transition-colors"
+                    class="flex items-center p-4 border-2 rounded-lg cursor-pointer hover:bg-gray-50 transition-colors focus-within:ring-2 focus-within:ring-[#C16A46] focus-within:ring-offset-2"
                     :class="{
                       'border-[#C16A46] bg-cream-100':
                         type === 'femme-enceinte',
@@ -164,11 +175,11 @@ const toggleBesoin = (besoinValue) => {
                       type="radio"
                       value="femme-enceinte"
                       v-bind="typeAttrs"
-                      class="mr-3" />
+                      class="mr-3 focus-visible:outline-none focus-visible:ring-0" />
                     <span class="text-gray-700">Femme enceinte</span>
                   </label>
                   <label
-                    class="flex items-center p-4 border-2 rounded-lg cursor-pointer hover:bg-gray-50 transition-colors"
+                    class="flex items-center p-4 border-2 rounded-lg cursor-pointer hover:bg-gray-50 transition-colors focus-within:ring-2 focus-within:ring-[#C16A46] focus-within:ring-offset-2"
                     :class="{
                       'border-[#C16A46] bg-cream-100': type === 'enfant',
                     }">
@@ -177,11 +188,11 @@ const toggleBesoin = (besoinValue) => {
                       type="radio"
                       value="enfant"
                       v-bind="typeAttrs"
-                      class="mr-3" />
+                      class="mr-3 focus-visible:outline-none focus-visible:ring-0" />
                     <span class="text-gray-700">Enfant</span>
                   </label>
                   <label
-                    class="flex items-center p-4 border-2 rounded-lg cursor-pointer hover:bg-gray-50 transition-colors"
+                    class="flex items-center p-4 border-2 rounded-lg cursor-pointer hover:bg-gray-50 transition-colors focus-within:ring-2 focus-within:ring-[#C16A46] focus-within:ring-offset-2"
                     :class="{
                       'border-[#C16A46] bg-cream-100': type === 'adulte',
                     }">
@@ -190,7 +201,7 @@ const toggleBesoin = (besoinValue) => {
                       type="radio"
                       value="adulte"
                       v-bind="typeAttrs"
-                      class="mr-3" />
+                      class="mr-3 focus-visible:outline-none focus-visible:ring-0" />
                     <span class="text-gray-700">Adulte (mieux-être)</span>
                   </label>
                 </div>
@@ -206,7 +217,7 @@ const toggleBesoin = (besoinValue) => {
                 <select
                   v-model="situation"
                   v-bind="situationAttrs"
-                  class="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:border-[#C16A46] focus:outline-none">
+                  class="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:border-[#C16A46] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#C16A46] focus-visible:ring-offset-2">
                   <option value="">Sélectionnez...</option>
                   <option value="debut">1er trimestre</option>
                   <option value="milieu">2ème trimestre</option>
@@ -230,19 +241,19 @@ const toggleBesoin = (besoinValue) => {
                   <label
                     v-for="option in besoinsOptions"
                     :key="option.value"
-                    class="flex items-center p-4 border-2 rounded-lg cursor-pointer hover:bg-gray-50 transition-colors"
+                    class="flex items-center p-4 border-2 rounded-lg cursor-pointer hover:bg-gray-50 transition-colors focus-within:ring-2 focus-within:ring-[#C16A46] focus-within:ring-offset-2"
                     :class="{
                       'border-[#C16A46] bg-cream-100': (besoins || []).includes(
                         option.value,
                       ),
                     }"
-                    @click="toggleBesoin(option.value)">
+                    >
                     <input
+                      v-model="besoins"
                       type="checkbox"
                       :value="option.value"
-                      :checked="(besoins || []).includes(option.value)"
-                      @change="toggleBesoin(option.value)"
-                      class="mr-3" />
+                      v-bind="besoinsAttrs"
+                      class="mr-3 focus-visible:outline-none focus-visible:ring-0" />
                     <span class="text-gray-700">{{ option.label }}</span>
                   </label>
                 </div>
@@ -260,7 +271,7 @@ const toggleBesoin = (besoinValue) => {
                 </label>
                 <div class="space-y-3">
                   <label
-                    class="flex items-center p-4 border-2 rounded-lg cursor-pointer hover:bg-gray-50 transition-colors"
+                    class="flex items-center p-4 border-2 rounded-lg cursor-pointer hover:bg-gray-50 transition-colors focus-within:ring-2 focus-within:ring-[#C16A46] focus-within:ring-offset-2"
                     :class="{
                       'border-[#C16A46] bg-cream-100': frequence === 'ponctuel',
                     }">
@@ -269,11 +280,11 @@ const toggleBesoin = (besoinValue) => {
                       type="radio"
                       value="ponctuel"
                       v-bind="frequenceAttrs"
-                      class="mr-3" />
+                      class="mr-3 focus-visible:outline-none focus-visible:ring-0" />
                     <span class="text-gray-700">Séances ponctuelles</span>
                   </label>
                   <label
-                    class="flex items-center p-4 border-2 rounded-lg cursor-pointer hover:bg-gray-50 transition-colors"
+                    class="flex items-center p-4 border-2 rounded-lg cursor-pointer hover:bg-gray-50 transition-colors focus-within:ring-2 focus-within:ring-[#C16A46] focus-within:ring-offset-2"
                     :class="{
                       'border-[#C16A46] bg-cream-100':
                         frequence === 'hebdomadaire',
@@ -283,11 +294,11 @@ const toggleBesoin = (besoinValue) => {
                       type="radio"
                       value="hebdomadaire"
                       v-bind="frequenceAttrs"
-                      class="mr-3" />
+                      class="mr-3 focus-visible:outline-none focus-visible:ring-0" />
                     <span class="text-gray-700">Une fois par semaine</span>
                   </label>
                   <label
-                    class="flex items-center p-4 border-2 rounded-lg cursor-pointer hover:bg-gray-50 transition-colors"
+                    class="flex items-center p-4 border-2 rounded-lg cursor-pointer hover:bg-gray-50 transition-colors focus-within:ring-2 focus-within:ring-[#C16A46] focus-within:ring-offset-2"
                     :class="{
                       'border-[#C16A46] bg-cream-100':
                         frequence === 'bihebdomadaire',
@@ -297,11 +308,11 @@ const toggleBesoin = (besoinValue) => {
                       type="radio"
                       value="bihebdomadaire"
                       v-bind="frequenceAttrs"
-                      class="mr-3" />
+                      class="mr-3 focus-visible:outline-none focus-visible:ring-0" />
                     <span class="text-gray-700">Toutes les deux semaines</span>
                   </label>
                   <label
-                    class="flex items-center p-4 border-2 rounded-lg cursor-pointer hover:bg-gray-50 transition-colors"
+                    class="flex items-center p-4 border-2 rounded-lg cursor-pointer hover:bg-gray-50 transition-colors focus-within:ring-2 focus-within:ring-[#C16A46] focus-within:ring-offset-2"
                     :class="{
                       'border-[#C16A46] bg-cream-100': frequence === 'mensuel',
                     }">
@@ -310,7 +321,7 @@ const toggleBesoin = (besoinValue) => {
                       type="radio"
                       value="mensuel"
                       v-bind="frequenceAttrs"
-                      class="mr-3" />
+                      class="mr-3 focus-visible:outline-none focus-visible:ring-0" />
                     <span class="text-gray-700">Une fois par mois</span>
                   </label>
                 </div>
@@ -333,7 +344,7 @@ const toggleBesoin = (besoinValue) => {
                   v-model="email"
                   type="email"
                   v-bind="emailAttrs"
-                  class="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:border-[#C16A46] focus:outline-none"
+                  class="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:border-[#C16A46] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#C16A46] focus-visible:ring-offset-2"
                   placeholder="votre.email@exemple.com" />
                 <p v-if="errors.email" class="mt-2 text-sm text-red-600">
                   {{ errors.email }}
@@ -351,7 +362,7 @@ const toggleBesoin = (besoinValue) => {
                   v-model="telephone"
                   type="tel"
                   v-bind="telephoneAttrs"
-                  class="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:border-[#C16A46] focus:outline-none"
+                  class="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:border-[#C16A46] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#C16A46] focus-visible:ring-offset-2"
                   placeholder="06 12 34 56 78" />
                 <p v-if="errors.telephone" class="mt-2 text-sm text-red-600">
                   {{ errors.telephone }}
@@ -369,24 +380,35 @@ const toggleBesoin = (besoinValue) => {
                   v-model="message"
                   v-bind="messageAttrs"
                   rows="4"
-                  class="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:border-[#C16A46] focus:outline-none"
-                  placeholder="Dites-nous en plus sur votre situation ou vos attentes..."></textarea>
+                  class="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:border-[#C16A46] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#C16A46] focus-visible:ring-offset-2"
+                  maxlength="1000"
+                  placeholder="Précisez vos attentes sans inclure d’informations médicales détaillées ou d’autres données sensibles."></textarea>
+                <p class="mt-2 text-sm text-gray-600">
+                  Merci de ne pas partager ici de données de santé détaillées ni
+                  d’informations très sensibles.
+                </p>
               </div>
 
               <div class="bg-cream-100 border border-cream-300 rounded-lg p-4">
                 <p class="text-sm text-gray-700">
                   <strong>Protection de vos données :</strong> Vos informations
-                  sont collectées uniquement dans le but de vous proposer un
-                  accompagnement personnalisé. Elles ne seront jamais partagées
-                  avec des tiers. Vous pouvez consulter notre
+                  sont collectées uniquement pour analyser votre demande et vous
+                  recontacter. Elles ne servent ni à un profilage commercial, ni
+                  à une inscription automatique. Vous pouvez consulter notre
                   <router-link
                     to="/politique-de-confidentialite"
-                    class="text-[#C16A46] underline">
+                    class="text-[#C16A46] underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#C16A46] focus-visible:ring-offset-2">
                     politique de confidentialité
                   </router-link>
                   pour plus d'informations.
                 </p>
               </div>
+
+              <label for="consent" class="flex items-start gap-3 rounded-lg p-1 -m-1 text-sm text-gray-700 focus-within:ring-2 focus-within:ring-[#C16A46] focus-within:ring-offset-2">
+                <input id="consent" v-model="consent" v-bind="consentAttrs" type="checkbox" class="mt-1 focus-visible:outline-none focus-visible:ring-0" />
+                <span>J’accepte que Maison Loratu utilise ces informations uniquement pour traiter ma demande et me recontacter, et je m’abstiens d’y saisir des données sensibles inutiles. *</span>
+              </label>
+              <p v-if="errors.consent" class="text-sm text-red-600">{{ errors.consent }}</p>
             </div>
           </Transition>
 
@@ -396,12 +418,12 @@ const toggleBesoin = (besoinValue) => {
           </p>
 
           <!-- Boutons de navigation -->
-          <div class="flex justify-between mt-8 pt-6 border-t border-gray-200">
+          <div class="mt-8 flex flex-col-reverse gap-3 border-t border-gray-200 pt-6 sm:flex-row sm:justify-between">
             <button
               v-if="currentStep > 1"
               type="button"
               @click="prevStep"
-              class="px-6 py-3 text-gray-700 border-2 border-gray-300 rounded-lg hover:bg-gray-50 transition-colors">
+              class="min-h-11 rounded-2xl border-2 border-gray-300 px-6 py-3 text-gray-700 transition-colors hover:bg-gray-50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#C16A46] focus-visible:ring-offset-2">
               Précédent
             </button>
             <div v-else></div>
@@ -410,15 +432,15 @@ const toggleBesoin = (besoinValue) => {
               v-if="currentStep < totalSteps"
               type="button"
               @click="nextStep"
-              class="px-6 py-3 bg-[#C16A46] text-white rounded-lg hover:bg-[#B85A36] transition-colors">
+              class="min-h-11 rounded-2xl bg-[#C16A46] px-6 py-3 text-white transition-colors hover:bg-[#B85A36] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#C16A46] focus-visible:ring-offset-2">
               Suivant
             </button>
             <button
               v-else
               type="submit"
               :disabled="isSubmitting"
-              class="px-6 py-3 bg-[#C16A46] text-white rounded-lg hover:bg-[#B85A36] transition-colors disabled:opacity-60 disabled:cursor-not-allowed">
-              {{ isSubmitting ? "Envoi en cours..." : "Envoyer" }}
+              class="min-h-11 rounded-2xl bg-[#C16A46] px-6 py-3 text-white transition-colors hover:bg-[#B85A36] disabled:cursor-not-allowed disabled:opacity-60 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#C16A46] focus-visible:ring-offset-2">
+              {{ isSubmitting ? "Envoi en cours..." : "Envoyer la demande" }}
             </button>
           </div>
         </form>

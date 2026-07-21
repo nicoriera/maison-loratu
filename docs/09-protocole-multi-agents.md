@@ -43,6 +43,10 @@ Prépare la structure des textes, les messages clés, les appels à l’action, 
 
 Contrôle la cohérence entre illustrations, photographies, palette, typographies, ton éditorial et publics ciblés.
 
+### Agent responsive mobile
+
+Audite et vérifie prioritairement les usages sur petits écrans iOS et Android. Il contrôle les largeurs à 320, 375 et 390 px, l’absence de débordement horizontal, les zones tactiles d’au moins 44 px, le clavier mobile, les formulaires, les menus, les safe areas et la lisibilité en orientation portrait. Il teste aussi les différences de comportement entre Safari iOS et Chrome Android lorsque l’outillage le permet. Il ne modifie pas le contenu métier et remet une liste de corrections vérifiables.
+
 ### Agent technique
 
 Analyse les besoins de réservation, Resalib, paiement, administration, formulaires, RGPD, SEO et évolutivité. Il ne développe pas.
@@ -78,6 +82,7 @@ Chaque décision, exigence ou question utilise un seul statut :
 
 - `À analyser` — le sujet n’a pas encore été étudié ;
 - `À décider` — une réponse de Sandra ou un arbitrage est nécessaire ;
+- `Proposition V1` — un choix provisoire permet d’avancer, mais doit être validé avec les écrans ;
 - `Validé` — la décision est documentée et approuvée ;
 - `Bloqué` — le sujet empêche une étape suivante ;
 - `Obsolète` — l’élément ne s’applique plus.
@@ -183,6 +188,7 @@ worktrees/
 ├── agent-ux/         → codex/ux-[mission]
 ├── agent-contenu/    → codex/contenu-[mission]
 ├── agent-technique/  → codex/technique-[mission]
+├── agent-responsive/ → codex/responsive-[mission]
 └── agent-qualite/    → codex/qualite-[mission]
 ```
 
@@ -511,6 +517,7 @@ Le modèle le plus léger capable de produire un résultat fiable est utilisé p
 | Agent UX | `gpt-5.4-mini` | moyen | `gpt-5.4` pour les parcours complexes ou multi-publics |
 | Agent contenu | `gpt-5.4-mini` | faible à moyen | `gpt-5.4` pour la stratégie éditoriale globale |
 | Agent direction artistique | `gpt-5.4-mini` | moyen | `gpt-5.4` pour arbitrer une direction complète |
+| Agent responsive mobile | `gpt-5.4-mini` | moyen | `gpt-5.4` si un bug touche plusieurs parcours ou plateformes |
 | Agent technique | `gpt-5.4` | élevé | `gpt-5.5` pour l’architecture, la sécurité ou les intégrations sensibles |
 | Agent qualité / Quality Analyst | `gpt-5.4` | élevé | `gpt-5.5` pour une revue de sécurité ou de risque critique |
 | Coordinateur | `gpt-5.4` | moyen à élevé | `gpt-5.5` pour la synthèse finale et les arbitrages complexes |
