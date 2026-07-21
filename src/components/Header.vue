@@ -1,10 +1,12 @@
 <script setup>
-import { ref, watch } from 'vue'
+import { nextTick, ref, watch } from 'vue'
 import { useRoute } from 'vue-router'
 import { siteConfig } from '../config/site.js'
 
 const route = useRoute()
 const mobileMenuOpen = ref(false)
+const mobileMenuButton = ref(null)
+const firstMobileLink = ref(null)
 
 const navigation = [
   { label: 'Accueil', to: '/' },
@@ -15,8 +17,35 @@ const navigation = [
 
 const reservationTarget = siteConfig.reservationUrl || '/ateliers'
 
-const closeMobileMenu = () => {
+const focusMobileMenuButton = async () => {
+  await nextTick()
+  mobileMenuButton.value?.focus?.()
+}
+
+const focusFirstMobileLink = async () => {
+  await nextTick()
+  firstMobileLink.value?.$el?.focus?.()
+}
+
+const closeMobileMenu = async () => {
+  if (!mobileMenuOpen.value) return
+
   mobileMenuOpen.value = false
+  await focusMobileMenuButton()
+}
+
+const openMobileMenu = async () => {
+  mobileMenuOpen.value = true
+  await focusFirstMobileLink()
+}
+
+const toggleMobileMenu = async () => {
+  if (mobileMenuOpen.value) {
+    await closeMobileMenu()
+    return
+  }
+
+  await openMobileMenu()
 }
 
 const isActive = (item) => {
@@ -30,14 +59,16 @@ const isActive = (item) => {
 watch(
   () => route.fullPath,
   () => {
-    closeMobileMenu()
+    if (mobileMenuOpen.value) {
+      closeMobileMenu()
+    }
   },
 )
 </script>
 
 <template>
   <header class="sticky top-0 z-50 border-b border-terracotta-100/70 bg-white/92 shadow-sm backdrop-blur">
-    <nav class="container mx-auto px-4 py-3 md:py-4">
+    <nav class="container mx-auto px-4 py-3 md:py-4" aria-label="Navigation principale">
       <div class="flex items-center justify-between gap-4">
         <router-link
           to="/"
@@ -101,11 +132,13 @@ watch(
 
           <button
             type="button"
+            ref="mobileMenuButton"
             class="inline-flex h-11 w-11 items-center justify-center rounded-full border border-terracotta-200 bg-white text-terracotta-700 shadow-sm transition duration-[var(--duration-ui)] ease-[var(--ease-warm-out)] hover:border-terracotta-300 hover:bg-cream-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-terracotta-500 focus-visible:ring-offset-2"
             :aria-expanded="mobileMenuOpen"
             aria-controls="mobile-navigation"
             :aria-label="mobileMenuOpen ? 'Fermer le menu' : 'Ouvrir le menu'"
-            @click="mobileMenuOpen = !mobileMenuOpen"
+            @click="toggleMobileMenu"
+            @keydown.esc.prevent="closeMobileMenu"
           >
             <span class="flex flex-col gap-1">
               <span
@@ -129,12 +162,14 @@ watch(
         v-show="mobileMenuOpen"
         id="mobile-navigation"
         class="mt-3 rounded-[1.5rem] border border-terracotta-100 bg-white p-4 shadow-soft-lg lg:hidden"
+        @keydown.esc.prevent.stop="closeMobileMenu"
       >
         <div class="grid gap-2">
           <router-link
             v-for="item in navigation"
             :key="`mobile-${item.label}`"
             :to="item.to"
+            :ref="item.label === navigation[0].label ? firstMobileLink : undefined"
             class="rounded-2xl px-4 py-3 text-base font-medium text-gray-800 transition duration-[var(--duration-ui)] ease-[var(--ease-warm-out)] hover:bg-cream-100 hover:text-terracotta-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-terracotta-500 focus-visible:ring-offset-2"
             :class="{ 'bg-cream-100 text-terracotta-700': isActive(item) }"
             :aria-current="isActive(item) ? 'page' : undefined"

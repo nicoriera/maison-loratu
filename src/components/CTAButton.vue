@@ -33,7 +33,7 @@ const buttonClasses = computed(() => [
     :to="!isExternal ? to : undefined"
     :href="isExternal ? to : undefined"
     :target="isExternal ? '_blank' : undefined"
-    :rel="isExternal ? 'noreferrer' : undefined"
+    :rel="isExternal ? 'noopener noreferrer' : undefined"
     :class="buttonClasses"
   >
     <slot />

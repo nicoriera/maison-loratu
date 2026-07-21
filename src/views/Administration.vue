@@ -1,6 +1,6 @@
 <script setup>
 import { ref } from 'vue'
-import { sanitizeReservationUrl } from '../config/site.js'
+import { sanitizeReservationUrl, validateAdminDraft } from '../config/site.js'
 
 const initialContent = {
   reservationUrl: '',
@@ -15,6 +15,7 @@ const content = ref({
 })
 
 const save = () => {
+  const { sanitizedDraft, issues } = validateAdminDraft(content.value)
   const sanitizedReservationUrl = sanitizeReservationUrl(content.value.reservationUrl)
 
   if (content.value.reservationUrl && !sanitizedReservationUrl) {
@@ -25,13 +26,25 @@ const save = () => {
     return
   }
 
+  if (issues.length > 0) {
+    message.value = {
+      type: 'error',
+      text: issues[0],
+    }
+    content.value = {
+      ...content.value,
+      ...sanitizedDraft,
+    }
+    return
+  }
+
   content.value = {
-    ...content.value,
+    ...sanitizedDraft,
     reservationUrl: sanitizedReservationUrl,
   }
   message.value = {
     type: 'success',
-    text: 'Aucune donnee n est enregistree ni envoyee. Ce brouillon reste uniquement en memoire le temps de la session.',
+    text: 'Brouillon vérifié localement : rien n’est enregistré, synchronisé ni envoyé. Les données restent uniquement en mémoire pendant cette session.',
   }
 }
 
@@ -58,6 +71,10 @@ const resetDraft = () => {
           N’ajoutez ni mot de passe, ni donnée de santé, ni information confidentielle. Seules des coordonnées
           publiques et un lien Resalib validé doivent être préparés ici.
         </p>
+        <p class="mt-3 text-sm leading-relaxed text-gray-700">
+          Aucun stockage persistant n’est prévu dans ce prototype&nbsp;: pas de base de données, pas de sauvegarde
+          navigateur, pas d’export. Utilisez-le seulement comme aide visuelle temporaire.
+        </p>
       </div>
 
       <form class="space-y-6 rounded-3xl bg-white p-6 shadow-soft md:p-8" autocomplete="off" @submit.prevent="save">
@@ -77,6 +94,7 @@ const resetDraft = () => {
         <div>
           <label for="location" class="form-label">Localisation</label>
           <input id="location" v-model.trim="content.location" class="form-input" type="text" placeholder="Coordonnee publique uniquement" />
+          <p class="mt-2 text-sm text-gray-600">Exemple&nbsp;: ville, quartier ou adresse professionnelle publique. Pas de code d’accès ni d’instruction interne.</p>
         </div>
         <div class="grid gap-6 md:grid-cols-2">
           <div>
@@ -88,6 +106,10 @@ const resetDraft = () => {
             <input id="phone" v-model.trim="content.phone" class="form-input" type="tel" placeholder="Numero public" />
           </div>
         </div>
+        <p class="rounded-2xl bg-cream-50 p-4 text-sm text-gray-700">
+          Vérification locale uniquement&nbsp;: si un champ ressemble à un secret, à un mot de passe ou à une donnée
+          non publique, le brouillon est refusé.
+        </p>
         <div class="flex items-center justify-between gap-4">
           <p
             v-if="message.text"
@@ -105,7 +127,7 @@ const resetDraft = () => {
             >
               Effacer
             </button>
-            <button type="submit" class="rounded-full bg-terracotta-500 px-7 py-3 font-semibold text-white hover:bg-terracotta-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-terracotta-500">Verifier le brouillon</button>
+            <button type="submit" class="rounded-full bg-terracotta-500 px-7 py-3 font-semibold text-white hover:bg-terracotta-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-terracotta-500">Vérifier le brouillon</button>
           </div>
         </div>
       </form>

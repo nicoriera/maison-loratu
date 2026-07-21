@@ -11,6 +11,8 @@ const currentStep = ref(1);
 const totalSteps = 4;
 const isSubmitting = ref(false);
 const submitError = ref("");
+const submissionNotice =
+  "Ce questionnaire envoie réellement votre demande à Maison Loratu via notre formulaire de contact sécurisé. Aucun rendez-vous n’est réservé automatiquement.";
 
 const schema = yup.object({
   type: yup.string().required("Veuillez sélectionner une option"),
@@ -25,9 +27,14 @@ const schema = yup.object({
     .required(),
   frequence: yup.string().required("Veuillez sélectionner une fréquence"),
   email: yup.string().email("Email invalide").required("Email requis"),
-  telephone: yup.string(),
-  message: yup.string(),
-  consent: yup.boolean().oneOf([true], "Veuillez accepter l'utilisation de vos informations"),
+  telephone: yup
+    .string()
+    .matches(/^[+()\d\s.-]*$/, "Téléphone invalide")
+    .max(20, "Téléphone trop long"),
+  message: yup.string().max(1000, "Message trop long"),
+  consent: yup
+    .boolean()
+    .oneOf([true], "Veuillez accepter l'utilisation de vos informations"),
 });
 
 const { handleSubmit, defineField, validateField, errors } = useForm({
@@ -135,6 +142,9 @@ const onSubmit = handleSubmit(async (formValues) => {
             Répondez à quelques questions pour que nous puissions vous proposer
             un accompagnement personnalisé
           </p>
+          <p class="rounded-lg bg-cream-100 px-4 py-3 text-sm text-gray-700">
+            {{ submissionNotice }}
+          </p>
 
           <!-- Barre de progression -->
           <div class="w-full bg-gray-200 rounded-full h-2 mb-4">
@@ -157,7 +167,7 @@ const onSubmit = handleSubmit(async (formValues) => {
                 </label>
                 <div class="space-y-3">
                   <label
-                    class="flex items-center p-4 border-2 rounded-lg cursor-pointer hover:bg-gray-50 transition-colors"
+                    class="flex items-center p-4 border-2 rounded-lg cursor-pointer hover:bg-gray-50 transition-colors focus-within:ring-2 focus-within:ring-[#C16A46] focus-within:ring-offset-2"
                     :class="{
                       'border-[#C16A46] bg-cream-100':
                         type === 'femme-enceinte',
@@ -167,11 +177,11 @@ const onSubmit = handleSubmit(async (formValues) => {
                       type="radio"
                       value="femme-enceinte"
                       v-bind="typeAttrs"
-                      class="mr-3" />
+                      class="mr-3 focus-visible:outline-none focus-visible:ring-0" />
                     <span class="text-gray-700">Femme enceinte</span>
                   </label>
                   <label
-                    class="flex items-center p-4 border-2 rounded-lg cursor-pointer hover:bg-gray-50 transition-colors"
+                    class="flex items-center p-4 border-2 rounded-lg cursor-pointer hover:bg-gray-50 transition-colors focus-within:ring-2 focus-within:ring-[#C16A46] focus-within:ring-offset-2"
                     :class="{
                       'border-[#C16A46] bg-cream-100': type === 'enfant',
                     }">
@@ -180,11 +190,11 @@ const onSubmit = handleSubmit(async (formValues) => {
                       type="radio"
                       value="enfant"
                       v-bind="typeAttrs"
-                      class="mr-3" />
+                      class="mr-3 focus-visible:outline-none focus-visible:ring-0" />
                     <span class="text-gray-700">Enfant</span>
                   </label>
                   <label
-                    class="flex items-center p-4 border-2 rounded-lg cursor-pointer hover:bg-gray-50 transition-colors"
+                    class="flex items-center p-4 border-2 rounded-lg cursor-pointer hover:bg-gray-50 transition-colors focus-within:ring-2 focus-within:ring-[#C16A46] focus-within:ring-offset-2"
                     :class="{
                       'border-[#C16A46] bg-cream-100': type === 'adulte',
                     }">
@@ -193,7 +203,7 @@ const onSubmit = handleSubmit(async (formValues) => {
                       type="radio"
                       value="adulte"
                       v-bind="typeAttrs"
-                      class="mr-3" />
+                      class="mr-3 focus-visible:outline-none focus-visible:ring-0" />
                     <span class="text-gray-700">Adulte (mieux-être)</span>
                   </label>
                 </div>
@@ -209,7 +219,7 @@ const onSubmit = handleSubmit(async (formValues) => {
                 <select
                   v-model="situation"
                   v-bind="situationAttrs"
-                  class="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:border-[#C16A46] focus:outline-none">
+                  class="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:border-[#C16A46] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#C16A46] focus-visible:ring-offset-2">
                   <option value="">Sélectionnez...</option>
                   <option value="debut">1er trimestre</option>
                   <option value="milieu">2ème trimestre</option>
@@ -233,7 +243,7 @@ const onSubmit = handleSubmit(async (formValues) => {
                   <label
                     v-for="option in besoinsOptions"
                     :key="option.value"
-                    class="flex items-center p-4 border-2 rounded-lg cursor-pointer hover:bg-gray-50 transition-colors"
+                    class="flex items-center p-4 border-2 rounded-lg cursor-pointer hover:bg-gray-50 transition-colors focus-within:ring-2 focus-within:ring-[#C16A46] focus-within:ring-offset-2"
                     :class="{
                       'border-[#C16A46] bg-cream-100': (besoins || []).includes(
                         option.value,
@@ -245,7 +255,7 @@ const onSubmit = handleSubmit(async (formValues) => {
                       type="checkbox"
                       :value="option.value"
                       v-bind="besoinsAttrs"
-                      class="mr-3" />
+                      class="mr-3 focus-visible:outline-none focus-visible:ring-0" />
                     <span class="text-gray-700">{{ option.label }}</span>
                   </label>
                 </div>
@@ -263,7 +273,7 @@ const onSubmit = handleSubmit(async (formValues) => {
                 </label>
                 <div class="space-y-3">
                   <label
-                    class="flex items-center p-4 border-2 rounded-lg cursor-pointer hover:bg-gray-50 transition-colors"
+                    class="flex items-center p-4 border-2 rounded-lg cursor-pointer hover:bg-gray-50 transition-colors focus-within:ring-2 focus-within:ring-[#C16A46] focus-within:ring-offset-2"
                     :class="{
                       'border-[#C16A46] bg-cream-100': frequence === 'ponctuel',
                     }">
@@ -272,11 +282,11 @@ const onSubmit = handleSubmit(async (formValues) => {
                       type="radio"
                       value="ponctuel"
                       v-bind="frequenceAttrs"
-                      class="mr-3" />
+                      class="mr-3 focus-visible:outline-none focus-visible:ring-0" />
                     <span class="text-gray-700">Séances ponctuelles</span>
                   </label>
                   <label
-                    class="flex items-center p-4 border-2 rounded-lg cursor-pointer hover:bg-gray-50 transition-colors"
+                    class="flex items-center p-4 border-2 rounded-lg cursor-pointer hover:bg-gray-50 transition-colors focus-within:ring-2 focus-within:ring-[#C16A46] focus-within:ring-offset-2"
                     :class="{
                       'border-[#C16A46] bg-cream-100':
                         frequence === 'hebdomadaire',
@@ -286,11 +296,11 @@ const onSubmit = handleSubmit(async (formValues) => {
                       type="radio"
                       value="hebdomadaire"
                       v-bind="frequenceAttrs"
-                      class="mr-3" />
+                      class="mr-3 focus-visible:outline-none focus-visible:ring-0" />
                     <span class="text-gray-700">Une fois par semaine</span>
                   </label>
                   <label
-                    class="flex items-center p-4 border-2 rounded-lg cursor-pointer hover:bg-gray-50 transition-colors"
+                    class="flex items-center p-4 border-2 rounded-lg cursor-pointer hover:bg-gray-50 transition-colors focus-within:ring-2 focus-within:ring-[#C16A46] focus-within:ring-offset-2"
                     :class="{
                       'border-[#C16A46] bg-cream-100':
                         frequence === 'bihebdomadaire',
@@ -300,11 +310,11 @@ const onSubmit = handleSubmit(async (formValues) => {
                       type="radio"
                       value="bihebdomadaire"
                       v-bind="frequenceAttrs"
-                      class="mr-3" />
+                      class="mr-3 focus-visible:outline-none focus-visible:ring-0" />
                     <span class="text-gray-700">Toutes les deux semaines</span>
                   </label>
                   <label
-                    class="flex items-center p-4 border-2 rounded-lg cursor-pointer hover:bg-gray-50 transition-colors"
+                    class="flex items-center p-4 border-2 rounded-lg cursor-pointer hover:bg-gray-50 transition-colors focus-within:ring-2 focus-within:ring-[#C16A46] focus-within:ring-offset-2"
                     :class="{
                       'border-[#C16A46] bg-cream-100': frequence === 'mensuel',
                     }">
@@ -313,7 +323,7 @@ const onSubmit = handleSubmit(async (formValues) => {
                       type="radio"
                       value="mensuel"
                       v-bind="frequenceAttrs"
-                      class="mr-3" />
+                      class="mr-3 focus-visible:outline-none focus-visible:ring-0" />
                     <span class="text-gray-700">Une fois par mois</span>
                   </label>
                 </div>
@@ -336,7 +346,7 @@ const onSubmit = handleSubmit(async (formValues) => {
                   v-model="email"
                   type="email"
                   v-bind="emailAttrs"
-                  class="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:border-[#C16A46] focus:outline-none"
+                  class="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:border-[#C16A46] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#C16A46] focus-visible:ring-offset-2"
                   placeholder="votre.email@exemple.com" />
                 <p v-if="errors.email" class="mt-2 text-sm text-red-600">
                   {{ errors.email }}
@@ -354,7 +364,7 @@ const onSubmit = handleSubmit(async (formValues) => {
                   v-model="telephone"
                   type="tel"
                   v-bind="telephoneAttrs"
-                  class="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:border-[#C16A46] focus:outline-none"
+                  class="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:border-[#C16A46] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#C16A46] focus-visible:ring-offset-2"
                   placeholder="06 12 34 56 78" />
                 <p v-if="errors.telephone" class="mt-2 text-sm text-red-600">
                   {{ errors.telephone }}
@@ -372,28 +382,33 @@ const onSubmit = handleSubmit(async (formValues) => {
                   v-model="message"
                   v-bind="messageAttrs"
                   rows="4"
-                  class="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:border-[#C16A46] focus:outline-none"
-                  placeholder="Dites-nous en plus sur votre situation ou vos attentes..."></textarea>
+                  class="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:border-[#C16A46] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#C16A46] focus-visible:ring-offset-2"
+                  maxlength="1000"
+                  placeholder="Précisez vos attentes sans inclure d’informations médicales détaillées ou d’autres données sensibles."></textarea>
+                <p class="mt-2 text-sm text-gray-600">
+                  Merci de ne pas partager ici de données de santé détaillées ni
+                  d’informations très sensibles.
+                </p>
               </div>
 
               <div class="bg-cream-100 border border-cream-300 rounded-lg p-4">
                 <p class="text-sm text-gray-700">
                   <strong>Protection de vos données :</strong> Vos informations
-                  sont collectées uniquement dans le but de vous proposer un
-                  accompagnement personnalisé. Elles ne seront jamais partagées
-                  avec des tiers. Vous pouvez consulter notre
+                  sont collectées uniquement pour analyser votre demande et vous
+                  recontacter. Elles ne servent ni à un profilage commercial, ni
+                  à une inscription automatique. Vous pouvez consulter notre
                   <router-link
                     to="/politique-de-confidentialite"
-                    class="text-[#C16A46] underline">
+                    class="text-[#C16A46] underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#C16A46] focus-visible:ring-offset-2">
                     politique de confidentialité
                   </router-link>
                   pour plus d'informations.
                 </p>
               </div>
 
-              <label for="consent" class="flex items-start gap-3 text-sm text-gray-700">
-                <input id="consent" v-model="consent" v-bind="consentAttrs" type="checkbox" class="mt-1" />
-                <span>J’accepte que Maison Loratu utilise ces informations uniquement pour répondre à ma demande. *</span>
+              <label for="consent" class="flex items-start gap-3 rounded-lg p-1 -m-1 text-sm text-gray-700 focus-within:ring-2 focus-within:ring-[#C16A46] focus-within:ring-offset-2">
+                <input id="consent" v-model="consent" v-bind="consentAttrs" type="checkbox" class="mt-1 focus-visible:outline-none focus-visible:ring-0" />
+                <span>J’accepte que Maison Loratu utilise ces informations uniquement pour traiter ma demande et me recontacter, et je m’abstiens d’y saisir des données sensibles inutiles. *</span>
               </label>
               <p v-if="errors.consent" class="text-sm text-red-600">{{ errors.consent }}</p>
             </div>
@@ -410,7 +425,7 @@ const onSubmit = handleSubmit(async (formValues) => {
               v-if="currentStep > 1"
               type="button"
               @click="prevStep"
-              class="px-6 py-3 text-gray-700 border-2 border-gray-300 rounded-lg hover:bg-gray-50 transition-colors">
+              class="px-6 py-3 text-gray-700 border-2 border-gray-300 rounded-lg hover:bg-gray-50 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#C16A46] focus-visible:ring-offset-2">
               Précédent
             </button>
             <div v-else></div>
@@ -419,15 +434,15 @@ const onSubmit = handleSubmit(async (formValues) => {
               v-if="currentStep < totalSteps"
               type="button"
               @click="nextStep"
-              class="px-6 py-3 bg-[#C16A46] text-white rounded-lg hover:bg-[#B85A36] transition-colors">
+              class="px-6 py-3 bg-[#C16A46] text-white rounded-lg hover:bg-[#B85A36] transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#C16A46] focus-visible:ring-offset-2">
               Suivant
             </button>
             <button
               v-else
               type="submit"
               :disabled="isSubmitting"
-              class="px-6 py-3 bg-[#C16A46] text-white rounded-lg hover:bg-[#B85A36] transition-colors disabled:opacity-60 disabled:cursor-not-allowed">
-              {{ isSubmitting ? "Envoi en cours..." : "Envoyer" }}
+              class="px-6 py-3 bg-[#C16A46] text-white rounded-lg hover:bg-[#B85A36] transition-colors disabled:opacity-60 disabled:cursor-not-allowed focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#C16A46] focus-visible:ring-offset-2">
+              {{ isSubmitting ? "Envoi en cours..." : "Envoyer la demande" }}
             </button>
           </div>
         </form>
