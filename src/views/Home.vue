@@ -58,23 +58,23 @@ const steps = [
 <template>
   <div class="overflow-hidden">
     <section class="relative bg-cream-200">
-      <div class="container mx-auto grid max-w-6xl items-center gap-10 px-4 py-14 md:grid-cols-[1.05fr_0.95fr] md:py-20">
+      <div class="container mx-auto grid max-w-6xl items-center gap-10 px-4 py-12 md:grid-cols-[1.05fr_0.95fr] md:py-20">
         <div class="hero-fade-in max-w-xl space-y-6">
           <p class="text-service-label text-terracotta-600">Sophrologie & ateliers</p>
-          <h1 class="text-5xl leading-[0.98] text-terracotta-800 md:text-7xl">
+          <h1 class="text-4xl leading-[0.98] text-terracotta-800 sm:text-5xl md:text-7xl">
             Un espace pour <span class="italic">souffler</span>, grandir et revenir à soi.
           </h1>
           <p class="max-w-lg text-lg leading-relaxed text-gray-700 md:text-xl">
             Maison Loratu accompagne les femmes, les enfants, les seniors et les structures avec des séances
             simples, joyeuses et adaptées à chacun.
           </p>
-          <div class="flex flex-wrap items-center gap-4">
+          <div class="flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:items-center">
             <CTAButton to="/ateliers">
               Découvrir les ateliers
             </CTAButton>
             <a
               href="#accompagnements"
-              class="rounded-full px-5 py-3 font-semibold text-terracotta-700 underline decoration-terracotta-300 underline-offset-4 transition duration-[var(--duration-ui)] ease-[var(--ease-warm-out)] hover:text-terracotta-900"
+              class="inline-flex min-h-11 items-center justify-center rounded-full px-5 py-3 text-center font-semibold text-terracotta-700 underline decoration-terracotta-300 underline-offset-4 transition duration-[var(--duration-ui)] ease-[var(--ease-warm-out)] hover:text-terracotta-900"
             >
               Choisir mon accompagnement
             </a>
@@ -111,7 +111,7 @@ const steps = [
       <div class="container mx-auto max-w-6xl">
         <ScrollReveal tag="div" class="mx-auto mb-12 max-w-2xl text-center">
           <p class="mb-3 text-service-label text-terracotta-600">À chacun son chemin</p>
-          <h2 class="text-4xl text-terracotta-800 md:text-5xl">Des propositions qui s’adaptent à la vie</h2>
+          <h2 class="text-3xl text-terracotta-800 sm:text-4xl md:text-5xl">Des propositions qui s’adaptent à la vie</h2>
           <p class="mt-4 text-lg leading-relaxed text-gray-600">
             Une approche humaine pour créer un espace de calme, de confiance et de lien, sans imposer un rythme unique.
           </p>
@@ -169,14 +169,14 @@ const steps = [
             <article
               v-for="workshop in workshops"
               :key="workshop.title"
-              class="flex items-center justify-between gap-5 rounded-2xl bg-white p-5 shadow-soft"
+              class="flex flex-col gap-4 rounded-2xl bg-white p-5 shadow-soft sm:flex-row sm:items-center sm:justify-between"
             >
               <div>
                 <p class="text-sm font-semibold uppercase tracking-[0.16em] text-terracotta-600">Atelier</p>
                 <h3 class="mt-1 text-2xl text-terracotta-800">{{ workshop.title }}</h3>
                 <p class="mt-1 text-gray-600">{{ workshop.detail }}</p>
               </div>
-              <span class="hidden h-14 w-14 shrink-0 rounded-full bg-cream-200 md:block" aria-hidden="true" />
+              <span class="hidden h-14 w-14 shrink-0 rounded-full bg-cream-200 sm:block" aria-hidden="true" />
             </article>
           </ScrollRevealStagger>
         </div>
@@ -187,7 +187,7 @@ const steps = [
       <div class="container mx-auto grid max-w-6xl gap-10 md:grid-cols-[1fr_0.8fr] md:items-center">
         <ScrollReveal direction="left" tag="div">
           <p class="mb-3 text-service-label text-cream-200">Écoles · centres de loisirs · associations</p>
-          <h2 class="text-4xl md:text-5xl">Des ateliers pensés pour les groupes</h2>
+          <h2 class="text-3xl sm:text-4xl md:text-5xl">Des ateliers pensés pour les groupes</h2>
           <p class="mt-5 max-w-xl text-lg leading-relaxed text-cream-100">
             Sandra imagine des interventions adaptées au public, à l’âge et au cadre de votre structure.
             Parlons de votre projet.
@@ -197,7 +197,7 @@ const steps = [
           </div>
         </ScrollReveal>
         <ScrollReveal direction="right" tag="div" class="rounded-[2rem] bg-cream-100 p-8 text-terracotta-800 shadow-soft-lg">
-          <p class="text-5xl" aria-hidden="true">✦</p>
+          <p class="text-4xl sm:text-5xl" aria-hidden="true">✦</p>
           <h3 class="mt-5 text-2xl">Un format à construire ensemble</h3>
           <p class="mt-3 leading-relaxed text-gray-700">
             Le lieu, les dates et le programme seront définis avec chaque structure.
@@ -210,7 +210,7 @@ const steps = [
       <div class="container mx-auto max-w-6xl">
         <ScrollReveal tag="div" class="mx-auto mb-12 max-w-2xl text-center">
           <p class="mb-3 text-service-label text-terracotta-600">Comment ça se passe ?</p>
-          <h2 class="text-4xl text-terracotta-800 md:text-5xl">Un parcours simple et rassurant</h2>
+          <h2 class="text-3xl text-terracotta-800 sm:text-4xl md:text-5xl">Un parcours simple et rassurant</h2>
           <p class="mt-4 text-lg leading-relaxed text-gray-600">
             Chaque public suit le même principe : un premier échange clair, un format adapté, puis une séance ou intervention pensée pour le contexte réel.
           </p>
@@ -237,7 +237,7 @@ const steps = [
         </ScrollReveal>
         <ScrollReveal direction="right" tag="div" class="max-w-xl">
           <p class="mb-3 text-service-label text-terracotta-600">La maison</p>
-          <h2 class="text-4xl text-terracotta-800 md:text-5xl">Fleurir à son rythme</h2>
+          <h2 class="text-3xl text-terracotta-800 sm:text-4xl md:text-5xl">Fleurir à son rythme</h2>
           <p class="mt-5 text-lg leading-relaxed text-gray-700">
             Loratu signifie « fleurir » en basque. C’est l’image d’un accompagnement qui laisse
             de la place à chacun, à chaque âge et à chaque histoire.
@@ -253,7 +253,7 @@ const steps = [
       <div class="container mx-auto max-w-2xl">
         <ScrollRevealStagger>
           <p class="mb-3 text-service-label text-terracotta-600">Prendre contact</p>
-          <h2 class="text-4xl text-terracotta-800 md:text-5xl">On commence par un échange ?</h2>
+          <h2 class="text-3xl text-terracotta-800 sm:text-4xl md:text-5xl">On commence par un échange ?</h2>
           <p class="mt-5 text-lg leading-relaxed text-gray-600">
             Les coordonnées et le lien de réservation seront ajoutés prochainement. En attendant,
             découvrez le projet et partagez votre besoin.

@@ -27,6 +27,18 @@ npm run dev
 
 Le site sera accessible sur `http://localhost:5173`
 
+### Utiliser l’administration V1
+
+L’administration éditoriale utilise Netlify Identity, une Function API protégée et Netlify Blobs :
+
+1. Activez Netlify Identity sur le site et passez les inscriptions en **Invite only**.
+2. Invitez Sandra, puis attribuez le rôle `admin` à son compte dans Netlify Identity.
+3. Déployez le site sur Netlify.
+4. Ouvrez `https://votre-domaine.fr/administration` et connectez-vous.
+5. Utilisez les onglets **Paramètres publics**, **Offres**, **FAQ** et **Articles & actualités**.
+
+Les rôles sont vérifiés dans l’interface et dans la Function `/api/admin/content`. Les contenus sont persistés dans le store Blobs `maison-loratu-content`. L’admin ne gère ni les rendez-vous, ni le paiement. Identity ne fonctionne pas complètement avec `netlify dev` : utilisez un deploy preview Netlify pour tester le flux réel.
+
 ## 🏗️ Build
 
 ```bash
@@ -47,6 +59,9 @@ src/
 │   └── CTAButton.vue   # Bouton d'appel à l'action
 ├── views/              # Pages principales
 │   ├── Home.vue        # Landing page
+│   ├── Administration.vue # Prototype d’administration éditoriale
+│   ├── Structures.vue  # Présentation des interventions structures
+│   ├── DevisStructure.vue # Demande de devis structure
 │   ├── Questionnaire.vue  # Page de questionnaire
 │   ├── MentionsLegales.vue  # Mentions légales
 │   └── PolitiqueConfidentialite.vue  # Politique de confidentialité RGPD
@@ -75,12 +90,14 @@ src/
 
 2. **Informations d'hébergement** dans `src/views/MentionsLegales.vue`
 
-3. **Backend pour le questionnaire** : Actuellement, le formulaire affiche une alerte. Il faudra :
+3. **Backend pour les formulaires** : Le questionnaire particulier utilise actuellement un service de formulaire externe et la demande structure reste un préparateur local. Avant la mise en production, il faudra :
    - Créer un endpoint API pour recevoir les données
-   - Modifier la fonction `onSubmit` dans `src/views/Questionnaire.vue`
+   - Remplacer les envois/prototypes dans `src/views/Questionnaire.vue` et `src/views/DevisStructure.vue`
    - Ajouter la gestion d'erreurs
 
-4. **Favicon** : Remplacer `/vite.svg` par un favicon personnalisé
+4. **Configuration Netlify** : Vérifier Identity, l’invitation du compte administrateur, le rôle `admin`, le store Blobs et les logs des Functions avant ouverture à Sandra.
+
+5. **Favicon** : Remplacer `/vite.svg` par un favicon personnalisé
 
 ## 🔒 Conformité RGPD
 
