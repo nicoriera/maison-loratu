@@ -6,6 +6,9 @@ import MentionsLegales from '../views/MentionsLegales.vue'
 import PolitiqueConfidentialite from '../views/PolitiqueConfidentialite.vue'
 import Ateliers from '../views/Ateliers.vue'
 import Contact from '../views/Contact.vue'
+import Accompagnement from '../views/Accompagnement.vue'
+import CarteCadeau from '../views/CarteCadeau.vue'
+import FAQ from '../views/FAQ.vue'
 import DevisStructure from '../views/DevisStructure.vue'
 import Structures from '../views/Structures.vue'
 import Administration from '../views/Administration.vue'
@@ -34,6 +37,24 @@ const router = createRouter({
       path: '/contact',
       name: 'contact',
       component: Contact,
+      meta: { transition: 'page-slide-left' },
+    },
+    {
+      path: '/accompagnement',
+      name: 'accompagnement',
+      component: Accompagnement,
+      meta: { transition: 'page-slide-left' },
+    },
+    {
+      path: '/carte-cadeau',
+      name: 'carte-cadeau',
+      component: CarteCadeau,
+      meta: { transition: 'page-slide-left' },
+    },
+    {
+      path: '/faq',
+      name: 'faq',
+      component: FAQ,
       meta: { transition: 'page-slide-left' },
     },
     {

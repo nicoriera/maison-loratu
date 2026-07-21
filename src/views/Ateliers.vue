@@ -4,36 +4,28 @@ import { siteConfig } from '../config/site.js'
 
 const offerings = [
   {
-    title: 'Ateliers enfants',
-    audience: 'Enfants',
-    description: 'Des exercices ludiques autour des émotions, du sommeil et de la confiance.',
-    bullets: ['Apprendre à respirer', 'S’apaiser', 'Renforcer la confiance'],
+    title: 'Ateliers collectifs & duos',
+    audience: '1 h 30 · 38 €',
+    description: 'Des ateliers en petit groupe pour respirer, se détendre et partager un moment convivial.',
+    bullets: ['8 participantes maximum', 'Respiration et relaxation', 'Visualisation positive', 'Sommeil plus serein', 'Concentration et outils simples'],
     to: '/questionnaire',
     action: 'Préparer mon atelier',
   },
   {
-    title: 'Ateliers femmes & duos',
-    audience: 'Femmes & duos',
-    description: 'Un temps de relaxation pour souffler, se retrouver et partager.',
-    bullets: ['Retrouver du calme', 'Partager à deux', 'Faire une vraie pause'],
+    title: 'Séances en plein air',
+    audience: '45 min · 15 €',
+    description: 'Une parenthèse dehors pour respirer, marcher, ressentir et revenir à l’essentiel.',
+    bullets: ['8 participantes maximum', 'Respirer au contact de la nature', 'Marcher, sentir, être'],
     to: '/questionnaire',
     action: 'Parler de mon besoin',
   },
   {
-    title: 'Ateliers seniors',
-    audience: 'Seniors',
-    description: 'Une pratique douce autour de la sérénité, de la mobilité et du lien.',
-    bullets: ['Bouger en douceur', 'Respirer', 'Créer du lien'],
+    title: 'Accompagnement individuel',
+    audience: '1 h · 60 €',
+    description: 'Un accompagnement personnalisé pour avancer à votre rythme et selon votre besoin.',
+    bullets: ['Confiance et émotions', 'Stress, anxiété et sommeil', 'Grossesse et parentalité', 'Examens et changement professionnel'],
     to: '/questionnaire',
-    action: 'Demander un rendez-vous',
-  },
-  {
-    title: 'Interventions structures',
-    audience: 'Structures',
-    description: 'Des formats sur mesure pour les écoles, centres de loisirs et associations.',
-    bullets: ['Programme ajusté', 'Cadre sur mesure', 'Format de groupe'],
-    to: '/devis-structure',
-    action: 'Parler de mon projet',
+    action: 'Préparer mon échange',
   },
 ]
 </script>
@@ -45,7 +37,7 @@ const offerings = [
         <p class="text-service-label text-terracotta-600">Les ateliers</p>
         <h1 class="page-title mt-4">Des parenthèses pour respirer</h1>
         <p class="body-copy mx-auto mt-6 max-w-2xl">
-          Les parcours sont pensés pour les enfants, les femmes, les seniors et les structures. Les dates, lieux et disponibilités seront affichés dès que le compte Resalib sera créé.
+          Les ateliers s’adressent aux enfants, aux adolescentes, aux femmes et aux grand-mères. Les dates, lieux et disponibilités seront affichés dès que le compte Resalib sera créé.
         </p>
         <div class="mt-8 flex flex-col justify-center gap-3 sm:flex-row sm:flex-wrap">
           <CTAButton to="/ateliers#formats">
@@ -62,8 +54,8 @@ const offerings = [
     </section>
 
     <section id="formats" class="scroll-mt-28 px-4 py-16 md:py-24">
-      <div class="container mx-auto grid max-w-6xl gap-6 md:grid-cols-2 xl:grid-cols-4">
-        <article
+      <div class="container mx-auto grid max-w-6xl gap-6 md:grid-cols-3">
+          <article
           v-for="offer in offerings"
           :key="offer.title"
           class="rounded-[1.75rem] bg-white p-7 shadow-soft"
@@ -84,13 +76,27 @@ const offerings = [
       </div>
     </section>
 
+    <section class="bg-white px-4 py-16 md:py-24">
+      <div class="container mx-auto grid max-w-6xl items-center gap-8 md:grid-cols-[1.1fr_0.9fr]">
+        <img src="/images/outdoor-session.jpg" alt="Séance de relaxation en extérieur près de la mer" class="h-full min-h-72 w-full rounded-[2rem] object-cover shadow-soft-lg" loading="lazy" />
+        <div>
+          <p class="text-service-label text-terracotta-600">Au fil des saisons</p>
+          <h2 class="mt-4 text-3xl text-terracotta-800 md:text-4xl">Des parenthèses dehors</h2>
+          <p class="mt-4 leading-relaxed text-gray-700">
+            La nature devient un allié pour apaiser le mental, libérer les tensions et retrouver une énergie plus légère.
+            Une invitation à marcher, respirer, ressentir… et simplement être.
+          </p>
+        </div>
+      </div>
+    </section>
+
     <section class="bg-sauge-100 px-4 py-16 md:py-24">
       <div class="container mx-auto grid max-w-6xl gap-8 md:grid-cols-[1fr_0.9fr]">
         <article class="rounded-[2rem] bg-white p-8 shadow-soft-lg">
           <p class="text-service-label text-terracotta-600">Réservation</p>
           <h2 class="mt-4 text-3xl text-terracotta-800 md:text-4xl">Le calendrier arrive bientôt</h2>
           <p class="mt-4 max-w-2xl leading-relaxed text-gray-700">
-            Sandra ajoutera le lien de réservation Resalib dès que son compte sera prêt. En attendant, le contact reste la bonne porte d’entrée pour les demandes enfants, femmes, seniors et structures.
+            Sandra ajoutera le lien de réservation Resalib dès que son compte sera prêt. En attendant, le contact reste la bonne porte d’entrée pour préciser votre besoin.
           </p>
           <div class="mt-7 flex flex-wrap gap-4">
             <a
@@ -107,14 +113,14 @@ const offerings = [
         </article>
 
         <article class="rounded-[2rem] bg-terracotta-800 p-8 text-white shadow-soft-lg">
-          <p class="text-service-label text-cream-200">Pour les structures</p>
-          <h2 class="mt-4 text-3xl md:text-4xl">Une intervention construite ensemble</h2>
+          <p class="text-service-label text-cream-200">Une question ?</p>
+          <h2 class="mt-4 text-3xl md:text-4xl">Besoin d’en savoir plus ?</h2>
           <p class="mt-4 leading-relaxed text-cream-100">
-            Le lieu, les dates, l’âge du groupe et le format se définissent avec la structure.
-            Cette version V1 reste volontairement simple, lisible et sans promesse d’agenda fictif.
+            Retrouvez les réponses aux questions les plus fréquentes sur la sophrologie, les enfants,
+            les seniors et le fonctionnement des ateliers.
           </p>
           <div class="mt-7">
-            <CTAButton to="/structures" variant="secondary">Découvrir les interventions</CTAButton>
+            <CTAButton to="/faq" variant="secondary">Consulter la FAQ</CTAButton>
           </div>
         </article>
       </div>

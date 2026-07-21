@@ -34,6 +34,12 @@
         </div>
         <div>
           <h4 class="font-semibold text-gray-900 mb-4">Contact</h4>
+          <router-link
+            to="/faq"
+            class="footer-link text-gray-600 hover:text-terracotta-600 text-sm"
+          >
+            Questions fréquentes
+          </router-link>
           <p class="text-gray-600 text-sm">
             <!-- À compléter avec les informations de contact -->
           </p>
