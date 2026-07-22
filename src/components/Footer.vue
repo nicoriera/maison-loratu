@@ -1,4 +1,6 @@
 <script setup>
+import { siteConfig } from '../config/site.js'
+import UiIcon from './UiIcon.vue'
 </script>
 
 <template>
@@ -43,6 +45,16 @@
           <p class="text-gray-600 text-sm">
             Coordonnées à venir
           </p>
+          <a
+            :href="siteConfig.instagramUrl"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="footer-link mt-3 inline-flex min-h-11 items-center gap-2 text-sm font-semibold text-terracotta-700 hover:text-terracotta-600 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-terracotta-500 focus-visible:ring-offset-2"
+            aria-label="Suivre Maison Loratu sur Instagram, nouvel onglet"
+          >
+            <UiIcon name="instagram" :size="20" />
+            <span>Instagram</span>
+          </a>
         </div>
       </div>
       <div class="mt-8 pt-8 border-t border-gray-200 text-center text-sm text-gray-500">

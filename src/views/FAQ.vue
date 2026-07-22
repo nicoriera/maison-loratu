@@ -1,4 +1,6 @@
 <script setup>
+import UiIcon from '../components/UiIcon.vue'
+
 const questions = [
   { question: 'Qu’est-ce que la sophrologie ?', answer: 'C’est une méthode douce qui associe respiration, relaxation et visualisation positive. Elle aide à mieux gérer le stress, apaiser les émotions et retrouver un équilibre entre le corps et l’esprit, avec des outils simples au quotidien.' },
   { question: 'Combien de séances sont nécessaires ?', answer: 'Certaines personnes ressentent une détente dès la première séance. Pour un objectif précis, quelques séances peuvent aider à installer des changements. Chaque accompagnement est personnalisé et évolue à votre rythme.' },
@@ -26,7 +28,10 @@ const questions = [
       </div>
       <div class="mt-12 grid gap-4">
         <details v-for="item in questions" :key="item.question" class="group rounded-[1.5rem] bg-white p-6 shadow-soft">
-          <summary class="cursor-pointer list-none pr-8 text-xl text-terracotta-800 marker:hidden">{{ item.question }}</summary>
+          <summary class="flex cursor-pointer list-none items-center justify-between gap-4 text-xl text-terracotta-800 marker:hidden">
+            <span>{{ item.question }}</span>
+            <UiIcon name="arrow-right" :size="22" class="shrink-0 text-terracotta-500 transition-transform duration-[var(--duration-ui)] group-open:rotate-90" />
+          </summary>
           <p class="mt-4 max-w-3xl leading-relaxed text-gray-700">{{ item.answer }}</p>
         </details>
       </div>

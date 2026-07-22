@@ -1,13 +1,14 @@
 <script setup>
 import { useRoute } from 'vue-router'
 import { siteConfig } from '../config/site.js'
+import UiIcon from './UiIcon.vue'
 
 const route = useRoute()
 const navigation = [
-  { label: 'Accueil', shortLabel: 'Accueil', to: '/', activeRoute: 'home' },
-  { label: 'Ateliers', shortLabel: 'Ateliers', to: '/ateliers', activeRoute: 'ateliers' },
-  { label: 'Accompagnement', shortLabel: 'Accomp.', to: '/accompagnement', activeRoute: 'accompagnement' },
-  { label: 'Contact', shortLabel: 'Contact', to: '/contact', activeRoute: 'contact' },
+  { label: 'Accueil', shortLabel: 'Accueil', to: '/', activeRoute: 'home', icon: 'home' },
+  { label: 'Ateliers', shortLabel: 'Ateliers', to: '/ateliers', activeRoute: 'ateliers', icon: 'workshops' },
+  { label: 'Accompagnement', shortLabel: 'Accomp.', to: '/accompagnement', activeRoute: 'accompagnement', icon: 'accompagnement' },
+  { label: 'Contact', shortLabel: 'Contact', to: '/contact', activeRoute: 'contact', icon: 'contact' },
 ]
 
 const reservationTarget = siteConfig.reservationUrl || '/ateliers'
@@ -26,8 +27,8 @@ const isActive = (item) => route.name === item.activeRoute && !route.hash
         :class="{ 'bg-cream-100 text-terracotta-700': isActive(item) }"
         :aria-current="isActive(item) ? 'page' : undefined"
       >
-        <span class="mb-1 text-base leading-none" aria-hidden="true">
-          {{ item.activeRoute === 'home' ? '⌂' : item.activeRoute === 'ateliers' ? '✦' : item.activeRoute === 'accompagnement' ? '◌' : '↗' }}
+        <span class="mb-1 leading-none" aria-hidden="true">
+          <UiIcon :name="item.icon" :size="22" />
         </span>
         <span :aria-label="item.label">{{ item.shortLabel }}</span>
       </router-link>
@@ -39,7 +40,7 @@ const isActive = (item) => route.name === item.activeRoute && !route.hash
         rel="noreferrer"
         class="flex min-h-14 flex-col items-center justify-center rounded-xl bg-terracotta-500 px-1 py-2 text-center text-[0.68rem] font-semibold leading-tight text-white transition duration-[var(--duration-ui)] ease-[var(--ease-warm-out)] hover:bg-terracotta-600 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-terracotta-500 focus-visible:ring-offset-2"
       >
-        <span class="mb-1 text-base leading-none" aria-hidden="true">♡</span>
+        <span class="mb-1 leading-none" aria-hidden="true"><UiIcon name="reserve" :size="22" /></span>
         <span>Réserver</span>
       </a>
       <router-link
@@ -47,7 +48,7 @@ const isActive = (item) => route.name === item.activeRoute && !route.hash
         to="/ateliers"
         class="flex min-h-14 flex-col items-center justify-center rounded-xl bg-terracotta-500 px-1 py-2 text-center text-[0.68rem] font-semibold leading-tight text-white transition duration-[var(--duration-ui)] ease-[var(--ease-warm-out)] hover:bg-terracotta-600 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-terracotta-500 focus-visible:ring-offset-2"
       >
-        <span class="mb-1 text-base leading-none" aria-hidden="true">♡</span>
+        <span class="mb-1 leading-none" aria-hidden="true"><UiIcon name="reserve" :size="22" /></span>
         <span>Réserver</span>
       </router-link>
     </div>

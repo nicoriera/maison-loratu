@@ -1,6 +1,7 @@
 <script setup>
 import { useRoute } from 'vue-router'
 import { siteConfig } from '../config/site.js'
+import UiIcon from './UiIcon.vue'
 
 const route = useRoute()
 
@@ -30,6 +31,16 @@ const isActive = (item) => {
           Maison Loratu
         </router-link>
 
+        <a
+          :href="siteConfig.instagramUrl"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="ml-auto inline-flex min-h-11 min-w-11 items-center justify-center rounded-full text-terracotta-700 transition duration-[var(--duration-ui)] ease-[var(--ease-warm-out)] hover:bg-cream-100 hover:text-terracotta-600 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-terracotta-500 focus-visible:ring-offset-2 lg:hidden"
+          aria-label="Suivre Maison Loratu sur Instagram, nouvel onglet"
+        >
+          <UiIcon name="instagram" :size="22" />
+        </a>
+
         <div class="hidden items-center gap-2 lg:flex lg:gap-5">
           <router-link
             v-for="item in navigation"
@@ -45,6 +56,16 @@ const isActive = (item) => {
               :class="isActive(item) ? 'scale-x-100' : 'scale-x-0'"
             />
           </router-link>
+
+          <a
+            :href="siteConfig.instagramUrl"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="ml-2 inline-flex min-h-11 min-w-11 items-center justify-center rounded-full text-terracotta-700 transition duration-[var(--duration-ui)] ease-[var(--ease-warm-out)] hover:bg-cream-100 hover:text-terracotta-600 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-terracotta-500 focus-visible:ring-offset-2"
+            aria-label="Suivre Maison Loratu sur Instagram, nouvel onglet"
+          >
+            <UiIcon name="instagram" :size="22" />
+          </a>
 
           <a
             v-if="siteConfig.reservationUrl"

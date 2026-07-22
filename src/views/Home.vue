@@ -2,6 +2,7 @@
 import CTAButton from '../components/CTAButton.vue'
 import ScrollReveal from '../components/ScrollReveal.vue'
 import ScrollRevealStagger from '../components/ScrollRevealStagger.vue'
+import UiIcon from '../components/UiIcon.vue'
 import { siteConfig } from '../config/site.js'
 import { computed, onMounted, ref } from 'vue'
 
@@ -16,37 +17,37 @@ const audiences = [
   {
     title: 'Pour les enfants',
     text: 'Des ateliers ludiques pour apprivoiser les émotions, mieux dormir et prendre confiance.',
-    image: '/images/children.jpg',
+    image: '/images/illustration-child.png',
     href: '/ateliers',
     cta: 'Voir les ateliers enfants',
   },
   {
     title: 'Pour les femmes et les duos',
     text: 'Un temps pour souffler, se retrouver et partager une expérience douce à deux.',
-    image: '/images/mother-daughter.jpg',
+    image: '/images/illustration-duo.png',
     href: '/ateliers',
     cta: 'Voir les ateliers femmes',
   },
   {
     title: 'Pour les seniors',
     text: 'Des séances adaptées pour cultiver la sérénité, la mobilité douce et le lien.',
-    image: '/images/about-lifestyle.png',
+    image: '/images/illustration-path.png',
     href: '/ateliers',
     cta: 'Voir les ateliers seniors',
   },
   {
     title: 'Accompagnement personnalisé',
     text: 'Un temps individuel pour avancer avec des outils adaptés à votre histoire et votre rythme.',
-    image: '/images/womens.jpg',
+    image: '/images/illustration-individual.png',
     href: '/accompagnement',
     cta: 'Découvrir l’accompagnement',
   },
 ]
 
 const workshops = [
-  { title: 'Ateliers collectifs & duos', detail: '1 h 30 · 8 participantes maximum · 38 €' },
-  { title: 'Séances en plein air', detail: '45 min · 8 participantes maximum · 15 €' },
-  { title: 'Accompagnement individuel', detail: '1 h · 60 €' },
+  { title: 'Ateliers collectifs & duos', detail: '1 h 30 · 8 participantes maximum · 38 €', icon: 'workshops' },
+  { title: 'Séances en plein air', detail: '45 min · 8 participantes maximum · 15 €', icon: 'outdoor' },
+  { title: 'Accompagnement individuel', detail: '1 h · 60 €', icon: 'accompagnement' },
 ]
 
 const momentOptions = [
@@ -213,7 +214,7 @@ onMounted(loadPublicContent)
             <img
               :src="audience.image"
               :alt="audience.title"
-              class="h-52 w-full object-cover transition-transform duration-500 group-hover:scale-105"
+              class="block aspect-[4/3] h-auto w-full object-cover transition-transform duration-500 group-hover:scale-105"
               loading="lazy"
             />
             <div class="space-y-3 p-6">
@@ -269,7 +270,9 @@ onMounted(loadPublicContent)
                 <h3 class="mt-1 text-2xl text-terracotta-800">{{ workshop.title }}</h3>
                 <p class="mt-1 text-gray-600">{{ workshop.detail }}</p>
               </div>
-              <span class="hidden h-14 w-14 shrink-0 rounded-full bg-cream-200 sm:block" aria-hidden="true" />
+              <span class="flex h-14 w-14 shrink-0 items-center justify-center rounded-full bg-cream-200 text-terracotta-600" aria-hidden="true">
+                <UiIcon :name="workshop.icon" :size="30" />
+              </span>
             </article>
           </ScrollRevealStagger>
         </div>

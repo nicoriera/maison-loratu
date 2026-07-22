@@ -1,11 +1,13 @@
 <script setup>
 import CTAButton from '../components/CTAButton.vue'
+import UiIcon from '../components/UiIcon.vue'
 import { siteConfig } from '../config/site.js'
 
 const offerings = [
   {
     title: 'Ateliers collectifs & duos',
     audience: '1 h 30 · 38 €',
+    icon: 'workshops',
     description: 'Des ateliers en petit groupe pour respirer, se détendre et partager un moment convivial.',
     bullets: ['8 participantes maximum', 'Respiration et relaxation', 'Visualisation positive', 'Sommeil plus serein', 'Concentration et outils simples'],
     to: '/questionnaire',
@@ -14,6 +16,7 @@ const offerings = [
   {
     title: 'Séances en plein air',
     audience: '45 min · 15 €',
+    icon: 'outdoor',
     description: 'Une parenthèse dehors pour respirer, marcher, ressentir et revenir à l’essentiel.',
     bullets: ['8 participantes maximum', 'Respirer au contact de la nature', 'Marcher, sentir, être'],
     to: '/questionnaire',
@@ -22,6 +25,7 @@ const offerings = [
   {
     title: 'Accompagnement individuel',
     audience: '1 h · 60 €',
+    icon: 'accompagnement',
     description: 'Un accompagnement personnalisé pour avancer à votre rythme et selon votre besoin.',
     bullets: ['Confiance et émotions', 'Stress, anxiété et sommeil', 'Grossesse et parentalité', 'Examens et changement professionnel'],
     to: '/questionnaire',
@@ -60,7 +64,12 @@ const offerings = [
           :key="offer.title"
           class="rounded-[1.75rem] bg-white p-7 shadow-soft"
         >
-          <p class="text-sm font-semibold uppercase tracking-[0.16em] text-terracotta-600">{{ offer.audience }}</p>
+          <div class="flex items-start justify-between gap-4">
+            <p class="text-sm font-semibold uppercase tracking-[0.16em] text-terracotta-600">{{ offer.audience }}</p>
+            <span class="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-cream-200 text-terracotta-600" aria-hidden="true">
+              <UiIcon :name="offer.icon" :size="26" />
+            </span>
+          </div>
           <h2 class="mt-3 text-2xl text-terracotta-800">{{ offer.title }}</h2>
           <p class="mt-3 leading-relaxed text-gray-700">{{ offer.description }}</p>
           <ul class="mt-5 space-y-2 text-sm text-gray-600">
@@ -78,7 +87,7 @@ const offerings = [
 
     <section class="bg-white px-4 py-16 md:py-24">
       <div class="container mx-auto grid max-w-6xl items-center gap-8 md:grid-cols-[1.1fr_0.9fr]">
-        <img src="/images/outdoor-session.jpg" alt="Séance de relaxation en extérieur près de la mer" class="h-full min-h-72 w-full rounded-[2rem] object-cover shadow-soft-lg" loading="lazy" />
+        <img src="/images/illustration-outdoor.png" alt="Illustration d’une séance de respiration en plein air" class="block aspect-[4/3] h-auto w-full rounded-[2rem] object-cover shadow-soft-lg" loading="lazy" />
         <div>
           <p class="text-service-label text-terracotta-600">Au fil des saisons</p>
           <h2 class="mt-4 text-3xl text-terracotta-800 md:text-4xl">Des parenthèses dehors</h2>

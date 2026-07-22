@@ -56,6 +56,7 @@ export const canAccessPrototypeRoute = (meta = {}, config = siteConfig) => {
 
 export const createSiteConfig = (env = import.meta.env ?? process.env) => ({
   reservationUrl: sanitizeReservationUrl(env?.VITE_RESALIB_URL ?? ''),
+  instagramUrl: 'https://www.instagram.com/maison__loratu/',
   isAdminPreviewEnabled: isAdminPreviewEnabled(env),
 })
 
