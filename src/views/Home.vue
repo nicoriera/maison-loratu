@@ -4,14 +4,7 @@ import ScrollReveal from '../components/ScrollReveal.vue'
 import ScrollRevealStagger from '../components/ScrollRevealStagger.vue'
 import UiIcon from '../components/UiIcon.vue'
 import { siteConfig } from '../config/site.js'
-import { computed, onMounted, ref } from 'vue'
-
-const shortcuts = [
-  { label: 'Enfants', href: '#accompagnements' },
-  { label: 'Femmes & duos', href: '#accompagnements' },
-  { label: 'Seniors', href: '#accompagnements' },
-  { label: 'Carte cadeau', href: '/carte-cadeau' },
-]
+import { computed, nextTick, onMounted, ref } from 'vue'
 
 const audiences = [
   {
@@ -54,35 +47,58 @@ const momentOptions = [
   {
     id: 'child',
     label: 'Pour un enfant',
+    icon: 'workshops',
     title: 'Ateliers enfants',
     text: 'Des exercices ludiques pour apprivoiser les émotions, mieux dormir et prendre confiance.',
+    reason: 'Un format ludique pour apprivoiser les émotions et repartir avec des outils simples.',
     to: '/ateliers',
   },
   {
     id: 'duo',
     label: 'À deux ou en famille',
+    icon: 'accompagnement',
     title: 'Ateliers collectifs & duos',
     text: 'Une parenthèse pour ralentir ensemble, respirer et créer un souvenir doux.',
+    reason: 'Un format à partager pour ralentir ensemble et créer un souvenir doux.',
     to: '/ateliers',
   },
   {
     id: 'self',
     label: 'Pour moi',
+    icon: 'outdoor',
     title: 'Accompagnement personnalisé',
     text: 'Un temps individuel pour avancer à votre rythme et selon ce que vous traversez.',
+    reason: 'Un format individuel pour être accompagné avec douceur, à votre rythme.',
     to: '/accompagnement',
   },
   {
     id: 'gift',
     label: 'Pour offrir',
+    icon: 'gift',
     title: 'Carte cadeau',
     text: 'Deux ateliers à vivre dans un délai de deux mois, seule ou à partager.',
+    reason: 'Une attention simple à offrir pour laisser de la place à un moment pour soi.',
     to: '/carte-cadeau',
   },
 ]
 
 const selectedMomentId = ref('')
 const selectedMoment = computed(() => momentOptions.find((option) => option.id === selectedMomentId.value))
+const journeyStep = computed(() => (selectedMoment.value ? 2 : 1))
+const journeyOptions = ref(null)
+const journeyResult = ref(null)
+
+const selectMoment = async (optionId) => {
+  selectedMomentId.value = optionId
+  await nextTick()
+  journeyResult.value?.focus()
+}
+
+const resetJourney = async () => {
+  selectedMomentId.value = ''
+  await nextTick()
+  journeyOptions.value?.querySelector('button')?.focus()
+}
 const featuredWorkshopFallback = {
   enabled: true,
   label: 'En ce moment',
@@ -116,7 +132,7 @@ onMounted(loadPublicContent)
         <div class="hero-fade-in max-w-xl space-y-6">
           <p class="text-service-label text-terracotta-600">Sophrologie & ateliers</p>
           <h1 class="text-4xl leading-[0.98] text-terracotta-800 sm:text-5xl md:text-7xl">
-            Un espace pour <span class="italic">souffler</span>, grandir et revenir à soi.
+            Un moment pour <span class="italic">souffler</span>, ensemble.
           </h1>
           <p class="max-w-lg text-lg leading-relaxed text-gray-700 md:text-xl">
             Maison Loratu propose des séances et des ateliers simples, joyeux et accessibles aux petites filles,
@@ -126,24 +142,10 @@ onMounted(loadPublicContent)
             <CTAButton to="/ateliers">
               Découvrir les ateliers
             </CTAButton>
-            <a
-              href="#accompagnements"
-              class="inline-flex min-h-11 items-center justify-center rounded-full px-5 py-3 text-center font-semibold text-terracotta-700 underline decoration-terracotta-300 underline-offset-4 transition duration-[var(--duration-ui)] ease-[var(--ease-warm-out)] hover:text-terracotta-900"
-            >
-              Choisir mon accompagnement
+            <a href="#parcours" class="inline-flex min-h-11 items-center justify-center rounded-full px-5 py-3 text-center font-semibold text-terracotta-700 underline decoration-terracotta-300 underline-offset-4 transition duration-[var(--duration-ui)] ease-[var(--ease-warm-out)] hover:text-terracotta-900">
+              Trouver mon parcours
             </a>
           </div>
-          <ul class="grid gap-3 sm:grid-cols-2">
-            <li v-for="shortcut in shortcuts" :key="shortcut.label">
-              <a
-                :href="shortcut.href"
-                class="flex h-full items-center justify-between rounded-2xl border border-terracotta-100 bg-white/80 px-4 py-3 text-sm font-semibold text-terracotta-700 shadow-soft transition duration-[var(--duration-ui)] ease-[var(--ease-warm-out)] hover:-translate-y-0.5 hover:border-terracotta-200 hover:bg-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-terracotta-500 focus-visible:ring-offset-2"
-              >
-                <span>{{ shortcut.label }}</span>
-                <span aria-hidden="true">→</span>
-              </a>
-            </li>
-          </ul>
           <p class="text-sm text-gray-600">
             En studio et en plein air — lieu à venir.
           </p>
@@ -152,16 +154,16 @@ onMounted(loadPublicContent)
         <div class="hero-img-slide relative">
           <div class="absolute -inset-3 -rotate-2 rounded-[2rem] bg-terracotta-200/70" aria-hidden="true" />
           <img
-            src="/images/women-trio.jpg"
-            alt="Trois femmes prennent un moment de calme ensemble"
-            class="relative w-full rounded-[2rem] object-cover shadow-soft-lg"
+            src="/images/illustration-hero.png"
+            alt="Une femme, une enfant et une grand-mère partagent un moment calme dans un jardin près d’une maison"
+            class="relative block aspect-[4/3] w-full rounded-[2rem] object-cover shadow-soft-lg"
             fetchpriority="high"
           />
         </div>
       </div>
     </section>
 
-    <section class="bg-white px-4 py-16 md:py-24">
+    <section id="parcours" class="scroll-mt-28 bg-white px-4 py-16 md:py-24">
       <div class="container mx-auto max-w-6xl">
         <div class="grid gap-8 md:grid-cols-[0.8fr_1.2fr] md:items-start">
           <ScrollReveal direction="left" tag="div" class="max-w-md">
@@ -173,25 +175,38 @@ onMounted(loadPublicContent)
           </ScrollReveal>
 
           <div>
-            <div class="grid gap-3 sm:grid-cols-2" role="group" aria-label="Choisir un besoin">
+            <div class="mb-5 flex items-center gap-3 text-sm font-semibold text-terracotta-700" aria-label="Progression du parcours">
+              <span class="flex h-9 w-9 items-center justify-center rounded-full bg-terracotta-500 text-white" :aria-current="journeyStep === 1 ? 'step' : undefined">{{ journeyStep === 1 ? '1' : '✓' }}</span>
+              <span class="h-px flex-1 bg-terracotta-200" aria-hidden="true" />
+              <span class="flex h-9 w-9 items-center justify-center rounded-full" :class="journeyStep === 2 ? 'bg-terracotta-500 text-white' : 'border-2 border-terracotta-200 text-terracotta-500'" :aria-current="journeyStep === 2 ? 'step' : undefined">2</span>
+              <span class="sr-only">Étape {{ journeyStep }} sur 2</span>
+            </div>
+
+            <div v-if="!selectedMoment" ref="journeyOptions" class="grid gap-3 sm:grid-cols-2" role="group" aria-label="Choisir une intention">
               <button
                 v-for="option in momentOptions"
                 :key="option.id"
                 type="button"
-                class="min-h-16 rounded-2xl border-2 bg-cream-50 px-5 py-4 text-left font-semibold text-terracotta-800 shadow-soft transition duration-[var(--duration-ui)] ease-[var(--ease-warm-out)] hover:-translate-y-0.5 hover:border-terracotta-300 hover:bg-cream-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-terracotta-500 focus-visible:ring-offset-2"
-                :class="selectedMomentId === option.id ? 'border-terracotta-500 bg-cream-100' : 'border-transparent'"
-                :aria-pressed="selectedMomentId === option.id"
-                @click="selectedMomentId = option.id"
+                class="flex min-h-16 items-center gap-3 rounded-2xl border-2 border-transparent bg-cream-50 px-5 py-4 text-left font-semibold text-terracotta-800 shadow-soft transition duration-[var(--duration-ui)] ease-[var(--ease-warm-out)] hover:-translate-y-0.5 hover:border-terracotta-300 hover:bg-cream-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-terracotta-500 focus-visible:ring-offset-2"
+                @click="selectMoment(option.id)"
               >
-                {{ option.label }}
+                <UiIcon :name="option.icon" :size="24" class="shrink-0 text-terracotta-600" />
+                <span>{{ option.label }}</span>
               </button>
             </div>
 
-            <div v-if="selectedMoment" class="mt-5 rounded-[1.5rem] bg-terracotta-800 p-6 text-white shadow-soft-lg" aria-live="polite">
-              <p class="text-service-label text-cream-200">Votre piste</p>
-              <h3 class="mt-3 text-2xl">{{ selectedMoment.title }}</h3>
+            <div v-if="selectedMoment" ref="journeyResult" tabindex="-1" class="mt-5 rounded-[1.5rem] bg-terracotta-800 p-6 text-white shadow-soft-lg outline-none focus-visible:ring-2 focus-visible:ring-terracotta-200 focus-visible:ring-offset-4 focus-visible:ring-offset-white" aria-live="polite" aria-labelledby="journey-result-title">
+              <div class="flex items-center justify-between gap-4">
+                <p class="text-service-label text-cream-200">Étape 2 · Votre piste</p>
+                <button type="button" class="min-h-11 rounded-full px-3 text-sm font-semibold text-cream-100 underline underline-offset-4 hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cream-100" @click="resetJourney">
+                  Changer
+                </button>
+              </div>
+              <h3 id="journey-result-title" class="mt-3 text-2xl">{{ selectedMoment.title }}</h3>
+              <p class="mt-3 font-semibold text-cream-100">Pourquoi ce parcours ?</p>
+              <p class="mt-1 leading-relaxed text-cream-100">{{ selectedMoment.reason }}</p>
               <p class="mt-3 leading-relaxed text-cream-100">{{ selectedMoment.text }}</p>
-              <div class="mt-5"><CTAButton :to="selectedMoment.to" variant="secondary">Découvrir</CTAButton></div>
+              <div class="mt-5"><CTAButton :to="selectedMoment.to" variant="secondary">Découvrir ce parcours</CTAButton></div>
             </div>
           </div>
         </div>
@@ -222,7 +237,7 @@ onMounted(loadPublicContent)
               <p class="leading-relaxed text-gray-700">{{ audience.text }}</p>
               <a
                 :href="audience.href"
-                class="inline-flex font-semibold text-terracotta-700 underline decoration-terracotta-300 underline-offset-4 transition duration-[var(--duration-ui)] ease-[var(--ease-warm-out)] hover:text-terracotta-900"
+                class="inline-flex min-h-11 items-center font-semibold text-terracotta-700 underline decoration-terracotta-300 underline-offset-4 transition duration-[var(--duration-ui)] ease-[var(--ease-warm-out)] hover:text-terracotta-900"
               >
                 {{ audience.cta }}
               </a>

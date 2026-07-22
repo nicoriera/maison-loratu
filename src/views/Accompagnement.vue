@@ -21,7 +21,7 @@ const subjects = [
             Un accompagnement individuel, adapté à votre rythme et à ce que vous traversez aujourd’hui.
             La sophrologie propose des outils simples pour retrouver un peu de calme et d’espace intérieur.
           </p>
-          <div class="mt-8"><CTAButton to="/contact">Échanger avec Sandra</CTAButton></div>
+          <div class="mt-8"><CTAButton to="/questionnaire">Préparer mon échange</CTAButton></div>
         </div>
         <img src="/images/illustration-individual.png" alt="Illustration d’un espace calme dédié à un accompagnement individuel" class="block aspect-[4/3] h-auto w-full rounded-[2rem] object-cover shadow-soft-lg" />
       </div>

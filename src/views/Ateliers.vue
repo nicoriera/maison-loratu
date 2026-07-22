@@ -41,17 +41,15 @@ const offerings = [
         <p class="text-service-label text-terracotta-600">Les ateliers</p>
         <h1 class="page-title mt-4">Des parenthèses pour respirer</h1>
         <p class="body-copy mx-auto mt-6 max-w-2xl">
-          Les ateliers s’adressent aux enfants, aux adolescentes, aux femmes et aux grand-mères. Les dates, lieux et disponibilités seront affichés dès que le compte Resalib sera créé.
+          Les ateliers s’adressent aux enfants, aux adolescentes, aux femmes et aux grand-mères. Découvrez les formats et préparez votre demande ; les dates seront ajoutées dès que le compte Resalib sera créé.
         </p>
         <div class="mt-8 flex flex-col justify-center gap-3 sm:flex-row sm:flex-wrap">
-          <CTAButton to="/ateliers#formats">
-            Découvrir les disponibilités
-          </CTAButton>
+          <CTAButton to="/ateliers#formats">Voir les formats</CTAButton>
           <a
-            href="#formats"
+            href="/contact"
             class="inline-flex min-h-11 items-center justify-center rounded-full border-2 border-terracotta-300 px-7 py-3 text-center font-semibold text-terracotta-700 transition duration-[var(--duration-ui)] ease-[var(--ease-warm-out)] hover:bg-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-terracotta-500 focus-visible:ring-offset-2"
           >
-            Voir les formats
+            Être recontacté
           </a>
         </div>
       </div>
@@ -87,7 +85,7 @@ const offerings = [
 
     <section class="bg-white px-4 py-16 md:py-24">
       <div class="container mx-auto grid max-w-6xl items-center gap-8 md:grid-cols-[1.1fr_0.9fr]">
-        <img src="/images/illustration-outdoor.png" alt="Illustration d’une séance de respiration en plein air" class="block aspect-[4/3] h-auto w-full rounded-[2rem] object-cover shadow-soft-lg" loading="lazy" />
+        <img src="/images/outdoor-session.jpg" alt="Groupe en séance de respiration en plein air au bord de l’océan" class="block aspect-[4/3] h-auto w-full rounded-[2rem] object-cover object-center shadow-soft-lg" loading="lazy" />
         <div>
           <p class="text-service-label text-terracotta-600">Au fil des saisons</p>
           <h2 class="mt-4 text-3xl text-terracotta-800 md:text-4xl">Des parenthèses dehors</h2>

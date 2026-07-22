@@ -15,6 +15,13 @@ import Administration from '../views/Administration.vue'
 
 const router = createRouter({
   history: createWebHistory(),
+  scrollBehavior(to) {
+    if (to.hash) {
+      return { el: to.hash, top: 112 }
+    }
+
+    return { top: 0 }
+  },
   routes: [
     {
       path: '/',

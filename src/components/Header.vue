@@ -46,7 +46,7 @@ const isActive = (item) => {
             v-for="item in navigation"
             :key="item.label"
             :to="item.to"
-            class="nav-link relative py-1 text-sm text-gray-700 transition duration-[var(--duration-nav)] ease-[var(--ease-warm-out)] hover:-translate-y-px hover:text-terracotta-600 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-terracotta-500 focus-visible:ring-offset-2 md:text-base"
+            class="nav-link relative inline-flex min-h-11 items-center text-sm text-gray-700 transition duration-[var(--duration-nav)] ease-[var(--ease-warm-out)] hover:-translate-y-px hover:text-terracotta-600 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-terracotta-500 focus-visible:ring-offset-2 md:text-base"
             :class="{ 'font-semibold text-terracotta-700': isActive(item) }"
             :aria-current="isActive(item) ? 'page' : undefined"
           >
@@ -73,6 +73,7 @@ const isActive = (item) => {
             target="_blank"
             rel="noreferrer"
             class="ml-2 inline-flex min-h-11 items-center justify-center rounded-full bg-terracotta-500 px-4 py-2 text-sm font-semibold text-white transition duration-[var(--duration-ui)] ease-[var(--ease-warm-out)] hover:bg-terracotta-600 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-terracotta-500 focus-visible:ring-offset-2"
+            aria-label="Réserver un atelier, nouvel onglet"
           >
             Réserver
           </a>
