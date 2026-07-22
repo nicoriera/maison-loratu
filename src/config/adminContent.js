@@ -69,7 +69,7 @@ export const createInitialPublicDraft = () => ({
     enabled: true,
     label: 'En ce moment',
     title: 'Ateliers collectifs & duos',
-    summary: '1 h 30 · 8 participantes maximum · 38 € — Une bulle de douceur pour ralentir, respirer et repartir avec des outils simples.',
+    summary: '1 h 30 · 8 participants maximum · 38 € — Une bulle de douceur pour ralentir, respirer et repartir avec des outils simples.',
     ctaLabel: 'Voir les ateliers',
     ctaHref: '/ateliers',
   },
@@ -78,15 +78,21 @@ export const createInitialPublicDraft = () => ({
 export const createInitialOffersDraft = () => ([
   {
     id: 'offer-collective',
-    title: 'Ateliers collectifs & duos',
-    audience: '1 h 30 · 8 participantes · 38 €',
+    title: 'Ateliers enfants',
+    audience: '1 h 30 · 8 participants · 38 €',
     summary: 'Respiration, relaxation et visualisation positive dans une ambiance conviviale.',
   },
   {
-    id: 'offer-outdoor',
-    title: 'Séances en plein air',
-    audience: '45 min · 8 participantes · 15 €',
-    summary: 'Marcher, respirer, ressentir et se reconnecter à l’instant présent.',
+    id: 'offer-duo',
+    title: 'Ateliers duo mère-fille ou grand-mère',
+    audience: '1 h 30 · 84 € pour 2 personnes',
+    summary: 'Un temps à deux pour respirer, se retrouver et partager une expérience douce.',
+  },
+  {
+    id: 'offer-seniors',
+    title: 'Ateliers seniors',
+    audience: '1 h 30 · 8 participants · 38 €',
+    summary: 'Respirer, bouger doucement et cultiver la sérénité dans un petit groupe.',
   },
   {
     id: 'offer-individual',

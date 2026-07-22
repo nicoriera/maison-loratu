@@ -35,6 +35,7 @@ test('createSiteConfig keeps invalid reservation URLs out of runtime config', ()
 
   assert.deepEqual(config, {
     reservationUrl: '',
+    instagramUrl: 'https://www.instagram.com/maison__loratu/',
     isAdminPreviewEnabled: false,
   })
 })

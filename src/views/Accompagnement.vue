@@ -1,5 +1,7 @@
 <script setup>
 import CTAButton from '../components/CTAButton.vue'
+import UiIcon from '../components/UiIcon.vue'
+import { siteConfig } from '../config/site.js'
 
 const subjects = [
   'Confiance en soi et émotions',
@@ -20,9 +22,9 @@ const subjects = [
             Un accompagnement individuel, adapté à votre rythme et à ce que vous traversez aujourd’hui.
             La sophrologie propose des outils simples pour retrouver un peu de calme et d’espace intérieur.
           </p>
-          <div class="mt-8"><CTAButton to="/contact">Échanger avec Sandra</CTAButton></div>
+          <div class="mt-8"><CTAButton :to="siteConfig.reservationUrl || '/questionnaire'">Je réserve</CTAButton></div>
         </div>
-        <img src="/images/individual-space.jpg" alt="Espace calme dédié à un accompagnement individuel" class="w-full rounded-[2rem] object-cover shadow-soft-lg" />
+          <img src="/images/individual-session.png" alt="Petit bureau calme pour un accompagnement individuel" class="block aspect-[4/3] h-auto w-full rounded-[2rem] object-cover shadow-soft-lg" />
       </div>
     </section>
 
@@ -30,7 +32,12 @@ const subjects = [
       <div class="container mx-auto max-w-5xl">
         <div class="grid gap-10 md:grid-cols-[0.8fr_1.2fr] md:items-start">
           <div>
-            <p class="text-service-label text-terracotta-600">Une séance</p>
+            <div class="flex items-center gap-3">
+              <span class="flex h-12 w-12 items-center justify-center rounded-full bg-cream-200 text-terracotta-600" aria-hidden="true">
+                <UiIcon name="accompagnement" :size="26" />
+              </span>
+              <p class="text-service-label text-terracotta-600">Une séance</p>
+            </div>
             <p class="mt-3 text-5xl text-terracotta-800">1 h · 60 €</p>
             <p class="mt-3 text-gray-600">Un format individuel, sur rendez-vous.</p>
           </div>
@@ -41,7 +48,10 @@ const subjects = [
               une difficulté de sommeil ou une transition, sans se substituer à un suivi médical ou psychologique.
             </p>
             <ul class="mt-6 grid gap-3 sm:grid-cols-2">
-              <li v-for="subject in subjects" :key="subject" class="rounded-2xl bg-cream-100 px-4 py-3 text-gray-700">{{ subject }}</li>
+              <li v-for="subject in subjects" :key="subject" class="flex items-center gap-3 rounded-2xl bg-cream-100 px-4 py-3 text-gray-700">
+                <UiIcon name="check" :size="20" class="shrink-0 text-terracotta-600" />
+                <span>{{ subject }}</span>
+              </li>
             </ul>
           </div>
         </div>

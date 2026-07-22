@@ -1,6 +1,7 @@
 <script setup>
 import { useRoute } from 'vue-router'
 import { siteConfig } from '../config/site.js'
+import UiIcon from './UiIcon.vue'
 
 const route = useRoute()
 
@@ -9,7 +10,6 @@ const navigation = [
   { label: 'Ateliers', to: '/ateliers', activeRoute: 'ateliers' },
   { label: 'Accompagnement personnalisé', to: '/accompagnement', activeRoute: 'accompagnement' },
   { label: 'Carte cadeau', to: '/carte-cadeau', activeRoute: 'carte-cadeau' },
-  { label: 'Contact', to: '/contact', activeRoute: 'contact' },
 ]
 
 const reservationTarget = siteConfig.reservationUrl || '/ateliers'
@@ -25,17 +25,28 @@ const isActive = (item) => {
       <div class="flex items-center justify-between gap-4">
         <router-link
           to="/"
-          class="nav-logo inline-flex min-h-11 items-center text-2xl font-serif text-terracotta-500 transition-colors duration-[var(--duration-nav)] ease-[var(--ease-warm-out)] hover:text-terracotta-600 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-terracotta-500 focus-visible:ring-offset-2"
+          class="nav-logo inline-flex min-h-11 items-center gap-2 text-2xl font-serif text-terracotta-500 transition-colors duration-[var(--duration-nav)] ease-[var(--ease-warm-out)] hover:text-terracotta-600 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-terracotta-500 focus-visible:ring-offset-2"
         >
+          <UiIcon name="house" :size="25" />
           Maison Loratu
         </router-link>
+
+        <a
+          :href="siteConfig.instagramUrl"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="ml-auto inline-flex min-h-11 min-w-11 items-center justify-center rounded-full text-terracotta-700 transition duration-[var(--duration-ui)] ease-[var(--ease-warm-out)] hover:bg-cream-100 hover:text-terracotta-600 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-terracotta-500 focus-visible:ring-offset-2 lg:hidden"
+          aria-label="Suivre Maison Loratu sur Instagram, nouvel onglet"
+        >
+          <UiIcon name="instagram" :size="22" />
+        </a>
 
         <div class="hidden items-center gap-2 lg:flex lg:gap-5">
           <router-link
             v-for="item in navigation"
             :key="item.label"
             :to="item.to"
-            class="nav-link relative py-1 text-sm text-gray-700 transition duration-[var(--duration-nav)] ease-[var(--ease-warm-out)] hover:-translate-y-px hover:text-terracotta-600 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-terracotta-500 focus-visible:ring-offset-2 md:text-base"
+            class="nav-link relative inline-flex min-h-11 items-center text-sm text-gray-700 transition duration-[var(--duration-nav)] ease-[var(--ease-warm-out)] hover:-translate-y-px hover:text-terracotta-600 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-terracotta-500 focus-visible:ring-offset-2 md:text-base"
             :class="{ 'font-semibold text-terracotta-700': isActive(item) }"
             :aria-current="isActive(item) ? 'page' : undefined"
           >
@@ -47,11 +58,22 @@ const isActive = (item) => {
           </router-link>
 
           <a
+            :href="siteConfig.instagramUrl"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="ml-2 inline-flex min-h-11 min-w-11 items-center justify-center rounded-full text-terracotta-700 transition duration-[var(--duration-ui)] ease-[var(--ease-warm-out)] hover:bg-cream-100 hover:text-terracotta-600 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-terracotta-500 focus-visible:ring-offset-2"
+            aria-label="Suivre Maison Loratu sur Instagram, nouvel onglet"
+          >
+            <UiIcon name="instagram" :size="22" />
+          </a>
+
+          <a
             v-if="siteConfig.reservationUrl"
             :href="reservationTarget"
             target="_blank"
             rel="noreferrer"
             class="ml-2 inline-flex min-h-11 items-center justify-center rounded-full bg-terracotta-500 px-4 py-2 text-sm font-semibold text-white transition duration-[var(--duration-ui)] ease-[var(--ease-warm-out)] hover:bg-terracotta-600 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-terracotta-500 focus-visible:ring-offset-2"
+            aria-label="Réserver un atelier, nouvel onglet"
           >
             Réserver
           </a>
