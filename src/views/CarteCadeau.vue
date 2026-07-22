@@ -16,7 +16,7 @@ import UiIcon from '../components/UiIcon.vue'
           <div class="mt-8"><CTAButton to="/contact">Demander une carte cadeau</CTAButton></div>
         </div>
         <div class="overflow-hidden rounded-[2rem] bg-terracotta-800 text-center text-white shadow-soft-lg">
-          <img src="/images/illustration-gift.png" alt="Illustration d’une enveloppe fleurie" class="block aspect-[16/9] h-auto w-full object-cover" />
+          <img src="/images/duo-session.png" alt="Mère et enfant partageant un moment de sophrologie" class="block aspect-[16/9] h-auto w-full object-cover" />
           <div class="p-8 md:p-12">
             <div class="flex items-center justify-center gap-3">
               <UiIcon name="gift" :size="26" class="text-cream-200" />

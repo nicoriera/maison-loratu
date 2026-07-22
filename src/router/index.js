@@ -12,6 +12,14 @@ import FAQ from '../views/FAQ.vue'
 import DevisStructure from '../views/DevisStructure.vue'
 import Structures from '../views/Structures.vue'
 import Administration from '../views/Administration.vue'
+import { getUser } from '@netlify/identity'
+
+const isLocalAdminPreview = import.meta.env.DEV && import.meta.env.VITE_ADMIN_LOCAL_PREVIEW === 'true'
+
+const hasAdminRole = (user) => {
+  const metadata = user?.appMetadata ?? user?.app_metadata
+  return Array.isArray(metadata?.roles) && metadata.roles.includes('admin')
+}
 
 const router = createRouter({
   history: createWebHistory(),
@@ -101,6 +109,15 @@ const router = createRouter({
       meta: { transition: 'page-slide-left' },
     },
   ],
+})
+
+router.beforeEach(async (to) => {
+  if (!to.meta.adminOnly || isLocalAdminPreview) return true
+
+  const user = await getUser()
+  if (user && !hasAdminRole(user)) return { name: 'home' }
+
+  return true
 })
 
 export default router

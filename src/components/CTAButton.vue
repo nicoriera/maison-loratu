@@ -37,6 +37,7 @@ const buttonClasses = computed(() => [
     :class="buttonClasses"
   >
     <slot />
+    <span v-if="isExternal" class="sr-only"> (nouvel onglet)</span>
   </component>
 </template>
 

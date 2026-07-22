@@ -8,7 +8,6 @@ const navigation = [
   { label: 'Accueil', shortLabel: 'Accueil', to: '/', activeRoute: 'home', icon: 'home' },
   { label: 'Ateliers', shortLabel: 'Ateliers', to: '/ateliers', activeRoute: 'ateliers', icon: 'workshops' },
   { label: 'Accompagnement', shortLabel: 'Accomp.', to: '/accompagnement', activeRoute: 'accompagnement', icon: 'accompagnement' },
-  { label: 'Contact', shortLabel: 'Contact', to: '/contact', activeRoute: 'contact', icon: 'contact' },
 ]
 
 const reservationTarget = siteConfig.reservationUrl || '/ateliers'
@@ -18,7 +17,7 @@ const isActive = (item) => route.name === item.activeRoute && !route.hash
 
 <template>
   <nav class="mobile-navigation fixed inset-x-0 bottom-0 z-50 border-t border-terracotta-100 bg-white/95 px-2 pt-2 shadow-[0_-8px_24px_rgba(74,44,33,0.08)] backdrop-blur lg:hidden" aria-label="Navigation mobile">
-    <div class="mx-auto grid max-w-lg grid-cols-5 gap-1 pb-[env(safe-area-inset-bottom)]">
+    <div class="mx-auto grid max-w-lg grid-cols-4 gap-1 pb-[env(safe-area-inset-bottom)]">
       <router-link
         v-for="item in navigation"
         :key="item.label"

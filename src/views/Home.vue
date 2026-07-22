@@ -46,7 +46,7 @@ const featuredWorkshopFallback = {
   enabled: true,
   label: 'En ce moment',
   title: 'Ateliers collectifs & duos',
-  summary: '1 h 30 · 8 participantes maximum · 38 € — Une bulle de douceur pour ralentir, respirer et repartir avec des outils simples.',
+  summary: '1 h 30 · 8 participants maximum · 38 € — Une bulle de douceur pour ralentir, respirer et repartir avec des outils simples.',
   ctaLabel: 'Voir les ateliers',
   ctaHref: '/ateliers',
 }
@@ -108,7 +108,7 @@ onMounted(loadPublicContent)
           <p class="mb-3 text-service-label text-terracotta-600">À chacun son moment</p>
           <h2 class="text-3xl text-terracotta-800 sm:text-4xl md:text-5xl">Des moments pensés pour les enfants et les femmes, de la petite fille à la grand-mère.</h2>
           <p class="mt-5 text-lg leading-relaxed text-gray-700">
-            Voir les disponibilités et réserver directement sur Resalib.
+            {{ siteConfig.reservationUrl ? 'Voir les disponibilités et réserver directement sur Resalib.' : 'Choisissez votre format et découvrez le détail de chaque proposition.' }}
           </p>
         </ScrollReveal>
 
@@ -116,7 +116,7 @@ onMounted(loadPublicContent)
           <article
             v-for="audience in audiences"
             :key="audience.title"
-            class="group flex flex-col overflow-hidden rounded-[1.5rem] bg-white shadow-soft transition-transform duration-300 hover:-translate-y-1"
+            class="group flex h-full flex-col overflow-hidden rounded-[1.5rem] bg-white shadow-soft transition-transform duration-300 hover:-translate-y-1"
           >
             <img
               :src="audience.image"

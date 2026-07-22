@@ -1,6 +1,7 @@
 <script setup>
 import CTAButton from '../components/CTAButton.vue'
 import UiIcon from '../components/UiIcon.vue'
+import { siteConfig } from '../config/site.js'
 
 const offerings = [
   {
@@ -9,7 +10,7 @@ const offerings = [
     icon: 'workshops',
     description: 'Des ateliers en petit groupe pour respirer, se détendre et partager un moment convivial.',
     bullets: ['8 participants maximum', 'Respiration et relaxation', 'Visualisation positive', 'Sommeil plus serein', 'Concentration et outils simples'],
-    to: '/questionnaire',
+    to: siteConfig.reservationUrl || '/questionnaire',
     action: 'Je participe',
   },
   {
@@ -18,7 +19,7 @@ const offerings = [
     icon: 'accompagnement',
     description: 'Un temps pour souffler, se retrouver et partager une expérience douce à deux.',
     bullets: ['Pour 2 personnes', 'Respiration et relaxation', 'Exercices complices', 'Un moment privilégié à partager'],
-    to: '/questionnaire',
+    to: siteConfig.reservationUrl || '/questionnaire',
     action: 'Je participe',
   },
   {
@@ -27,7 +28,7 @@ const offerings = [
     icon: 'workshops',
     description: 'Des séances adaptées pour cultiver la sérénité, la mobilité douce et le lien.',
     bullets: ['8 participants maximum', 'Respiration et relaxation', 'Mobilité douce', 'Sérénité et lien social'],
-    to: '/questionnaire',
+    to: siteConfig.reservationUrl || '/questionnaire',
     action: 'Je participe',
   },
   {
@@ -36,7 +37,7 @@ const offerings = [
     icon: 'accompagnement',
     description: 'Un accompagnement personnalisé pour avancer à votre rythme et selon votre besoin.',
     bullets: ['Confiance et émotions', 'Stress, anxiété et sommeil', 'Grossesse et parentalité', 'Examens et changement professionnel'],
-    to: '/questionnaire',
+    to: siteConfig.reservationUrl || '/questionnaire',
     action: 'Préparer mon échange',
   },
 ]
@@ -49,7 +50,7 @@ const offerings = [
         <p class="text-service-label text-terracotta-600">Les ateliers</p>
         <h1 class="page-title mt-4">Des parenthèses pour respirer</h1>
         <p class="body-copy mx-auto mt-6 max-w-2xl">
-          Les ateliers s’adressent aux enfants, aux adolescentes, aux femmes et aux grand-mères. Découvrez les formats et préparez votre demande ; les dates seront ajoutées dès que le compte Resalib sera créé.
+          Les ateliers s’adressent aux enfants, aux adolescentes, aux femmes et aux grand-mères. Découvrez les formats et choisissez celui qui vous correspond.
         </p>
         <div class="mt-8 flex flex-col justify-center gap-3 sm:flex-row sm:flex-wrap">
           <CTAButton to="/ateliers#formats">Voir les formats</CTAButton>

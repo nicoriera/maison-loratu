@@ -1,6 +1,7 @@
 <script setup>
 import CTAButton from '../components/CTAButton.vue'
 import UiIcon from '../components/UiIcon.vue'
+import { siteConfig } from '../config/site.js'
 
 const subjects = [
   'Confiance en soi et émotions',
@@ -21,9 +22,9 @@ const subjects = [
             Un accompagnement individuel, adapté à votre rythme et à ce que vous traversez aujourd’hui.
             La sophrologie propose des outils simples pour retrouver un peu de calme et d’espace intérieur.
           </p>
-          <div class="mt-8"><CTAButton to="/questionnaire">Je réserve</CTAButton></div>
+          <div class="mt-8"><CTAButton :to="siteConfig.reservationUrl || '/questionnaire'">Je réserve</CTAButton></div>
         </div>
-        <img src="/images/illustration-individual.png" alt="Illustration d’un espace calme dédié à un accompagnement individuel" class="block aspect-[4/3] h-auto w-full rounded-[2rem] object-cover shadow-soft-lg" />
+          <img src="/images/individual-session.png" alt="Petit bureau calme pour un accompagnement individuel" class="block aspect-[4/3] h-auto w-full rounded-[2rem] object-cover shadow-soft-lg" />
       </div>
     </section>
 
