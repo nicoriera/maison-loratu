@@ -37,8 +37,14 @@ import UiIcon from './UiIcon.vue'
         <div>
           <h4 class="font-semibold text-gray-900 mb-4">Contact</h4>
           <router-link
+            to="/contact"
+            class="footer-link block text-gray-600 hover:text-terracotta-600 text-sm"
+          >
+            Nous contacter
+          </router-link>
+          <router-link
             to="/faq"
-            class="footer-link text-gray-600 hover:text-terracotta-600 text-sm"
+            class="footer-link mt-2 inline-block text-gray-600 hover:text-terracotta-600 text-sm"
           >
             Questions fréquentes
           </router-link>

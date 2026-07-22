@@ -29,6 +29,11 @@ defineProps({
       <path d="M6 9.5V20h12V9.5" />
       <path d="M10 20v-5h4v5" />
     </template>
+    <template v-else-if="name === 'house'">
+      <path d="m3.5 11.5 8.5-7 8.5 7" />
+      <path d="M6 10.5V20h12v-9.5" />
+      <path d="M10 20v-4.5h4V20M16 6.5V4h2v4" />
+    </template>
     <template v-else-if="name === 'workshops'">
       <path d="M12 3.5 14 8l4.5.5-3.4 3 1 4.5-4.1-2.4-4.1 2.4 1-4.5-3.4-3L10 8l2-4.5Z" />
       <path d="M12 17v3.5M9.5 20.5h5" />

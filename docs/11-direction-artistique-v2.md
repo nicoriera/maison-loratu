@@ -2,7 +2,7 @@
 
 ## Décision de positionnement
 
-Maison Loratu propose des séances et des ateliers simples, joyeux et accessibles aux petites filles, aux adolescentes, aux femmes, aux mamans et aux grand-mères.
+Des ateliers de sophrologie conçus pour toutes les générations, des enfants aux grand-mères.
 
 Le site ne doit pas être présenté comme un catalogue de prestations. Il doit être vécu comme une **maison-jardin intergénérationnelle**, dans laquelle chaque visiteur trouve un moment adapté à son besoin.
 

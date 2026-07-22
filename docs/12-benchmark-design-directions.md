@@ -140,7 +140,7 @@ Adopter une combinaison contrôlée :
 - **Socle UX :** Version 2, parcours par intention et orientation progressive.
 - **Accent de marque :** Version 3, réservé aux ateliers, aux saisons et aux contenus sociaux.
 
-Cette combinaison permet de rendre le site mémorable sans sacrifier la compréhension. Elle respecte la promesse : des séances et ateliers simples, joyeux et accessibles aux petites filles, aux adolescentes, aux femmes, aux mamans et aux grand-mères.
+Cette combinaison permet de rendre le site mémorable sans sacrifier la compréhension. Elle respecte la promesse : des ateliers de sophrologie conçus pour toutes les générations, des enfants aux grand-mères.
 
 ## Principes à conserver
 

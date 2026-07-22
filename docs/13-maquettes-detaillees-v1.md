@@ -6,7 +6,7 @@
 
 Promesse à conserver :
 
-> Maison Loratu propose des séances et des ateliers simples, joyeux et accessibles aux petites filles, aux adolescentes, aux femmes, aux mamans et aux grand-mères.
+> Des ateliers de sophrologie conçus pour toutes les générations, des enfants aux grand-mères.
 
 ## Règles communes
 

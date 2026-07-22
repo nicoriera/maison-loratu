@@ -10,7 +10,6 @@ const navigation = [
   { label: 'Ateliers', to: '/ateliers', activeRoute: 'ateliers' },
   { label: 'Accompagnement personnalisé', to: '/accompagnement', activeRoute: 'accompagnement' },
   { label: 'Carte cadeau', to: '/carte-cadeau', activeRoute: 'carte-cadeau' },
-  { label: 'Contact', to: '/contact', activeRoute: 'contact' },
 ]
 
 const reservationTarget = siteConfig.reservationUrl || '/ateliers'
@@ -26,8 +25,9 @@ const isActive = (item) => {
       <div class="flex items-center justify-between gap-4">
         <router-link
           to="/"
-          class="nav-logo inline-flex min-h-11 items-center text-2xl font-serif text-terracotta-500 transition-colors duration-[var(--duration-nav)] ease-[var(--ease-warm-out)] hover:text-terracotta-600 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-terracotta-500 focus-visible:ring-offset-2"
+          class="nav-logo inline-flex min-h-11 items-center gap-2 text-2xl font-serif text-terracotta-500 transition-colors duration-[var(--duration-nav)] ease-[var(--ease-warm-out)] hover:text-terracotta-600 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-terracotta-500 focus-visible:ring-offset-2"
         >
+          <UiIcon name="house" :size="25" />
           Maison Loratu
         </router-link>
 

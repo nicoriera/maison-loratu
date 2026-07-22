@@ -1,26 +1,34 @@
 <script setup>
 import CTAButton from '../components/CTAButton.vue'
 import UiIcon from '../components/UiIcon.vue'
-import { siteConfig } from '../config/site.js'
 
 const offerings = [
   {
-    title: 'Ateliers collectifs & duos',
+    title: 'Ateliers enfants',
     audience: '1 h 30 · 38 €',
     icon: 'workshops',
     description: 'Des ateliers en petit groupe pour respirer, se détendre et partager un moment convivial.',
-    bullets: ['8 participantes maximum', 'Respiration et relaxation', 'Visualisation positive', 'Sommeil plus serein', 'Concentration et outils simples'],
+    bullets: ['8 participants maximum', 'Respiration et relaxation', 'Visualisation positive', 'Sommeil plus serein', 'Concentration et outils simples'],
     to: '/questionnaire',
-    action: 'Préparer mon atelier',
+    action: 'Je participe',
   },
   {
-    title: 'Séances en plein air',
-    audience: '45 min · 15 €',
-    icon: 'outdoor',
-    description: 'Une parenthèse dehors pour respirer, marcher, ressentir et revenir à l’essentiel.',
-    bullets: ['8 participantes maximum', 'Respirer au contact de la nature', 'Marcher, sentir, être'],
+    title: 'Ateliers duo mère-fille ou grand-mère',
+    audience: '1 h 30 · 84 € pour 2 personnes',
+    icon: 'accompagnement',
+    description: 'Un temps pour souffler, se retrouver et partager une expérience douce à deux.',
+    bullets: ['Pour 2 personnes', 'Respiration et relaxation', 'Exercices complices', 'Un moment privilégié à partager'],
     to: '/questionnaire',
-    action: 'Parler de mon besoin',
+    action: 'Je participe',
+  },
+  {
+    title: 'Ateliers seniors',
+    audience: '1 h 30 · 38 €',
+    icon: 'workshops',
+    description: 'Des séances adaptées pour cultiver la sérénité, la mobilité douce et le lien.',
+    bullets: ['8 participants maximum', 'Respiration et relaxation', 'Mobilité douce', 'Sérénité et lien social'],
+    to: '/questionnaire',
+    action: 'Je participe',
   },
   {
     title: 'Accompagnement individuel',
@@ -83,42 +91,8 @@ const offerings = [
       </div>
     </section>
 
-    <section class="bg-white px-4 py-16 md:py-24">
-      <div class="container mx-auto grid max-w-6xl items-center gap-8 md:grid-cols-[1.1fr_0.9fr]">
-        <img src="/images/outdoor-session.jpg" alt="Groupe en séance de respiration en plein air au bord de l’océan" class="block aspect-[4/3] h-auto w-full rounded-[2rem] object-cover object-center shadow-soft-lg" loading="lazy" />
-        <div>
-          <p class="text-service-label text-terracotta-600">Au fil des saisons</p>
-          <h2 class="mt-4 text-3xl text-terracotta-800 md:text-4xl">Des parenthèses dehors</h2>
-          <p class="mt-4 leading-relaxed text-gray-700">
-            La nature devient un allié pour apaiser le mental, libérer les tensions et retrouver une énergie plus légère.
-            Une invitation à marcher, respirer, ressentir… et simplement être.
-          </p>
-        </div>
-      </div>
-    </section>
-
     <section class="bg-sauge-100 px-4 py-16 md:py-24">
-      <div class="container mx-auto grid max-w-6xl gap-8 md:grid-cols-[1fr_0.9fr]">
-        <article class="rounded-[2rem] bg-white p-8 shadow-soft-lg">
-          <p class="text-service-label text-terracotta-600">Réservation</p>
-          <h2 class="mt-4 text-3xl text-terracotta-800 md:text-4xl">Le calendrier arrive bientôt</h2>
-          <p class="mt-4 max-w-2xl leading-relaxed text-gray-700">
-            Sandra ajoutera le lien de réservation Resalib dès que son compte sera prêt. En attendant, le contact reste la bonne porte d’entrée pour préciser votre besoin.
-          </p>
-          <div class="mt-7 flex flex-wrap gap-4">
-            <a
-              v-if="siteConfig.reservationUrl"
-              :href="siteConfig.reservationUrl"
-              target="_blank"
-              rel="noreferrer"
-              class="inline-flex min-h-11 items-center justify-center rounded-full bg-terracotta-500 px-7 py-3 font-semibold text-white transition duration-[var(--duration-ui)] ease-[var(--ease-warm-out)] hover:bg-terracotta-600 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-terracotta-500 focus-visible:ring-offset-2"
-            >
-              Réserver un atelier
-            </a>
-            <CTAButton v-else to="/contact">Être recontacté</CTAButton>
-          </div>
-        </article>
-
+      <div class="container mx-auto max-w-3xl">
         <article class="rounded-[2rem] bg-terracotta-800 p-8 text-white shadow-soft-lg">
           <p class="text-service-label text-cream-200">Une question ?</p>
           <h2 class="mt-4 text-3xl md:text-4xl">Besoin d’en savoir plus ?</h2>
@@ -127,7 +101,7 @@ const offerings = [
             les seniors et le fonctionnement des ateliers.
           </p>
           <div class="mt-7">
-            <CTAButton to="/faq" variant="secondary">Consulter la FAQ</CTAButton>
+            <CTAButton to="/faq" variant="secondary">Questions fréquentes</CTAButton>
           </div>
         </article>
       </div>
