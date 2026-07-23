@@ -13,7 +13,7 @@ const isSubmitting = ref(false);
 const submitError = ref("");
 const stepHeading = ref(null);
 const submissionNotice =
-  "Ce questionnaire envoie réellement votre demande à Maison Loratu via notre formulaire de contact sécurisé. Aucun rendez-vous n’est réservé automatiquement.";
+  "Votre demande sera envoyée à Sandra pour préparer un premier échange. Aucun rendez-vous n’est réservé automatiquement.";
 
 const schema = yup.object({
   type: yup.string().required("Veuillez sélectionner une option"),
@@ -75,12 +75,13 @@ const scrollToStep = async () => {
 };
 
 const besoinsOptions = [
-  { value: "stress", label: "Gestion du stress" },
-  { value: "sommeil", label: "Amélioration du sommeil" },
-  { value: "confiance", label: "Confiance en soi" },
-  { value: "emotions", label: "Gestion des émotions" },
-  { value: "concentration", label: "Amélioration de la concentration" },
-  { value: "preparation", label: "Préparation à un événement" },
+  { value: "stress", label: "Apaiser le stress" },
+  { value: "sommeil", label: "Mieux dormir" },
+  { value: "confiance", label: "Prendre confiance" },
+  { value: "emotions", label: "Apprivoiser les émotions" },
+  { value: "concentration", label: "Mieux se concentrer" },
+  { value: "preparation", label: "Préparer un événement" },
+  { value: "duo", label: "Partager un moment à deux" },
   { value: "autre", label: "Autre" },
 ];
 
@@ -148,10 +149,10 @@ const onSubmit = handleSubmit(async (formValues) => {
         <div class="mb-8">
           <p class="text-center text-service-label text-terracotta-600">Un premier échange</p>
           <h1 class="page-title mt-4 text-center">
-            Questionnaire de besoins
+            Quelques questions pour mieux vous orienter
           </h1>
           <p class="mb-6 mt-4 text-center text-gray-600">
-            Répondez à quelques questions pour que nous puissions vous proposer un accompagnement personnalisé
+            Ce questionnaire prend quelques minutes. Il vous aide à préciser le public, le besoin et le format souhaité.
           </p>
           <p class="rounded-2xl bg-cream-100 px-4 py-3 text-sm text-gray-700">
             {{ submissionNotice }}
@@ -174,7 +175,7 @@ const onSubmit = handleSubmit(async (formValues) => {
             <div v-if="currentStep === 1" key="step-1" class="space-y-6">
               <fieldset>
                 <legend ref="stepHeading" tabindex="-1" class="block text-lg font-semibold text-gray-900 outline-none focus-visible:ring-2 focus-visible:ring-terracotta-500 focus-visible:ring-offset-4" aria-describedby="type-error">
-                  Pour qui souhaitez-vous un accompagnement ?
+                  Pour qui recherchez-vous un accompagnement ?
                 </legend>
                 <div class="space-y-3">
                   <label
@@ -189,7 +190,7 @@ const onSubmit = handleSubmit(async (formValues) => {
                       value="femme-enceinte"
                       v-bind="typeAttrs"
                       class="mr-3 focus-visible:outline-none focus-visible:ring-0" />
-                    <span class="text-gray-700">Femme enceinte</span>
+                    <span class="text-gray-700">Pour une femme enceinte</span>
                   </label>
                   <label
                     class="flex min-h-14 cursor-pointer items-center rounded-2xl border-2 border-terracotta-100 bg-cream-50 p-4 transition-colors hover:bg-cream-100 focus-within:ring-2 focus-within:ring-terracotta-500 focus-within:ring-offset-2"
@@ -202,7 +203,7 @@ const onSubmit = handleSubmit(async (formValues) => {
                       value="enfant"
                       v-bind="typeAttrs"
                       class="mr-3 focus-visible:outline-none focus-visible:ring-0" />
-                    <span class="text-gray-700">Enfant</span>
+                    <span class="text-gray-700">Pour un enfant</span>
                   </label>
                   <label
                     class="flex min-h-14 cursor-pointer items-center rounded-2xl border-2 border-terracotta-100 bg-cream-50 p-4 transition-colors hover:bg-cream-100 focus-within:ring-2 focus-within:ring-terracotta-500 focus-within:ring-offset-2"
@@ -215,7 +216,29 @@ const onSubmit = handleSubmit(async (formValues) => {
                       value="adulte"
                       v-bind="typeAttrs"
                       class="mr-3 focus-visible:outline-none focus-visible:ring-0" />
-                    <span class="text-gray-700">Adulte (mieux-être)</span>
+                    <span class="text-gray-700">Pour moi</span>
+                  </label>
+                  <label
+                    class="flex min-h-14 cursor-pointer items-center rounded-2xl border-2 border-terracotta-100 bg-cream-50 p-4 transition-colors hover:bg-cream-100 focus-within:ring-2 focus-within:ring-terracotta-500 focus-within:ring-offset-2"
+                    :class="{ 'border-terracotta-500 bg-cream-100': type === 'duo' }">
+                    <input
+                      v-model="type"
+                      type="radio"
+                      value="duo"
+                      v-bind="typeAttrs"
+                      class="mr-3 focus-visible:outline-none focus-visible:ring-0" />
+                    <span class="text-gray-700">Pour un duo mère-fille ou grand-mère</span>
+                  </label>
+                  <label
+                    class="flex min-h-14 cursor-pointer items-center rounded-2xl border-2 border-terracotta-100 bg-cream-50 p-4 transition-colors hover:bg-cream-100 focus-within:ring-2 focus-within:ring-terracotta-500 focus-within:ring-offset-2"
+                    :class="{ 'border-terracotta-500 bg-cream-100': type === 'senior' }">
+                    <input
+                      v-model="type"
+                      type="radio"
+                      value="senior"
+                      v-bind="typeAttrs"
+                      class="mr-3 focus-visible:outline-none focus-visible:ring-0" />
+                    <span class="text-gray-700">Pour une personne senior</span>
                   </label>
                 </div>
                 <p v-if="errors.type" id="type-error" class="mt-2 text-sm text-red-600" role="alert">
@@ -225,7 +248,7 @@ const onSubmit = handleSubmit(async (formValues) => {
 
               <div v-if="type === 'femme-enceinte'" class="mt-6">
                 <label for="situation" class="block text-lg font-semibold text-gray-900 mb-4">
-                  À quel stade de votre grossesse êtes-vous ?
+                  Où en êtes-vous dans votre parcours ?
                 </label>
                 <select
                   v-model="situation"
@@ -235,10 +258,10 @@ const onSubmit = handleSubmit(async (formValues) => {
                   :aria-invalid="errors.situation ? 'true' : 'false'"
                   aria-describedby="situation-error">
                   <option value="">Sélectionnez...</option>
-                  <option value="debut">1er trimestre</option>
-                  <option value="milieu">2ème trimestre</option>
-                  <option value="fin">3ème trimestre</option>
-                  <option value="post-partum">Post-partum</option>
+                  <option value="debut">Début de grossesse</option>
+                  <option value="milieu">Milieu de grossesse</option>
+                  <option value="fin">Fin de grossesse</option>
+                  <option value="post-partum">Après la naissance</option>
                 </select>
                 <p v-if="errors.situation" id="situation-error" class="mt-2 text-sm text-red-600" role="alert">
                   {{ errors.situation }}
@@ -250,8 +273,8 @@ const onSubmit = handleSubmit(async (formValues) => {
             <div v-else-if="currentStep === 2" key="step-2" class="space-y-6">
               <fieldset>
                 <legend ref="stepHeading" tabindex="-1" class="block text-lg font-semibold text-gray-900 outline-none focus-visible:ring-2 focus-visible:ring-terracotta-500 focus-visible:ring-offset-4" aria-describedby="needs-error">
-                  Quels sont vos besoins principaux ? (plusieurs choix
-                  possibles)
+                  Qu’aimeriez-vous améliorer ou partager ?
+                  <span class="mt-1 block text-sm font-normal text-gray-600">Plusieurs réponses possibles.</span>
                 </legend>
                 <div class="space-y-3">
                   <label
@@ -283,7 +306,7 @@ const onSubmit = handleSubmit(async (formValues) => {
             <div v-else-if="currentStep === 3" key="step-3" class="space-y-6">
               <fieldset>
                 <legend ref="stepHeading" tabindex="-1" class="block text-lg font-semibold text-gray-900 outline-none focus-visible:ring-2 focus-visible:ring-terracotta-500 focus-visible:ring-offset-4" aria-describedby="frequency-error">
-                  Quelle fréquence d'accompagnement vous conviendrait le mieux ?
+                  Quel rythme vous conviendrait le mieux ?
                 </legend>
                 <div class="space-y-3">
                   <label
@@ -297,7 +320,7 @@ const onSubmit = handleSubmit(async (formValues) => {
                       value="ponctuel"
                       v-bind="frequenceAttrs"
                       class="mr-3 focus-visible:outline-none focus-visible:ring-0" />
-                    <span class="text-gray-700">Séances ponctuelles</span>
+                    <span class="text-gray-700">Une première séance</span>
                   </label>
                   <label
                   class="flex min-h-14 cursor-pointer items-center rounded-2xl border-2 border-terracotta-100 bg-cream-50 p-4 transition-colors hover:bg-cream-100 focus-within:ring-2 focus-within:ring-terracotta-500 focus-within:ring-offset-2"
@@ -311,7 +334,7 @@ const onSubmit = handleSubmit(async (formValues) => {
                       value="hebdomadaire"
                       v-bind="frequenceAttrs"
                       class="mr-3 focus-visible:outline-none focus-visible:ring-0" />
-                    <span class="text-gray-700">Une fois par semaine</span>
+                    <span class="text-gray-700">Quelques séances</span>
                   </label>
                   <label
                   class="flex min-h-14 cursor-pointer items-center rounded-2xl border-2 border-terracotta-100 bg-cream-50 p-4 transition-colors hover:bg-cream-100 focus-within:ring-2 focus-within:ring-terracotta-500 focus-within:ring-offset-2"
@@ -325,7 +348,7 @@ const onSubmit = handleSubmit(async (formValues) => {
                       value="bihebdomadaire"
                       v-bind="frequenceAttrs"
                       class="mr-3 focus-visible:outline-none focus-visible:ring-0" />
-                    <span class="text-gray-700">Toutes les deux semaines</span>
+                    <span class="text-gray-700">Un accompagnement régulier</span>
                   </label>
                   <label
                   class="flex min-h-14 cursor-pointer items-center rounded-2xl border-2 border-terracotta-100 bg-cream-50 p-4 transition-colors hover:bg-cream-100 focus-within:ring-2 focus-within:ring-terracotta-500 focus-within:ring-offset-2"
@@ -338,7 +361,7 @@ const onSubmit = handleSubmit(async (formValues) => {
                       value="mensuel"
                       v-bind="frequenceAttrs"
                       class="mr-3 focus-visible:outline-none focus-visible:ring-0" />
-                    <span class="text-gray-700">Une fois par mois</span>
+                    <span class="text-gray-700">Je ne sais pas encore</span>
                   </label>
                 </div>
                 <p v-if="errors.frequence" id="frequency-error" class="mt-2 text-sm text-red-600" role="alert">
