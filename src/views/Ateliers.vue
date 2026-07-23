@@ -1,9 +1,12 @@
 <script setup>
 import CTAButton from "../components/CTAButton.vue";
-import { siteConfig } from "../config/site.js";
 import OfferingCard from "../components/OfferingCard.vue";
+import { computed } from "vue";
+import { useReservationConfig } from "../config/reservation.js";
 
-const offerings = [
+const { reservationUrl } = useReservationConfig();
+
+const offerings = computed(() => [
   {
     title: "Ateliers enfants",
     audience: "1 h 30 · 38 €",
@@ -17,7 +20,7 @@ const offerings = [
       "Sommeil plus serein",
       "Concentration et outils simples",
     ],
-    to: siteConfig.reservationUrl || "/questionnaire",
+    to: reservationUrl.value,
     action: "Je participe",
   },
   {
@@ -32,7 +35,7 @@ const offerings = [
       "Exercices complices",
       "Un moment privilégié à partager",
     ],
-    to: siteConfig.reservationUrl || "/questionnaire",
+    to: reservationUrl.value,
     action: "Je participe",
   },
   {
@@ -47,7 +50,7 @@ const offerings = [
       "Mobilité douce",
       "Sérénité et lien social",
     ],
-    to: siteConfig.reservationUrl || "/questionnaire",
+    to: reservationUrl.value,
     action: "Je participe",
   },
   {
@@ -62,10 +65,10 @@ const offerings = [
       "Grossesse et parentalité",
       "Examens et changement professionnel",
     ],
-    to: siteConfig.reservationUrl || "/questionnaire",
+    to: reservationUrl.value,
     action: "Je réserve",
   },
-];
+]);
 </script>
 
 <template>
@@ -84,7 +87,7 @@ const offerings = [
           </p>
           <div
             class="mt-8 flex flex-col justify-center gap-3 sm:flex-row sm:flex-wrap md:justify-start">
-            <CTAButton to="/ateliers#formats">Voir les formats</CTAButton>
+            <CTAButton to="/ateliers#formats">Voir les ateliers et tarifs</CTAButton>
             <a
               href="/contact"
               class="inline-flex min-h-11 items-center justify-center rounded-full border-2 border-terracotta-300 px-7 py-3 text-center font-semibold text-terracotta-700 transition duration-[var(--duration-ui)] ease-[var(--ease-warm-out)] hover:bg-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-terracotta-500 focus-visible:ring-offset-2">

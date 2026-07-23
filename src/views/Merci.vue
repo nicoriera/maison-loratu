@@ -15,8 +15,8 @@ import ScrollReveal from '../components/ScrollReveal.vue'
         Votre questionnaire a bien été envoyé. Je vous contacterai sous peu pour vous proposer un accompagnement personnalisé.
       </p>
       <div class="flex flex-wrap justify-center gap-3">
-        <router-link to="/ateliers" class="inline-flex min-h-11 items-center justify-center rounded-full bg-terracotta-500 px-6 py-3 font-semibold text-white transition-colors hover:bg-terracotta-600 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-terracotta-500 focus-visible:ring-offset-2">
-          Voir les ateliers
+        <router-link to="/accompagnement" class="inline-flex min-h-11 items-center justify-center rounded-full bg-terracotta-500 px-6 py-3 font-semibold text-white transition-colors hover:bg-terracotta-600 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-terracotta-500 focus-visible:ring-offset-2">
+          Voir l’accompagnement personnalisé
         </router-link>
         <router-link to="/" class="inline-flex min-h-11 items-center justify-center rounded-full border-2 border-terracotta-300 px-6 py-3 font-semibold text-terracotta-700 transition-colors hover:bg-cream-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-terracotta-500 focus-visible:ring-offset-2">
           Retour à l’accueil

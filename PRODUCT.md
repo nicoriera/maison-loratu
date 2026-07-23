@@ -20,13 +20,15 @@ Une offre de sophrologie simple, joyeuse et accessible à plusieurs génération
 
 ## Operating Context
 
-Les visiteurs consultent principalement le site sur mobile. Ils découvrent les offres, leurs durées et leurs tarifs, puis suivent un lien vers Resalib pour voir les disponibilités, réserver et payer en ligne.
+Les visiteurs consultent principalement le site sur mobile. Ils découvrent les offres, leurs durées et leurs tarifs, puis suivent un lien vers Resalib pour voir les disponibilités, réserver et payer en ligne. La ville principale ciblée est Anglet et les communes desservies sont celles du BAB (Bayonne, Anglet et Biarritz).
 
 ## Capabilities and Constraints
 
 - Offres proposées : ateliers enfants, ateliers seniors, ateliers duo mère-fille ou grand-mère, accompagnement individuel.
 - Réservation et paiement en ligne prévus via Resalib, lorsque le compte et le lien seront configurés.
-- Le lieu des séances et ateliers n’est pas encore défini.
+- La ville principale est Anglet.
+- La zone desservie est le BAB : Bayonne, Anglet et Biarritz.
+- Le lieu fixe des séances et ateliers n’est pas encore défini.
 - Les informations de contact et certains contenus éditoriaux restent à compléter.
 - Une interface d’administration est prévue pour gérer les contenus du site.
 
@@ -41,9 +43,9 @@ Les visiteurs consultent principalement le site sur mobile. Ils découvrent les 
 
 - Contenus et tarifs transmis par Sandra et Nicolas dans les échanges du projet.
 - Photos de séances enfants, seniors, duo et accompagnement individuel présentes dans `public/images/`.
-- Photographie de Sandra présente dans `public/images/sandra-portrait.png`.
+- Photographie de Sandra présente dans `public/images/sandra-portrait.webp`.
 - Lien Instagram : `https://www.instagram.com/maison__loratu/`.
-- Le lieu définitif et les coordonnées restent indisponibles à ce stade.
+- Le lieu fixe définitif, les coordonnées et le lien Resalib restent indisponibles à ce stade.
 
 ## Product Principles
 

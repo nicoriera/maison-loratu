@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+Disallow: /administration
+Disallow: /questionnaire
+Disallow: /merci
+
+Sitemap: https://maison-loratu.fr/sitemap.xml
