@@ -2,17 +2,19 @@
 import { useRoute } from 'vue-router'
 import { siteConfig } from '../config/site.js'
 import UiIcon from './UiIcon.vue'
+import { useReservationConfig } from '../config/reservation.js'
 
 const route = useRoute()
 
 const navigation = [
   { label: 'Accueil', to: '/', activeRoute: 'home' },
-  { label: 'Ateliers', to: '/ateliers', activeRoute: 'ateliers' },
+  { label: 'Ateliers & tarifs', to: '/ateliers', activeRoute: 'ateliers' },
   { label: 'Accompagnement personnalisé', to: '/accompagnement', activeRoute: 'accompagnement' },
+  { label: 'Structures', to: '/structures', activeRoute: 'structures' },
   { label: 'Carte cadeau', to: '/carte-cadeau', activeRoute: 'carte-cadeau' },
 ]
 
-const reservationTarget = siteConfig.reservationUrl || '/ateliers'
+const { reservationUrl: reservationTarget } = useReservationConfig()
 
 const isActive = (item) => {
   return route.name === item.activeRoute && !route.hash
@@ -68,7 +70,6 @@ const isActive = (item) => {
           </a>
 
           <a
-            v-if="siteConfig.reservationUrl"
             :href="reservationTarget"
             target="_blank"
             rel="noopener noreferrer"
@@ -77,13 +78,6 @@ const isActive = (item) => {
           >
             Réserver
           </a>
-          <router-link
-            v-else
-            to="/ateliers"
-            class="ml-2 inline-flex min-h-11 items-center justify-center rounded-full bg-terracotta-500 px-4 py-2 text-sm font-semibold text-white transition duration-[var(--duration-ui)] ease-[var(--ease-warm-out)] hover:bg-terracotta-600 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-terracotta-500 focus-visible:ring-offset-2"
-          >
-            Réserver
-          </router-link>
         </div>
 
       </div>

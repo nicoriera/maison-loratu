@@ -3,8 +3,10 @@ import CTAButton from "../components/CTAButton.vue";
 import ScrollReveal from "../components/ScrollReveal.vue";
 import ScrollRevealStagger from "../components/ScrollRevealStagger.vue";
 import OfferingCard from "../components/OfferingCard.vue";
-import { siteConfig } from "../config/site.js";
+import { useReservationConfig } from "../config/reservation.js";
 import { computed, onMounted, ref } from "vue";
+
+const { reservationConfigured } = useReservationConfig();
 
 const audiences = [
   {
@@ -40,10 +42,6 @@ const audiences = [
     cta: "Je découvre",
   },
 ];
-
-const reservationLabel = computed(() =>
-  siteConfig.reservationUrl ? "Réserver et payer en ligne" : "Être recontacté",
-);
 
 const featuredWorkshopFallback = {
   enabled: true,
@@ -100,7 +98,11 @@ const featuredWorkshopVisual = computed(() => {
 });
 
 const loadPublicContent = async () => {
-  if (import.meta.env.DEV && import.meta.env.VITE_ENABLE_PUBLIC_CONTENT !== "true") return
+  if (
+    import.meta.env.DEV &&
+    import.meta.env.VITE_ENABLE_PUBLIC_CONTENT !== "true"
+  )
+    return;
 
   try {
     const response = await fetch("/api/content", {
@@ -129,9 +131,6 @@ onMounted(loadPublicContent);
       <div
         class="container mx-auto grid max-w-6xl items-center gap-10 px-4 py-12 md:grid-cols-[1.05fr_0.95fr] md:py-20">
         <div class="hero-fade-in max-w-xl space-y-6">
-          <p class="text-service-label text-terracotta-600">
-            Sophrologie & ateliers
-          </p>
           <h1
             class="text-4xl leading-[0.98] text-terracotta-800 sm:text-5xl md:text-7xl">
             Un moment pour <span class="italic">souffler</span>, ensemble.
@@ -180,9 +179,9 @@ onMounted(loadPublicContent);
           </h2>
           <p class="mt-5 text-lg leading-relaxed text-gray-700">
             {{
-              siteConfig.reservationUrl
+              reservationConfigured
                 ? "Voir les disponibilités et réserver directement sur Resalib."
-                : "Choisissez votre format et découvrez le détail de chaque proposition."
+                : "Découvrez les formats et choisissez celui qui vous correspond."
             }}
           </p>
         </ScrollReveal>
@@ -192,26 +191,11 @@ onMounted(loadPublicContent);
           <OfferingCard
             v-for="audience in audiences"
             :key="audience.title"
-            :offering="{ ...audience, to: siteConfig.reservationUrl || audience.href }"
+            :offering="{ ...audience, to: audience.href }"
             variant="compact"
-            :cta-label="siteConfig.reservationUrl ? 'Réserver et payer en ligne' : audience.cta" />
+            :cta-label="audience.cta" />
         </ScrollRevealStagger>
 
-        <div
-          class="mt-10 flex flex-col items-center justify-between gap-4 rounded-2xl border border-terracotta-200 bg-cream-50 p-5 text-center sm:flex-row sm:text-left">
-          <p class="text-sm leading-relaxed text-gray-700">
-            {{
-              siteConfig.reservationUrl
-                ? "Réservation et paiement sécurisés via Resalib."
-                : "Le lien Resalib sera activé dès que le compte de réservation sera créé."
-            }}
-          </p>
-          <CTAButton
-            :to="siteConfig.reservationUrl || '/contact'"
-            variant="secondary"
-            >{{ reservationLabel }}</CTAButton
-          >
-        </div>
       </div>
     </section>
 

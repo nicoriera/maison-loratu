@@ -1,5 +1,7 @@
 <script setup>
 import CTAButton from '../components/CTAButton.vue'
+import { siteConfig } from '../config/site.js'
+import UiIcon from '../components/UiIcon.vue'
 </script>
 
 <template>
@@ -10,8 +12,7 @@ import CTAButton from '../components/CTAButton.vue'
         <p class="text-service-label text-terracotta-600">Être recontacté</p>
         <h1 class="page-title mt-4">Préparons votre premier échange</h1>
         <p class="body-copy mx-auto mt-6 max-w-2xl">
-          Les coordonnées de Sandra seront ajoutées dès qu’elles seront confirmées. En attendant,
-          le questionnaire permet de mieux comprendre votre besoin, votre public et le format souhaité.
+          Le questionnaire permet de mieux comprendre votre besoin, votre public et le format souhaité.
         </p>
         <div class="mt-8 flex flex-wrap justify-center gap-4 md:justify-start">
           <CTAButton to="/questionnaire">Décrire mon besoin</CTAButton>
@@ -20,6 +21,16 @@ import CTAButton from '../components/CTAButton.vue'
             class="rounded-full border-2 border-terracotta-300 px-7 py-3 font-semibold text-terracotta-700 transition duration-[var(--duration-ui)] ease-[var(--ease-warm-out)] hover:bg-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-terracotta-500 focus-visible:ring-offset-2"
           >
             Comprendre la démarche
+          </a>
+          <a
+            :href="siteConfig.instagramUrl"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="inline-flex min-h-11 items-center justify-center gap-2 rounded-full px-5 py-3 font-semibold text-terracotta-700 underline decoration-terracotta-300 underline-offset-4 transition duration-[var(--duration-ui)] ease-[var(--ease-warm-out)] hover:text-terracotta-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-terracotta-500 focus-visible:ring-offset-2"
+            aria-label="Suivre Maison Loratu sur Instagram, nouvel onglet"
+          >
+            <UiIcon name="instagram" :size="19" />
+            Instagram
           </a>
         </div>
         </div>
@@ -38,7 +49,7 @@ import CTAButton from '../components/CTAButton.vue'
             Si vous cherchez un accompagnement pour un enfant, une femme, un duo ou un senior, commencez par le questionnaire. Il aide à cadrer le public, l’objectif et le format le plus pertinent.
           </p>
           <div class="mt-7">
-            <CTAButton to="/questionnaire">Continuer vers le questionnaire</CTAButton>
+            <CTAButton to="/questionnaire">Je préfère être accompagné</CTAButton>
           </div>
         </article>
 
@@ -68,9 +79,9 @@ import CTAButton from '../components/CTAButton.vue'
           <p class="mt-2 text-gray-600">Atelier enfants, atelier duo, atelier seniors ou accompagnement individuel.</p>
         </div>
         <div class="rounded-[1.75rem] bg-white p-6 shadow-soft">
-          <p class="text-sm font-semibold uppercase tracking-[0.16em] text-terracotta-600">Coordonnées</p>
-          <h2 class="mt-3 text-2xl text-terracotta-800">À venir</h2>
-          <p class="mt-2 text-gray-600">Les moyens de contact directs seront publiés quand ils seront confirmés.</p>
+          <p class="text-sm font-semibold uppercase tracking-[0.16em] text-terracotta-600">Échange personnalisé</p>
+          <h2 class="mt-3 text-2xl text-terracotta-800">Décrivez votre besoin</h2>
+          <p class="mt-2 text-gray-600">Quelques informations suffisent pour préparer un premier échange avec Sandra.</p>
         </div>
       </div>
     </section>

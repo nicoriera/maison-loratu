@@ -5,6 +5,7 @@ import CTAButton from '../components/CTAButton.vue'
 const consent = ref(false)
 const error = ref('')
 const requestPrepared = ref(false)
+const isSubmitting = ref(false)
 const form = ref({
   structure: '',
   email: '',
@@ -18,7 +19,7 @@ const projectSummary = computed(() =>
     .slice(0, 220),
 )
 
-const submit = () => {
+const submit = async () => {
   if (!form.value.structure.trim() || !form.value.email.trim() || !form.value.project.trim()) {
     error.value = 'Merci de compléter les champs requis avant de préparer votre demande.'
     requestPrepared.value = false
@@ -32,7 +33,32 @@ const submit = () => {
   }
 
   error.value = ''
-  requestPrepared.value = true
+  isSubmitting.value = true
+
+  try {
+    const response = await fetch('https://formspree.io/f/mbdzazdg', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        Accept: 'application/json',
+      },
+      body: JSON.stringify({
+        type: 'demande-structure',
+        structure: form.value.structure,
+        email: form.value.email,
+        project: form.value.project,
+        consent: consent.value,
+      }),
+    })
+
+    if (!response.ok) throw new Error('Erreur lors de l’envoi')
+    requestPrepared.value = true
+  } catch {
+    error.value = 'Une erreur est survenue. Veuillez réessayer ou utiliser la page contact.'
+    requestPrepared.value = false
+  } finally {
+    isSubmitting.value = false
+  }
 }
 </script>
 
@@ -43,13 +69,12 @@ const submit = () => {
       <h1 class="mt-4 text-3xl text-terracotta-800 sm:text-4xl md:text-5xl">Construisons votre atelier</h1>
       <p class="mt-5 leading-relaxed text-gray-700">Décrivez simplement votre structure et votre projet. Les détails pratiques seront précisés avec Sandra.</p>
       <div class="mt-6 rounded-2xl bg-cream-50 p-5 text-sm leading-relaxed text-gray-700">
-        Ce formulaire V1 ne transmet encore aucune donnée. Il prépare votre demande localement pour éviter tout faux
-        message d’envoi. Merci de ne pas y inclure de données de santé ni d’informations nominatives sur des mineurs.
+        Votre demande est transmise de façon sécurisée à Sandra. Merci de ne pas y inclure de données de santé ni
+        d’informations nominatives sur des mineurs.
       </div>
       <div v-if="requestPrepared" class="mt-8 rounded-2xl bg-sauge-100 p-6 text-gray-800">
-        Votre demande est prête, mais rien n’a été envoyé automatiquement. Utilisez la page contact pour transmettre
-        ces éléments à Sandra&nbsp;: <strong>{{ form.structure }}</strong>, <strong>{{ form.email }}</strong>,
-        projet&nbsp;: <strong>{{ projectSummary }}</strong>.
+        Votre demande a bien été envoyée à Sandra&nbsp;: <strong>{{ form.structure }}</strong>,
+        <strong>{{ form.email }}</strong>, projet&nbsp;: <strong>{{ projectSummary }}</strong>.
       </div>
       <form class="mt-8 space-y-5" @submit.prevent="submit">
         <div class="grid gap-5 md:grid-cols-2">
@@ -60,7 +85,7 @@ const submit = () => {
         <p class="text-sm text-gray-600">Partagez seulement les éléments utiles au devis&nbsp;: structure, public, objectifs, format souhaité. Évitez toute donnée sensible ou médicale.</p>
         <label class="flex items-start gap-3 rounded-2xl p-2 -m-2 text-sm text-gray-700 focus-within:ring-2 focus-within:ring-terracotta-400 focus-within:ring-offset-2"><input v-model="consent" type="checkbox" class="mt-1 h-5 w-5 shrink-0 focus-visible:outline-none focus-visible:ring-0" /><span>J’accepte que Maison Loratu utilise ces informations uniquement pour me recontacter au sujet de cette demande, sans autre usage. *</span></label>
         <p v-if="error" class="text-sm text-red-600">{{ error }}</p>
-        <button type="submit" class="inline-flex min-h-11 items-center justify-center rounded-full bg-terracotta-500 px-7 py-3 font-semibold text-white hover:bg-terracotta-600 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-terracotta-400 focus-visible:ring-offset-2">Préparer ma demande</button>
+        <button type="submit" :disabled="isSubmitting" class="inline-flex min-h-11 items-center justify-center rounded-full bg-terracotta-500 px-7 py-3 font-semibold text-white hover:bg-terracotta-600 disabled:cursor-not-allowed disabled:opacity-60 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-terracotta-400 focus-visible:ring-offset-2">{{ isSubmitting ? 'Envoi en cours…' : 'Envoyer ma demande' }}</button>
       </form>
       <div class="mt-8"><CTAButton to="/contact" variant="secondary">Voir les autres moyens de contact</CTAButton></div>
     </section>

@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-labelledby="title">
+  <title>Maison Loratu</title>
+  <rect width="64" height="64" rx="16" fill="#FEFCF9"/>
+  <path d="M11 30 32 12l21 18" fill="none" stroke="#B85A36" stroke-linecap="round" stroke-linejoin="round" stroke-width="4"/>
+  <path d="M17 27v25h30V27M27 52V38h10v14M43 19v-6h6v11" fill="none" stroke="#5D2A1C" stroke-linecap="round" stroke-linejoin="round" stroke-width="4"/>
+  <path d="M47 47c3-5 7-6 8-6-1 4-4 8-8 9M47 51c-4-3-7-3-9-3 2 3 5 5 9 5" fill="none" stroke="#53614B" stroke-linecap="round" stroke-width="2.5"/>
+</svg>

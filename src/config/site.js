@@ -1,5 +1,7 @@
 const RESALIB_HOSTNAME_PATTERN = /(^|\.)resalib\.fr$/i
 
+export const RESALIB_PLACEHOLDER_URL = 'https://www.resalib.fr/'
+
 export const sanitizeReservationUrl = (value) => {
   if (typeof value !== 'string') {
     return ''
@@ -54,10 +56,19 @@ export const canAccessPrototypeRoute = (meta = {}, config = siteConfig) => {
   return !meta?.prototypeOnly || config.isAdminPreviewEnabled
 }
 
-export const createSiteConfig = (env = import.meta.env ?? process.env) => ({
-  reservationUrl: sanitizeReservationUrl(env?.VITE_RESALIB_URL ?? ''),
-  instagramUrl: 'https://www.instagram.com/maison__loratu/',
-  isAdminPreviewEnabled: isAdminPreviewEnabled(env),
-})
+export const createSiteConfig = (env = import.meta.env ?? process.env) => {
+  const configuredReservationUrl = sanitizeReservationUrl(env?.VITE_RESALIB_URL ?? '')
+
+  return {
+    siteUrl: 'https://maison-loratu.fr',
+    siteName: 'Maison Loratu',
+    primaryCity: 'Anglet',
+    serviceArea: ['Anglet', 'Bayonne', 'Biarritz'],
+    reservationUrl: configuredReservationUrl || RESALIB_PLACEHOLDER_URL,
+    reservationConfigured: Boolean(configuredReservationUrl),
+    instagramUrl: 'https://www.instagram.com/maison__loratu/',
+    isAdminPreviewEnabled: isAdminPreviewEnabled(env),
+  }
+}
 
 export const siteConfig = Object.freeze(createSiteConfig())

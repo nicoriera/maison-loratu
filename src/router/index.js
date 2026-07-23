@@ -13,6 +13,7 @@ import DevisStructure from '../views/DevisStructure.vue'
 import Structures from '../views/Structures.vue'
 import Administration from '../views/Administration.vue'
 import { getUser } from '@netlify/identity'
+import { seoByRoute } from '../config/seo.js'
 
 const isLocalAdminPreview = import.meta.env.DEV && import.meta.env.VITE_ADMIN_LOCAL_PREVIEW === 'true'
 
@@ -35,78 +36,79 @@ const router = createRouter({
       path: '/',
       name: 'home',
       component: Home,
+      meta: { seo: seoByRoute.home },
     },
     {
       path: '/questionnaire',
       name: 'questionnaire',
       component: Questionnaire,
-      meta: { transition: 'page-slide-left' },
+      meta: { transition: 'page-slide-left', seo: seoByRoute.questionnaire },
     },
     {
       path: '/ateliers',
       name: 'ateliers',
       component: Ateliers,
-      meta: { transition: 'page-slide-left' },
+      meta: { transition: 'page-slide-left', seo: seoByRoute.ateliers },
     },
     {
       path: '/contact',
       name: 'contact',
       component: Contact,
-      meta: { transition: 'page-slide-left' },
+      meta: { transition: 'page-slide-left', seo: seoByRoute.contact },
     },
     {
       path: '/accompagnement',
       name: 'accompagnement',
       component: Accompagnement,
-      meta: { transition: 'page-slide-left' },
+      meta: { transition: 'page-slide-left', seo: seoByRoute.accompagnement },
     },
     {
       path: '/carte-cadeau',
       name: 'carte-cadeau',
       component: CarteCadeau,
-      meta: { transition: 'page-slide-left' },
+      meta: { transition: 'page-slide-left', seo: seoByRoute['carte-cadeau'] },
     },
     {
       path: '/faq',
       name: 'faq',
       component: FAQ,
-      meta: { transition: 'page-slide-left' },
+      meta: { transition: 'page-slide-left', seo: seoByRoute.faq },
     },
     {
       path: '/devis-structure',
       name: 'devis-structure',
       component: DevisStructure,
-      meta: { transition: 'page-slide-left' },
+      meta: { transition: 'page-slide-left', seo: seoByRoute['devis-structure'] },
     },
     {
       path: '/structures',
       name: 'structures',
       component: Structures,
-      meta: { transition: 'page-slide-left' },
+      meta: { transition: 'page-slide-left', seo: seoByRoute.structures },
     },
     {
       path: '/administration',
       name: 'administration',
       component: Administration,
-      meta: { transition: 'page-slide-left', adminOnly: true },
+      meta: { transition: 'page-slide-left', adminOnly: true, seo: seoByRoute.administration },
     },
     {
       path: '/merci',
       name: 'merci',
       component: Merci,
-      meta: { transition: 'page-slide-left' },
+      meta: { transition: 'page-slide-left', seo: seoByRoute.merci },
     },
     {
       path: '/mentions-legales',
       name: 'mentions-legales',
       component: MentionsLegales,
-      meta: { transition: 'page-slide-left' },
+      meta: { transition: 'page-slide-left', seo: seoByRoute['mentions-legales'] },
     },
     {
       path: '/politique-de-confidentialite',
       name: 'politique-confidentialite',
       component: PolitiqueConfidentialite,
-      meta: { transition: 'page-slide-left' },
+      meta: { transition: 'page-slide-left', seo: seoByRoute['politique-confidentialite'] },
     },
   ],
 })
