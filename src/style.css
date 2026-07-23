@@ -12,6 +12,7 @@
   --text-body-size: 1rem;
   --text-body-leading: 1.75;
   --text-title-leading: 1.08;
+  --color-focus: #B85A36;
   --ease-warm: cubic-bezier(0.33, 1, 0.68, 1);
   --ease-warm-out: cubic-bezier(0.4, 0, 0.2, 1);
   --duration-nav: 0.42s;
@@ -58,7 +59,7 @@
   }
 
   :where(a, button, input, select, textarea, summary, [role='button']):focus-visible {
-    outline: 2px solid #b85a36;
+    outline: 2px solid var(--color-focus);
     outline-offset: 3px;
   }
 

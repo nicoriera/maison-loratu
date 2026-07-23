@@ -39,7 +39,7 @@ const steps = [
             <a href="#formats" class="rounded-full px-5 py-3 font-semibold text-terracotta-700 underline decoration-terracotta-300 underline-offset-4 hover:text-terracotta-900">Voir les formats</a>
           </div>
         </div>
-        <img src="/images/children-session.png" alt="Enfants réunis dans un atelier de sophrologie" class="rounded-[2rem] shadow-soft-lg" />
+        <img src="/images/children-session.webp" width="1200" height="900" alt="Enfants réunis dans un atelier de sophrologie" class="rounded-[2rem] shadow-soft-lg" />
       </div>
     </section>
 

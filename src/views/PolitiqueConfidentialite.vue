@@ -2,10 +2,10 @@
 </script>
 
 <template>
-  <div class="min-h-screen bg-gray-50 py-12 px-4">
+  <div class="min-h-screen bg-cream-50 px-4 py-12">
     <div class="container mx-auto max-w-4xl">
-      <div class="bg-white rounded-lg shadow-lg p-8 md:p-12">
-        <h1 class="text-3xl md:text-4xl font-serif text-primary-700 mb-8">
+      <div class="rounded-[1.75rem] bg-white p-8 shadow-soft-lg md:p-12">
+        <h1 class="mb-8 font-serif text-3xl text-terracotta-800 md:text-4xl">
           Politique de confidentialité
         </h1>
 
@@ -88,7 +88,7 @@
             <p class="text-gray-700 mt-4">
               Pour exercer ces droits, contactez-nous à l'adresse suivante :
               <!-- À compléter avec l'email de contact -->
-              <a href="mailto:[À compléter]" class="text-primary-600 underline">[À compléter]</a>
+              <a href="mailto:[À compléter]" class="text-terracotta-700 underline">[À compléter]</a>
             </p>
           </section>
 
@@ -121,7 +121,7 @@
               3 Place de Fontenoy - TSA 80715<br>
               75334 PARIS CEDEX 07<br>
               Téléphone : 01 53 73 22 22<br>
-              Site web : <a href="https://www.cnil.fr" target="_blank" rel="noopener noreferrer" class="text-primary-600 underline">www.cnil.fr</a>
+              Site web : <a href="https://www.cnil.fr" target="_blank" rel="noopener noreferrer" class="text-terracotta-700 underline">www.cnil.fr</a>
             </p>
           </section>
 
@@ -142,7 +142,7 @@
         <div class="mt-12 pt-8 border-t border-gray-200">
           <router-link
             to="/"
-            class="text-primary-600 hover:text-primary-700 underline"
+            class="text-terracotta-700 underline hover:text-terracotta-800"
           >
             ← Retour à l'accueil
           </router-link>

@@ -4,7 +4,7 @@ import UiIcon from './UiIcon.vue'
 </script>
 
 <template>
-  <footer class="bg-gray-50 border-t border-gray-200 mt-auto pb-20 lg:pb-0">
+  <footer class="bg-gray-50 border-t border-gray-200 mt-auto pb-[calc(5rem+env(safe-area-inset-bottom))] lg:pb-0">
     <div class="container mx-auto px-4 py-8">
       <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
         <div>
@@ -91,7 +91,7 @@ import UiIcon from './UiIcon.vue'
   transform: scaleX(1);
 }
 .footer-link:focus-visible {
-  outline: 2px solid #B85A36;
+  outline: 2px solid var(--color-focus);
   outline-offset: 2px;
 }
 @media (prefers-reduced-motion: reduce) {

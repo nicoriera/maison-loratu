@@ -24,7 +24,7 @@ import CTAButton from '../components/CTAButton.vue'
         </div>
         </div>
         <div class="mx-auto w-full max-w-sm overflow-hidden rounded-[2rem] shadow-soft-lg">
-          <img src="/images/sandra-portrait.png" alt="Sandra, sophrologue et fondatrice de Maison Loratu" class="block aspect-[4/5] w-full object-cover" loading="lazy" />
+          <img src="/images/sandra-portrait.webp" width="900" height="1352" alt="Sandra, sophrologue et fondatrice de Maison Loratu" class="block aspect-[4/5] w-full object-cover" loading="lazy" decoding="async" />
         </div>
       </div>
     </section>

@@ -11,7 +11,7 @@ const transitionName = inject('transitionName', ref('page-fade'))
 <template>
   <div class="min-h-screen flex flex-col">
     <Header />
-    <main class="flex-grow pb-20 lg:pb-0">
+    <main class="flex-grow pb-[calc(5rem+env(safe-area-inset-bottom))] lg:pb-0">
       <RouterView v-slot="{ Component, route }">
         <Transition
           :name="transitionName"
