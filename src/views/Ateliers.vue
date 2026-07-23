@@ -7,7 +7,7 @@ const offerings = [
   {
     title: "Ateliers enfants",
     audience: "1 h 30 · 38 €",
-    image: "/images/children-session.png",
+    image: "/images/children-session.webp",
     description:
       "Des ateliers en petit groupe pour respirer, se détendre et partager un moment convivial.",
     bullets: [
@@ -23,7 +23,7 @@ const offerings = [
   {
     title: "Ateliers duo mère-fille ou grand-mère",
     audience: "1 h 30 · 84 € pour 2 personnes",
-    image: "/images/duo-session.png",
+    image: "/images/duo-session.webp",
     description:
       "Un temps pour souffler, se retrouver et partager une expérience douce à deux.",
     bullets: [
@@ -38,7 +38,7 @@ const offerings = [
   {
     title: "Ateliers seniors",
     audience: "1 h 30 · 38 €",
-    image: "/images/seniors-session.png",
+    image: "/images/seniors-session.webp",
     description:
       "Des séances adaptées pour cultiver la sérénité, la mobilité douce et le lien.",
     bullets: [
@@ -53,7 +53,7 @@ const offerings = [
   {
     title: "Accompagnement individuel",
     audience: "1 h · 60 €",
-    image: "/images/individual-session.png",
+    image: "/images/individual-session.webp",
     description:
       "Un accompagnement personnalisé pour avancer à votre rythme et selon votre besoin.",
     bullets: [
@@ -63,7 +63,7 @@ const offerings = [
       "Examens et changement professionnel",
     ],
     to: siteConfig.reservationUrl || "/questionnaire",
-    action: "Préparer mon échange",
+    action: "Je réserve",
   },
 ];
 </script>
@@ -94,7 +94,9 @@ const offerings = [
         </div>
         <div class="overflow-hidden rounded-[2rem] shadow-soft-lg">
           <img
-            src="/images/duo-session.png"
+            src="/images/duo-session.webp"
+            width="1200"
+            height="900"
             alt="Mère et enfant partageant un atelier de sophrologie"
             class="block aspect-[4/3] w-full object-cover"
             loading="eager"

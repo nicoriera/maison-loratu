@@ -23,7 +23,7 @@ const subjects = [
           </p>
           <div class="mt-8"><CTAButton :to="siteConfig.reservationUrl || '/questionnaire'">Je réserve</CTAButton></div>
         </div>
-        <img src="/images/individual-session.png" alt="Petit bureau calme pour un accompagnement individuel" class="block aspect-[4/3] h-auto w-full rounded-[2rem] object-cover shadow-soft-lg" />
+        <img src="/images/individual-session.webp" width="1200" height="900" alt="Petit bureau calme pour un accompagnement individuel" class="block aspect-[4/3] h-auto w-full rounded-[2rem] object-cover shadow-soft-lg" loading="lazy" decoding="async" />
       </div>
     </section>
 

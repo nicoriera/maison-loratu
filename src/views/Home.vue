@@ -11,7 +11,7 @@ const audiences = [
     title: "Ateliers enfants",
     text: "Des ateliers ludiques pour apprivoiser les émotions, mieux dormir et prendre confiance.",
     detail: "1 h 30 · 38 € · 8 participants maximum",
-    image: "/images/children-session.png",
+    image: "/images/children-session.webp",
     href: "/ateliers",
     cta: "Je découvre",
   },
@@ -19,7 +19,7 @@ const audiences = [
     title: "Ateliers duo mère-fille ou grand-mère",
     text: "Un temps pour souffler, se retrouver et partager une expérience douce à deux.",
     detail: "1 h 30 · 84 € pour 2 personnes",
-    image: "/images/duo-session.png",
+    image: "/images/duo-session.webp",
     href: "/ateliers",
     cta: "Je découvre",
   },
@@ -27,7 +27,7 @@ const audiences = [
     title: "Ateliers seniors",
     text: "Des séances adaptées pour cultiver la sérénité, la mobilité douce et le lien.",
     detail: "1 h 30 · 38 € · 8 participants maximum",
-    image: "/images/seniors-session.png",
+    image: "/images/seniors-session.webp",
     href: "/ateliers",
     cta: "Je découvre",
   },
@@ -35,7 +35,7 @@ const audiences = [
     title: "Accompagnement individuel",
     text: "Un temps individuel pour avancer avec des outils adaptés à votre histoire et votre rythme.",
     detail: "1 h · 60 €",
-    image: "/images/individual-session.png",
+    image: "/images/individual-session.webp",
     href: "/accompagnement",
     cta: "Je découvre",
   },
@@ -53,7 +53,7 @@ const featuredWorkshopFallback = {
     "1 h 30 · 8 participants maximum · 38 € — Une bulle de douceur pour ralentir, respirer et repartir avec des outils simples.",
   ctaLabel: "Voir les ateliers",
   ctaHref: "/ateliers",
-  image: "/images/duo-session.png",
+  image: "/images/duo-session.webp",
   imageAlt: "Deux participantes partagent un atelier de sophrologie",
 };
 const featuredWorkshop = ref(featuredWorkshopFallback);
@@ -63,7 +63,7 @@ const featuredWorkshopVisual = computed(() => {
 
   if (title.includes("enfant")) {
     return {
-      image: "/images/children-session.png",
+      image: "/images/children-session.webp",
       alt: "Enfants réunis dans un atelier de sophrologie",
     };
   }
@@ -74,27 +74,27 @@ const featuredWorkshopVisual = computed(() => {
     title.includes("famille")
   ) {
     return {
-      image: "/images/duo-session.png",
+      image: "/images/duo-session.webp",
       alt: "Deux participantes partagent un atelier de sophrologie",
     };
   }
 
   if (title.includes("senior")) {
     return {
-      image: "/images/seniors-session.png",
+      image: "/images/seniors-session.webp",
       alt: "Adultes participant à un atelier de sophrologie",
     };
   }
 
   if (title.includes("individuel") || title.includes("accompagnement")) {
     return {
-      image: "/images/individual-session.png",
+      image: "/images/individual-session.webp",
       alt: "Accompagnement individuel dans un espace calme",
     };
   }
 
   return {
-    image: featuredWorkshop.value.image || "/images/duo-session.png",
+    image: featuredWorkshop.value.image || "/images/duo-session.webp",
     alt: featuredWorkshop.value.imageAlt || "Atelier de sophrologie",
   };
 });
@@ -156,7 +156,9 @@ onMounted(loadPublicContent);
             class="absolute -inset-3 -rotate-2 rounded-[2rem] bg-terracotta-200/70"
             aria-hidden="true" />
           <img
-            src="/images/women-trio.jpg"
+            src="/images/women-trio.webp"
+            width="1200"
+            height="1500"
             alt="Trois femmes réunies dans un moment calme, les visages rapprochés"
             class="relative block aspect-[4/3] w-full rounded-[2rem] object-cover object-center shadow-soft-lg"
             fetchpriority="high" />
@@ -251,7 +253,9 @@ onMounted(loadPublicContent);
           tag="div"
           class="order-last mx-auto max-w-sm overflow-hidden rounded-[2rem] shadow-soft-lg md:order-first md:mx-0">
           <img
-            src="/images/sandra-portrait.png"
+            src="/images/sandra-portrait.webp"
+            width="900"
+            height="1352"
             alt="Sandra, sophrologue et fondatrice de Maison Loratu"
             class="aspect-[4/5] w-full object-cover"
             loading="lazy" />

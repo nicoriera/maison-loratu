@@ -1,0 +1,91 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-07-23T00:00:00.000Z",
+  "title": "Design System: Maison Loratu",
+  "extensions": {
+    "colorMeta": {
+      "terracotta-soft": { "role": "primary", "displayName": "Terracotta voilé", "canonical": "#F8E8E0", "tonalRamp": ["#3D1A12", "#5D2A1C", "#7D3A25", "#9D4A2E", "#B85A36", "#D16B4D", "#F0D0C0", "#F8E8E0"] },
+      "terracotta-light": { "role": "primary", "displayName": "Terracotta clair", "canonical": "#F0D0C0", "tonalRamp": ["#3D1A12", "#5D2A1C", "#7D3A25", "#9D4A2E", "#B85A36", "#D16B4D", "#F0D0C0", "#F8E8E0"] },
+      "terracotta": { "role": "primary", "displayName": "Terracotta chaleureux", "canonical": "#B85A36", "tonalRamp": ["#3D1A12", "#5D2A1C", "#7D3A25", "#9D4A2E", "#B85A36", "#D16B4D", "#F0D0C0", "#F8E8E0"] },
+      "terracotta-deep": { "role": "primary", "displayName": "Terracotta profond", "canonical": "#5D2A1C", "tonalRamp": ["#3D1A12", "#5D2A1C", "#7D3A25", "#9D4A2E", "#B85A36", "#D16B4D", "#F0D0C0", "#F8E8E0"] },
+      "cream": { "role": "neutral", "displayName": "Crème lumineux", "canonical": "#FEFCF9", "tonalRamp": ["#9D8066", "#B8A088", "#D4C0A8", "#E8D8C8", "#F5E7CF", "#F8F0E5", "#FDF9F3", "#FEFCF9"] },
+      "cream-warm": { "role": "neutral", "displayName": "Crème chaleureux", "canonical": "#FDF9F3", "tonalRamp": ["#9D8066", "#B8A088", "#D4C0A8", "#E8D8C8", "#F5E7CF", "#F8F0E5", "#FDF9F3", "#FEFCF9"] },
+      "cream-section": { "role": "neutral", "displayName": "Crème de section", "canonical": "#FBF3E7", "tonalRamp": ["#9D8066", "#B8A088", "#D4C0A8", "#E8D8C8", "#F5E7CF", "#F8F0E5", "#FDF9F3", "#FEFCF9"] },
+      "cream-border": { "role": "neutral", "displayName": "Crème bordure", "canonical": "#D4C0A8", "tonalRamp": ["#9D8066", "#B8A088", "#D4C0A8", "#E8D8C8", "#F5E7CF", "#F8F0E5", "#FDF9F3", "#FEFCF9"] },
+      "sage": { "role": "secondary", "displayName": "Sauge doux", "canonical": "#E7EBDD", "tonalRamp": ["#53614B", "#68755F", "#7D896F", "#9BA78C", "#B3BDA8", "#CAD1C2", "#DCE1D6", "#E7EBDD"] },
+      "sage-deep": { "role": "secondary", "displayName": "Sauge profond", "canonical": "#53614B", "tonalRamp": ["#3E4938", "#53614B", "#68755F", "#7D896F", "#9BA78C", "#B3BDA8", "#CAD1C2", "#E7EBDD"] }
+    },
+    "typographyMeta": {
+      "display": { "displayName": "Georgia display", "purpose": "Hero headlines and brand statements." },
+      "body": { "displayName": "System sans", "purpose": "Readable descriptions, prices, forms and navigation." }
+    },
+    "shadows": [
+      { "name": "soft", "value": "0 4px 20px rgba(0, 0, 0, 0.06), 0 2px 8px rgba(0, 0, 0, 0.04)", "purpose": "Cards and regular surfaces." },
+      { "name": "soft-large", "value": "0 8px 30px rgba(0, 0, 0, 0.08), 0 4px 12px rgba(0, 0, 0, 0.05)", "purpose": "Hero imagery and prominent surfaces." },
+      { "name": "mobile-navigation", "value": "0 -8px 24px rgba(74, 44, 33, 0.08)", "purpose": "Separate the fixed mobile navigation from page content." }
+    ],
+    "motion": [
+      { "name": "warm-out", "value": "cubic-bezier(0.4, 0, 0.2, 1)", "purpose": "Navigation and UI transitions." },
+      { "name": "warm", "value": "cubic-bezier(0.33, 1, 0.68, 1)", "purpose": "Soft reveal and movement easing." }
+    ],
+    "breakpoints": [
+      { "name": "sm", "value": "640px" },
+      { "name": "md", "value": "768px" },
+      { "name": "lg", "value": "1024px" }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Warm terracotta action used for booking and primary next steps.",
+      "html": "<button class=\"ds-btn-primary\">Je réserve</button>",
+      "css": ".ds-btn-primary { display: inline-flex; min-height: 44px; align-items: center; justify-content: center; border: 0; border-radius: 9999px; background: #B85A36; color: #FFFFFF; padding: 12px 32px; font: 600 1rem/1 system-ui, sans-serif; cursor: pointer; transition: transform 360ms cubic-bezier(0.4,0,0.2,1), background-color 360ms cubic-bezier(0.4,0,0.2,1), box-shadow 360ms cubic-bezier(0.4,0,0.2,1); box-shadow: 0 4px 20px rgba(0,0,0,.06), 0 2px 8px rgba(0,0,0,.04); } .ds-btn-primary:hover { background: #9D4A2E; box-shadow: 0 8px 30px rgba(0,0,0,.08), 0 4px 12px rgba(0,0,0,.05); } .ds-btn-primary:focus-visible { outline: 2px solid #B85A36; outline-offset: 3px; } .ds-btn-primary:active { transform: scale(.95); }"
+    },
+    {
+      "name": "Secondary Button",
+      "kind": "button",
+      "refersTo": "button-secondary",
+      "description": "Quiet alternative action that retains the Maison Loratu border language.",
+      "html": "<button class=\"ds-btn-secondary\">Je découvre</button>",
+      "css": ".ds-btn-secondary { display: inline-flex; min-height: 44px; align-items: center; justify-content: center; border: 2px solid #D16B4D; border-radius: 9999px; background: #FFFFFF; color: #7D3A25; padding: 12px 32px; font: 600 1rem/1 system-ui, sans-serif; cursor: pointer; transition: background-color 360ms cubic-bezier(0.4,0,0.2,1), border-color 360ms cubic-bezier(0.4,0,0.2,1); } .ds-btn-secondary:hover { border-color: #C16A46; background: #FDF9F3; } .ds-btn-secondary:focus-visible { outline: 2px solid #B85A36; outline-offset: 3px; }"
+    },
+    {
+      "name": "Offering Card",
+      "kind": "card",
+      "refersTo": "card",
+      "description": "Photo-led offer card with practical information and a bottom-aligned action.",
+      "html": "<article class=\"ds-card\"><div class=\"ds-card-image\"></div><div class=\"ds-card-body\"><h3>Ateliers enfants</h3><p class=\"ds-card-detail\">1 h 30 · 38 € · 8 participants maximum</p><p>Des ateliers ludiques pour apprivoiser les émotions.</p><button class=\"ds-btn-primary\">Je découvre</button></div></article>",
+      "css": ".ds-card { display: flex; min-height: 360px; flex-direction: column; overflow: hidden; border-radius: 28px; background: #FFFFFF; box-shadow: 0 4px 20px rgba(0,0,0,.06), 0 2px 8px rgba(0,0,0,.04); } .ds-card-image { aspect-ratio: 4 / 3; background: #E7EBDD; } .ds-card-body { display: flex; flex: 1; flex-direction: column; gap: 12px; padding: 28px; color: #374151; font: 400 1rem/1.75 system-ui, sans-serif; } .ds-card h3 { margin: 0; color: #5D2A1C; font: 400 1.5rem/1.08 Georgia, serif; } .ds-card-detail { margin: 0; color: #9D4A2E; font-weight: 600; } .ds-card .ds-btn-primary { margin-top: auto; align-self: flex-start; }"
+    },
+    {
+      "name": "Form Input",
+      "kind": "input",
+      "refersTo": "input",
+      "description": "Soft cream field with a clear terracotta focus state.",
+      "html": "<label class=\"ds-field\"><span>Votre prénom</span><input placeholder=\"Votre prénom\" /></label>",
+      "css": ".ds-field { display: grid; gap: 8px; color: #5D2A1C; font: 600 .875rem/1.2 system-ui, sans-serif; } .ds-field input { width: 100%; border: 1px solid #D4C0A8; border-radius: 16px; background: #FEFCF9; color: #1F2937; padding: 12px 16px; font: 400 1rem/1.5 system-ui, sans-serif; } .ds-field input:focus-visible { border-color: #B85A36; outline: 2px solid #F0D0C0; outline-offset: 1px; }"
+    },
+    {
+      "name": "Mobile Navigation",
+      "kind": "nav",
+      "refersTo": "navigation",
+      "description": "Fixed bottom navigation that keeps the booking action available on mobile.",
+      "html": "<nav class=\"ds-mobile-nav\"><a class=\"is-active\" href=\"#\">⌂<span>Accueil</span></a><a href=\"#\">Ateliers</a><a href=\"#\">Individuel</a><a class=\"ds-nav-book\" href=\"#\">Réserver</a></nav>",
+      "css": ".ds-mobile-nav { display: grid; grid-template-columns: repeat(4, 1fr); gap: 4px; padding: 8px; border-top: 1px solid #F0D0C0; background: rgba(255,255,255,.95); box-shadow: 0 -8px 24px rgba(74,44,33,.08); } .ds-mobile-nav a { display: flex; min-height: 48px; align-items: center; justify-content: center; border-radius: 12px; color: #374151; font: 600 .75rem/1.1 system-ui, sans-serif; text-align: center; text-decoration: none; } .ds-mobile-nav a.is-active { background: #FDF9F3; color: #7D3A25; } .ds-mobile-nav .ds-nav-book { background: #B85A36; color: #FFFFFF; } .ds-mobile-nav a:focus-visible { outline: 2px solid #B85A36; outline-offset: 3px; }"
+    }
+  ],
+  "narrative": {
+    "northStar": "La maison chaleureuse",
+    "overview": "Maison Loratu se présente comme une maison accueillante : un espace simple, humain et rassurant où chaque génération peut trouver un moment adapté à son rythme. Le design privilégie la proximité plutôt que la distance institutionnelle, avec une présence visuelle douce mais suffisamment structurée pour guider rapidement vers une offre et sa réservation.\n\nLa palette naturelle, les photographies authentiques et les formes généreuses créent une atmosphère calme et accessible. Le système reste chaleureux sans devenir décoratif : les photos montrent les personnes et les situations réelles, tandis que la typographie éditoriale donne une identité mémorable aux contenus essentiels.",
+    "keyCharacteristics": ["Maison chaleureuse, naturelle et humaine", "Photos authentiques comme principal langage visuel", "Typographie serif éditoriale associée à une sans-serif lisible", "Surfaces crème, sauge et blanc avec accent terracotta", "Parcours mobile-first orienté vers la découverte puis la réservation"],
+    "rules": [
+      { "name": "The Terracotta Invitation Rule", "body": "Le terracotta signale une action, un lien actif ou un repère important ; il ne doit pas recouvrir toute la page.", "section": "colors" },
+      { "name": "The Two Voices Rule", "body": "La serif raconte et donne de la chaleur ; la sans-serif explique, mesure et permet d’agir. Ne pas inverser leurs rôles.", "section": "typography" },
+      { "name": "The Warm Surface Rule", "body": "Une surface blanche peut être élevée par une ombre douce ; elle ne doit pas cumuler une bordure forte et une ombre lourde.", "section": "elevation" }
+    ],
+    "dos": ["Do utiliser des photos authentiques et naturelles comme langage visuel principal.", "Do réserver le terracotta aux actions, titres importants et repères de navigation.", "Do conserver une hiérarchie claire entre récit en serif et informations pratiques en sans-serif.", "Do tester chaque composition sur mobile avec des zones tactiles d’au moins 48px.", "Do garder des espaces généreux et des cartes lisibles plutôt que de tasser le contenu."],
+    "donts": ["Don't multiplier les illustrations décoratives : elles ne doivent pas concurrencer les photos ni le contenu.", "Don't utiliser des dégradés, effets glassmorphism ou animations décoratives sans besoin fonctionnel.", "Don't transformer chaque section en grille de cartes identiques.", "Don't inventer un lieu, une disponibilité, un témoignage ou une information commerciale.", "Don't réduire la taille des textes ou des contrôles pour faire tenir davantage de contenu sur mobile."]
+  }
+}

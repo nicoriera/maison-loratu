@@ -71,7 +71,7 @@ const isActive = (item) => {
             v-if="siteConfig.reservationUrl"
             :href="reservationTarget"
             target="_blank"
-            rel="noreferrer"
+            rel="noopener noreferrer"
             class="ml-2 inline-flex min-h-11 items-center justify-center rounded-full bg-terracotta-500 px-4 py-2 text-sm font-semibold text-white transition duration-[var(--duration-ui)] ease-[var(--ease-warm-out)] hover:bg-terracotta-600 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-terracotta-500 focus-visible:ring-offset-2"
             aria-label="Réserver un atelier, nouvel onglet"
           >
@@ -103,7 +103,7 @@ const isActive = (item) => {
 }
 
 .nav-link:focus-visible {
-  outline: 2px solid #b85a36;
+  outline: 2px solid var(--color-focus);
   outline-offset: 2px;
 }
 </style>
