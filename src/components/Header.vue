@@ -27,7 +27,7 @@ const isActive = (item) => {
           to="/"
           class="nav-logo inline-flex min-h-11 items-center gap-2 text-2xl font-serif text-terracotta-500 transition-colors duration-[var(--duration-nav)] ease-[var(--ease-warm-out)] hover:text-terracotta-600 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-terracotta-500 focus-visible:ring-offset-2"
         >
-          <UiIcon name="house" :size="25" />
+          <UiIcon name="house" :size="20" />
           Maison Loratu
         </router-link>
 

@@ -1,6 +1,5 @@
 <script setup>
 import CTAButton from '../components/CTAButton.vue'
-import UiIcon from '../components/UiIcon.vue'
 </script>
 
 <template>
@@ -16,12 +15,9 @@ import UiIcon from '../components/UiIcon.vue'
           <div class="mt-8"><CTAButton to="/contact">Demander une carte cadeau</CTAButton></div>
         </div>
         <div class="overflow-hidden rounded-[2rem] bg-terracotta-800 text-center text-white shadow-soft-lg">
-          <img src="/images/duo-session.png" alt="Mère et enfant partageant un moment de sophrologie" class="block aspect-[16/9] h-auto w-full object-cover" />
+          <img src="/images/gift-card.png" alt="Main tenant une enveloppe cadeau dans un intérieur chaleureux" class="block aspect-[16/9] h-auto w-full object-cover" />
           <div class="p-8 md:p-12">
-            <div class="flex items-center justify-center gap-3">
-              <UiIcon name="gift" :size="26" class="text-cream-200" />
-              <p class="text-service-label text-cream-200">À offrir</p>
-            </div>
+            <p class="text-service-label text-cream-200">À offrir</p>
             <p class="mt-5 text-6xl text-cream-100">114 €</p>
             <p class="mt-4 text-lg text-cream-100">2 ateliers à utiliser dans les 2 mois</p>
           </div>
