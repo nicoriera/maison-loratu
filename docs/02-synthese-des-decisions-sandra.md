@@ -1,7 +1,7 @@
 # Maison Loratu — Synthèse des décisions de Sandra
 
-**Date des réponses :** 20/07/2026  
-**Statut :** décisions de cadrage à utiliser comme référence
+**Date des réponses :** 20/07/2026, complétées le 21/07/2026
+**Statut :** décisions consolidées ; les corrections du 21/07 remplacent les éléments incompatibles du cadrage initial
 
 ## 1. Mission
 
@@ -34,7 +34,7 @@ Maison Loratu doit transmettre une approche naturelle, humaine et adaptée aux e
 - Seniors, notamment pour les ateliers de sérénité, mobilité douce, sommeil et lutte contre l'isolement.
 - Duos et familles : mère-fille, grand-mère-petite-fille, sœurs.
 
-La grossesse n'est pas retenue dans le périmètre du lancement.
+La grossesse n’est pas une offre ou un parcours dédié au lancement. Elle peut être citée comme événement préparé dans le cadre d’un accompagnement personnalisé.
 
 ## 5. Offres validées
 
@@ -78,13 +78,14 @@ Les ateliers doivent permettre de :
 - mieux vivre ses émotions ;
 - améliorer le sommeil.
 
-## 7. Interventions pour les structures
+## 7. Périmètre retiré
 
-Les écoles, centres de loisirs et associations peuvent contacter Maison Loratu pour une intervention personnalisée.
+Sandra a demandé le 21/07/2026 de retirer toute la partie « structures et projet ».
 
-- Demande de devis uniquement sur demande.
-- Formulaire dédié sur le site.
-- Formats, tarifs et contenu définis au cas par cas.
+- Pas de page dédiée aux structures au lancement.
+- Pas de formulaire de devis pour les écoles, centres de loisirs ou associations.
+- Pas de bloc « Comment ça se passe ? » ni de parcours en étapes associé.
+- Les anciennes URL sont redirigées vers le contact général afin de ne pas laisser de liens cassés.
 
 ## 8. Décisions pratiques et niveaux de maturité
 
@@ -108,7 +109,7 @@ Le site doit aussi proposer clairement :
 - un calendrier de réservation en ligne ;
 - une adresse email pour poser une question avant de réserver ;
 - un numéro de téléphone ;
-- un formulaire de demande de devis pour les structures.
+- un formulaire de contact général.
 
 Sandra souhaite offrir le choix entre un premier contact par email ou par téléphone.
 
@@ -147,15 +148,9 @@ Les visuels doivent montrer des personnes authentiques, notamment des femmes mû
 L'arborescence doit donner la priorité aux ateliers :
 
 - Accueil.
-- Réserver un atelier.
-- Ateliers enfants.
-- Ateliers femmes et duos.
-- Ateliers seniors.
-- Cours en plein air.
-- Accompagnement individuel.
-- Écoles, centres de loisirs et associations.
-- À propos de Sandra.
-- Avis.
+- Ateliers.
+- Accompagnement personnalisé.
+- Carte cadeau.
 - Contact.
 
 ## 13. Administration recommandée

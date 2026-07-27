@@ -25,6 +25,7 @@ Les visiteurs consultent principalement le site sur mobile. Ils découvrent les 
 ## Capabilities and Constraints
 
 - Offres proposées : ateliers enfants, ateliers seniors, ateliers duo mère-fille ou grand-mère, accompagnement individuel.
+- Les interventions pour les écoles, centres de loisirs et associations, leur page et leur formulaire de devis sont hors périmètre du lancement.
 - Réservation et paiement en ligne prévus via Resalib, lorsque le compte et le lien seront configurés.
 - La ville principale est Anglet.
 - La zone desservie est le BAB : Bayonne, Anglet et Biarritz.

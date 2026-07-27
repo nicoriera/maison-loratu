@@ -7,17 +7,21 @@ export const seoByRoute = {
     title: 'Ateliers de sophrologie à Anglet | Maison Loratu',
     description: 'Découvrez les ateliers de sophrologie pour enfants, seniors et duos mère-fille ou grand-mère à Anglet et dans le BAB.',
   },
+  'atelier-enfants': {
+    title: 'Ateliers enfants de sophrologie à Anglet | Maison Loratu',
+    description: 'Des ateliers ludiques de sophrologie pour aider les enfants à accueillir leurs émotions, retrouver leur calme et prendre confiance.',
+  },
+  'atelier-duo': {
+    title: 'Ateliers duo mère-fille à Anglet | Maison Loratu',
+    description: 'Une parenthèse de sophrologie à partager entre mère et fille ou entre grand-mère et petite-fille.',
+  },
+  'atelier-seniors': {
+    title: 'Ateliers seniors de sophrologie à Anglet | Maison Loratu',
+    description: 'Des ateliers de sophrologie en petit groupe pour respirer, bouger en douceur et entretenir concentration et vitalité.',
+  },
   accompagnement: {
     title: 'Accompagnement individuel en sophrologie à Anglet | Maison Loratu',
     description: 'Un accompagnement individuel en sophrologie, adapté à votre histoire et votre rythme, à Anglet et dans le BAB.',
-  },
-  structures: {
-    title: 'Ateliers de sophrologie pour écoles et associations | Anglet',
-    description: 'Maison Loratu conçoit des ateliers de sophrologie sur mesure pour les écoles, centres de loisirs et associations du BAB.',
-  },
-  'devis-structure': {
-    title: 'Préparer un atelier de sophrologie pour votre structure | BAB',
-    description: 'Décrivez votre projet d’atelier de sophrologie pour une école, un centre de loisirs ou une association à Anglet, Bayonne ou Biarritz.',
   },
   contact: {
     title: 'Contacter Maison Loratu | Sophrologie à Anglet',

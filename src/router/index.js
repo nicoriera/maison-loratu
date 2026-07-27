@@ -5,12 +5,13 @@ import Merci from '../views/Merci.vue'
 import MentionsLegales from '../views/MentionsLegales.vue'
 import PolitiqueConfidentialite from '../views/PolitiqueConfidentialite.vue'
 import Ateliers from '../views/Ateliers.vue'
+import AtelierEnfants from '../views/AtelierEnfants.vue'
+import AtelierDuo from '../views/AtelierDuo.vue'
+import AtelierSeniors from '../views/AtelierSeniors.vue'
 import Contact from '../views/Contact.vue'
 import Accompagnement from '../views/Accompagnement.vue'
 import CarteCadeau from '../views/CarteCadeau.vue'
 import FAQ from '../views/FAQ.vue'
-import DevisStructure from '../views/DevisStructure.vue'
-import Structures from '../views/Structures.vue'
 import Administration from '../views/Administration.vue'
 import { getUser } from '@netlify/identity'
 import { seoByRoute } from '../config/seo.js'
@@ -51,6 +52,24 @@ const router = createRouter({
       meta: { transition: 'page-slide-left', seo: seoByRoute.ateliers },
     },
     {
+      path: '/ateliers/enfants',
+      name: 'atelier-enfants',
+      component: AtelierEnfants,
+      meta: { transition: 'page-slide-left', seo: seoByRoute['atelier-enfants'] },
+    },
+    {
+      path: '/ateliers/duo',
+      name: 'atelier-duo',
+      component: AtelierDuo,
+      meta: { transition: 'page-slide-left', seo: seoByRoute['atelier-duo'] },
+    },
+    {
+      path: '/ateliers/seniors',
+      name: 'atelier-seniors',
+      component: AtelierSeniors,
+      meta: { transition: 'page-slide-left', seo: seoByRoute['atelier-seniors'] },
+    },
+    {
       path: '/contact',
       name: 'contact',
       component: Contact,
@@ -76,15 +95,11 @@ const router = createRouter({
     },
     {
       path: '/devis-structure',
-      name: 'devis-structure',
-      component: DevisStructure,
-      meta: { transition: 'page-slide-left', seo: seoByRoute['devis-structure'] },
+      redirect: { name: 'contact' },
     },
     {
       path: '/structures',
-      name: 'structures',
-      component: Structures,
-      meta: { transition: 'page-slide-left', seo: seoByRoute.structures },
+      redirect: { name: 'contact' },
     },
     {
       path: '/administration',

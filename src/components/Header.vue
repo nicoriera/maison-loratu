@@ -8,10 +8,10 @@ const route = useRoute()
 
 const navigation = [
   { label: 'Accueil', to: '/', activeRoute: 'home' },
-  { label: 'Ateliers & tarifs', to: '/ateliers', activeRoute: 'ateliers' },
+  { label: 'Ateliers', to: '/ateliers', activeRoute: 'ateliers' },
   { label: 'Accompagnement personnalisé', to: '/accompagnement', activeRoute: 'accompagnement' },
-  { label: 'Structures', to: '/structures', activeRoute: 'structures' },
   { label: 'Carte cadeau', to: '/carte-cadeau', activeRoute: 'carte-cadeau' },
+  { label: 'Contact', to: '/contact', activeRoute: 'contact' },
 ]
 
 const { reservationUrl: reservationTarget } = useReservationConfig()

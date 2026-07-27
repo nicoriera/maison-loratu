@@ -35,13 +35,6 @@ import UiIcon from "./UiIcon.vue";
             </li>
             <li>
               <router-link
-                to="/structures"
-                class="footer-link text-sm text-gray-600 hover:text-terracotta-600">
-                Interventions en structures
-              </router-link>
-            </li>
-            <li>
-              <router-link
                 to="/carte-cadeau"
                 class="footer-link text-sm text-gray-600 hover:text-terracotta-600">
                 Carte cadeau

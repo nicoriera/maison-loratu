@@ -70,7 +70,7 @@ src/
 ├── views/              # Pages principales
 │   ├── Home.vue        # Landing page
 │   ├── Administration.vue # Prototype d’administration éditoriale
-│   ├── Ateliers.vue  # Formats collectifs, plein air et individuel
+│   ├── Ateliers.vue  # Ateliers collectifs et accompagnement individuel
 │   ├── Accompagnement.vue # Accompagnement personnalisé
 │   ├── CarteCadeau.vue # Carte cadeau
 │   ├── FAQ.vue       # Questions fréquentes
@@ -102,9 +102,9 @@ src/
 
 2. **Informations d'hébergement** dans `src/views/MentionsLegales.vue`
 
-3. **Backend pour les formulaires** : Le questionnaire particulier utilise actuellement un service de formulaire externe et la demande structure reste un préparateur local. Avant la mise en production, il faudra :
+3. **Backend pour les formulaires** : Le questionnaire particulier utilise actuellement un service de formulaire externe. Avant la mise en production, il faudra :
    - Créer un endpoint API pour recevoir les données
-   - Remplacer les envois/prototypes dans `src/views/Questionnaire.vue` et `src/views/DevisStructure.vue`
+   - Remplacer l’envoi/prototype dans `src/views/Questionnaire.vue`
    - Ajouter la gestion d'erreurs
 
 4. **Configuration Netlify** : Vérifier Identity, l’invitation du compte administrateur, le rôle `admin`, le store Blobs et les logs des Functions avant ouverture à Sandra.

@@ -2,9 +2,10 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url><loc>https://maison-loratu.fr/</loc></url>
   <url><loc>https://maison-loratu.fr/ateliers</loc></url>
+  <url><loc>https://maison-loratu.fr/ateliers/enfants</loc></url>
+  <url><loc>https://maison-loratu.fr/ateliers/duo</loc></url>
+  <url><loc>https://maison-loratu.fr/ateliers/seniors</loc></url>
   <url><loc>https://maison-loratu.fr/accompagnement</loc></url>
-  <url><loc>https://maison-loratu.fr/structures</loc></url>
-  <url><loc>https://maison-loratu.fr/devis-structure</loc></url>
   <url><loc>https://maison-loratu.fr/carte-cadeau</loc></url>
   <url><loc>https://maison-loratu.fr/faq</loc></url>
   <url><loc>https://maison-loratu.fr/contact</loc></url>

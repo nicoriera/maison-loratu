@@ -17,11 +17,6 @@ const submissionNotice =
 
 const schema = yup.object({
   type: yup.string().required("Veuillez sélectionner une option"),
-  situation: yup.string().when("type", {
-    is: (val) => val === "femme-enceinte",
-    then: (schema) => schema.required("Veuillez préciser votre situation"),
-    otherwise: (schema) => schema.notRequired(),
-  }),
   besoins: yup
     .array()
     .min(1, "Veuillez sélectionner au moins un besoin")
@@ -42,7 +37,6 @@ const { handleSubmit, defineField, validateField, errors } = useForm({
   validationSchema: schema,
   initialValues: {
     type: "",
-    situation: "",
     besoins: [],
     frequence: "",
     email: "",
@@ -53,7 +47,6 @@ const { handleSubmit, defineField, validateField, errors } = useForm({
 });
 
 const [type, typeAttrs] = defineField("type");
-const [situation, situationAttrs] = defineField("situation");
 const [besoins, besoinsAttrs] = defineField("besoins");
 const [frequence, frequenceAttrs] = defineField("frequence");
 const [email, emailAttrs] = defineField("email");
@@ -87,7 +80,7 @@ const besoinsOptions = [
 
 const nextStep = async () => {
   const fieldsByStep = {
-    1: type.value === "femme-enceinte" ? ["type", "situation"] : ["type"],
+    1: ["type"],
     2: ["besoins"],
     3: ["frequence"],
   };
@@ -119,7 +112,6 @@ const onSubmit = handleSubmit(async (formValues) => {
       },
       body: JSON.stringify({
         type: formValues.type,
-        situation: formValues.situation || "",
         besoins: (formValues.besoins || []).join(", "),
         frequence: formValues.frequence,
         email: formValues.email,
@@ -181,20 +173,6 @@ const onSubmit = handleSubmit(async (formValues) => {
                   <label
                     class="flex min-h-14 cursor-pointer items-center rounded-2xl border-2 border-terracotta-100 bg-cream-50 p-4 transition-colors hover:bg-cream-100 focus-within:ring-2 focus-within:ring-terracotta-500 focus-within:ring-offset-2"
                     :class="{
-                      'border-terracotta-500 bg-cream-100':
-                        type === 'femme-enceinte',
-                    }">
-                    <input
-                      v-model="type"
-                      type="radio"
-                      value="femme-enceinte"
-                      v-bind="typeAttrs"
-                      class="mr-3 focus-visible:outline-none focus-visible:ring-0" />
-                    <span class="text-gray-700">Pour une femme enceinte</span>
-                  </label>
-                  <label
-                    class="flex min-h-14 cursor-pointer items-center rounded-2xl border-2 border-terracotta-100 bg-cream-50 p-4 transition-colors hover:bg-cream-100 focus-within:ring-2 focus-within:ring-terracotta-500 focus-within:ring-offset-2"
-                    :class="{
                       'border-terracotta-500 bg-cream-100': type === 'enfant',
                     }">
                     <input
@@ -246,27 +224,6 @@ const onSubmit = handleSubmit(async (formValues) => {
                 </p>
               </fieldset>
 
-              <div v-if="type === 'femme-enceinte'" class="mt-6">
-                <label for="situation" class="block text-lg font-semibold text-gray-900 mb-4">
-                  Où en êtes-vous dans votre parcours ?
-                </label>
-                <select
-                  v-model="situation"
-                  v-bind="situationAttrs"
-                  id="situation"
-                  class="form-input"
-                  :aria-invalid="errors.situation ? 'true' : 'false'"
-                  aria-describedby="situation-error">
-                  <option value="">Sélectionnez...</option>
-                  <option value="debut">Début de grossesse</option>
-                  <option value="milieu">Milieu de grossesse</option>
-                  <option value="fin">Fin de grossesse</option>
-                  <option value="post-partum">Après la naissance</option>
-                </select>
-                <p v-if="errors.situation" id="situation-error" class="mt-2 text-sm text-red-600" role="alert">
-                  {{ errors.situation }}
-                </p>
-              </div>
             </div>
 
             <!-- Étape 2 : Besoins -->
