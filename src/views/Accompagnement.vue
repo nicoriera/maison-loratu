@@ -52,7 +52,7 @@ const foundations = [
           </p>
           <div class="mt-8"><CTAButton :to="reservationUrl">Je réserve</CTAButton></div>
         </div>
-        <img src="/images/individual-session.webp" width="1200" height="900" alt="Petit bureau calme pour un accompagnement individuel" class="block aspect-[4/3] h-auto w-full rounded-[2rem] object-cover shadow-soft-lg" loading="lazy" decoding="async" />
+        <img src="/images/individual-session.webp" width="1200" height="900" alt="Petit bureau calme pour un accompagnement individuel" class="block aspect-[4/3] h-auto w-full rounded-[2rem] object-cover shadow-soft-lg" fetchpriority="high" decoding="async" />
       </div>
     </section>
 
@@ -68,7 +68,7 @@ const foundations = [
             <h2 class="text-3xl text-terracotta-800">Des ressources concrètes pour avancer</h2>
             <p class="mt-4 leading-relaxed text-gray-700">
               Grâce à des exercices de respiration, de relaxation, de visualisation et de mouvement doux,
-              vous développez des ressources concrètes pour retrouver un équilibre durable.
+              vous développez des ressources concrètes pour retrouver davantage d’équilibre au quotidien.
               La sophrologie ne se substitue pas à un suivi médical ou psychologique.
             </p>
             <ul class="mt-6 grid gap-3 sm:grid-cols-2">
@@ -116,18 +116,34 @@ const foundations = [
         </div>
 
         <div class="foundation-house mx-auto mt-12 max-w-4xl">
-          <div class="foundation-roof" aria-hidden="true" />
-          <div class="grid gap-4 bg-terracotta-100 p-5 sm:grid-cols-2 md:p-8">
+          <div class="foundation-roof">
+            <div class="foundation-roof-content">
+              <p>Un équilibre qui se construit,<br />une ressource après l’autre</p>
+            </div>
+          </div>
+          <div class="foundation-rooms grid sm:grid-cols-2">
             <article
-              v-for="(foundation, index) in foundations"
+              v-for="foundation in foundations"
               :key="foundation.title"
-              class="rounded-2xl bg-white p-6 shadow-soft">
-              <p class="text-sm font-semibold text-terracotta-600">{{ index + 1 }}</p>
-              <h3 class="mt-2 text-2xl text-terracotta-800">{{ foundation.title }}</h3>
-              <p class="mt-3 leading-relaxed text-gray-700">{{ foundation.text }}</p>
+              class="foundation-room">
+              <div class="foundation-room-heading">
+                <h3>{{ foundation.title }}</h3>
+              </div>
+              <p>{{ foundation.text }}</p>
             </article>
           </div>
-          <div class="foundation-base">Maison Loratu · respirer, relâcher, visualiser, cultiver le positif</div>
+          <div class="foundation-base">
+            Des outils simples à réutiliser au quotidien
+          </div>
+        </div>
+
+        <div class="mx-auto mt-10 flex max-w-2xl flex-col items-center text-center">
+          <p class="text-lg leading-relaxed text-gray-700">
+            Une séance individuelle de 1 h, adaptée à votre rythme et à vos besoins.
+          </p>
+          <div class="mt-6">
+            <CTAButton :to="reservationUrl">Je réserve mon accompagnement</CTAButton>
+          </div>
         </div>
       </div>
     </section>
@@ -136,21 +152,90 @@ const foundations = [
 
 <style scoped>
 .foundation-house {
-  filter: drop-shadow(0 14px 24px rgba(93, 42, 28, 0.12));
+  position: relative;
+  filter: drop-shadow(0 8px 30px rgba(0, 0, 0, 0.08)) drop-shadow(0 4px 12px rgba(0, 0, 0, 0.05));
 }
 
 .foundation-roof {
-  height: clamp(5rem, 14vw, 9rem);
+  position: relative;
+  display: grid;
+  min-height: clamp(8.5rem, 17vw, 11.5rem);
+  place-items: end center;
+  overflow: visible;
   background: #b85a36;
-  clip-path: polygon(50% 0, 100% 100%, 0 100%);
+  clip-path: polygon(50% 0, 100% 78%, 96% 100%, 4% 100%, 0 78%);
+  color: white;
+}
+
+.foundation-roof-content {
+  z-index: 1;
+  padding-bottom: 1.5rem;
+  text-align: center;
+}
+
+.foundation-roof-content p {
+  max-width: 24rem;
+  font-family: Georgia, serif;
+  font-size: 1.5rem;
+  line-height: 1.08;
+}
+
+.foundation-rooms {
+  gap: 2px;
+  padding: 2px;
+  background: rgba(93, 42, 28, 0.18);
+}
+
+.foundation-room {
+  min-height: 14rem;
+  padding: clamp(1.5rem, 4vw, 2.25rem);
+  background: #fefcf9;
+}
+
+.foundation-room:nth-child(2),
+.foundation-room:nth-child(3) {
+  background: #fdf9f3;
+}
+
+.foundation-room-heading {
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+}
+
+.foundation-room h3 {
+  color: #5d2a1c;
+  font-family: Georgia, serif;
+  font-size: 1.5rem;
+  line-height: 1.08;
+}
+
+.foundation-room p {
+  @apply text-gray-800;
+  margin-top: 1.15rem;
+  line-height: 1.7;
 }
 
 .foundation-base {
   background: #5d2a1c;
   color: #fff;
-  padding: 1rem 1.5rem;
-  text-align: center;
+  padding: 1.1rem 1.5rem;
   font-weight: 600;
-  border-radius: 0 0 1.5rem 1.5rem;
+  border-radius: 0 0 1.75rem 1.75rem;
+  text-align: center;
+}
+
+@media (max-width: 639px) {
+  .foundation-roof {
+    min-height: 8rem;
+  }
+
+  .foundation-roof-content {
+    padding: 0 1.25rem 1.1rem;
+  }
+
+  .foundation-room {
+    min-height: auto;
+  }
 }
 </style>
