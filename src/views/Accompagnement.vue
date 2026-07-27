@@ -115,7 +115,7 @@ const foundations = [
           </p>
         </div>
 
-        <div class="foundation-house mx-auto mt-12 max-w-4xl">
+        <div class="foundation-house mx-auto mt-8 max-w-4xl sm:mt-12">
           <div class="foundation-roof">
             <div class="foundation-roof-content">
               <p>Un équilibre qui se construit,<br />une ressource après l’autre</p>
@@ -227,15 +227,46 @@ const foundations = [
 
 @media (max-width: 639px) {
   .foundation-roof {
-    min-height: 8rem;
+    display: block;
+    min-height: 0;
+    padding-top: 4.5rem;
+    overflow: visible;
+    background: transparent;
+    clip-path: none;
+  }
+
+  .foundation-roof::before {
+    position: absolute;
+    inset: 0 0 auto;
+    height: 4.5rem;
+    background: #b85a36;
+    clip-path: polygon(50% 0, 100% 100%, 0 100%);
+    content: "";
   }
 
   .foundation-roof-content {
-    padding: 0 1.25rem 1.1rem;
+    position: relative;
+    width: 100%;
+    padding: 0.85rem 1.25rem 1rem;
+    background: #b85a36;
+  }
+
+  .foundation-roof-content p {
+    max-width: 18rem;
+    margin: 0 auto;
+    font-size: 1.25rem;
+    line-height: 1.15;
   }
 
   .foundation-room {
     min-height: auto;
+    padding: 1.25rem 1.5rem;
   }
+
+  .foundation-room p {
+    margin-top: 0.6rem;
+    line-height: 1.55;
+  }
+
 }
 </style>
