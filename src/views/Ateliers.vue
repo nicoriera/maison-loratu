@@ -13,7 +13,7 @@ const offerings = computed(() => [
     order: 1,
     title: "Ateliers enfants",
     audience: "1 h 15 · 38 €",
-    image: "/images/children-session.webp",
+    image: "/images/children-studio-sun-markers.webp",
     description:
       "Des ateliers joyeux pour aider les petits cœurs à grandir sereinement.",
     bullets: [
@@ -31,7 +31,7 @@ const offerings = computed(() => [
     order: 3,
     title: "Ateliers duo mère-fille ou grand-mère",
     audience: "1 h 15 · 110 € pour 2 personnes",
-    image: "/images/duo-session.webp",
+    image: "/images/duo-mother-daughter-back-stretch.webp",
     description:
       "Une parenthèse de douceur à vivre à deux, une invitation à ralentir, à partager un moment précieux et à tisser de jolis souvenirs entre générations.",
     bullets: [
@@ -122,7 +122,7 @@ onMounted(async () => {
         </div>
         <div class="overflow-hidden rounded-[2rem] shadow-soft-lg">
           <img
-            src="/images/duo-session.webp"
+            src="/images/duo-mother-daughter-back-stretch.webp"
             width="1200"
             height="900"
             alt="Mère et enfant partageant un atelier de sophrologie"
