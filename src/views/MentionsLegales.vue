@@ -17,10 +17,9 @@
             </p>
             <p class="text-gray-700">
               Maison Loratu<br>
-              <!-- À compléter avec les informations réelles -->
               Adresse : [À compléter]<br>
-              Téléphone : [À compléter]<br>
-              Email : [À compléter]
+              Téléphone : 06 66 88 33 02<br>
+              Email : <a href="mailto:maisonloratu@gmail.com" class="text-terracotta-700 underline">maisonloratu@gmail.com</a>
             </p>
           </section>
 
@@ -94,8 +93,7 @@
               contacter à l'adresse suivante :
             </p>
             <p class="text-gray-700">
-              <!-- À compléter avec les informations de contact -->
-              Email : [À compléter]
+              Email : <a href="mailto:maisonloratu@gmail.com" class="text-terracotta-700 underline">maisonloratu@gmail.com</a>
             </p>
           </section>
         </div>

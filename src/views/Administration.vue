@@ -415,7 +415,6 @@ const deleteArticle = async (articleId) => {
               <label for="featuredLabel" class="form-label">Libellé<input id="featuredLabel" v-model.trim="publicContent.atelierDuMoment.label" class="form-input mt-2" maxlength="40" placeholder="En ce moment" /></label>
               <label for="featuredTitle" class="form-label">Titre<input id="featuredTitle" v-model.trim="publicContent.atelierDuMoment.title" class="form-input mt-2" maxlength="80" placeholder="Atelier & sophrologie" /></label>
             </div>
-            <label for="featuredSummary" class="form-label">Résumé<textarea id="featuredSummary" v-model.trim="publicContent.atelierDuMoment.summary" class="form-input mt-2 min-h-24" maxlength="220" placeholder="Un texte court et public" /></label>
             <div class="grid gap-5 md:grid-cols-2">
               <label for="featuredCtaLabel" class="form-label">Libellé du bouton<input id="featuredCtaLabel" v-model.trim="publicContent.atelierDuMoment.ctaLabel" class="form-input mt-2" maxlength="30" placeholder="Voir les ateliers" /></label>
               <label for="featuredCtaHref" class="form-label">Lien du bouton<input id="featuredCtaHref" v-model.trim="publicContent.atelierDuMoment.ctaHref" class="form-input mt-2" maxlength="200" placeholder="/ateliers ou lien Resalib" /></label>

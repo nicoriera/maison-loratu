@@ -6,6 +6,7 @@ const isSubmitting = ref(false)
 const submitError = ref('')
 const submitted = ref(false)
 const form = ref({ name: '', email: '', message: '', consent: false })
+const contactEndpoint = import.meta.env.VITE_FORMSPREE_ENDPOINT || 'https://formspree.io/f/mbdzazdg'
 
 const onSubmit = async () => {
   if (!contactForm.value?.reportValidity()) return
@@ -14,7 +15,7 @@ const onSubmit = async () => {
   submitError.value = ''
 
   try {
-    const response = await fetch('https://formspree.io/f/mbdzazdg', {
+    const response = await fetch(contactEndpoint, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
       body: JSON.stringify({

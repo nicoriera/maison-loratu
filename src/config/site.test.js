@@ -39,20 +39,20 @@ test('createSiteConfig keeps invalid reservation URLs out of runtime config', ()
     primaryCity: 'Anglet',
     serviceArea: ['Anglet', 'Bayonne', 'Biarritz'],
     reservationUrl: 'https://www.resalib.fr/',
-    reservationConfigured: false,
+    reservationConfigured: true,
     instagramUrl: 'https://www.instagram.com/maison__loratu/',
     isAdminPreviewEnabled: false,
   })
 })
 
-test('createSiteConfig uses the Resalib homepage until an account URL is configured', () => {
+test('createSiteConfig uses the Resalib homepage when no environment URL is set', () => {
   const config = createSiteConfig({
     DEV: false,
     VITE_ENABLE_ADMIN_PREVIEW: 'false',
   })
 
   assert.equal(config.reservationUrl, 'https://www.resalib.fr/')
-  assert.equal(config.reservationConfigured, false)
+  assert.equal(config.reservationConfigured, true)
 })
 
 test('createSiteConfig uses a valid Resalib account URL when configured', () => {

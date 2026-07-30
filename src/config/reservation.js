@@ -1,5 +1,5 @@
 import { computed, ref } from 'vue'
-import { RESALIB_PLACEHOLDER_URL, sanitizeReservationUrl, siteConfig } from './site.js'
+import { sanitizeReservationUrl, siteConfig } from './site.js'
 
 const runtimeReservationUrl = ref(siteConfig.reservationUrl)
 const runtimeReservationConfigured = ref(siteConfig.reservationConfigured)
@@ -30,11 +30,6 @@ export const loadReservationConfig = async () => {
         runtimeReservationUrl.value = adminReservationUrl
         runtimeReservationConfigured.value = true
         return
-      }
-
-      if (!siteConfig.reservationConfigured) {
-        runtimeReservationUrl.value = RESALIB_PLACEHOLDER_URL
-        runtimeReservationConfigured.value = false
       }
     })
     .catch(() => undefined)

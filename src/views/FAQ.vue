@@ -1,7 +1,8 @@
 <script setup>
+import { onMounted, ref } from 'vue'
 import UiIcon from '../components/UiIcon.vue'
 
-const questions = [
+const questions = ref([
   { question: 'Qu’est-ce que la sophrologie ?', answer: 'C’est une méthode douce qui associe respiration, relaxation et visualisation positive. Elle aide à mieux gérer le stress, apaiser les émotions et retrouver un équilibre entre le corps et l’esprit, avec des outils simples au quotidien.' },
   { question: 'Combien de séances sont nécessaires ?', answer: 'Certaines personnes ressentent une détente dès la première séance. Pour un objectif précis, quelques séances peuvent aider à installer des changements. Chaque accompagnement est personnalisé et évolue à votre rythme.' },
   { question: 'La sophrologie accompagne-t-elle un parcours PMA ?', answer: 'Oui, comme soutien complémentaire et sans se substituer au suivi médical. Elle peut aider à accueillir les émotions, diminuer le stress et retrouver un espace de calme pendant un parcours FIV, IAC ou stimulation.' },
@@ -16,7 +17,18 @@ const questions = [
   { question: 'Peut-on participer avec sa fille ou sa petite-fille ?', answer: 'Oui. Les formats mère-fille et grand-mère-petite-fille invitent à ralentir ensemble, partager un moment privilégié et créer des souvenirs dans une ambiance ludique et relaxante.' },
   { question: 'Peut-on venir entre sœurs, amies ou en famille ?', answer: 'Absolument. Les ateliers sont ouverts à celles qui souhaitent prendre soin d’elles et des liens qui les unissent, entre sœurs, amies ou membres d’une même famille.' },
   { question: 'Puis-je offrir un atelier ?', answer: 'Oui. La carte cadeau donne accès à l’Atelier Duo, un moment de douceur à partager entre femmes, d’une durée de 1 h 15. Elle est valable deux mois à partir de la date d’achat.' },
-]
+])
+
+onMounted(async () => {
+  try {
+    const response = await fetch('/api/content', { headers: { Accept: 'application/json' } })
+    if (!response.ok) return
+    const content = await response.json()
+    if (Array.isArray(content.faq) && content.faq.length) questions.value = content.faq
+  } catch {
+    // La FAQ intégrée reste disponible si le service de contenu est indisponible.
+  }
+})
 </script>
 
 <template>

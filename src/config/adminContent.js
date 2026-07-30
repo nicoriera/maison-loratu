@@ -162,10 +162,10 @@ export const validatePublicContentDraft = (draft = {}) => {
 
   const featuredWorkshop = sanitizedDraft.atelierDuMoment
   if (featuredWorkshop.enabled) {
-    if (!featuredWorkshop.label || !featuredWorkshop.title || !featuredWorkshop.summary || !featuredWorkshop.ctaLabel || !featuredWorkshop.ctaHref) {
-      issues.push('L’atelier du moment doit comporter un libellé, un titre, un résumé et un lien valides.')
+    if (!featuredWorkshop.label || !featuredWorkshop.title || !featuredWorkshop.ctaLabel || !featuredWorkshop.ctaHref) {
+      issues.push('L’atelier du moment doit comporter un libellé, un titre et un lien valides.')
     }
-    if (featuredWorkshop.label.length > 40 || featuredWorkshop.title.length > 80 || featuredWorkshop.summary.length > 220 || featuredWorkshop.ctaLabel.length > 30) {
+    if (featuredWorkshop.label.length > 40 || featuredWorkshop.title.length > 80 || featuredWorkshop.ctaLabel.length > 30) {
       issues.push('L’atelier du moment doit rester court et lisible.')
     }
   }

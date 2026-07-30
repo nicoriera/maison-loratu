@@ -1,13 +1,15 @@
 <script setup>
 import CTAButton from "../components/CTAButton.vue";
 import OfferingCard from "../components/OfferingCard.vue";
-import { computed } from "vue";
+import { computed, onMounted, ref } from "vue";
 import { useReservationConfig } from "../config/reservation.js";
 
 const { reservationUrl } = useReservationConfig();
+const publicOffers = ref([]);
 
 const offerings = computed(() => [
   {
+    id: "offer-collective",
     order: 1,
     title: "Ateliers enfants",
     audience: "1 h 15 · 38 €",
@@ -25,6 +27,7 @@ const offerings = computed(() => [
     action: "Je découvre",
   },
   {
+    id: "offer-duo",
     order: 3,
     title: "Ateliers duo mère-fille ou grand-mère",
     audience: "1 h 15 · 110 € pour 2 personnes",
@@ -41,6 +44,7 @@ const offerings = computed(() => [
     action: "Je découvre",
   },
   {
+    id: "offer-seniors",
     order: 2,
     title: "Ateliers en douceur",
     audience: "1 h 15 · 38 €",
@@ -73,7 +77,23 @@ const offerings = computed(() => [
     to: reservationUrl.value,
     action: "Je réserve",
   },
-].sort((first, second) => first.order - second.order));
+].map((offer) => {
+  const remoteOffer = publicOffers.value.find((item) => item.id === offer.id);
+  return remoteOffer
+    ? { ...offer, title: remoteOffer.title, audience: remoteOffer.audience, description: remoteOffer.summary }
+    : offer;
+}).sort((first, second) => first.order - second.order));
+
+onMounted(async () => {
+  try {
+    const response = await fetch("/api/content", { headers: { Accept: "application/json" } });
+    if (!response.ok) return;
+    const content = await response.json();
+    if (Array.isArray(content.offers)) publicOffers.value = content.offers;
+  } catch {
+    // Les offres intégrées restent disponibles si le service de contenu est indisponible.
+  }
+});
 </script>
 
 <template>
@@ -93,11 +113,11 @@ const offerings = computed(() => [
           <div
             class="mt-8 flex flex-col justify-center gap-3 sm:flex-row sm:flex-wrap md:justify-start">
             <CTAButton to="/ateliers#formats">Voir les ateliers et tarifs</CTAButton>
-            <a
-              href="/contact"
+            <router-link
+              to="/contact"
               class="inline-flex min-h-11 items-center justify-center rounded-full border-2 border-terracotta-300 px-7 py-3 text-center font-semibold text-terracotta-700 transition duration-[var(--duration-ui)] ease-[var(--ease-warm-out)] hover:bg-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-terracotta-500 focus-visible:ring-offset-2">
               Être recontacté
-            </a>
+            </router-link>
           </div>
         </div>
         <div class="overflow-hidden rounded-[2rem] shadow-soft-lg">

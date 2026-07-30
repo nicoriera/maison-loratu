@@ -1,5 +1,5 @@
 <script setup>
-import { inject, onMounted, ref, watch } from 'vue'
+import { inject, nextTick, onMounted, ref, watch } from 'vue'
 import { RouterView } from 'vue-router'
 import { useRoute } from 'vue-router'
 import Header from './components/Header.vue'
@@ -10,6 +10,7 @@ import { loadReservationConfig } from './config/reservation.js'
 
 const transitionName = inject('transitionName', ref('page-fade'))
 const route = useRoute()
+const mainContent = ref(null)
 
 watch(
   () => route.fullPath,
@@ -18,12 +19,23 @@ watch(
 )
 
 onMounted(loadReservationConfig)
+
+watch(
+  () => route.fullPath,
+  async () => {
+    await nextTick()
+    mainContent.value?.focus()
+  },
+)
 </script>
 
 <template>
   <div class="min-h-screen flex flex-col">
+    <a href="#contenu-principal" class="sr-only z-50 rounded-b-lg bg-terracotta-700 px-4 py-3 font-semibold text-white focus:not-sr-only focus:absolute focus:left-4 focus:top-0">
+      Aller au contenu principal
+    </a>
     <Header />
-    <main class="flex-grow pb-[calc(5rem+env(safe-area-inset-bottom))] lg:pb-0">
+    <main id="contenu-principal" ref="mainContent" tabindex="-1" class="flex-grow pb-[calc(5rem+env(safe-area-inset-bottom))] outline-none lg:pb-0">
       <RouterView v-slot="{ Component, route }">
         <Transition
           :name="transitionName"
