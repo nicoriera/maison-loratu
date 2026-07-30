@@ -24,16 +24,12 @@
           <section>
             <h2 class="text-2xl font-semibold text-gray-900 mb-4">1. Collecte des données</h2>
             <p class="text-gray-700 mb-4">
-              Nous collectons les données suivantes lorsque vous remplissez notre questionnaire :
+              Nous collectons les données suivantes lorsque vous utilisez notre formulaire de contact :
             </p>
             <ul class="list-disc list-inside text-gray-700 space-y-2 ml-4">
-              <li>Type d'accompagnement recherché</li>
-              <li>Situation personnelle (si applicable)</li>
-              <li>Besoins identifiés</li>
-              <li>Préférences de fréquence</li>
+              <li>Prénom et nom</li>
               <li>Adresse email</li>
-              <li>Numéro de téléphone</li>
-              <li>Message optionnel</li>
+              <li>Message</li>
             </ul>
           </section>
 
@@ -57,7 +53,7 @@
             <h2 class="text-2xl font-semibold text-gray-900 mb-4">3. Base légale du traitement</h2>
             <p class="text-gray-700">
               Le traitement de vos données personnelles est basé sur votre consentement explicite
-              lorsque vous remplissez le questionnaire. Vous pouvez retirer votre consentement à
+              lorsque vous remplissez le formulaire de contact. Vous pouvez retirer votre consentement à
               tout moment en nous contactant.
             </p>
           </section>

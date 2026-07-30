@@ -12,10 +12,10 @@ const questions = [
   { question: 'Comment accompagner un enfant anxieux ?', answer: 'La sophrologie offre un espace bienveillant pour comprendre ses émotions, apaiser ses peurs et développer ses ressources intérieures. Elle ne remplace pas l’accompagnement d’un professionnel de santé lorsque celui-ci est nécessaire.' },
   { question: 'La sophrologie est-elle bénéfique pour les seniors ?', answer: 'Oui. Elle peut soutenir le bien-être physique et émotionnel, le sommeil et la sérénité, dans le respect des capacités et du rythme de chacun.' },
   { question: 'Peut-elle soutenir la concentration et la vitalité des seniors ?', answer: 'Les exercices d’attention, de respiration et de visualisation peuvent favoriser la clarté mentale, la récupération et une sensation de vitalité. Ils s’inscrivent dans une démarche de bien-être.' },
-  { question: 'Comment se déroulent les ateliers collectifs ?', answer: 'Ils se déroulent en petits groupes pendant 1 h 30, sans prérequis. Sandra guide des exercices de respiration, relaxation et visualisation, pour repartir détendue et avec des outils simples à utiliser au quotidien.' },
+  { question: 'Comment se déroulent les ateliers collectifs ?', answer: 'Ils se déroulent en petits groupes pendant 1 h 15, sans prérequis. Sandra guide des exercices de respiration, relaxation et visualisation, pour repartir détendue et avec des outils simples à utiliser au quotidien.' },
   { question: 'Peut-on participer avec sa fille ou sa petite-fille ?', answer: 'Oui. Les formats mère-fille et grand-mère-petite-fille invitent à ralentir ensemble, partager un moment privilégié et créer des souvenirs dans une ambiance ludique et relaxante.' },
   { question: 'Peut-on venir entre sœurs, amies ou en famille ?', answer: 'Absolument. Les ateliers sont ouverts à celles qui souhaitent prendre soin d’elles et des liens qui les unissent, entre sœurs, amies ou membres d’une même famille.' },
-  { question: 'Puis-je offrir un atelier ?', answer: 'Oui. La Carte Cadeau Maison Loratu permet d’offrir une parenthèse de sérénité, seule ou à partager. Elle comprend deux ateliers à vivre dans un délai de deux mois.' },
+  { question: 'Puis-je offrir un atelier ?', answer: 'Oui. La carte cadeau donne accès à l’Atelier Duo, un moment de douceur à partager entre femmes, d’une durée de 1 h 15. Elle est valable deux mois à partir de la date d’achat.' },
 ]
 </script>
 

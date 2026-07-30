@@ -12,7 +12,7 @@ import ScrollReveal from '../components/ScrollReveal.vue'
       </div>
       <h1 class="text-3xl text-terracotta-800 md:text-4xl">Merci !</h1>
       <p class="mb-8 mt-4 text-lg leading-relaxed text-gray-600">
-        Votre questionnaire a bien été envoyé. Je vous contacterai sous peu pour vous proposer un accompagnement personnalisé.
+        Votre message a bien été envoyé. Sandra vous répondra sous peu pour échanger sur votre besoin.
       </p>
       <div class="flex flex-wrap justify-center gap-3">
         <router-link to="/accompagnement" class="inline-flex min-h-11 items-center justify-center rounded-full bg-terracotta-500 px-6 py-3 font-semibold text-white transition-colors hover:bg-terracotta-600 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-terracotta-500 focus-visible:ring-offset-2">

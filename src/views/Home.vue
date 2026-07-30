@@ -3,99 +3,52 @@ import CTAButton from "../components/CTAButton.vue";
 import ScrollReveal from "../components/ScrollReveal.vue";
 import ScrollRevealStagger from "../components/ScrollRevealStagger.vue";
 import OfferingCard from "../components/OfferingCard.vue";
-import { useReservationConfig } from "../config/reservation.js";
-import { computed, onMounted, ref } from "vue";
-
-const { reservationConfigured } = useReservationConfig();
+import { onMounted, ref } from "vue";
 
 const audiences = [
   {
+    order: 1,
     title: "Ateliers enfants",
-    text: "Des ateliers joyeux pour aider les petits cœurs à grandir sereinement.",
-    detail: "1 h 30 · 38 € · 8 participants maximum",
+    detail: "1 h 15 · 38 € · 8 participants maximum",
     image: "/images/children-session.webp",
     href: "/ateliers/enfants",
     cta: "Je découvre",
   },
   {
+    order: 3,
     title: "Ateliers duo mère-fille ou grand-mère",
-    text: "Une parenthèse de douceur à vivre à deux.",
-    detail: "1 h 30 · 84 € pour 2 personnes",
+    detail: "1 h 15 · 110 € pour 2 personnes",
     image: "/images/duo-session.webp",
     href: "/ateliers/duo",
     cta: "Je découvre",
   },
   {
-    title: "Ateliers seniors",
-    text: "Des séances pour entretenir la concentration, réveiller la vitalité et préserver la mobilité en douceur.",
-    detail: "1 h 30 · 38 € · 8 participants maximum",
+    order: 2,
+    title: "Ateliers en douceur",
+    detail: "1 h 15 · 38 € · 8 participants maximum",
     image: "/images/seniors-session.webp",
     href: "/ateliers/seniors",
     cta: "Je découvre",
   },
   {
+    order: 4,
     title: "Accompagnement individuel pour enfants et femmes",
-    text: "Un temps rien que pour vous, pour souffler, vous recentrer et avancer à votre rythme.",
     detail: "1 h · 60 €",
     image: "/images/individual-session.webp",
     href: "/accompagnement",
     cta: "Je découvre",
   },
-];
+].sort((first, second) => first.order - second.order);
 
 const featuredWorkshopFallback = {
   enabled: true,
   label: "En ce moment",
-  title: "Ateliers collectifs & duos",
-  summary:
-    "1 h 30 · 8 participants maximum · 38 € — Une bulle de douceur pour ralentir, respirer et repartir avec des outils simples.",
+  title: "Atelier & sophrologie",
+  summary: "",
   ctaLabel: "Voir les ateliers à venir",
   ctaHref: "/ateliers",
-  image: "/images/duo-session.webp",
-  imageAlt: "Deux participantes partagent un atelier de sophrologie",
 };
 const featuredWorkshop = ref(featuredWorkshopFallback);
-
-const featuredWorkshopVisual = computed(() => {
-  const title = featuredWorkshop.value.title.toLowerCase();
-
-  if (title.includes("enfant")) {
-    return {
-      image: "/images/children-session.webp",
-      alt: "Enfants réunis dans un atelier de sophrologie",
-    };
-  }
-
-  if (
-    title.includes("duo") ||
-    title.includes("mère") ||
-    title.includes("famille")
-  ) {
-    return {
-      image: "/images/duo-session.webp",
-      alt: "Deux participantes partagent un atelier de sophrologie",
-    };
-  }
-
-  if (title.includes("senior")) {
-    return {
-      image: "/images/seniors-session.webp",
-      alt: "Adultes participant à un atelier de sophrologie",
-    };
-  }
-
-  if (title.includes("individuel") || title.includes("accompagnement")) {
-    return {
-      image: "/images/individual-session.webp",
-      alt: "Accompagnement individuel dans un espace calme",
-    };
-  }
-
-  return {
-    image: featuredWorkshop.value.image || "/images/duo-session.webp",
-    alt: featuredWorkshop.value.imageAlt || "Atelier de sophrologie",
-  };
-});
 
 const loadPublicContent = async () => {
   if (
@@ -171,18 +124,13 @@ onMounted(loadPublicContent);
       <div id="accompagnements" class="container mx-auto max-w-6xl">
         <ScrollReveal tag="div" class="mx-auto mb-12 max-w-3xl text-center">
           <p class="mb-3 text-service-label text-terracotta-600">
-            À chacun son moment
+            Les ateliers de sophrologie
           </p>
           <h2 class="text-3xl text-terracotta-800 sm:text-4xl md:text-5xl">
-            Des moments pensés pour les enfants et les femmes, de la petite
-            fille à la grand-mère.
+            Des parenthèses pour respirer
           </h2>
           <p class="mt-5 text-lg leading-relaxed text-gray-700">
-            {{
-              reservationConfigured
-                ? "Voir les disponibilités et réserver directement sur Resalib."
-                : "Découvrez les formats et choisissez celui qui vous correspond."
-            }}
+            Les ateliers s’adressent aux enfants, aux adolescentes, aux femmes et aux grand-mères. Découvrez les formats et choisissez celui qui vous correspond.
           </p>
         </ScrollReveal>
 
@@ -199,6 +147,20 @@ onMounted(loadPublicContent);
       </div>
     </section>
 
+    <section class="bg-cream-100 px-4 py-16 md:py-24">
+      <div class="mx-auto max-w-3xl text-center">
+        <h2 class="text-3xl text-terracotta-800 sm:text-4xl md:text-5xl">
+          Qu’est-ce que la sophrologie ?
+        </h2>
+        <p class="mt-6 text-lg leading-relaxed text-gray-700">
+          C’est une méthode douce qui associe respiration, relaxation et visualisation positive. Elle aide à mieux gérer le stress, apaiser les émotions et retrouver un équilibre entre le corps et l’esprit, avec des outils simples au quotidien. La sophrologie améliore le sommeil des petits et des grands.
+        </p>
+        <p class="mt-4 text-lg leading-relaxed text-gray-700">
+          Elle accompagne aussi la préparation des grands moments de la vie des femmes, comme l’adolescence, la grossesse et l’accouchement, ou encore la ménopause. Les exercices peuvent se refaire chez soi, avec son enfant ou dans son cocon familial.
+        </p>
+      </div>
+    </section>
+
     <section class="bg-terracotta-800 px-4 py-16 text-white md:py-20">
       <div
         class="container mx-auto grid max-w-6xl items-center gap-8 md:grid-cols-[0.92fr_1.08fr]">
@@ -207,11 +169,8 @@ onMounted(loadPublicContent);
             {{ featuredWorkshop.label }}
           </p>
           <h2 class="mt-3 text-3xl sm:text-4xl">
-            {{ featuredWorkshop.title }}
+            Atelier &amp; sophrologie
           </h2>
-          <p class="mt-3 max-w-2xl text-lg leading-relaxed text-cream-100">
-            {{ featuredWorkshop.summary }}
-          </p>
           <div class="mt-5">
             <CTAButton :to="featuredWorkshop.ctaHref" variant="secondary">{{
               featuredWorkshop.ctaLabel
@@ -221,10 +180,13 @@ onMounted(loadPublicContent);
         <div
           class="order-1 overflow-hidden rounded-[2rem] shadow-soft-lg md:order-2">
           <img
-            :src="featuredWorkshopVisual.image"
-            :alt="featuredWorkshopVisual.alt"
-            class="block aspect-[4/3] w-full object-cover"
-            loading="lazy" />
+            src="/images/paddle-beach.jpg"
+            width="1920"
+            height="1280"
+            alt="Une femme sur un paddle au large, face aux montagnes"
+            class="block aspect-[4/3] w-full object-cover object-center"
+            loading="lazy"
+            decoding="async" />
         </div>
       </div>
     </section>
@@ -235,7 +197,7 @@ onMounted(loadPublicContent);
         <ScrollReveal
           variant="image"
           tag="div"
-          class="order-last mx-auto max-w-sm overflow-hidden rounded-[2rem] shadow-soft-lg md:order-first md:mx-0">
+          class="order-last mx-auto max-w-[17rem] overflow-hidden rounded-[2rem] shadow-soft-lg md:order-first md:mx-0 md:max-w-[18rem]">
           <img
             src="/images/sandra-portrait.webp"
             width="900"

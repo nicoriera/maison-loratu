@@ -8,8 +8,9 @@ const { reservationUrl } = useReservationConfig();
 
 const offerings = computed(() => [
   {
+    order: 1,
     title: "Ateliers enfants",
-    audience: "1 h 30 · 38 €",
+    audience: "1 h 15 · 38 €",
     image: "/images/children-session.webp",
     description:
       "Des ateliers joyeux pour aider les petits cœurs à grandir sereinement.",
@@ -24,11 +25,12 @@ const offerings = computed(() => [
     action: "Je découvre",
   },
   {
+    order: 3,
     title: "Ateliers duo mère-fille ou grand-mère",
-    audience: "1 h 30 · 84 € pour 2 personnes",
+    audience: "1 h 15 · 110 € pour 2 personnes",
     image: "/images/duo-session.webp",
     description:
-      "Une parenthèse de douceur à vivre à deux. Ces ateliers sont une invitation à ralentir, à partager un moment précieux et à tisser de jolis souvenirs entre générations.",
+      "Une parenthèse de douceur à vivre à deux, une invitation à ralentir, à partager un moment précieux et à tisser de jolis souvenirs entre générations.",
     bullets: [
       "2 personnes",
       "Respiration et relaxation",
@@ -39,11 +41,12 @@ const offerings = computed(() => [
     action: "Je découvre",
   },
   {
-    title: "Ateliers seniors",
-    audience: "1 h 30 · 38 €",
+    order: 2,
+    title: "Ateliers en douceur",
+    audience: "1 h 15 · 38 €",
     image: "/images/seniors-session.webp",
     description:
-      "Des séances pensées pour entretenir la concentration, réveiller la vitalité et préserver une mobilité tout en douceur.",
+      "Des séances pensées pour les seniors qui souhaitent entretenir leur concentration, leur vitalité et leur mobilité tout en douceur.",
     bullets: [
       "8 participants maximum",
       "Respiration et relaxation",
@@ -55,6 +58,7 @@ const offerings = computed(() => [
     action: "Je découvre",
   },
   {
+    order: 4,
     title: "Accompagnement individuel pour enfants et femmes",
     audience: "1 h · 60 €",
     image: "/images/individual-session.webp",
@@ -69,7 +73,7 @@ const offerings = computed(() => [
     to: reservationUrl.value,
     action: "Je réserve",
   },
-]);
+].sort((first, second) => first.order - second.order));
 </script>
 
 <template>
@@ -131,10 +135,16 @@ const offerings = computed(() => [
             sophrologie, les enfants, les seniors et le fonctionnement des
             ateliers.
           </p>
-          <div class="mt-7">
-            <CTAButton to="/faq" variant="secondary"
-              >Questions fréquentes</CTAButton
-            >
+          <p class="mt-4 leading-relaxed text-cream-100">
+            Pour une demande particulière, vous pouvez aussi contacter Maison Loratu directement.
+          </p>
+          <div class="mt-7 flex flex-col gap-4 sm:flex-row sm:items-center">
+            <CTAButton to="/contact" variant="secondary">Contacter Maison Loratu</CTAButton>
+            <router-link
+              to="/faq"
+              class="inline-flex min-h-11 items-center justify-center font-semibold text-cream-100 underline decoration-cream-300 underline-offset-4 transition hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cream-100 focus-visible:ring-offset-2 focus-visible:ring-offset-terracotta-800">
+              Questions fréquentes
+            </router-link>
           </div>
         </article>
       </div>

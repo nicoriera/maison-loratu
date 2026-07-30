@@ -1,23 +1,24 @@
 # Maison Loratu — Contenus page par page
 
-**Version :** 27/07/2026
+**Version :** 30/07/2026
 
 ## Accueil
 
 - Titre : « Un moment pour souffler, ensemble. »
 - Promesse : ateliers de sophrologie pour plusieurs générations.
 - Accès direct aux ateliers et à l’accompagnement individuel.
-- Cartes : enfants, duo, seniors, accompagnement personnalisé.
-- Atelier du moment administrable.
+- Cartes : enfants, duo, ateliers en douceur, accompagnement personnalisé.
+- Atelier mis en avant « Atelier & sophrologie », sans descriptif collectif, avec une photo de paddle.
+- Repère « Qu’est-ce que la sophrologie ? » : respiration, relaxation, visualisation, préparation de moments de vie (adolescence, grossesse, accouchement, ménopause) et exercices à refaire chez soi ou en famille.
 - Présentation de Sandra et sens du nom Loratu.
 
 ## Ateliers
 
 Présenter séparément dans l’index puis dans une page dédiée :
 
-- enfants — 1 h 30, 38 €, 8 participants maximum ;
-- duo — 1 h 30, 84 € pour deux personnes ;
-- seniors — 1 h 30, 38 €, 8 participants maximum ;
+- enfants — 1 h 15, 38 €, 8 participants maximum ;
+- duo — 1 h 15, 110 € pour deux personnes ;
+- ateliers en douceur — 1 h 15, 38 €, 8 participants maximum ;
 - accompagnement individuel — 1 h, 60 €.
 
 Chaque entrée comporte une photo, une description courte, les bénéfices proposés sans promesse médicale et une action de réservation.
@@ -30,7 +31,7 @@ Ajouter les mouvements doux, la respiration ludique, la visualisation et les th�
 
 Présenter un atelier pour deux personnes avec mobilisation douce, respiration, visualisation, relaxation et moment partagé.
 
-### Page seniors
+### Page ateliers en douceur
 
 Présenter respiration, relaxation, mobilisation douce, concentration, équilibre, stabilité, mémoire et vitalité.
 
@@ -45,13 +46,13 @@ Présenter respiration, relaxation, mobilisation douce, concentration, équilibr
 
 ## Carte cadeau
 
-- Présenter l’intention et les personnes auxquelles elle peut être offerte.
-- Afficher 114 € pour deux ateliers à utiliser dans un délai de deux mois.
+- Présenter l’Atelier Duo comme un moment de douceur à partager entre femmes, notamment entre mères, filles, sœurs, amies ou grand-mères.
+- Afficher l’Atelier Duo (1 h 15), valable deux mois à partir de la date d’achat.
 - Orienter la demande vers la page de contact.
 
 ## Contact
 
-- Donner un moyen simple de poser une question avant réservation.
+- Donner un moyen simple de poser une question avant réservation via un formulaire, le téléphone, l’email ou Resalib.
 - Ne pas demander de données sensibles.
 - Afficher les coordonnées uniquement lorsqu’elles sont confirmées.
 

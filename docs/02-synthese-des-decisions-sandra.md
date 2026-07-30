@@ -1,6 +1,7 @@
 # Maison Loratu — Synthèse des décisions de Sandra
 
 **Date des réponses :** 20/07/2026, complétées le 21/07/2026
+**Mise à jour produit :** 30/07/2026
 **Statut :** décisions consolidées ; les corrections du 21/07 remplacent les éléments incompatibles du cadrage initial
 
 ## 1. Mission
@@ -46,7 +47,7 @@ La grossesse n’est pas une offre ou un parcours dédié au lancement. Elle peu
 
 ### Ateliers en studio
 
-- Durée : 1 h 30.
+- Durée : 1 h 15.
 - Tarif : 38 €.
 - Capacité : 6 à 8 personnes.
 - Lieu : Studio Loratu.
@@ -92,12 +93,12 @@ Sandra a demandé le 21/07/2026 de retirer toute la partie « structures et proj
 | Sujet | Décision actuelle | Statut |
 |---|---|---|
 | Localisation | À définir | En attente |
-| Réservation | Resalib pressenti | À confirmer |
+| Réservation | Téléphone ou lien Resalib dans le footer ; URL générale à confirmer | Partiellement configuré |
 | Annulation | Règles à définir | En attente |
 | Paiement au lancement | Paiement sur place | Décidé provisoirement |
 | Paiement en ligne | À étudier ultérieurement | À cadrer avec sécurité et RGPD |
 | Contenus | À fournir | En attente |
-| Coordonnées | À fournir | En attente |
+| Coordonnées | Téléphone et email publics dans le footer | Configuré |
 | Administration du site | À prévoir de manière légère | Recommandé |
 
 ## 9. Parcours prioritaire du site
@@ -188,7 +189,7 @@ Prévoir une administration simple de type CMS pour les contenus éditoriaux, sa
 - Règles d'annulation et de report.
 - Modalités de paiement.
 - Tarif et format de l'accompagnement individuel.
-- Public exact des ateliers seniors.
+- Public exact des ateliers en douceur.
 - Photos disponibles et autorisations de droit à l'image.
 - Diplômes et formations à afficher.
 - Adresse email et numéro de téléphone officiels.

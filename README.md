@@ -70,11 +70,11 @@ src/
 ├── views/              # Pages principales
 │   ├── Home.vue        # Landing page
 │   ├── Administration.vue # Prototype d’administration éditoriale
-│   ├── Ateliers.vue  # Ateliers collectifs et accompagnement individuel
+│   ├── Ateliers.vue  # Index des ateliers et des formats proposés
 │   ├── Accompagnement.vue # Accompagnement personnalisé
 │   ├── CarteCadeau.vue # Carte cadeau
 │   ├── FAQ.vue       # Questions fréquentes
-│   ├── Questionnaire.vue  # Page de questionnaire
+│   ├── Contact.vue   # Formulaire de contact simple
 │   ├── MentionsLegales.vue  # Mentions légales
 │   └── PolitiqueConfidentialite.vue  # Politique de confidentialité RGPD
 ├── router/             # Configuration Vue Router
@@ -86,7 +86,7 @@ src/
 ## ✨ Fonctionnalités
 
 - **Landing page** avec sections explicatives sur la sophrologie
-- **Questionnaire interactif** en plusieurs étapes avec validation
+- **Formulaire de contact** simple, avec consentement et envoi vers Formspree
 - **Conformité RGPD** avec mentions légales et politique de confidentialité
 - **Design responsive** et moderne
 - **Animations subtiles** pour une meilleure expérience utilisateur
@@ -95,21 +95,13 @@ src/
 
 ### À compléter avant la mise en production
 
-1. **Informations de contact** dans :
-   - `src/components/Footer.vue`
-   - `src/views/MentionsLegales.vue`
-   - `src/views/PolitiqueConfidentialite.vue`
+1. **Informations d'hébergement** dans `src/views/MentionsLegales.vue`
 
-2. **Informations d'hébergement** dans `src/views/MentionsLegales.vue`
+2. **Formulaire de contact** : vérifier l’adresse de réception et les notifications du formulaire Formspree avant publication.
 
-3. **Backend pour les formulaires** : Le questionnaire particulier utilise actuellement un service de formulaire externe. Avant la mise en production, il faudra :
-   - Créer un endpoint API pour recevoir les données
-   - Remplacer l’envoi/prototype dans `src/views/Questionnaire.vue`
-   - Ajouter la gestion d'erreurs
+3. **Configuration Netlify** : Vérifier Identity, l’invitation du compte administrateur, le rôle `admin`, le store Blobs et les logs des Functions avant ouverture à Sandra.
 
-4. **Configuration Netlify** : Vérifier Identity, l’invitation du compte administrateur, le rôle `admin`, le store Blobs et les logs des Functions avant ouverture à Sandra.
-
-5. **Favicon** : Remplacer `/vite.svg` par un favicon personnalisé
+4. **Favicon** : Remplacer `/vite.svg` par un favicon personnalisé
 
 ## 🔒 Conformité RGPD
 

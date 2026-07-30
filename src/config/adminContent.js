@@ -68,8 +68,8 @@ export const createInitialPublicDraft = () => ({
   atelierDuMoment: {
     enabled: true,
     label: 'En ce moment',
-    title: 'Ateliers collectifs & duos',
-    summary: '1 h 30 · 8 participants maximum · 38 € — Une bulle de douceur pour ralentir, respirer et repartir avec des outils simples.',
+    title: 'Atelier & sophrologie',
+    summary: '1 h 15 · 8 participants maximum · 38 € — Une bulle de douceur pour ralentir, respirer et repartir avec des outils simples.',
     ctaLabel: 'Voir les ateliers',
     ctaHref: '/ateliers',
   },
@@ -79,19 +79,19 @@ export const createInitialOffersDraft = () => ([
   {
     id: 'offer-collective',
     title: 'Ateliers enfants',
-    audience: '1 h 30 · 8 participants · 38 €',
+    audience: '1 h 15 · 8 participants · 38 €',
     summary: 'Respiration, relaxation et visualisation positive dans une ambiance conviviale.',
   },
   {
     id: 'offer-duo',
     title: 'Ateliers duo mère-fille ou grand-mère',
-    audience: '1 h 30 · 84 € pour 2 personnes',
+    audience: '1 h 15 · 110 € pour 2 personnes',
     summary: 'Un temps à deux pour respirer, se retrouver et partager une expérience douce.',
   },
   {
     id: 'offer-seniors',
-    title: 'Ateliers seniors',
-    audience: '1 h 30 · 8 participants · 38 €',
+    title: 'Ateliers en douceur',
+    audience: '1 h 15 · 8 participants · 38 €',
     summary: 'Respirer, bouger doucement et cultiver la sérénité dans un petit groupe.',
   },
   {
@@ -116,7 +116,7 @@ export const createInitialFaqDraft = () => ([
   {
     id: 'faq-workshops',
     question: 'Comment se déroulent les ateliers ?',
-    answer: 'Les ateliers durent 1 h 30, en petit groupe et sans prérequis. Sandra guide des exercices de respiration, relaxation et visualisation.',
+    answer: 'Les ateliers durent 1 h 15, en petit groupe et sans prérequis. Sandra guide des exercices de respiration, relaxation et visualisation.',
   },
 ])
 

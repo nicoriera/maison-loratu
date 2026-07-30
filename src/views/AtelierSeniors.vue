@@ -5,9 +5,9 @@ import WorkshopDetail from '../components/WorkshopDetail.vue'
 <template>
   <WorkshopDetail
     eyebrow="Atelier en petit groupe"
-    title="Ateliers seniors"
-    meta="1 h 30 · 38 € · 8 participants maximum"
-    intro="Des ateliers en petit groupe pour respirer, bouger en douceur et partager un moment convivial."
+    title="Ateliers en douceur"
+    meta="1 h 15 · 38 € · 8 participants maximum"
+    intro="Des ateliers pensés pour les seniors, afin de respirer, bouger en douceur et partager un moment convivial."
     :paragraphs="[
       'Chacun évolue à son rythme dans une ambiance bienveillante et chaleureuse.',
       'Au programme : des exercices de respiration, de relaxation, de mobilisation douce et des activités favorisant la concentration, l’équilibre et la stabilité.',
