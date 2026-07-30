@@ -1,6 +1,6 @@
 # Maison Loratu — Note de cadrage stratégique
 
-**Version :** 27/07/2026
+**Version :** 30/07/2026
 **Référence :** décisions validées par Sandra les 20, 21 et 24 juillet 2026
 
 ## Mission
@@ -25,7 +25,7 @@ Maison Loratu accompagne les enfants et les femmes en quête de sérénité et d
 
 - Ateliers enfants.
 - Ateliers duo.
-- Ateliers seniors.
+- Ateliers en douceur.
 - Accompagnement individuel pour enfants et femmes.
 - Carte cadeau.
 
@@ -40,7 +40,7 @@ Permettre à une visiteuse de comprendre rapidement les offres, de choisir le fo
 1. Découvrir les ateliers.
 2. Découvrir l’accompagnement personnalisé.
 3. Réserver.
-4. Contacter Sandra.
+4. Contacter Maison Loratu.
 
 ## Principes de contenu
 
@@ -52,7 +52,6 @@ Permettre à une visiteuse de comprendre rapidement les offres, de choisir le fo
 ## Informations encore nécessaires
 
 - Lieu définitif.
-- Coordonnées publiques.
 - Lien Resalib définitif.
 - Diplômes et formations à afficher.
 - Témoignages autorisés.

@@ -1,6 +1,6 @@
 # Maison Loratu — Personas et parcours prioritaires
 
-**Version :** 27/07/2026
+**Version :** 30/07/2026
 
 ## Parent d’un enfant
 
@@ -24,13 +24,13 @@ Parcours : accueil → ateliers duo → tarif pour deux personnes → réservati
 
 Cherche un atelier accessible autour de la respiration, de la mobilité douce, de la concentration et de la convivialité.
 
-Parcours : accueil → ateliers seniors → capacité et contenu → réservation ou contact.
+Parcours : accueil → ateliers en douceur → capacité et contenu → réservation ou contact.
 
 ## Personne qui offre
 
 Cherche un cadeau de bien-être simple à comprendre.
 
-Parcours : accueil ou menu → carte cadeau → conditions → contact ou achat lorsque le dispositif sera validé.
+Parcours : accueil ou menu → carte cadeau → Atelier Duo et conditions → contact.
 
 ## Exigences communes
 
@@ -39,4 +39,3 @@ Parcours : accueil ou menu → carte cadeau → conditions → contact ou achat 
 - Navigation mobile courte.
 - Contact humain disponible en complément de la réservation.
 - Aucun parcours professionnel ou institutionnel au lancement.
-

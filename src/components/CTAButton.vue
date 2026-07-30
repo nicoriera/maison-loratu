@@ -4,7 +4,7 @@ import { computed } from 'vue'
 const props = defineProps({
   to: {
     type: String,
-    default: '/questionnaire',
+    default: '/contact',
   },
   variant: {
     type: String,

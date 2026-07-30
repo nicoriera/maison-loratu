@@ -6,7 +6,7 @@ import WorkshopDetail from '../components/WorkshopDetail.vue'
   <WorkshopDetail
     eyebrow="Un atelier à deux"
     title="Ateliers duo mère-fille ou grand-mère-petite-fille"
-    meta="1 h 30 · 84 € pour deux personnes"
+    meta="1 h 15 · 110 € pour deux personnes"
     intro="Une parenthèse de douceur à vivre à deux."
     :paragraphs="[
       'Ces ateliers sont une invitation à ralentir, à partager un moment précieux et à tisser de jolis souvenirs entre générations.',

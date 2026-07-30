@@ -22,7 +22,7 @@ const isDetailed = props.variant === 'detailed'
       <h2 v-if="isDetailed" class="mt-3 text-2xl text-terracotta-800">{{ offering.title }}</h2>
       <h3 v-else class="text-2xl text-terracotta-800">{{ offering.title }}</h3>
       <p v-if="!isDetailed" class="mt-3 font-semibold text-terracotta-600">{{ offering.detail }}</p>
-      <p class="mt-3 leading-relaxed text-gray-700">{{ isDetailed ? offering.description : offering.text }}</p>
+      <p v-if="isDetailed ? offering.description : offering.text" class="mt-3 leading-relaxed text-gray-700">{{ isDetailed ? offering.description : offering.text }}</p>
       <ul v-if="isDetailed" class="mt-5 space-y-2 text-sm text-gray-600">
         <li v-for="bullet in offering.bullets" :key="bullet" class="flex items-start gap-2">
           <span class="mt-1 h-2.5 w-2.5 shrink-0 rounded-full bg-terracotta-300" aria-hidden="true" />

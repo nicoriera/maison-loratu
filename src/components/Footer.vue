@@ -28,16 +28,16 @@ import UiIcon from "./UiIcon.vue";
             </li>
             <li>
               <router-link
-                to="/questionnaire"
+                to="/carte-cadeau"
                 class="footer-link text-sm text-gray-600 hover:text-terracotta-600">
-                Décrire mon besoin
+                Carte cadeau
               </router-link>
             </li>
             <li>
               <router-link
-                to="/carte-cadeau"
+                to="/faq"
                 class="footer-link text-sm text-gray-600 hover:text-terracotta-600">
-                Carte cadeau
+                Questions fréquentes
               </router-link>
             </li>
           </ul>
@@ -63,16 +63,19 @@ import UiIcon from "./UiIcon.vue";
         </div>
         <div class="flex flex-col gap-1">
           <h4 class="font-semibold text-gray-900 mb-4">Contact</h4>
-          <router-link
-            to="/contact"
-            class="footer-link block text-gray-600 hover:text-terracotta-600 text-sm">
-            Nous contacter
-          </router-link>
-          <router-link
-            to="/faq"
-            class="footer-link mt-2 inline-block text-gray-600 hover:text-terracotta-600 text-sm">
-            Questions fréquentes
-          </router-link>
+          <a
+            href="tel:+33666883302"
+            class="footer-link inline-block w-fit text-sm text-gray-600 hover:text-terracotta-600">
+            06 66 88 33 02
+          </a>
+          <p class="mt-2 text-sm leading-relaxed text-gray-600">
+            Prise de rendez-vous par <a href="tel:+33666883302" class="footer-link font-semibold text-terracotta-700 hover:text-terracotta-600">téléphone</a> ou sur <a href="https://www.resalib.fr/praticien/109472-marion-remy-sophrologue-monestier-de-clermont" target="_blank" rel="noopener noreferrer" class="footer-link font-semibold text-terracotta-700 hover:text-terracotta-600">Resalib</a>
+          </p>
+          <a
+            href="mailto:maisonloratu@gmail.com"
+            class="footer-link mt-2 inline-block w-fit text-sm text-gray-600 hover:text-terracotta-600">
+            maisonloratu@gmail.com
+          </a>
           <a
             :href="siteConfig.instagramUrl"
             target="_blank"

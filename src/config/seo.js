@@ -16,7 +16,7 @@ export const seoByRoute = {
     description: 'Une parenthèse de sophrologie à partager entre mère et fille ou entre grand-mère et petite-fille.',
   },
   'atelier-seniors': {
-    title: 'Ateliers seniors de sophrologie à Anglet | Maison Loratu',
+    title: 'Ateliers en douceur pour seniors à Anglet | Maison Loratu',
     description: 'Des ateliers de sophrologie en petit groupe pour respirer, bouger en douceur et entretenir concentration et vitalité.',
   },
   accompagnement: {
@@ -42,11 +42,6 @@ export const seoByRoute = {
   'politique-confidentialite': {
     title: 'Politique de confidentialité | Maison Loratu',
     description: 'Politique de confidentialité du site Maison Loratu.',
-  },
-  questionnaire: {
-    title: 'Trouver un accompagnement | Maison Loratu',
-    description: 'Précisez votre besoin pour trouver le format de sophrologie adapté.',
-    noindex: true,
   },
   merci: {
     title: 'Merci | Maison Loratu',

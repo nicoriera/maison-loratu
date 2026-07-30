@@ -1,89 +1,104 @@
 <script setup>
-import CTAButton from '../components/CTAButton.vue'
-import { siteConfig } from '../config/site.js'
-import UiIcon from '../components/UiIcon.vue'
+import { ref } from 'vue'
+
+const contactForm = ref(null)
+const isSubmitting = ref(false)
+const submitError = ref('')
+const submitted = ref(false)
+const form = ref({ name: '', email: '', message: '', consent: false })
+
+const onSubmit = async () => {
+  if (!contactForm.value?.reportValidity()) return
+
+  isSubmitting.value = true
+  submitError.value = ''
+
+  try {
+    const response = await fetch('https://formspree.io/f/mbdzazdg', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+      body: JSON.stringify({
+        name: form.value.name,
+        email: form.value.email,
+        message: form.value.message,
+        consent: form.value.consent,
+        subject: 'Demande de contact — Maison Loratu',
+      }),
+    })
+
+    if (!response.ok) throw new Error('Erreur lors de l’envoi')
+
+    submitted.value = true
+    form.value = { name: '', email: '', message: '', consent: false }
+  } catch {
+    submitError.value = 'Une erreur est survenue. Veuillez réessayer un peu plus tard.'
+  } finally {
+    isSubmitting.value = false
+  }
+}
 </script>
 
 <template>
   <div class="bg-cream-50">
     <section class="bg-gradient-to-b from-cream-200 to-cream-50 px-4 py-16 md:py-24">
-      <div class="container mx-auto grid max-w-6xl items-center gap-10 md:grid-cols-[1fr_0.8fr]">
-        <div class="max-w-3xl text-center md:text-left">
-        <p class="text-service-label text-terracotta-600">Être recontacté</p>
-        <h1 class="page-title mt-4">Parlons de votre besoin</h1>
-        <p class="body-copy mx-auto mt-6 max-w-2xl">
-          Vous hésitez entre plusieurs formats ou souhaitez un accompagnement personnalisé ?
-          Répondez à quelques questions pour aider Sandra à comprendre votre situation.
-        </p>
-        <div class="mt-8 flex flex-wrap justify-center gap-4 md:justify-start">
-          <CTAButton to="/questionnaire">Commencer le questionnaire</CTAButton>
-          <router-link
-            to="/faq"
-            class="rounded-full border-2 border-terracotta-300 px-7 py-3 font-semibold text-terracotta-700 transition duration-[var(--duration-ui)] ease-[var(--ease-warm-out)] hover:bg-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-terracotta-500 focus-visible:ring-offset-2"
-          >
-            Questions fréquentes
-          </router-link>
-          <a
-            :href="siteConfig.instagramUrl"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="inline-flex min-h-11 items-center justify-center gap-2 rounded-full px-5 py-3 font-semibold text-terracotta-700 underline decoration-terracotta-300 underline-offset-4 transition duration-[var(--duration-ui)] ease-[var(--ease-warm-out)] hover:text-terracotta-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-terracotta-500 focus-visible:ring-offset-2"
-            aria-label="Suivre Maison Loratu sur Instagram, nouvel onglet"
-          >
-            <UiIcon name="instagram" :size="19" />
-            Instagram
-          </a>
+      <div class="container mx-auto grid max-w-6xl items-start gap-10 md:grid-cols-[0.9fr_1.1fr]">
+        <div class="max-w-xl text-center md:pt-8 md:text-left">
+          <p class="text-service-label text-terracotta-600">Nous contacter</p>
+          <h1 class="page-title mt-4">Parlons de votre besoin</h1>
+          <div class="mt-8 flex flex-wrap justify-center gap-4 md:justify-start">
+            <router-link
+              to="/faq"
+              class="inline-flex min-h-11 items-center justify-center rounded-full border-2 border-terracotta-300 px-7 py-3 font-semibold text-terracotta-700 transition duration-[var(--duration-ui)] ease-[var(--ease-warm-out)] hover:bg-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-terracotta-500 focus-visible:ring-offset-2">
+              Questions fréquentes
+            </router-link>
+          </div>
         </div>
-        </div>
-        <div class="mx-auto w-full max-w-sm overflow-hidden rounded-[2rem] shadow-soft-lg">
-          <img src="/images/sandra-portrait.webp" width="900" height="1352" alt="Sandra, sophrologue et fondatrice de Maison Loratu" class="block aspect-[4/5] w-full object-cover" loading="lazy" decoding="async" />
+
+        <form
+          v-if="!submitted"
+          ref="contactForm"
+          class="rounded-[2rem] bg-white p-6 shadow-soft-lg md:p-8"
+          @submit.prevent="onSubmit">
+          <div class="mb-6">
+            <h2 class="text-2xl text-terracotta-800">Écrivez à Maison Loratu</h2>
+            <p class="mt-2 text-gray-700">Les champs marqués d’un astérisque sont obligatoires.</p>
+          </div>
+          <div class="space-y-5">
+            <label class="form-label" for="contact-name">Prénom et nom *</label>
+            <input id="contact-name" v-model.trim="form.name" class="form-input" type="text" autocomplete="name" required />
+
+            <label class="form-label" for="contact-email">Adresse email *</label>
+            <input id="contact-email" v-model.trim="form.email" class="form-input" type="email" autocomplete="email" required />
+
+            <label class="form-label" for="contact-message">Votre message *</label>
+            <textarea id="contact-message" v-model.trim="form.message" class="form-input min-h-36" maxlength="1000" required placeholder="Expliquez simplement votre demande, sans information médicale détaillée."></textarea>
+
+            <label class="flex items-start gap-3 text-sm leading-relaxed text-gray-700">
+              <input v-model="form.consent" class="mt-1 h-4 w-4 accent-terracotta-500" type="checkbox" required />
+              <span>J’accepte que Maison Loratu utilise ces informations uniquement pour répondre à ma demande. *</span>
+            </label>
+          </div>
+          <p v-if="submitError" class="mt-5 rounded-2xl bg-red-50 px-4 py-3 text-sm text-red-800" role="alert">{{ submitError }}</p>
+          <button class="mt-7 inline-flex min-h-11 w-full items-center justify-center rounded-full bg-terracotta-500 px-8 py-3 font-semibold text-white shadow-soft transition hover:bg-terracotta-600 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-terracotta-500 focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-60 sm:w-auto" type="submit" :disabled="isSubmitting">
+            {{ isSubmitting ? 'Envoi en cours…' : 'Envoyer ma demande' }}
+          </button>
+        </form>
+
+        <div v-else class="rounded-[2rem] bg-white p-8 text-center shadow-soft-lg md:p-10" role="status">
+          <h2 class="text-3xl text-terracotta-800">Merci pour votre message</h2>
+          <p class="mt-4 leading-relaxed text-gray-700">Maison Loratu vous répondra dès que possible pour échanger sur votre besoin.</p>
         </div>
       </div>
     </section>
 
-    <section id="repères" class="scroll-mt-28 px-4 py-16 md:py-24">
-      <div class="container mx-auto grid max-w-6xl gap-6 lg:grid-cols-[1.05fr_0.95fr]">
-        <article class="rounded-[2rem] bg-white p-8 shadow-soft-lg">
-          <p class="text-service-label text-terracotta-600">Votre demande</p>
-          <h2 class="mt-4 text-3xl text-terracotta-800 md:text-4xl">Décrire votre besoin</h2>
-          <p class="mt-4 leading-relaxed text-gray-700">
-            Le questionnaire précise le public concerné, votre objectif et le format souhaité. Il ne réserve pas de séance automatiquement.
-          </p>
-          <div class="mt-7">
-            <CTAButton to="/questionnaire">Commencer le questionnaire</CTAButton>
-          </div>
-        </article>
-
+    <section class="px-4 py-16 md:py-24">
+      <div class="container mx-auto max-w-3xl">
         <article class="rounded-[2rem] bg-terracotta-800 p-8 text-white shadow-soft-lg">
           <p class="text-service-label text-cream-200">Une question ?</p>
           <h2 class="mt-4 text-3xl md:text-4xl">Consulter les réponses</h2>
-          <p class="mt-4 leading-relaxed text-cream-100">
-            Retrouvez les informations essentielles sur les séances, les ateliers, les enfants et les différents formats proposés.
-          </p>
-          <div class="mt-7">
-            <CTAButton to="/faq" variant="secondary">Voir la FAQ</CTAButton>
-          </div>
+          <p class="mt-4 leading-relaxed text-cream-100">Retrouvez les informations essentielles sur les séances, les ateliers, les enfants et les différents formats proposés.</p>
+          <div class="mt-7"><router-link to="/faq" class="inline-flex min-h-11 items-center justify-center rounded-full border-2 border-terracotta-300 bg-white px-8 py-3 font-semibold text-terracotta-700 transition hover:border-terracotta-400 hover:bg-cream-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cream-100 focus-visible:ring-offset-2 focus-visible:ring-offset-terracotta-800">Voir la FAQ</router-link></div>
         </article>
-      </div>
-    </section>
-
-    <section class="px-4 pb-16 md:pb-24">
-      <div class="container mx-auto grid max-w-6xl gap-5 md:grid-cols-3">
-        <div class="rounded-[1.75rem] bg-white p-6 shadow-soft">
-          <p class="text-sm font-semibold uppercase tracking-[0.16em] text-terracotta-600">1 · Pour qui ?</p>
-          <h2 class="mt-3 text-2xl text-terracotta-800">Le public concerné</h2>
-          <p class="mt-2 text-gray-600">Enfant, adolescente, femme, duo, maman ou grand-mère.</p>
-        </div>
-        <div class="rounded-[1.75rem] bg-white p-6 shadow-soft">
-          <p class="text-sm font-semibold uppercase tracking-[0.16em] text-terracotta-600">2 · Pourquoi ?</p>
-          <h2 class="mt-3 text-2xl text-terracotta-800">Votre besoin</h2>
-          <p class="mt-2 text-gray-600">Calme, confiance, sommeil, émotions ou moment de partage.</p>
-        </div>
-        <div class="rounded-[1.75rem] bg-white p-6 shadow-soft">
-          <p class="text-sm font-semibold uppercase tracking-[0.16em] text-terracotta-600">3 · Et ensuite ?</p>
-          <h2 class="mt-3 text-2xl text-terracotta-800">Un échange avec Sandra</h2>
-          <p class="mt-2 text-gray-600">Sandra revient vers vous pour préciser le format le plus adapté.</p>
-        </div>
       </div>
     </section>
   </div>
