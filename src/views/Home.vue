@@ -66,7 +66,7 @@ const loadPublicContent = async () => {
     if (
       content.public?.atelierDuMoment?.enabled &&
       content.public.atelierDuMoment.title &&
-      content.public.atelierDuMoment.summary
+      content.public.atelierDuMoment.title
     ) {
       featuredWorkshop.value = content.public.atelierDuMoment;
     }
@@ -169,7 +169,7 @@ onMounted(loadPublicContent);
             {{ featuredWorkshop.label }}
           </p>
           <h2 class="mt-3 text-3xl sm:text-4xl">
-            Atelier &amp; sophrologie
+            {{ featuredWorkshop.title }}
           </h2>
           <div class="mt-5">
             <CTAButton :to="featuredWorkshop.ctaHref" variant="secondary">{{

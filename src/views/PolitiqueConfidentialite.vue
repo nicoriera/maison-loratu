@@ -39,22 +39,19 @@
               Les données collectées sont utilisées exclusivement pour :
             </p>
             <ul class="list-disc list-inside text-gray-700 space-y-2 ml-4">
-              <li>Vous proposer un accompagnement personnalisé en sophrologie</li>
               <li>Vous contacter pour discuter de vos besoins</li>
-              <li>Vous envoyer des informations relatives à nos services (avec votre consentement)</li>
             </ul>
             <p class="text-gray-700 mt-4">
-              Vos données ne seront jamais vendues, louées ou partagées avec des tiers à des fins
-              commerciales.
+              Vos données ne sont jamais vendues ni utilisées à des fins commerciales. Elles sont transmises à Formspree,
+              notre sous-traitant technique de formulaires, uniquement pour acheminer votre demande à Maison Loratu.
             </p>
           </section>
 
           <section>
             <h2 class="text-2xl font-semibold text-gray-900 mb-4">3. Base légale du traitement</h2>
             <p class="text-gray-700">
-              Le traitement de vos données personnelles est basé sur votre consentement explicite
-              lorsque vous remplissez le formulaire de contact. Vous pouvez retirer votre consentement à
-              tout moment en nous contactant.
+              Le traitement de vos données personnelles est nécessaire pour répondre à votre demande de contact.
+              Vous pouvez demander l’effacement de vos données à tout moment en nous contactant.
             </p>
           </section>
 
@@ -83,8 +80,7 @@
             </ul>
             <p class="text-gray-700 mt-4">
               Pour exercer ces droits, contactez-nous à l'adresse suivante :
-              <!-- À compléter avec l'email de contact -->
-              <a href="mailto:[À compléter]" class="text-terracotta-700 underline">[À compléter]</a>
+              <a href="mailto:maisonloratu@gmail.com" class="text-terracotta-700 underline">maisonloratu@gmail.com</a>
             </p>
           </section>
 
@@ -128,9 +124,8 @@
               de vos données personnelles, vous pouvez nous contacter à :
             </p>
             <p class="text-gray-700">
-              <!-- À compléter avec les informations de contact -->
-              Email : [À compléter]<br>
-              Téléphone : [À compléter]
+              Email : <a href="mailto:maisonloratu@gmail.com" class="text-terracotta-700 underline">maisonloratu@gmail.com</a><br>
+              Téléphone : <a href="tel:+33666883302" class="text-terracotta-700 underline">06 66 88 33 02</a>
             </p>
           </section>
         </div>
