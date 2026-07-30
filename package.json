@@ -4,7 +4,7 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
+    "dev": "netlify dev --port 5173 --target-port 5174 --command \"vite --port 5174\"",
     "build": "vite build",
     "preview": "vite preview"
   },
@@ -24,6 +24,7 @@
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^6.0.1",
+    "netlify-cli": "^27.0.1",
     "vite": "^7.2.4"
   }
 }

@@ -19,6 +19,6 @@ import WorkshopDetail from '../components/WorkshopDetail.vue'
       'Jeux de visualisation',
       'Thématiques : animaux de la savane, mission dans l’espace, petit koala et sa maman',
     ]"
-    image="/images/children-session.webp"
-    image-alt="Enfants réunis pour un atelier de sophrologie" />
+    image="/images/children-studio-sun-markers.webp"
+    image-alt="Mains d’enfants autour de coloriages de soleils sur des tapis de yoga" />
 </template>

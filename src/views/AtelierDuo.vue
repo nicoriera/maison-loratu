@@ -19,6 +19,6 @@ import WorkshopDetail from '../components/WorkshopDetail.vue'
       'Visualisation et relaxation',
       'Un moment doux à partager',
     ]"
-    image="/images/duo-session.webp"
+    image="/images/duo-mother-daughter-back-stretch.webp"
     image-alt="Mère et fille partageant un atelier de sophrologie" />
 </template>
