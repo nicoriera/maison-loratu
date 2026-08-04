@@ -5,7 +5,7 @@ const contactForm = ref(null)
 const isSubmitting = ref(false)
 const submitError = ref('')
 const submitted = ref(false)
-const form = ref({ name: '', email: '', message: '', consent: false })
+const form = ref({ inquiryType: 'contact', name: '', email: '', message: '', consent: false })
 const contactEndpoint = import.meta.env.VITE_FORMSPREE_ENDPOINT || 'https://formspree.io/f/mbdzazdg'
 
 const onSubmit = async () => {
@@ -23,14 +23,17 @@ const onSubmit = async () => {
         email: form.value.email,
         message: form.value.message,
         consent: form.value.consent,
-        subject: 'Demande de contact — Maison Loratu',
+        inquiryType: form.value.inquiryType,
+        subject: form.value.inquiryType === 'suggestion'
+          ? 'Amélioration ou suggestion — Maison Loratu'
+          : 'Demande de contact — Maison Loratu',
       }),
     })
 
     if (!response.ok) throw new Error('Erreur lors de l’envoi')
 
     submitted.value = true
-    form.value = { name: '', email: '', message: '', consent: false }
+    form.value = { inquiryType: 'contact', name: '', email: '', message: '', consent: false }
   } catch {
     submitError.value = 'Une erreur est survenue. Veuillez réessayer un peu plus tard.'
   } finally {
@@ -65,14 +68,28 @@ const onSubmit = async () => {
             <p class="mt-2 text-gray-700">Les champs marqués d’un astérisque sont obligatoires.</p>
           </div>
           <div class="space-y-5">
+            <fieldset>
+              <legend class="form-label">Votre message concerne *</legend>
+              <div class="mt-2 grid gap-2 sm:grid-cols-2" role="radiogroup">
+                <label class="cursor-pointer rounded-2xl border-2 px-4 py-3 text-sm font-semibold transition" :class="form.inquiryType === 'contact' ? 'border-terracotta-500 bg-terracotta-50 text-terracotta-800' : 'border-cream-300 text-gray-700 hover:border-terracotta-300'">
+                  <input v-model="form.inquiryType" class="sr-only" type="radio" name="inquiry-type" value="contact" />
+                  Une demande de contact
+                </label>
+                <label class="cursor-pointer rounded-2xl border-2 px-4 py-3 text-sm font-semibold transition" :class="form.inquiryType === 'suggestion' ? 'border-terracotta-500 bg-terracotta-50 text-terracotta-800' : 'border-cream-300 text-gray-700 hover:border-terracotta-300'">
+                  <input v-model="form.inquiryType" class="sr-only" type="radio" name="inquiry-type" value="suggestion" />
+                  Amélioration / suggestion
+                </label>
+              </div>
+            </fieldset>
+
             <label class="form-label" for="contact-name">Prénom et nom *</label>
             <input id="contact-name" v-model.trim="form.name" class="form-input" type="text" autocomplete="name" required />
 
             <label class="form-label" for="contact-email">Adresse email *</label>
             <input id="contact-email" v-model.trim="form.email" class="form-input" type="email" autocomplete="email" required />
 
-            <label class="form-label" for="contact-message">Votre message *</label>
-            <textarea id="contact-message" v-model.trim="form.message" class="form-input min-h-36" maxlength="1000" required placeholder="Expliquez simplement votre demande, sans information médicale détaillée."></textarea>
+            <label class="form-label" for="contact-message">{{ form.inquiryType === 'suggestion' ? 'Votre amélioration ou suggestion *' : 'Votre message *' }}</label>
+            <textarea id="contact-message" v-model.trim="form.message" class="form-input min-h-36" maxlength="1000" required :placeholder="form.inquiryType === 'suggestion' ? 'Partagez une idée pour améliorer Maison Loratu.' : 'Expliquez simplement votre demande, sans information médicale détaillée.'"></textarea>
 
             <label class="flex items-start gap-3 text-sm leading-relaxed text-gray-700">
               <input v-model="form.consent" class="mt-1 h-4 w-4 accent-terracotta-500" type="checkbox" required />

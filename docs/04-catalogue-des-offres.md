@@ -1,23 +1,23 @@
 # Maison Loratu — Catalogue des offres
 
-**Version :** 30/07/2026
+**Version :** 04/08/2026
 
 | Offre | Public | Durée | Tarif | Capacité |
 |---|---|---:|---:|---:|
-| Ateliers enfants | Enfants | 1 h 15 | 38 € | 8 maximum |
-| Ateliers duo | Mère-fille ou grand-mère-petite-fille | 1 h 15 | 110 € pour deux | 2 |
-| Ateliers en douceur | Seniors | 1 h 15 | 38 € | 8 maximum |
+| Ateliers enfants — émotions, sommeil, apaisement | Enfants | 1 h 15 | 20 € par personne | 8 maximum |
+| Atelier Duo — sérénité, partage | Un enfant (fille ou garçon) et une femme | 1 h 15 | 49 € pour deux | 2 |
+| Ateliers en douceur — vitalité, relaxation, concentration | Adultes | 1 h 15 | 25 € par personne | 8 maximum |
 | Accompagnement individuel | Enfants et femmes | 1 h | 60 € | Individuel |
 
-## Ateliers enfants
+## Ateliers enfants — émotions, sommeil, apaisement
 
 Yoga kids, histoires, jeux de respiration, mouvements et relaxation pour accueillir les émotions, retrouver le calme, prendre confiance et mieux dormir.
 
-## Ateliers duo
+## Atelier Duo — sérénité, partage
 
-Une parenthèse à deux avec respiration, relaxation, visualisation et mouvements doux. Aucun prérequis n’est nécessaire.
+Une parenthèse à deux, entre un enfant — fille ou garçon — et une femme de son entourage, avec respiration, relaxation, visualisation et mouvements doux. Aucun prérequis n’est nécessaire.
 
-## Ateliers en douceur
+## Ateliers en douceur — vitalité, relaxation, concentration
 
 Respiration, relaxation, mouvements adaptés et exercices de mémoire pour entretenir concentration, équilibre, vitalité et convivialité.
 
@@ -27,8 +27,11 @@ Une séance adaptée aux besoins du moment : stress, anxiété, sommeil, confian
 
 ## Carte cadeau
 
-- Formule : Atelier Duo (1 h 15).
-- Intention : une parenthèse de douceur à partager entre femmes, pour ralentir et respirer.
+- Formule : Atelier Duo (1 h 15) — 49 €.
+- Carte cadeau numérique : envoi numérique offert, reçue immédiatement par e-mail après achat.
+- Carte cadeau Signature : 54 €, envoyée par courrier dans une belle enveloppe avec un mot personnalisé.
+- Informations à recueillir : prénom de la personne qui reçoit la carte et message personnalisé.
+- Intention : une parenthèse de douceur à partager entre un enfant et une femme de son entourage, pour ralentir et respirer.
 - Validité : deux mois à partir de la date d’achat.
 - Demande via le formulaire de contact, par téléphone ou par email.
 
