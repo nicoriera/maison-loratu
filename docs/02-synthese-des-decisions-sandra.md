@@ -1,7 +1,7 @@
 # Maison Loratu — Synthèse des décisions de Sandra
 
 **Date des réponses :** 20/07/2026, complétées le 21/07/2026
-**Mise à jour produit :** 30/07/2026
+**Mise à jour produit :** 04/08/2026
 **Statut :** décisions consolidées ; les corrections du 21/07 remplacent les éléments incompatibles du cadrage initial
 
 ## 1. Mission
@@ -32,8 +32,8 @@ Maison Loratu doit transmettre une approche naturelle, humaine et adaptée aux e
 
 ### Publics et situations à préciser
 
-- Seniors, notamment pour les ateliers de sérénité, mobilité douce, sommeil et lutte contre l'isolement.
-- Duos et familles : mère-fille, grand-mère-petite-fille, sœurs.
+- Personnes recherchant un temps en douceur, notamment pour la sérénité, la mobilité douce, le sommeil et le lien social.
+- Duos : un enfant, fille ou garçon, et une femme de son entourage.
 
 La grossesse n’est pas une offre ou un parcours dédié au lancement. Elle peut être citée comme événement préparé dans le cadre d’un accompagnement personnalisé.
 
@@ -48,8 +48,9 @@ La grossesse n’est pas une offre ou un parcours dédié au lancement. Elle peu
 ### Ateliers en studio
 
 - Durée : 1 h 15.
-- Tarif : 38 €.
-- Capacité : 6 à 8 personnes.
+- Ateliers enfants — émotions, sommeil, apaisement : 20 € par personne, 8 participants maximum.
+- Ateliers en douceur — vitalité, relaxation, concentration : 25 € par personne, 8 participants maximum.
+- Atelier Duo — sérénité, partage : 49 € pour deux personnes, un enfant et une femme.
 - Lieu : Studio Loratu.
 
 ### Cours de sophrologie en plein air
@@ -62,11 +63,9 @@ La grossesse n’est pas une offre ou un parcours dédié au lancement. Elle peu
 
 ### Ateliers thématiques
 
-- Seniors : retrouver un état de sérénité.
-- Enfants : émotions et sommeil.
-- Duos mère-fille : détente et moment doux.
-- Duos grand-mère-petite-fille.
-- Ateliers entre sœurs.
+- Ateliers en douceur : vitalité, relaxation et concentration.
+- Enfants : émotions, sommeil et apaisement.
+- Duo : sérénité et partage, entre un enfant et une femme.
 
 ## 6. Objectifs des ateliers
 

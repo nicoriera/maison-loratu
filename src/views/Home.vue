@@ -8,24 +8,24 @@ import { onMounted, ref } from "vue";
 const audiences = [
   {
     order: 1,
-    title: "Ateliers enfants",
-    detail: "1 h 15 · 38 € · 8 participants maximum",
+    title: "Ateliers enfants — émotions, sommeil, apaisement",
+    detail: "1 h 15 · 20 € par personne · 8 participants maximum",
     image: "/images/children-studio-sun-markers.webp",
     href: "/ateliers/enfants",
     cta: "Je découvre",
   },
   {
     order: 3,
-    title: "Ateliers duo mère-fille ou grand-mère",
-    detail: "1 h 15 · 110 € pour 2 personnes",
+    title: "Atelier Duo — sérénité, partage",
+    detail: "1 h 15 · 49 € pour 2 personnes",
     image: "/images/duo-mother-daughter-back-stretch.webp",
     href: "/ateliers/duo",
     cta: "Je découvre",
   },
   {
     order: 2,
-    title: "Ateliers en douceur",
-    detail: "1 h 15 · 38 € · 8 participants maximum",
+    title: "Ateliers en douceur — vitalité, relaxation, concentration",
+    detail: "1 h 15 · 25 € par personne · 8 participants maximum",
     image: "/images/seniors-session.webp",
     href: "/ateliers/seniors",
     cta: "Je découvre",
@@ -118,6 +118,20 @@ onMounted(loadPublicContent);
       </div>
     </section>
 
+    <section class="bg-cream-100 px-4 py-16 md:py-24">
+      <div class="mx-auto max-w-3xl text-center">
+        <h2 class="text-3xl text-terracotta-800 sm:text-4xl md:text-5xl">
+          Qu’est-ce que la sophrologie ?
+        </h2>
+        <p class="mt-6 text-lg leading-relaxed text-gray-700">
+          C’est une méthode douce qui associe respiration, relaxation et visualisation positive. Elle aide à mieux gérer le stress, apaiser les émotions et retrouver un équilibre entre le corps et l’esprit, avec des outils simples au quotidien. La sophrologie améliore le sommeil des petits et des grands.
+        </p>
+        <p class="mt-4 text-lg leading-relaxed text-gray-700">
+          Elle accompagne aussi la préparation des grands moments de la vie des femmes, comme l’adolescence, la grossesse et l’accouchement, ou encore la ménopause. Les exercices peuvent se refaire chez soi, avec son enfant ou dans son cocon familial.
+        </p>
+      </div>
+    </section>
+
     <section
       id="ateliers"
       class="scroll-mt-28 bg-sauge-100 px-4 py-16 md:py-24">
@@ -144,20 +158,6 @@ onMounted(loadPublicContent);
             :cta-label="audience.cta" />
         </ScrollRevealStagger>
 
-      </div>
-    </section>
-
-    <section class="bg-cream-100 px-4 py-16 md:py-24">
-      <div class="mx-auto max-w-3xl text-center">
-        <h2 class="text-3xl text-terracotta-800 sm:text-4xl md:text-5xl">
-          Qu’est-ce que la sophrologie ?
-        </h2>
-        <p class="mt-6 text-lg leading-relaxed text-gray-700">
-          C’est une méthode douce qui associe respiration, relaxation et visualisation positive. Elle aide à mieux gérer le stress, apaiser les émotions et retrouver un équilibre entre le corps et l’esprit, avec des outils simples au quotidien. La sophrologie améliore le sommeil des petits et des grands.
-        </p>
-        <p class="mt-4 text-lg leading-relaxed text-gray-700">
-          Elle accompagne aussi la préparation des grands moments de la vie des femmes, comme l’adolescence, la grossesse et l’accouchement, ou encore la ménopause. Les exercices peuvent se refaire chez soi, avec son enfant ou dans son cocon familial.
-        </p>
       </div>
     </section>
 

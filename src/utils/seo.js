@@ -52,8 +52,8 @@ const createLocalBusinessSchema = () => ({
   sameAs: [siteConfig.instagramUrl],
   serviceType: [
     'Atelier de sophrologie pour enfants',
-    'Atelier de sophrologie pour seniors',
-    'Atelier duo mère-fille ou grand-mère',
+    'Atelier de sophrologie en douceur',
+    'Atelier Duo enfant et femme',
     'Accompagnement individuel en sophrologie',
   ],
 })

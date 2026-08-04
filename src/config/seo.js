@@ -5,18 +5,18 @@ export const seoByRoute = {
   },
   ateliers: {
     title: 'Ateliers de sophrologie à Anglet | Maison Loratu',
-    description: 'Découvrez les ateliers de sophrologie pour enfants, seniors et duos mère-fille ou grand-mère à Anglet et dans le BAB.',
+    description: 'Découvrez les ateliers de sophrologie pour enfants, les ateliers en douceur et les ateliers Duo à Anglet et dans le BAB.',
   },
   'atelier-enfants': {
-    title: 'Ateliers enfants de sophrologie à Anglet | Maison Loratu',
-    description: 'Des ateliers ludiques de sophrologie pour aider les enfants à accueillir leurs émotions, retrouver leur calme et prendre confiance.',
+    title: 'Ateliers enfants : émotions, sommeil, apaisement | Maison Loratu',
+    description: 'Des ateliers ludiques de sophrologie pour aider les enfants à accueillir leurs émotions, retrouver leur calme et mieux dormir.',
   },
   'atelier-duo': {
-    title: 'Ateliers duo mère-fille à Anglet | Maison Loratu',
-    description: 'Une parenthèse de sophrologie à partager entre mère et fille ou entre grand-mère et petite-fille.',
+    title: 'Atelier Duo : sérénité et partage à Anglet | Maison Loratu',
+    description: 'Une parenthèse de sophrologie à partager entre un enfant, fille ou garçon, et une femme de son entourage.',
   },
   'atelier-seniors': {
-    title: 'Ateliers en douceur pour seniors à Anglet | Maison Loratu',
+    title: 'Ateliers en douceur : vitalité, relaxation, concentration | Maison Loratu',
     description: 'Des ateliers de sophrologie en petit groupe pour respirer, bouger en douceur et entretenir concentration et vitalité.',
   },
   accompagnement: {

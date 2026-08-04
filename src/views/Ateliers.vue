@@ -11,8 +11,8 @@ const offerings = computed(() => [
   {
     id: "offer-collective",
     order: 1,
-    title: "Ateliers enfants",
-    audience: "1 h 15 · 38 €",
+    title: "Ateliers enfants — émotions, sommeil, apaisement",
+    audience: "1 h 15 · 20 € par personne",
     image: "/images/children-studio-sun-markers.webp",
     description:
       "Des ateliers joyeux pour aider les petits cœurs à grandir sereinement.",
@@ -29,13 +29,13 @@ const offerings = computed(() => [
   {
     id: "offer-duo",
     order: 3,
-    title: "Ateliers duo mère-fille ou grand-mère",
-    audience: "1 h 15 · 110 € pour 2 personnes",
+    title: "Atelier Duo — sérénité, partage",
+    audience: "1 h 15 · 49 € pour 2 personnes",
     image: "/images/duo-mother-daughter-back-stretch.webp",
     description:
-      "Une parenthèse de douceur à vivre à deux, une invitation à ralentir, à partager un moment précieux et à tisser de jolis souvenirs entre générations.",
+      "Une parenthèse de douceur à vivre entre un enfant, fille ou garçon, et une femme de son entourage.",
     bullets: [
-      "2 personnes",
+      "Un enfant et une femme",
       "Respiration et relaxation",
       "Visualisation et mouvements doux",
       "Une pratique accessible à tous les âges",
@@ -46,11 +46,11 @@ const offerings = computed(() => [
   {
     id: "offer-seniors",
     order: 2,
-    title: "Ateliers en douceur",
-    audience: "1 h 15 · 38 €",
+    title: "Ateliers en douceur — vitalité, relaxation, concentration",
+    audience: "1 h 15 · 25 € par personne",
     image: "/images/seniors-session.webp",
     description:
-      "Des séances pensées pour les seniors qui souhaitent entretenir leur concentration, leur vitalité et leur mobilité tout en douceur.",
+      "Des séances pensées pour entretenir la concentration, la vitalité et la mobilité tout en douceur.",
     bullets: [
       "8 participants maximum",
       "Respiration et relaxation",
@@ -125,7 +125,7 @@ onMounted(async () => {
             src="/images/duo-mother-daughter-back-stretch.webp"
             width="1200"
             height="900"
-            alt="Mère et enfant partageant un atelier de sophrologie"
+            alt="Une femme et un enfant partageant un atelier de sophrologie"
             class="block aspect-[4/3] w-full object-cover"
             loading="eager"
             fetchpriority="high" />
@@ -152,7 +152,7 @@ onMounted(async () => {
           <h2 class="mt-4 text-3xl md:text-4xl">Besoin d’en savoir plus ?</h2>
           <p class="mt-4 leading-relaxed text-cream-100">
             Retrouvez les réponses aux questions les plus fréquentes sur la
-            sophrologie, les enfants, les seniors et le fonctionnement des
+            sophrologie, les enfants, les ateliers en douceur et le fonctionnement des
             ateliers.
           </p>
           <p class="mt-4 leading-relaxed text-cream-100">

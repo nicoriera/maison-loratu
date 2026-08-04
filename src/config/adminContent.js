@@ -69,7 +69,7 @@ export const createInitialPublicDraft = () => ({
     enabled: true,
     label: 'En ce moment',
     title: 'Atelier & sophrologie',
-    summary: '1 h 15 · 8 participants maximum · 38 € — Une bulle de douceur pour ralentir, respirer et repartir avec des outils simples.',
+    summary: '1 h 15 · 20 € par personne · 8 participants maximum.',
     ctaLabel: 'Voir les ateliers',
     ctaHref: '/ateliers',
   },
@@ -78,20 +78,20 @@ export const createInitialPublicDraft = () => ({
 export const createInitialOffersDraft = () => ([
   {
     id: 'offer-collective',
-    title: 'Ateliers enfants',
-    audience: '1 h 15 · 8 participants · 38 €',
+    title: 'Ateliers enfants — émotions, sommeil, apaisement',
+    audience: '1 h 15 · 8 participants · 20 € par personne',
     summary: 'Respiration, relaxation et visualisation positive dans une ambiance conviviale.',
   },
   {
     id: 'offer-duo',
-    title: 'Ateliers duo mère-fille ou grand-mère',
-    audience: '1 h 15 · 110 € pour 2 personnes',
-    summary: 'Un temps à deux pour respirer, se retrouver et partager une expérience douce.',
+    title: 'Atelier Duo — sérénité, partage',
+    audience: '1 h 15 · 49 € pour 2 personnes',
+    summary: 'Un temps à deux pour un enfant, fille ou garçon, et une femme de son entourage.',
   },
   {
     id: 'offer-seniors',
-    title: 'Ateliers en douceur',
-    audience: '1 h 15 · 8 participants · 38 €',
+    title: 'Ateliers en douceur — vitalité, relaxation, concentration',
+    audience: '1 h 15 · 8 participants · 25 € par personne',
     summary: 'Respirer, bouger doucement et cultiver la sérénité dans un petit groupe.',
   },
   {

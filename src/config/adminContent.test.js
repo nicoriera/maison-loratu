@@ -26,7 +26,7 @@ test('create admin draft factories returns lightweight local defaults', () => {
       enabled: true,
       label: 'En ce moment',
       title: 'Atelier & sophrologie',
-      summary: '1 h 15 · 8 participants maximum · 38 € — Une bulle de douceur pour ralentir, respirer et repartir avec des outils simples.',
+      summary: '1 h 15 · 20 € par personne · 8 participants maximum.',
       ctaLabel: 'Voir les ateliers',
       ctaHref: '/ateliers',
     },
