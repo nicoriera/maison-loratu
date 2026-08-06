@@ -1,8 +1,5 @@
 <script setup>
 import CTAButton from '../components/CTAButton.vue'
-import { useReservationConfig } from '../config/reservation.js'
-
-const { reservationUrl } = useReservationConfig()
 
 const subjects = [
   'Stress, anxiété et troubles du sommeil',
@@ -50,7 +47,7 @@ const foundations = [
             Un temps rien que pour vous, pour souffler, vous recentrer et avancer à votre rythme.
             Chaque accompagnement est personnalisé selon vos besoins du moment.
           </p>
-          <div class="mt-8"><CTAButton :to="reservationUrl">Je réserve</CTAButton></div>
+          <div class="mt-8"><CTAButton to="/reservation">M’alerter</CTAButton></div>
         </div>
         <img src="/images/individual-session.webp" width="1200" height="900" alt="Petit bureau calme pour un accompagnement individuel" class="block aspect-[4/3] h-auto w-full rounded-[2rem] object-cover shadow-soft-lg" fetchpriority="high" decoding="async" />
       </div>
@@ -142,7 +139,7 @@ const foundations = [
             Une séance individuelle de 1 h, adaptée à votre rythme et à vos besoins.
           </p>
           <div class="mt-6">
-            <CTAButton :to="reservationUrl">Je réserve mon accompagnement</CTAButton>
+            <CTAButton to="/reservation">M’alerter</CTAButton>
           </div>
         </div>
       </div>

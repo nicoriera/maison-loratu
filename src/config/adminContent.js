@@ -1,5 +1,3 @@
-import { sanitizeReservationUrl } from './site.js'
-
 const PUBLIC_EMAIL_PATTERN = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
 const PUBLIC_PHONE_PATTERN = /^[+()\d\s.-]{6,20}$/
 const ISO_DATE_PATTERN = /^\d{4}-\d{2}-\d{2}$/
@@ -22,10 +20,9 @@ export const ARTICLE_STATUS_OPTIONS = Object.freeze([
 
 const trimText = (value) => (typeof value === 'string' ? value.trim() : '')
 
-const sanitizeInternalOrReservationUrl = (value) => {
+const sanitizeInternalUrl = (value) => {
   const href = trimText(value)
-  if (href.startsWith('/')) return href
-  return sanitizeReservationUrl(href)
+  return href.startsWith('/') ? href : ''
 }
 
 const normalizeMultilineText = (value) => {
@@ -61,7 +58,6 @@ const isValidIsoDate = (value) => {
 }
 
 export const createInitialPublicDraft = () => ({
-  reservationUrl: '',
   location: '',
   email: '',
   phone: '',
@@ -69,7 +65,7 @@ export const createInitialPublicDraft = () => ({
     enabled: true,
     label: 'En ce moment',
     title: 'Atelier & sophrologie',
-    summary: '1 h 15 · 20 € par personne · 8 participants maximum.',
+    summary: '45 min · 20 € par personne · 8 participants maximum.',
     ctaLabel: 'Voir les ateliers',
     ctaHref: '/ateliers',
   },
@@ -79,7 +75,7 @@ export const createInitialOffersDraft = () => ([
   {
     id: 'offer-collective',
     title: 'Ateliers enfants — émotions, sommeil, apaisement',
-    audience: '1 h 15 · 8 participants · 20 € par personne',
+    audience: '45 min · 8 participants · 20 € par personne',
     summary: 'Respiration, relaxation et visualisation positive dans une ambiance conviviale.',
   },
   {
@@ -116,7 +112,7 @@ export const createInitialFaqDraft = () => ([
   {
     id: 'faq-workshops',
     question: 'Comment se déroulent les ateliers ?',
-    answer: 'Les ateliers durent 1 h 15, en petit groupe et sans prérequis. Sandra guide des exercices de respiration, relaxation et visualisation.',
+    answer: 'Les ateliers durent de 45 min à 1 h 15, en petit groupe et sans prérequis. Sandra guide des exercices de respiration, relaxation et visualisation.',
   },
 ])
 
@@ -130,7 +126,6 @@ export const createEmptyArticleDraft = () => ({
 })
 
 export const sanitizePublicContentDraft = (draft = {}) => ({
-  reservationUrl: trimText(draft.reservationUrl),
   location: trimText(draft.location),
   email: trimText(draft.email),
   phone: trimText(draft.phone),
@@ -140,7 +135,7 @@ export const sanitizePublicContentDraft = (draft = {}) => ({
     title: trimText(draft.atelierDuMoment?.title),
     summary: trimText(draft.atelierDuMoment?.summary),
     ctaLabel: trimText(draft.atelierDuMoment?.ctaLabel),
-    ctaHref: sanitizeInternalOrReservationUrl(draft.atelierDuMoment?.ctaHref),
+    ctaHref: sanitizeInternalUrl(draft.atelierDuMoment?.ctaHref),
   },
 })
 
@@ -183,7 +178,6 @@ export const validatePublicContentDraft = (draft = {}) => {
 
   return {
     sanitizedDraft,
-    sanitizedReservationUrl: sanitizeReservationUrl(sanitizedDraft.reservationUrl),
     issues,
   }
 }
@@ -359,9 +353,6 @@ export const validateAdminContent = (content = {}) => {
     : [{ sanitizedDraft: {}, issues: ['Les articles doivent être une liste valide.'] }]
   const issues = [
     ...publicResult.issues,
-    ...(publicResult.sanitizedDraft.reservationUrl && !publicResult.sanitizedReservationUrl
-      ? ['Le lien de réservation doit utiliser https:// et pointer vers un domaine Resalib.']
-      : []),
     ...offersResult.issues,
     ...faqResult.issues,
     ...articleResults.flatMap((result) => result.issues),
@@ -369,7 +360,7 @@ export const validateAdminContent = (content = {}) => {
 
   return {
     sanitizedContent: {
-      public: { ...publicResult.sanitizedDraft, reservationUrl: publicResult.sanitizedReservationUrl },
+      public: publicResult.sanitizedDraft,
       offers: offersResult.sanitizedDraft,
       faq: faqResult.sanitizedDraft,
       articles: articleResults.map((result, index) => ({

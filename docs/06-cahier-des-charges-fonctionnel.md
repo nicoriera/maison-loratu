@@ -1,12 +1,12 @@
 # Maison Loratu — Cahier des charges fonctionnel
 
-**Version :** 30/07/2026
+**Version :** 06/08/2026
 
 ## Périmètre V1
 
 - Site public responsive construit avec Vue 3 et Vite.
 - Présentation des ateliers, de l’accompagnement et de la carte cadeau.
-- Réservation externe via Resalib.
+- Page d’attente pour les réservations, avec inscription e-mail pour recevoir les premières dates.
 - Formulaire de contact pour les demandes particulières.
 - FAQ, mentions légales et politique de confidentialité.
 - Administration éditoriale légère protégée par Netlify Identity.
@@ -16,7 +16,7 @@
 ### Navigation
 
 - Afficher Ateliers, Accompagnement personnalisé, Carte cadeau et Contact sur ordinateur.
-- Conserver une navigation mobile courte avec un accès direct à la réservation.
+- Conserver une navigation mobile courte avec un accès direct à l’alerte d’ouverture.
 - Rediriger les anciennes URL retirées vers le contact général.
 
 ### Offres
@@ -29,10 +29,9 @@
 
 ### Réservation
 
-- Utiliser uniquement une URL HTTPS Resalib validée.
-- Ouvrir la réservation dans un nouvel onglet.
-- Ne pas dupliquer les disponibilités dans le site.
-- Afficher dans le footer le téléphone, l’email et le lien Resalib fournis.
+- Rediriger les actions « M’alerter » vers la page d’attente Maison Loratu.
+- Ne pas publier de disponibilité avant l’ouverture du service.
+- Afficher dans le footer le téléphone, l’email et un lien vers l’inscription aux premières dates.
 
 ### Formulaires
 

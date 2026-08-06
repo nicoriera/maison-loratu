@@ -29,7 +29,6 @@ Le site sera accessible sur `http://localhost:5173`
 
 ### Variables publiques facultatives
 
-- `VITE_RESALIB_URL` : remplace le lien Resalib général utilisé par défaut dans le footer et les boutons de réservation.
 - `VITE_FORMSPREE_ENDPOINT` : remplace le point de réception Formspree du formulaire de contact.
 
 ### Formulaire de contact
@@ -40,7 +39,7 @@ Sandra peut répondre directement depuis sa messagerie. Avant la mise en ligne, 
 
 ### Réservation
 
-Les boutons « Réserver » et le lien Resalib du footer ouvrent `https://www.resalib.fr/` par défaut. Lorsqu’une URL praticienne sera disponible, définissez `VITE_RESALIB_URL` pour la remplacer partout de façon cohérente.
+Les boutons « M’alerter » ouvrent actuellement la page d’attente Maison Loratu. La réservation en ligne sera activée ultérieurement.
 
 ### Utiliser l’administration V1
 
@@ -111,7 +110,7 @@ src/
 
 - **Landing page** avec sections explicatives sur la sophrologie
 - **Formulaire de contact** simple, avec consentement et envoi vers Formspree
-- **Réservation externe** via Resalib, centralisée dans la configuration du site
+- **Réservations en ligne** : page d’attente Maison Loratu, dans l’attente de l’ouverture du service
 - **Contenus administrables** pour l’atelier mis en avant, les offres et la FAQ
 - **Conformité RGPD** avec mentions légales et politique de confidentialité
 - **Design responsive** et moderne

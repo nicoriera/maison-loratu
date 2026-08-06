@@ -4,7 +4,7 @@
 
 | Offre | Public | Durée | Tarif | Capacité |
 |---|---|---:|---:|---:|
-| Ateliers enfants — émotions, sommeil, apaisement | Enfants | 1 h 15 | 20 € par personne | 8 maximum |
+| Ateliers enfants — émotions, sommeil, apaisement | Enfants | 45 min | 20 € par personne | 8 maximum |
 | Atelier Duo — sérénité, partage | Un enfant (fille ou garçon) et une femme | 1 h 15 | 49 € pour deux | 2 |
 | Ateliers en douceur — vitalité, relaxation, concentration | Adultes | 1 h 15 | 25 € par personne | 8 maximum |
 | Accompagnement individuel | Enfants et femmes | 1 h | 60 € | Individuel |

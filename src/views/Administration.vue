@@ -139,16 +139,7 @@ const tabBadges = computed(() => ({
 const messageClass = (type) => (type === 'error' ? 'text-red-700' : 'text-terracotta-700')
 
 const savePublicContent = async () => {
-  const { sanitizedDraft, sanitizedReservationUrl, issues } = validatePublicContentDraft(publicContent.value)
-
-  if (sanitizedDraft.reservationUrl && !sanitizedReservationUrl) {
-    publicMessage.value = {
-      type: 'error',
-      text: 'Le lien de réservation doit utiliser https:// et pointer vers un domaine Resalib.',
-    }
-    publicContent.value = sanitizedDraft
-    return
-  }
+  const { sanitizedDraft, issues } = validatePublicContentDraft(publicContent.value)
 
   if (issues.length > 0) {
     publicMessage.value = { type: 'error', text: issues[0] }
@@ -156,10 +147,7 @@ const savePublicContent = async () => {
     return
   }
 
-  publicContent.value = {
-    ...sanitizedDraft,
-    reservationUrl: sanitizedReservationUrl,
-  }
+  publicContent.value = sanitizedDraft
   try { await persistContent(); publicMessage.value = { type: 'success', text: 'Paramètres enregistrés.' } }
   catch (error) { publicMessage.value = { type: 'error', text: error.message } }
 }
@@ -350,27 +338,11 @@ const deleteArticle = async (articleId) => {
         <div>
           <h2 class="text-2xl text-terracotta-800">Paramètres publics</h2>
           <p class="mt-2 max-w-3xl text-gray-700">
-            Préparez uniquement les coordonnées publiques et un lien Resalib conforme.
+            Préparez uniquement les coordonnées publiques et l’atelier mis en avant.
           </p>
         </div>
 
         <form class="space-y-6" autocomplete="off" @submit.prevent="savePublicContent">
-          <div>
-            <label for="reservationUrl" class="form-label">Lien Resalib</label>
-            <input
-              id="reservationUrl"
-              v-model.trim="publicContent.reservationUrl"
-              class="form-input"
-              type="url"
-              inputmode="url"
-              placeholder="https://www.resalib.fr/..."
-              spellcheck="false"
-            />
-            <p class="mt-2 text-sm text-gray-600">
-              Le lien n’est accepté que s’il utilise `https://` sur un domaine `resalib.fr`.
-            </p>
-          </div>
-
           <div>
             <label for="location" class="form-label">Localisation</label>
             <input
@@ -417,7 +389,7 @@ const deleteArticle = async (articleId) => {
             </div>
             <div class="grid gap-5 md:grid-cols-2">
               <label for="featuredCtaLabel" class="form-label">Libellé du bouton<input id="featuredCtaLabel" v-model.trim="publicContent.atelierDuMoment.ctaLabel" class="form-input mt-2" maxlength="30" placeholder="Voir les ateliers" /></label>
-              <label for="featuredCtaHref" class="form-label">Lien du bouton<input id="featuredCtaHref" v-model.trim="publicContent.atelierDuMoment.ctaHref" class="form-input mt-2" maxlength="200" placeholder="/ateliers ou lien Resalib" /></label>
+              <label for="featuredCtaHref" class="form-label">Lien du bouton<input id="featuredCtaHref" v-model.trim="publicContent.atelierDuMoment.ctaHref" class="form-input mt-2" maxlength="200" placeholder="/ateliers" /></label>
             </div>
           </fieldset>
 

@@ -25,7 +25,7 @@ Une décision validée et datée remplace toute hypothèse antérieure incompati
 
 - Publics : enfants, adolescentes, femmes, seniors et duos intergénérationnels.
 - Navigation : Ateliers, Accompagnement personnalisé, Carte cadeau, Contact.
-- Réservation : Resalib lorsqu’un lien sécurisé est configuré.
+- Réservation : page d’attente et inscription e-mail jusqu’à l’ouverture du service.
 - Les anciennes URL retirées restent uniquement comme redirections techniques.
 - Aucun agent ne doit recréer une offre, une page, un formulaire ou un CTA destiné à une organisation professionnelle.
 

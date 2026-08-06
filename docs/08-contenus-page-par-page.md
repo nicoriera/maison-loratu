@@ -16,7 +16,7 @@
 
 Présenter séparément dans l’index puis dans une page dédiée :
 
-- enfants — émotions, sommeil, apaisement — 1 h 15, 20 € par personne, 8 participants maximum ;
+- enfants — émotions, sommeil, apaisement — 45 min, 20 € par personne, 8 participants maximum ;
 - Duo — sérénité, partage — 1 h 15, 49 € pour deux personnes ; enfant (fille ou garçon) et femme ;
 - ateliers en douceur — vitalité, relaxation, concentration — 1 h 15, 25 € par personne, 8 participants maximum ;
 - accompagnement individuel — 1 h, 60 €.
@@ -53,7 +53,7 @@ Présenter respiration, relaxation, mobilisation douce, concentration, équilibr
 
 ## Contact
 
-- Donner un moyen simple de poser une question ou de partager une amélioration / suggestion via un formulaire, le téléphone, l’email ou Resalib.
+- Donner un moyen simple de poser une question ou de partager une amélioration / suggestion via un formulaire, le téléphone ou l’email.
 - Ne pas demander de données sensibles.
 - Afficher les coordonnées uniquement lorsqu’elles sont confirmées.
 

@@ -1,12 +1,12 @@
 <script setup>
-import { inject, nextTick, onMounted, ref, watch } from 'vue'
+import { inject, nextTick, ref, watch } from 'vue'
 import { RouterView } from 'vue-router'
 import { useRoute } from 'vue-router'
 import Header from './components/Header.vue'
 import Footer from './components/Footer.vue'
 import MobileNavigation from './components/MobileNavigation.vue'
+import ReservationNotice from './components/ReservationNotice.vue'
 import { applyRouteSeo } from './utils/seo.js'
-import { loadReservationConfig } from './config/reservation.js'
 
 const transitionName = inject('transitionName', ref('page-fade'))
 const route = useRoute()
@@ -17,8 +17,6 @@ watch(
   () => applyRouteSeo(route),
   { immediate: true },
 )
-
-onMounted(loadReservationConfig)
 
 watch(
   () => route.fullPath,
@@ -35,6 +33,7 @@ watch(
       Aller au contenu principal
     </a>
     <Header />
+    <ReservationNotice v-if="route.name !== 'reservation'" />
     <main id="contenu-principal" ref="mainContent" tabindex="-1" class="flex-grow pb-[calc(5rem+env(safe-area-inset-bottom))] outline-none lg:pb-0">
       <RouterView v-slot="{ Component, route }">
         <Transition
