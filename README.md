@@ -39,7 +39,7 @@ Sandra peut répondre directement depuis sa messagerie. Avant la mise en ligne, 
 
 ### Réservation
 
-Les boutons « M’alerter » ouvrent actuellement la page d’attente Maison Loratu. La réservation en ligne sera activée ultérieurement.
+Les boutons « Réserver » ouvrent actuellement la page d’attente Maison Loratu. La réservation en ligne sera activée ultérieurement.
 
 ### Utiliser l’administration V1
 

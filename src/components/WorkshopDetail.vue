@@ -24,7 +24,7 @@ defineProps({
           <p class="mt-5 text-xl text-terracotta-800">{{ meta }}</p>
           <p class="body-copy mt-6">{{ intro }}</p>
           <div class="mt-8 flex flex-col gap-3 sm:flex-row">
-            <CTAButton to="/reservation">M’alerter</CTAButton>
+            <CTAButton to="/reservation">Je réserve</CTAButton>
             <CTAButton to="/ateliers" variant="secondary">Tous les ateliers</CTAButton>
           </div>
         </div>

@@ -13,7 +13,7 @@
 4. Carte cadeau — `/carte-cadeau`
 5. Contact — `/contact`
 
-Le bouton « M’alerter » ouvre la page d’attente Maison Loratu, le temps de préparer l’ouverture des réservations en ligne.
+Le bouton « Réserver » ouvre la page d’attente Maison Loratu, le temps de préparer l’ouverture des réservations en ligne.
 
 ## Navigation secondaire
 

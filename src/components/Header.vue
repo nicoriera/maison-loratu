@@ -69,10 +69,10 @@ const isActive = (item) => {
           <router-link
             to="/reservation"
             class="ml-2 inline-flex min-h-11 items-center justify-center rounded-full bg-terracotta-500 px-4 py-2 text-sm font-semibold text-white transition duration-[var(--duration-ui)] ease-[var(--ease-warm-out)] hover:bg-terracotta-600 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-terracotta-500 focus-visible:ring-offset-2"
-            aria-label="Être prévenue de l’ouverture des réservations"
+            aria-label="Réserver un atelier"
             :aria-current="route.name === 'reservation' ? 'page' : undefined"
           >
-            M’alerter
+            Réserver
           </router-link>
         </div>
 

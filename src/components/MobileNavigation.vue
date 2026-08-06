@@ -34,11 +34,11 @@ const isActive = (item) => route.name === item.activeRoute && !route.hash
         to="/reservation"
         class="flex min-h-12 flex-col items-center justify-center rounded-xl bg-terracotta-500 px-1 py-2 text-center text-xs font-semibold leading-tight text-white transition duration-[var(--duration-ui)] ease-[var(--ease-warm-out)] hover:bg-terracotta-600 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-terracotta-500 focus-visible:ring-offset-2"
         :class="{ 'ring-2 ring-terracotta-700 ring-offset-2': route.name === 'reservation' }"
-        aria-label="Être prévenue de l’ouverture des réservations"
+        aria-label="Réserver un atelier"
         :aria-current="route.name === 'reservation' ? 'page' : undefined"
       >
         <span class="mb-1 leading-none" aria-hidden="true"><UiIcon name="reserve" :size="22" /></span>
-        <span>M’alerter</span>
+        <span>Réserver</span>
       </router-link>
     </div>
   </nav>

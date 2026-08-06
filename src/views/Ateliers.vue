@@ -73,7 +73,7 @@ const offerings = computed(() => [
       "Concentration et étapes de vie",
     ],
     to: "/reservation",
-    action: "M’alerter",
+    action: "Je réserve",
   },
 ].map((offer) => {
   const remoteOffer = publicOffers.value.find((item) => item.id === offer.id);

@@ -16,7 +16,7 @@
 ### Navigation
 
 - Afficher Ateliers, Accompagnement personnalisé, Carte cadeau et Contact sur ordinateur.
-- Conserver une navigation mobile courte avec un accès direct à l’alerte d’ouverture.
+- Conserver une navigation mobile courte avec un accès direct à la réservation.
 - Rediriger les anciennes URL retirées vers le contact général.
 
 ### Offres
@@ -29,7 +29,7 @@
 
 ### Réservation
 
-- Rediriger les actions « M’alerter » vers la page d’attente Maison Loratu.
+- Rediriger les actions « Réserver » vers la page d’attente Maison Loratu.
 - Ne pas publier de disponibilité avant l’ouverture du service.
 - Afficher dans le footer le téléphone, l’email et un lien vers l’inscription aux premières dates.
 
