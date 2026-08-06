@@ -9,7 +9,7 @@ const audiences = [
   {
     order: 1,
     title: "Ateliers enfants — émotions, sommeil, apaisement",
-    detail: "1 h 15 · 20 € par personne · 8 participants maximum",
+    detail: "45 min · 20 €",
     image: "/images/children-studio-sun-markers.webp",
     href: "/ateliers/enfants",
     cta: "Je découvre",
@@ -17,7 +17,7 @@ const audiences = [
   {
     order: 3,
     title: "Atelier Duo — sérénité, partage",
-    detail: "1 h 15 · 49 € pour 2 personnes",
+    detail: "1 h 15 · 49 € pour deux personnes",
     image: "/images/duo-mother-daughter-back-stretch.webp",
     href: "/ateliers/duo",
     cta: "Je découvre",
@@ -25,7 +25,7 @@ const audiences = [
   {
     order: 2,
     title: "Ateliers en douceur — vitalité, relaxation, concentration",
-    detail: "1 h 15 · 25 € par personne · 8 participants maximum",
+    detail: "1 h 15 · 25 €",
     image: "/images/seniors-session.webp",
     href: "/ateliers/seniors",
     cta: "Je découvre",
@@ -172,7 +172,7 @@ onMounted(loadPublicContent);
             {{ featuredWorkshop.title }}
           </h2>
           <div class="mt-5">
-            <CTAButton :to="featuredWorkshop.ctaHref" variant="secondary">{{
+            <CTAButton to="/reservation" variant="secondary">{{
               featuredWorkshop.ctaLabel
             }}</CTAButton>
           </div>

@@ -2,9 +2,7 @@
 import CTAButton from "../components/CTAButton.vue";
 import OfferingCard from "../components/OfferingCard.vue";
 import { computed, onMounted, ref } from "vue";
-import { useReservationConfig } from "../config/reservation.js";
 
-const { reservationUrl } = useReservationConfig();
 const publicOffers = ref([]);
 
 const offerings = computed(() => [
@@ -12,7 +10,7 @@ const offerings = computed(() => [
     id: "offer-collective",
     order: 1,
     title: "Ateliers enfants — émotions, sommeil, apaisement",
-    audience: "1 h 15 · 20 € par personne",
+    audience: "45 min · 20 € par personne",
     image: "/images/children-studio-sun-markers.webp",
     description:
       "Des ateliers joyeux pour aider les petits cœurs à grandir sereinement.",
@@ -74,8 +72,8 @@ const offerings = computed(() => [
       "Préparation aux examens, à la grossesse ou à un événement",
       "Concentration et étapes de vie",
     ],
-    to: reservationUrl.value,
-    action: "Je réserve",
+    to: "/reservation",
+    action: "M’alerter",
   },
 ].map((offer) => {
   const remoteOffer = publicOffers.value.find((item) => item.id === offer.id);

@@ -42,13 +42,12 @@ La grossesse n’est pas une offre ou un parcours dédié au lancement. Elle peu
 ### Accompagnement individuel
 
 - Tarif indicatif : 60 €.
-- Modalité de réservation : calendrier en ligne.
-- Outil pressenti : Resalib, à confirmer après vérification de l'offre et des conditions.
+- Modalité de réservation : ouverture à venir ; inscription e-mail pour recevoir les premières dates.
 
 ### Ateliers en studio
 
 - Durée : 1 h 15.
-- Ateliers enfants — émotions, sommeil, apaisement : 20 € par personne, 8 participants maximum.
+- Ateliers enfants — émotions, sommeil, apaisement : 45 min, 20 € par personne, 8 participants maximum.
 - Ateliers en douceur — vitalité, relaxation, concentration : 25 € par personne, 8 participants maximum.
 - Atelier Duo — sérénité, partage : 49 € pour deux personnes, un enfant et une femme.
 - Lieu : Studio Loratu.
@@ -92,7 +91,7 @@ Sandra a demandé le 21/07/2026 de retirer toute la partie « structures et proj
 | Sujet | Décision actuelle | Statut |
 |---|---|---|
 | Localisation | À définir | En attente |
-| Réservation | Téléphone ou lien Resalib dans le footer ; URL générale à confirmer | Partiellement configuré |
+| Réservation | Page d’attente et inscription e-mail ; ouverture à préparer | En attente |
 | Annulation | Règles à définir | En attente |
 | Paiement au lancement | Paiement sur place | Décidé provisoirement |
 | Paiement en ligne | À étudier ultérieurement | À cadrer avec sécurité et RGPD |
@@ -155,7 +154,7 @@ L'arborescence doit donner la priorité aux ateliers :
 
 ## 13. Administration recommandée
 
-Un espace d'administration est recommandé, mais il doit rester proportionné à l'activité. Il ne faut pas créer un back-office complexe au lancement si Resalib gère déjà l'agenda et les réservations.
+Un espace d'administration est recommandé, mais il doit rester proportionné à l'activité. Il ne faut pas créer un back-office complexe avant d’avoir arrêté le fonctionnement des réservations.
 
 ### À administrer depuis le site
 
@@ -166,7 +165,7 @@ Un espace d'administration est recommandé, mais il doit rester proportionné à
 - Photos et illustrations.
 - Textes de présentation.
 
-### À laisser à Resalib
+### À préparer pour l’ouverture des réservations
 
 - Créneaux et disponibilités.
 - Réservations.
@@ -176,7 +175,7 @@ Un espace d'administration est recommandé, mais il doit rester proportionné à
 
 ### Recommandation de lancement
 
-Prévoir une administration simple de type CMS pour les contenus éditoriaux, sans développer de gestionnaire de rendez-vous propriétaire. Le site affichera un bouton ou un lien vers Resalib pour réserver.
+Prévoir une administration simple de type CMS pour les contenus éditoriaux, sans développer de gestionnaire de rendez-vous propriétaire avant d’avoir choisi le service de réservation. Le site affiche une page d’attente et permet de demander les premières dates par e-mail.
 
 ## 14. Informations encore nécessaires
 

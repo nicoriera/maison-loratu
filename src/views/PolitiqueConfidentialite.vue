@@ -24,12 +24,13 @@
           <section>
             <h2 class="text-2xl font-semibold text-gray-900 mb-4">1. Collecte des données</h2>
             <p class="text-gray-700 mb-4">
-              Nous collectons les données suivantes lorsque vous utilisez notre formulaire de contact :
+              Nous collectons les données suivantes lorsque vous utilisez le formulaire de contact ou l’inscription pour être prévenue de l’ouverture des réservations :
             </p>
             <ul class="list-disc list-inside text-gray-700 space-y-2 ml-4">
               <li>Prénom et nom</li>
               <li>Adresse email</li>
               <li>Message</li>
+              <li>Choix d’être prévenue de l’ouverture des réservations</li>
             </ul>
           </section>
 
@@ -40,6 +41,7 @@
             </p>
             <ul class="list-disc list-inside text-gray-700 space-y-2 ml-4">
               <li>Vous contacter pour discuter de vos besoins</li>
+              <li>Vous prévenir de l’ouverture des réservations si vous l’avez demandé</li>
             </ul>
             <p class="text-gray-700 mt-4">
               Vos données ne sont jamais vendues ni utilisées à des fins commerciales. Elles sont transmises à Formspree,
@@ -50,7 +52,7 @@
           <section>
             <h2 class="text-2xl font-semibold text-gray-900 mb-4">3. Base légale du traitement</h2>
             <p class="text-gray-700">
-              Le traitement de vos données personnelles est nécessaire pour répondre à votre demande de contact.
+              Le traitement de vos données personnelles est nécessaire pour répondre à votre demande de contact. Lorsque vous choisissez d’être prévenue de l’ouverture des réservations, le traitement repose sur votre consentement.
               Vous pouvez demander l’effacement de vos données à tout moment en nous contactant.
             </p>
           </section>

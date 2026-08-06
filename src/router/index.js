@@ -11,6 +11,7 @@ import Contact from '../views/Contact.vue'
 import Accompagnement from '../views/Accompagnement.vue'
 import CarteCadeau from '../views/CarteCadeau.vue'
 import FAQ from '../views/FAQ.vue'
+import ReservationEnCours from '../views/ReservationEnCours.vue'
 import Administration from '../views/Administration.vue'
 import { getUser } from '@netlify/identity'
 import { seoByRoute } from '../config/seo.js'
@@ -89,6 +90,12 @@ const router = createRouter({
       name: 'faq',
       component: FAQ,
       meta: { transition: 'page-slide-left', seo: seoByRoute.faq },
+    },
+    {
+      path: '/reservation',
+      name: 'reservation',
+      component: ReservationEnCours,
+      meta: { transition: 'page-slide-left', seo: seoByRoute.reservation },
     },
     {
       path: '/devis-structure',

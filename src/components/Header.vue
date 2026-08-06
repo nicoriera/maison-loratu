@@ -2,7 +2,6 @@
 import { useRoute } from 'vue-router'
 import { siteConfig } from '../config/site.js'
 import UiIcon from './UiIcon.vue'
-import { useReservationConfig } from '../config/reservation.js'
 
 const route = useRoute()
 
@@ -13,8 +12,6 @@ const navigation = [
   { label: 'Carte cadeau', to: '/carte-cadeau', activeRoute: 'carte-cadeau' },
   { label: 'Contact', to: '/contact', activeRoute: 'contact' },
 ]
-
-const { reservationUrl: reservationTarget } = useReservationConfig()
 
 const isActive = (item) => {
   return route.name === item.activeRoute && !route.hash
@@ -69,15 +66,14 @@ const isActive = (item) => {
             <UiIcon name="instagram" :size="22" />
           </a>
 
-          <a
-            :href="reservationTarget"
-            target="_blank"
-            rel="noopener noreferrer"
+          <router-link
+            to="/reservation"
             class="ml-2 inline-flex min-h-11 items-center justify-center rounded-full bg-terracotta-500 px-4 py-2 text-sm font-semibold text-white transition duration-[var(--duration-ui)] ease-[var(--ease-warm-out)] hover:bg-terracotta-600 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-terracotta-500 focus-visible:ring-offset-2"
-            aria-label="Réserver un atelier, nouvel onglet"
+            aria-label="Être prévenue de l’ouverture des réservations"
+            :aria-current="route.name === 'reservation' ? 'page' : undefined"
           >
-            Réserver
-          </a>
+            M’alerter
+          </router-link>
         </div>
 
       </div>

@@ -71,11 +71,11 @@ const onSubmit = async () => {
             <fieldset>
               <legend class="form-label">Votre message concerne *</legend>
               <div class="mt-2 grid gap-2 sm:grid-cols-2" role="radiogroup">
-                <label class="cursor-pointer rounded-2xl border-2 px-4 py-3 text-sm font-semibold transition" :class="form.inquiryType === 'contact' ? 'border-terracotta-500 bg-terracotta-50 text-terracotta-800' : 'border-cream-300 text-gray-700 hover:border-terracotta-300'">
+                <label class="cursor-pointer rounded-2xl border-2 px-4 py-3 text-sm font-semibold transition focus-within:ring-2 focus-within:ring-terracotta-500 focus-within:ring-offset-2" :class="form.inquiryType === 'contact' ? 'border-terracotta-500 bg-terracotta-50 text-terracotta-800' : 'border-cream-300 text-gray-700 hover:border-terracotta-300'">
                   <input v-model="form.inquiryType" class="sr-only" type="radio" name="inquiry-type" value="contact" />
                   Une demande de contact
                 </label>
-                <label class="cursor-pointer rounded-2xl border-2 px-4 py-3 text-sm font-semibold transition" :class="form.inquiryType === 'suggestion' ? 'border-terracotta-500 bg-terracotta-50 text-terracotta-800' : 'border-cream-300 text-gray-700 hover:border-terracotta-300'">
+                <label class="cursor-pointer rounded-2xl border-2 px-4 py-3 text-sm font-semibold transition focus-within:ring-2 focus-within:ring-terracotta-500 focus-within:ring-offset-2" :class="form.inquiryType === 'suggestion' ? 'border-terracotta-500 bg-terracotta-50 text-terracotta-800' : 'border-cream-300 text-gray-700 hover:border-terracotta-300'">
                   <input v-model="form.inquiryType" class="sr-only" type="radio" name="inquiry-type" value="suggestion" />
                   Amélioration / suggestion
                 </label>
@@ -102,9 +102,12 @@ const onSubmit = async () => {
           </button>
         </form>
 
-        <div v-else class="rounded-[2rem] bg-white p-8 text-center shadow-soft-lg md:p-10" role="status">
-          <h2 class="text-3xl text-terracotta-800">Merci pour votre message</h2>
-          <p class="mt-4 leading-relaxed text-gray-700">Maison Loratu vous répondra dès que possible pour échanger sur votre besoin.</p>
+        <div v-else class="flex min-h-80 items-center justify-center rounded-[2rem] bg-white p-8 text-center shadow-soft-lg md:col-span-2 md:min-h-[30rem] md:p-12" role="status">
+          <div class="max-w-xl">
+            <p class="contact-success-heart text-5xl text-terracotta-500" aria-hidden="true">♥</p>
+            <h2 class="mt-5 text-4xl text-terracotta-800 md:text-5xl">Merci pour votre message</h2>
+            <p class="mt-5 text-xl leading-relaxed text-gray-700">Maison Loratu vous répondra dans la journée.</p>
+          </div>
         </div>
       </div>
     </section>
@@ -121,3 +124,33 @@ const onSubmit = async () => {
     </section>
   </div>
 </template>
+
+<style scoped>
+@keyframes contact-success-heartbeat {
+  0%, 100% {
+    transform: scale(1) rotate(0deg);
+  }
+
+  20% {
+    transform: scale(1.18) rotate(-4deg);
+  }
+
+  40% {
+    transform: scale(1.04) rotate(3deg);
+  }
+
+  60% {
+    transform: scale(1.14) rotate(-2deg);
+  }
+}
+
+.contact-success-heart {
+  animation: contact-success-heartbeat 1s cubic-bezier(0.16, 1, 0.3, 1) 5;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .contact-success-heart {
+    animation: none;
+  }
+}
+</style>

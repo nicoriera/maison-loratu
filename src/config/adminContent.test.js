@@ -18,7 +18,6 @@ import {
 
 test('create admin draft factories returns lightweight local defaults', () => {
   assert.deepEqual(createInitialPublicDraft(), {
-    reservationUrl: '',
     location: '',
     email: '',
     phone: '',
@@ -26,7 +25,7 @@ test('create admin draft factories returns lightweight local defaults', () => {
       enabled: true,
       label: 'En ce moment',
       title: 'Atelier & sophrologie',
-      summary: '1 h 15 · 20 € par personne · 8 participants maximum.',
+      summary: '45 min · 20 € par personne · 8 participants maximum.',
       ctaLabel: 'Voir les ateliers',
       ctaHref: '/ateliers',
     },
@@ -45,7 +44,6 @@ test('create admin draft factories returns lightweight local defaults', () => {
 
 test('validatePublicContentDraft trims safe public fields without raising issues', () => {
   const result = validatePublicContentDraft({
-    reservationUrl: ' https://www.resalib.fr/praticien/maison-loratu ',
     location: ' Cabinet Loratu - Nantes ',
     email: ' contact@maison-loratu.fr ',
     phone: '06 12 34 56 78 ',
@@ -53,7 +51,6 @@ test('validatePublicContentDraft trims safe public fields without raising issues
 
   assert.deepEqual(result, {
     sanitizedDraft: {
-      reservationUrl: 'https://www.resalib.fr/praticien/maison-loratu',
       location: 'Cabinet Loratu - Nantes',
       email: 'contact@maison-loratu.fr',
       phone: '06 12 34 56 78',
@@ -66,20 +63,17 @@ test('validatePublicContentDraft trims safe public fields without raising issues
         ctaHref: '',
       },
     },
-    sanitizedReservationUrl: 'https://www.resalib.fr/praticien/maison-loratu',
     issues: [],
   })
 })
 
 test('validatePublicContentDraft flags malformed or sensitive public content', () => {
-  const { issues, sanitizedReservationUrl } = validatePublicContentDraft({
-    reservationUrl: 'https://evil.example.com',
+  const { issues } = validatePublicContentDraft({
     location: 'mot de passe: 1234',
     email: 'contact-public',
     phone: 'appelez-moi sur slack',
   })
 
-  assert.equal(sanitizedReservationUrl, '')
   assert.deepEqual(issues, [
     'L’email doit être une adresse de contact publique valide.',
     'Le téléphone doit rester un numéro de contact public valide.',

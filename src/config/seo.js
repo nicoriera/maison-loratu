@@ -31,6 +31,11 @@ export const seoByRoute = {
     title: 'Questions fréquentes sur la sophrologie | Maison Loratu',
     description: 'Retrouvez les réponses aux questions fréquentes sur les séances et ateliers de sophrologie de Maison Loratu.',
   },
+  reservation: {
+    title: 'Réservations bientôt disponibles | Maison Loratu',
+    description: 'Maison Loratu prépare l’ouverture de ses réservations. Inscrivez-vous pour recevoir les dates des premiers ateliers.',
+    noindex: true,
+  },
   'carte-cadeau': {
     title: 'Carte cadeau sophrologie à Anglet | Maison Loratu',
     description: 'Offrez un moment de sophrologie avec la carte cadeau Maison Loratu, pour prendre soin d’une personne qui vous est chère.',

@@ -33,7 +33,7 @@ Les cours en plein air restent une piste éditoriale à confirmer avant publicat
 
 ## Objectif du site
 
-Permettre à une visiteuse de comprendre rapidement les offres, de choisir le format adapté, puis de consulter les disponibilités et réserver via Resalib lorsque le lien définitif sera configuré.
+Permettre à une visiteuse de comprendre rapidement les offres, de choisir le format adapté, puis de s’inscrire pour recevoir les dates des premiers ateliers pendant la préparation des réservations en ligne.
 
 ## Actions principales
 
@@ -52,7 +52,7 @@ Permettre à une visiteuse de comprendre rapidement les offres, de choisir le fo
 ## Informations encore nécessaires
 
 - Lieu définitif.
-- Lien Resalib définitif.
+- Solution de réservation en ligne et conditions associées.
 - Diplômes et formations à afficher.
 - Témoignages autorisés.
 - Conditions de réservation, d’annulation et de paiement.

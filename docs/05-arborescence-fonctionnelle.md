@@ -13,7 +13,7 @@
 4. Carte cadeau — `/carte-cadeau`
 5. Contact — `/contact`
 
-Le bouton « Réserver » ouvre Resalib dans un nouvel onglet.
+Le bouton « M’alerter » ouvre la page d’attente Maison Loratu, le temps de préparer l’ouverture des réservations en ligne.
 
 ## Navigation secondaire
 
@@ -26,7 +26,7 @@ Le bouton « Réserver » ouvre Resalib dans un nouvel onglet.
 ## Footer
 
 - Colonne « Vos besoins » : accompagnement personnalisé, carte cadeau et questions fréquentes.
-- Colonne « Contact » : téléphone `06 66 88 33 02`, prise de rendez-vous par téléphone ou via Resalib, et email `maisonloratu@gmail.com`.
+- Colonne « Contact » : téléphone `06 66 88 33 02`, prise de rendez-vous par téléphone et email `maisonloratu@gmail.com`.
 
 ## Page d’accueil
 

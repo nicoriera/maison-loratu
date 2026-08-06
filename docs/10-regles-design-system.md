@@ -16,7 +16,7 @@
 - Boutons : forme pilule, hauteur minimale confortable, focus visible.
 - Cartes d’offres : photo, titre, durée, tarif, capacité, description et action.
 - Champs : fond clair, étiquette explicite, erreur et récupération lisibles.
-- Navigation : quatre entrées principales maximum hors accueil, plus un bouton Réserver.
+- Navigation : quatre entrées principales maximum hors accueil, plus un bouton « M’alerter ».
 
 ## Accessibilité
 

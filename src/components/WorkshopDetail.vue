@@ -1,6 +1,5 @@
 <script setup>
 import CTAButton from './CTAButton.vue'
-import { useReservationConfig } from '../config/reservation.js'
 
 defineProps({
   eyebrow: { type: String, required: true },
@@ -13,7 +12,6 @@ defineProps({
   imageAlt: { type: String, required: true },
 })
 
-const { reservationUrl } = useReservationConfig()
 </script>
 
 <template>
@@ -26,7 +24,7 @@ const { reservationUrl } = useReservationConfig()
           <p class="mt-5 text-xl text-terracotta-800">{{ meta }}</p>
           <p class="body-copy mt-6">{{ intro }}</p>
           <div class="mt-8 flex flex-col gap-3 sm:flex-row">
-            <CTAButton :to="reservationUrl">Je réserve</CTAButton>
+            <CTAButton to="/reservation">M’alerter</CTAButton>
             <CTAButton to="/ateliers" variant="secondary">Tous les ateliers</CTAButton>
           </div>
         </div>
