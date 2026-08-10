@@ -37,7 +37,7 @@ const dismiss = () => {
           to="/reservation"
           class="ml-1 inline-flex min-h-11 items-center font-semibold text-terracotta-700 underline decoration-terracotta-300 underline-offset-4 transition hover:text-terracotta-800 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-terracotta-500 focus-visible:ring-offset-2"
         >
-          M’alerter
+          Je veux être au courant&nbsp;!
         </router-link>
       </p>
       <button

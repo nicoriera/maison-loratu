@@ -4,9 +4,9 @@ import WorkshopDetail from '../components/WorkshopDetail.vue'
 
 <template>
   <WorkshopDetail
-    eyebrow="Atelier en petit groupe"
-    title="Ateliers en douceur — vitalité, relaxation, concentration"
-    meta="1 h 15 · 25 € par personne · 8 participants maximum"
+    eyebrow="Pour femmes"
+    title="En douceur"
+    meta="1 h 15 · 25 € · 8 participants maximum"
     intro="Des ateliers pensés pour respirer, bouger en douceur et partager un moment convivial."
     :paragraphs="[
       'Chacun évolue à son rythme dans une ambiance bienveillante et chaleureuse.',

@@ -33,7 +33,7 @@ Maison Loratu doit transmettre une approche naturelle, humaine et adaptée aux e
 ### Publics et situations à préciser
 
 - Personnes recherchant un temps en douceur, notamment pour la sérénité, la mobilité douce, le sommeil et le lien social.
-- Duos : un enfant, fille ou garçon, et une femme de son entourage.
+- Grandir ensemble : une maman et son enfant.
 
 La grossesse n’est pas une offre ou un parcours dédié au lancement. Elle peut être citée comme événement préparé dans le cadre d’un accompagnement personnalisé.
 
@@ -42,14 +42,14 @@ La grossesse n’est pas une offre ou un parcours dédié au lancement. Elle peu
 ### Accompagnement individuel
 
 - Tarif indicatif : 60 €.
-- Modalité de réservation : ouverture à venir ; inscription e-mail pour recevoir les premières dates.
+- Modalité de réservation : widget SimplyBook intégré au site ; inscription e-mail conservée pour être prévenue des prochaines dates.
 
 ### Ateliers en studio
 
 - Durée : 1 h 15.
-- Ateliers enfants — émotions, sommeil, apaisement : 45 min, 20 € par personne, 8 participants maximum.
-- Ateliers en douceur — vitalité, relaxation, concentration : 25 € par personne, 8 participants maximum.
-- Atelier Duo — sérénité, partage : 49 € pour deux personnes, un enfant et une femme.
+- Les Petits Explorateurs, pour enfants : 45 min, 20 €, 8 participants maximum.
+- En douceur, pour femmes : 1 h 15, 25 €, 8 participants maximum.
+- Grandir ensemble, pour mamans et enfants : 1 h 15, 42 € pour 2, 4 duos par atelier.
 - Lieu : Studio Loratu.
 
 ### Cours de sophrologie en plein air
@@ -62,9 +62,9 @@ La grossesse n’est pas une offre ou un parcours dédié au lancement. Elle peu
 
 ### Ateliers thématiques
 
-- Ateliers en douceur : vitalité, relaxation et concentration.
-- Enfants : émotions, sommeil et apaisement.
-- Duo : sérénité et partage, entre un enfant et une femme.
+- En douceur : vitalité, relaxation et concentration.
+- Les Petits Explorateurs : émotions, sommeil et apaisement.
+- Grandir ensemble : un temps de sérénité et de partage, pour 4 duos de mamans et d’enfants.
 
 ## 6. Objectifs des ateliers
 
@@ -91,7 +91,7 @@ Sandra a demandé le 21/07/2026 de retirer toute la partie « structures et proj
 | Sujet | Décision actuelle | Statut |
 |---|---|---|
 | Localisation | À définir | En attente |
-| Réservation | Page d’attente et inscription e-mail ; ouverture à préparer | En attente |
+| Réservation | Widget SimplyBook intégré ; dates, capacités et paiements à administrer dans SimplyBook | En cours |
 | Annulation | Règles à définir | En attente |
 | Paiement au lancement | Paiement sur place | Décidé provisoirement |
 | Paiement en ligne | À étudier ultérieurement | À cadrer avec sécurité et RGPD |
@@ -175,7 +175,7 @@ Un espace d'administration est recommandé, mais il doit rester proportionné à
 
 ### Recommandation de lancement
 
-Prévoir une administration simple de type CMS pour les contenus éditoriaux, sans développer de gestionnaire de rendez-vous propriétaire avant d’avoir choisi le service de réservation. Le site affiche une page d’attente et permet de demander les premières dates par e-mail.
+Prévoir une administration simple de type CMS pour les contenus éditoriaux, sans développer de gestionnaire de rendez-vous propriétaire. Les réservations sont gérées dans SimplyBook ; le site conserve une inscription e-mail pour les prochaines dates.
 
 ## 14. Informations encore nécessaires
 

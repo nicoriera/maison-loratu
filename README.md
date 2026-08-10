@@ -39,7 +39,7 @@ Sandra peut répondre directement depuis sa messagerie. Avant la mise en ligne, 
 
 ### Réservation
 
-Les boutons « Réserver » ouvrent actuellement la page d’attente Maison Loratu. La réservation en ligne sera activée ultérieurement.
+Les boutons « Réserver » ouvrent la page `/reservation`, qui intègre le widget SimplyBook de Maison Loratu. Les ateliers et créneaux restent administrés dans SimplyBook ; l’inscription e-mail reste disponible si aucune date ne convient.
 
 ### Utiliser l’administration V1
 
@@ -110,7 +110,7 @@ src/
 
 - **Landing page** avec sections explicatives sur la sophrologie
 - **Formulaire de contact** simple, avec consentement et envoi vers Formspree
-- **Réservations en ligne** : page d’attente Maison Loratu, dans l’attente de l’ouverture du service
+- **Réservations en ligne** : widget SimplyBook intégré à la page de réservation ; les dates et capacités sont administrées dans SimplyBook
 - **Contenus administrables** pour l’atelier mis en avant, les offres et la FAQ
 - **Conformité RGPD** avec mentions légales et politique de confidentialité
 - **Design responsive** et moderne

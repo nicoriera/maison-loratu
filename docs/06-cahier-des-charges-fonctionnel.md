@@ -6,7 +6,7 @@
 
 - Site public responsive construit avec Vue 3 et Vite.
 - Présentation des ateliers, de l’accompagnement et de la carte cadeau.
-- Page d’attente pour les réservations, avec inscription e-mail pour recevoir les premières dates.
+- Page de réservation intégrant SimplyBook, avec inscription e-mail pour être prévenue des prochaines dates.
 - Formulaire de contact pour les demandes particulières.
 - FAQ, mentions légales et politique de confidentialité.
 - Administration éditoriale légère protégée par Netlify Identity.
@@ -29,9 +29,9 @@
 
 ### Réservation
 
-- Rediriger les actions « Réserver » vers la page d’attente Maison Loratu.
-- Ne pas publier de disponibilité avant l’ouverture du service.
-- Afficher dans le footer le téléphone, l’email et un lien vers l’inscription aux premières dates.
+- Rediriger les actions « Réserver » vers la page intégrant SimplyBook.
+- Administrer les disponibilités, capacités et paiements dans SimplyBook.
+- Afficher dans le footer le téléphone, l’email et un lien vers la réservation en ligne.
 
 ### Formulaires
 

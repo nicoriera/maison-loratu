@@ -5,18 +5,18 @@ export const seoByRoute = {
   },
   ateliers: {
     title: 'Ateliers de sophrologie à Anglet | Maison Loratu',
-    description: 'Découvrez les ateliers de sophrologie pour enfants, les ateliers en douceur et les ateliers Duo à Anglet et dans le BAB.',
+    description: 'Découvrez Les Petits Explorateurs pour enfants, En douceur pour femmes et Grandir ensemble pour mamans et enfants à Anglet et dans le BAB.',
   },
   'atelier-enfants': {
-    title: 'Ateliers enfants : émotions, sommeil, apaisement | Maison Loratu',
+    title: 'Les Petits Explorateurs | Sophrologie enfants à Anglet | Maison Loratu',
     description: 'Des ateliers ludiques de sophrologie pour aider les enfants à accueillir leurs émotions, retrouver leur calme et mieux dormir.',
   },
   'atelier-duo': {
-    title: 'Atelier Duo : sérénité et partage à Anglet | Maison Loratu',
-    description: 'Une parenthèse de sophrologie à partager entre un enfant, fille ou garçon, et une femme de son entourage.',
+    title: 'Grandir ensemble | Sophrologie mamans et enfants à Anglet | Maison Loratu',
+    description: 'Un atelier de sophrologie pour 4 duos de mamans et d’enfants, pour ralentir et partager un moment précieux.',
   },
   'atelier-seniors': {
-    title: 'Ateliers en douceur : vitalité, relaxation, concentration | Maison Loratu',
+    title: 'En douceur | Sophrologie pour femmes à Anglet | Maison Loratu',
     description: 'Des ateliers de sophrologie en petit groupe pour respirer, bouger en douceur et entretenir concentration et vitalité.',
   },
   accompagnement: {
@@ -33,7 +33,7 @@ export const seoByRoute = {
   },
   reservation: {
     title: 'Réservations bientôt disponibles | Maison Loratu',
-    description: 'Maison Loratu prépare l’ouverture de ses réservations. Inscrivez-vous pour recevoir les dates des premiers ateliers.',
+    description: 'Maison Loratu prépare l’ouverture des réservations. Inscrivez-vous pour recevoir les dates des premiers ateliers.',
     noindex: true,
   },
   'carte-cadeau': {
