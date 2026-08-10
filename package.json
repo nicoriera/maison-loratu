@@ -3,6 +3,9 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
+  "engines": {
+    "node": ">=20.19.0"
+  },
   "scripts": {
     "dev": "netlify dev --port 5173 --target-port 5174 --command \"vite --port 5174\"",
     "build": "vite build",

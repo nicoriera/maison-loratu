@@ -33,7 +33,7 @@ Les cours en plein air restent une piste éditoriale à confirmer avant publicat
 
 ## Objectif du site
 
-Permettre à une visiteuse de comprendre rapidement les offres, de choisir le format adapté, puis de s’inscrire pour recevoir les dates des premiers ateliers pendant la préparation des réservations en ligne.
+Permettre à une visiteuse de comprendre rapidement les offres, de choisir le format adapté, puis de consulter et réserver les dates proposées via SimplyBook. Une inscription e-mail reste disponible lorsqu’aucune date ne convient.
 
 ## Actions principales
 

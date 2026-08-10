@@ -1,11 +1,12 @@
 import { getStore } from '@netlify/blobs'
 import type { Config, Context } from '@netlify/functions'
-import { createInitialAdminContent } from '../../src/config/adminContent.js'
+import { createInitialAdminContent, migrateLegacyContent } from '../../src/config/adminContent.js'
 
 const store = getStore({ name: 'maison-loratu-content', consistency: 'strong' })
 
 export default async (_request: Request, _context: Context) => {
-  const content = (await store.get('site-content', { type: 'json' })) ?? createInitialAdminContent()
+  const storedContent = await store.get('site-content', { type: 'json' })
+  const content = migrateLegacyContent(storedContent ?? createInitialAdminContent())
   return Response.json(
     {
       public: content.public,

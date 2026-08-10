@@ -16,9 +16,9 @@
 
 Présenter séparément dans l’index puis dans une page dédiée :
 
-- enfants — émotions, sommeil, apaisement — 45 min, 20 € par personne, 8 participants maximum ;
-- Duo — sérénité, partage — 1 h 15, 49 € pour deux personnes ; enfant (fille ou garçon) et femme ;
-- ateliers en douceur — vitalité, relaxation, concentration — 1 h 15, 25 € par personne, 8 participants maximum ;
+- Les Petits Explorateurs, pour enfants — 45 min, 20 €, 8 participants maximum ;
+- Grandir ensemble, pour mamans et enfants — 1 h 15, 42 € pour 2, 4 duos par atelier ;
+- En douceur, pour femmes — 1 h 15, 25 €, 8 participants maximum ;
 - accompagnement individuel — 1 h, 60 €.
 
 Chaque entrée comporte une photo, une description courte, les bénéfices proposés sans promesse médicale et une action de réservation.
@@ -29,7 +29,7 @@ Ajouter les mouvements doux, la respiration ludique, la visualisation et les th�
 
 ### Page Duo
 
-Présenter un atelier pour un enfant — fille ou garçon — et une femme de son entourage, avec mobilisation douce, respiration, visualisation, relaxation et moment partagé.
+Présenter Grandir ensemble comme un atelier pour 4 duos de mamans et d’enfants, avec mobilisation douce, respiration, visualisation, relaxation et moment partagé.
 
 ### Page ateliers en douceur
 
@@ -46,8 +46,8 @@ Présenter respiration, relaxation, mobilisation douce, concentration, équilibr
 
 ## Carte cadeau
 
-- Présenter l’Atelier Duo comme un moment de douceur à partager entre un enfant et une femme de son entourage.
-- Afficher l’Atelier Duo (1 h 15, 49 €), valable deux mois à partir de la date d’achat.
+- Présenter À deux comme un atelier privatif, à partager des petits-enfants à la grand-mère.
+- Afficher À deux (atelier privatif, 1 h 15, 49 €), valable deux mois à partir de la date d’achat.
 - Proposer deux formats : carte cadeau numérique (envoi offert par e-mail après achat) ou carte cadeau Signature (+5 €, envoyée par courrier dans une enveloppe avec mot personnalisé).
 - Recueillir le prénom de la personne qui reçoit la carte et un message personnalisé.
 

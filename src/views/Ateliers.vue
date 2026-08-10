@@ -9,8 +9,8 @@ const offerings = computed(() => [
   {
     id: "offer-collective",
     order: 1,
-    title: "Ateliers enfants — émotions, sommeil, apaisement",
-    audience: "45 min · 20 € par personne",
+    title: "Les Petits Explorateurs",
+    audience: "Pour enfants · 45 min · 20 €",
     image: "/images/children-studio-sun-markers.webp",
     description:
       "Des ateliers joyeux pour aider les petits cœurs à grandir sereinement.",
@@ -27,13 +27,13 @@ const offerings = computed(() => [
   {
     id: "offer-duo",
     order: 3,
-    title: "Atelier Duo — sérénité, partage",
-    audience: "1 h 15 · 49 € pour 2 personnes",
+    title: "Grandir ensemble",
+    audience: "Pour mamans et enfants · 1 h 15 · 42 € pour 2",
     image: "/images/duo-mother-daughter-back-stretch.webp",
     description:
-      "Une parenthèse de douceur à vivre entre un enfant, fille ou garçon, et une femme de son entourage.",
+      "Un atelier qui accueille 4 duos de mamans et d’enfants, pour partager une parenthèse de douceur.",
     bullets: [
-      "Un enfant et une femme",
+      "4 duos de mamans et d’enfants",
       "Respiration et relaxation",
       "Visualisation et mouvements doux",
       "Une pratique accessible à tous les âges",
@@ -44,8 +44,8 @@ const offerings = computed(() => [
   {
     id: "offer-seniors",
     order: 2,
-    title: "Ateliers en douceur — vitalité, relaxation, concentration",
-    audience: "1 h 15 · 25 € par personne",
+    title: "En douceur",
+    audience: "Pour femmes · 1 h 15 · 25 €",
     image: "/images/seniors-session.webp",
     description:
       "Des séances pensées pour entretenir la concentration, la vitalité et la mobilité tout en douceur.",
@@ -118,7 +118,7 @@ onMounted(async () => {
             </router-link>
           </div>
         </div>
-        <div class="overflow-hidden rounded-[2rem] shadow-soft-lg">
+        <div class="hidden overflow-hidden rounded-[2rem] shadow-soft-lg md:block">
           <img
             src="/images/duo-mother-daughter-back-stretch.webp"
             width="1200"
@@ -150,7 +150,7 @@ onMounted(async () => {
           <h2 class="mt-4 text-3xl md:text-4xl">Besoin d’en savoir plus ?</h2>
           <p class="mt-4 leading-relaxed text-cream-100">
             Retrouvez les réponses aux questions les plus fréquentes sur la
-            sophrologie, les enfants, les ateliers en douceur et le fonctionnement des
+            sophrologie, les enfants, En douceur et le fonctionnement des
             ateliers.
           </p>
           <p class="mt-4 leading-relaxed text-cream-100">

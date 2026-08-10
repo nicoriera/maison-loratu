@@ -69,7 +69,7 @@ import UiIcon from "./UiIcon.vue";
             06 66 88 33 02
           </a>
           <p class="mt-2 text-sm leading-relaxed text-gray-600">
-            Prise de rendez-vous par <a href="tel:+33666883302" class="footer-link font-semibold text-terracotta-700 hover:text-terracotta-600">téléphone</a> ou en ligne <router-link to="/reservation" class="footer-link font-semibold text-terracotta-700 hover:text-terracotta-600">bientôt</router-link>.
+            Prise de rendez-vous par <a href="tel:+33666883302" class="footer-link font-semibold text-terracotta-700 hover:text-terracotta-600">téléphone</a> ou <router-link to="/reservation" class="footer-link font-semibold text-terracotta-700 hover:text-terracotta-600">en ligne</router-link>.
           </p>
           <a
             href="mailto:maisonloratu@gmail.com"

@@ -8,7 +8,7 @@ import { onMounted, ref } from "vue";
 const audiences = [
   {
     order: 1,
-    title: "Ateliers enfants — émotions, sommeil, apaisement",
+    title: "Les Petits Explorateurs",
     detail: "45 min · 20 €",
     image: "/images/children-studio-sun-markers.webp",
     href: "/ateliers/enfants",
@@ -16,15 +16,15 @@ const audiences = [
   },
   {
     order: 3,
-    title: "Atelier Duo — sérénité, partage",
-    detail: "1 h 15 · 49 € pour deux personnes",
+    title: "Grandir ensemble",
+    detail: "1 h 15 · 42 € pour 2",
     image: "/images/duo-mother-daughter-back-stretch.webp",
     href: "/ateliers/duo",
     cta: "Je découvre",
   },
   {
     order: 2,
-    title: "Ateliers en douceur — vitalité, relaxation, concentration",
+    title: "En douceur",
     detail: "1 h 15 · 25 €",
     image: "/images/seniors-session.webp",
     href: "/ateliers/seniors",

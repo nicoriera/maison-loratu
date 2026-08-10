@@ -4,9 +4,9 @@ import WorkshopDetail from '../components/WorkshopDetail.vue'
 
 <template>
   <WorkshopDetail
-    eyebrow="Atelier en petit groupe"
-    title="Ateliers enfants — émotions, sommeil, apaisement"
-    meta="45 min · 20 € par personne · 8 participants maximum"
+    eyebrow="Pour enfants"
+    title="Les Petits Explorateurs"
+    meta="45 min · 20 € · 8 participants maximum"
     intro="Des ateliers ludiques pour apprivoiser les émotions et favoriser un sommeil plus serein."
     :paragraphs="[
       'À travers le yoga kids, des histoires, des jeux de respiration, des mouvements et des temps de relaxation, les enfants apprennent à accueillir leurs émotions, à retrouver leur calme, à prendre confiance et à mieux dormir.',

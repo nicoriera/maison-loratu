@@ -1,12 +1,12 @@
 import { getStore } from '@netlify/blobs'
 import type { Config, Context } from '@netlify/functions'
-import { createInitialAdminContent, validateAdminContent } from '../../src/config/adminContent.js'
+import { createInitialAdminContent, migrateLegacyContent, validateAdminContent } from '../../src/config/adminContent.js'
 import { getAdminUser, forbiddenResponse, unauthorizedResponse } from './_shared/admin-auth.mts'
 
 const store = getStore({ name: 'maison-loratu-content', consistency: 'strong' })
 const contentKey = 'site-content'
 
-const readContent = async () => (await store.get(contentKey, { type: 'json' })) ?? createInitialAdminContent()
+const readContent = async () => migrateLegacyContent((await store.get(contentKey, { type: 'json' })) ?? createInitialAdminContent())
 
 export default async (request: Request, _context: Context) => {
   const user = await getAdminUser()

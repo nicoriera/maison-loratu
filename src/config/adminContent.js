@@ -74,20 +74,20 @@ export const createInitialPublicDraft = () => ({
 export const createInitialOffersDraft = () => ([
   {
     id: 'offer-collective',
-    title: 'Ateliers enfants — émotions, sommeil, apaisement',
-    audience: '45 min · 8 participants · 20 € par personne',
+    title: 'Les Petits Explorateurs',
+    audience: 'Pour enfants · 45 min · 8 participants · 20 €',
     summary: 'Respiration, relaxation et visualisation positive dans une ambiance conviviale.',
   },
   {
     id: 'offer-duo',
-    title: 'Atelier Duo — sérénité, partage',
-    audience: '1 h 15 · 49 € pour 2 personnes',
-    summary: 'Un temps à deux pour un enfant, fille ou garçon, et une femme de son entourage.',
+    title: 'Grandir ensemble',
+    audience: 'Pour mamans et enfants · 1 h 15 · 42 € pour 2',
+    summary: 'Un atelier qui accueille 4 duos de mamans et d’enfants, pour partager un moment à deux.',
   },
   {
     id: 'offer-seniors',
-    title: 'Ateliers en douceur — vitalité, relaxation, concentration',
-    audience: '1 h 15 · 8 participants · 25 € par personne',
+    title: 'En douceur',
+    audience: 'Pour femmes · 1 h 15 · 8 participants · 25 €',
     summary: 'Respirer, bouger doucement et cultiver la sérénité dans un petit groupe.',
   },
   {
@@ -115,6 +115,48 @@ export const createInitialFaqDraft = () => ([
     answer: 'Les ateliers durent de 45 min à 1 h 15, en petit groupe et sans prérequis. Sandra guide des exercices de respiration, relaxation et visualisation.',
   },
 ])
+
+const legacyOfferTitles = new Set([
+  'Ateliers enfants — émotions, sommeil, apaisement',
+  'Atelier Duo — sérénité, partage',
+  'Ateliers en douceur — vitalité, relaxation, concentration',
+])
+
+const legacyFaqUpdates = {
+  'À qui s’adressent les ateliers en douceur ?': {
+    question: 'À qui s’adresse En douceur ?',
+    answer: 'En douceur s’adresse aux femmes qui souhaitent respirer, bouger en douceur et entretenir leur concentration ou leur vitalité, dans le respect de leur rythme.',
+  },
+  'Avec qui peut-on participer à l’Atelier Duo ?': {
+    question: 'Avec qui peut-on participer à Grandir ensemble ?',
+    answer: 'Grandir ensemble accueille 4 duos de mamans et d’enfants. L’atelier invite à ralentir ensemble, partager un moment privilégié et créer des souvenirs dans une ambiance ludique et relaxante.',
+  },
+  'Puis-je offrir un atelier ?': {
+    question: 'Puis-je offrir un atelier ?',
+    answer: 'Oui. La carte cadeau À deux donne accès à un atelier privatif pour 49 €, valable deux mois à partir de la date d’achat. Elle existe en version numérique ou Signature, envoyée par courrier avec un mot personnalisé.',
+  },
+}
+
+export const migrateLegacyContent = (content = {}) => {
+  const defaultOffersById = new Map(createInitialOffersDraft().map((offer) => [offer.id, offer]))
+  const offers = Array.isArray(content.offers)
+    ? content.offers.map((offer) => {
+        const defaultOffer = defaultOffersById.get(offer?.id)
+        return defaultOffer && legacyOfferTitles.has(trimText(offer?.title))
+          ? { ...offer, ...defaultOffer }
+          : offer
+      })
+    : content.offers
+
+  const faq = Array.isArray(content.faq)
+    ? content.faq.map((item) => {
+        const update = legacyFaqUpdates[trimText(item?.question)]
+        return update ? { ...item, ...update } : item
+      })
+    : content.faq
+
+  return { ...content, offers, faq }
+}
 
 export const createEmptyArticleDraft = () => ({
   title: '',

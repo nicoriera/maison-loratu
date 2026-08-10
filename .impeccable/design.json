@@ -1,6 +1,6 @@
 {
   "schemaVersion": 2,
-  "generatedAt": "2026-07-23T00:00:00.000Z",
+  "generatedAt": "2026-08-10T00:00:00.000Z",
   "title": "Design System: Maison Loratu",
   "extensions": {
     "colorMeta": {
@@ -56,7 +56,7 @@
       "kind": "card",
       "refersTo": "card",
       "description": "Photo-led offer card with practical information and a bottom-aligned action.",
-      "html": "<article class=\"ds-card\"><div class=\"ds-card-image\"></div><div class=\"ds-card-body\"><h3>Ateliers enfants</h3><p class=\"ds-card-detail\">1 h 30 · 38 € · 8 participants maximum</p><p>Des ateliers ludiques pour apprivoiser les émotions.</p><button class=\"ds-btn-primary\">Je découvre</button></div></article>",
+      "html": "<article class=\"ds-card\"><div class=\"ds-card-image\"></div><div class=\"ds-card-body\"><h3>Atelier enfants</h3><p class=\"ds-card-detail\">45 min · 20 €</p><p>Des ateliers ludiques pour apprivoiser les émotions et favoriser le sommeil.</p><button class=\"ds-btn-primary\">Je découvre</button></div></article>",
       "css": ".ds-card { display: flex; min-height: 360px; flex-direction: column; overflow: hidden; border-radius: 28px; background: #FFFFFF; box-shadow: 0 4px 20px rgba(0,0,0,.06), 0 2px 8px rgba(0,0,0,.04); } .ds-card-image { aspect-ratio: 4 / 3; background: #E7EBDD; } .ds-card-body { display: flex; flex: 1; flex-direction: column; gap: 12px; padding: 28px; color: #374151; font: 400 1rem/1.75 system-ui, sans-serif; } .ds-card h3 { margin: 0; color: #5D2A1C; font: 400 1.5rem/1.08 Georgia, serif; } .ds-card-detail { margin: 0; color: #9D4A2E; font-weight: 600; } .ds-card .ds-btn-primary { margin-top: auto; align-self: flex-start; }"
     },
     {

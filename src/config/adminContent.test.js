@@ -9,6 +9,7 @@ import {
   createInitialOffersDraft,
   createInitialPublicDraft,
   formatArticleDate,
+  migrateLegacyContent,
   validateArticleDraft,
   validateAdminContent,
   validateFaqItemsDraft,
@@ -97,6 +98,38 @@ test('validateOffersDraft and validateFaqItemsDraft keep editorial content publi
     validateFaqItemsDraft([{ id: 'x', question: 'Mot de passe ?', answer: '1234' }]).issues,
     ['FAQ 1 : retirez toute information sensible ou confidentielle.'],
   )
+})
+
+test('migrateLegacyContent updates only known legacy workshop and FAQ copy', () => {
+  const migrated = migrateLegacyContent({
+    offers: [
+      {
+        id: 'offer-duo',
+        title: 'Atelier Duo — sérénité, partage',
+        audience: '1 h 15 · 49 € pour 2 personnes',
+        summary: 'Ancien résumé',
+      },
+      { id: 'custom-offer', title: 'Offre personnalisée', audience: 'Sur mesure', summary: 'À conserver' },
+    ],
+    faq: [
+      { id: 'duo', question: 'Avec qui peut-on participer à l’Atelier Duo ?', answer: 'Ancienne réponse' },
+      { id: 'custom', question: 'Question personnalisée', answer: 'Réponse personnalisée' },
+    ],
+  })
+
+  assert.deepEqual(migrated.offers[0], {
+    id: 'offer-duo',
+    title: 'Grandir ensemble',
+    audience: 'Pour mamans et enfants · 1 h 15 · 42 € pour 2',
+    summary: 'Un atelier qui accueille 4 duos de mamans et d’enfants, pour partager un moment à deux.',
+  })
+  assert.deepEqual(migrated.offers[1], { id: 'custom-offer', title: 'Offre personnalisée', audience: 'Sur mesure', summary: 'À conserver' })
+  assert.deepEqual(migrated.faq[0], {
+    id: 'duo',
+    question: 'Avec qui peut-on participer à Grandir ensemble ?',
+    answer: 'Grandir ensemble accueille 4 duos de mamans et d’enfants. L’atelier invite à ralentir ensemble, partager un moment privilégié et créer des souvenirs dans une ambiance ludique et relaxante.',
+  })
+  assert.deepEqual(migrated.faq[1], { id: 'custom', question: 'Question personnalisée', answer: 'Réponse personnalisée' })
 })
 
 test('validateArticleDraft accepts a safe article draft', () => {
