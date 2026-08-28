@@ -13,7 +13,7 @@
           <section>
             <h2 class="text-2xl font-semibold text-gray-900 mb-4">1. Éditeur du site</h2>
             <p class="text-gray-700">
-              Le site <strong>maison-loratu.fr</strong> est édité par :
+              Le site <strong>maisonloratu.com</strong> est édité par :
             </p>
             <p class="text-gray-700">
               Maison Loratu<br>

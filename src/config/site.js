@@ -24,7 +24,7 @@ export const canAccessPrototypeRoute = (meta = {}, config = siteConfig) => {
 
 export const createSiteConfig = (env = import.meta.env ?? process.env) => {
   return {
-    siteUrl: "https://maison-loratu.fr",
+    siteUrl: "https://maisonloratu.com",
     siteName: "Maison Loratu",
     primaryCity: "Anglet",
     serviceArea: ["Anglet", "Bayonne", "Biarritz"],

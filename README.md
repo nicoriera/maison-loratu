@@ -35,7 +35,7 @@ Le site sera accessible sur `http://localhost:5173`
 
 Le formulaire `/contact` transmet le prénom et nom, l’adresse e-mail et le message à Formspree. Formspree envoie ensuite chaque demande à l’adresse destinataire configurée dans son tableau de bord — actuellement `maisonloratu@gmail.com`.
 
-Sandra peut répondre directement depuis sa messagerie. Avant la mise en ligne, vérifiez dans Formspree l’adresse destinataire, les notifications et la restriction du formulaire au domaine `maison-loratu.fr`.
+Sandra peut répondre directement depuis sa messagerie. Avant la mise en ligne, vérifiez dans Formspree l’adresse destinataire, les notifications et la restriction du formulaire au domaine `maisonloratu.com`.
 
 ### Réservation
 

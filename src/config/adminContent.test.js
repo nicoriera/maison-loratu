@@ -46,14 +46,14 @@ test('create admin draft factories returns lightweight local defaults', () => {
 test('validatePublicContentDraft trims safe public fields without raising issues', () => {
   const result = validatePublicContentDraft({
     location: ' Cabinet Loratu - Nantes ',
-    email: ' contact@maison-loratu.fr ',
+    email: ' contact@maisonloratu.com ',
     phone: '06 12 34 56 78 ',
   })
 
   assert.deepEqual(result, {
     sanitizedDraft: {
       location: 'Cabinet Loratu - Nantes',
-      email: 'contact@maison-loratu.fr',
+      email: 'contact@maisonloratu.com',
       phone: '06 12 34 56 78',
       atelierDuMoment: {
         enabled: false,
