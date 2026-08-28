@@ -4,4 +4,4 @@ Disallow: /administration
 Disallow: /questionnaire
 Disallow: /merci
 
-Sitemap: https://maison-loratu.fr/sitemap.xml
+Sitemap: https://maisonloratu.com/sitemap.xml
