@@ -18,13 +18,13 @@ const gift = ref({
 const giftOptions = {
   numeric: {
     label: 'Carte cadeau numérique',
-    detail: '49 € · envoi numérique offert par e-mail après confirmation',
-    price: '49 €',
+    detail: '60 € · envoi numérique offert par e-mail après confirmation',
+    price: '60 €',
   },
   signature: {
     label: 'Carte cadeau Signature',
-    detail: '54 € · envoyée par courrier dans une belle enveloppe avec un mot personnalisé',
-    price: '54 €',
+    detail: '65 € · envoyée par courrier dans une belle enveloppe avec un mot personnalisé',
+    price: '65 €',
   },
 }
 
@@ -70,16 +70,16 @@ const onSubmit = async () => {
           <p class="text-service-label text-terracotta-600">Carte cadeau</p>
           <h1 class="page-title mt-4">Une idée cadeau pleine de douceur</h1>
           <p class="body-copy mt-6 max-w-xl">
-            Offrez un atelier privatif à partager à deux, des petits-enfants à la grand-mère. La carte numérique est à 49 € ; l’envoi Signature, à 54 €, comprend une belle enveloppe et un mot personnalisé.
+            Offrez le DUO Mama & enfant, un atelier privé à partager à deux. La carte numérique est à 60 € ; l’envoi Signature, à 65 €, comprend une belle enveloppe et un mot personnalisé.
           </p>
         </div>
         <div class="overflow-hidden rounded-[2rem] bg-terracotta-800 text-center text-white shadow-soft-lg">
           <img src="/images/gift-envelope-heart.webp" width="1200" height="675" alt="Enveloppe ivoire ornée d’un cœur terracotta" class="block aspect-[16/9] h-auto w-full object-cover" loading="lazy" decoding="async" />
           <div class="p-8 md:p-12">
             <p class="text-service-label text-cream-200">Carte cadeau</p>
-            <h2 class="mt-4 text-3xl text-cream-100 sm:text-4xl">À deux</h2>
-            <p class="mt-3 text-lg text-cream-100">Des petits-enfants à la grand-mère</p>
-            <p class="mt-5 text-lg text-cream-100">Atelier privatif · 1 h 15 · 49 € · valable 2 mois à partir de la date d’achat</p>
+            <h2 class="mt-4 text-3xl text-cream-100 sm:text-4xl">DUO Mama & enfant</h2>
+            <p class="mt-3 text-lg text-cream-100">Une mama et son enfant</p>
+            <p class="mt-5 text-lg text-cream-100">Atelier privé · 1 h 15 · 60 € · valable 2 mois à partir de la date d’achat</p>
           </div>
         </div>
       </div>
@@ -88,7 +88,7 @@ const onSubmit = async () => {
       <div class="container mx-auto max-w-2xl">
         <h2 class="text-3xl text-terracotta-800 sm:text-4xl">Un cadeau qui laisse de la place</h2>
         <p class="mt-5 text-lg leading-relaxed text-gray-700">
-          Une parenthèse de douceur à vivre à deux, pour ralentir, apaiser les tensions et se retrouver. Un atelier privatif à partager des petits-enfants à la grand-mère, pour tisser de jolis souvenirs.
+          Une parenthèse de douceur à vivre à deux, pour ralentir, apaiser les tensions et se retrouver. Un atelier privé pour une mama et son enfant, pour tisser de jolis souvenirs.
         </p>
       </div>
     </section>
@@ -98,7 +98,7 @@ const onSubmit = async () => {
         <div>
           <p class="text-service-label text-terracotta-600">Choisir votre format</p>
           <h2 class="mt-4 text-3xl text-terracotta-800 sm:text-4xl">Offrir une carte cadeau</h2>
-          <p class="mt-5 leading-relaxed text-gray-700">Choisissez une carte numérique à 49 € ou une attention Signature à 54 €, envoyée par courrier.</p>
+          <p class="mt-5 leading-relaxed text-gray-700">Choisissez une carte numérique à 60 € ou une attention Signature à 65 €, envoyée par courrier.</p>
         </div>
 
         <form v-if="!submitted" ref="giftForm" class="rounded-[2rem] bg-white p-6 shadow-soft-lg md:p-8" @submit.prevent="onSubmit">

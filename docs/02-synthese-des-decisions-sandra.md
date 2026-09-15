@@ -33,7 +33,7 @@ Maison Loratu doit transmettre une approche naturelle, humaine et adaptée aux e
 ### Publics et situations à préciser
 
 - Personnes recherchant un temps en douceur, notamment pour la sérénité, la mobilité douce, le sommeil et le lien social.
-- Grandir ensemble : une maman et son enfant.
+- DUO Mama & enfant : une mama et son enfant.
 
 La grossesse n’est pas une offre ou un parcours dédié au lancement. Elle peut être citée comme événement préparé dans le cadre d’un accompagnement personnalisé.
 
@@ -47,9 +47,9 @@ La grossesse n’est pas une offre ou un parcours dédié au lancement. Elle peu
 ### Ateliers en studio
 
 - Durée : 1 h 15.
-- Les Petits Explorateurs, pour enfants : 45 min, 20 €, 8 participants maximum.
-- En douceur, pour femmes : 1 h 15, 25 €, 8 participants maximum.
-- Grandir ensemble, pour mamans et enfants : 1 h 15, 42 € pour 2, 4 duos par atelier.
+- Les Petits Explorateurs, pour enfants : 45 min, 22 €, 8 participants maximum.
+- Mamas & enfants : 1 h 15, 38 €, 8 participants maximum.
+- DUO Mama & enfant : atelier privé de 1 h 15 à 60 €, disponible en carte cadeau.
 - Lieu : Studio Loratu.
 
 ### Cours de sophrologie en plein air
@@ -62,9 +62,9 @@ La grossesse n’est pas une offre ou un parcours dédié au lancement. Elle peu
 
 ### Ateliers thématiques
 
-- En douceur : vitalité, relaxation et concentration.
+- Mamas & enfants : yoga en duo, respiration, relaxation, émotions, calme et complicité.
 - Les Petits Explorateurs : émotions, sommeil et apaisement.
-- Grandir ensemble : un temps de sérénité et de partage, pour 4 duos de mamans et d’enfants.
+- DUO Mama & enfant : un temps privé de sérénité et de partage pour une mama et son enfant.
 
 ## 6. Objectifs des ateliers
 
@@ -187,7 +187,7 @@ Prévoir une administration simple de type CMS pour les contenus éditoriaux, sa
 - Règles d'annulation et de report.
 - Modalités de paiement.
 - Tarif et format de l'accompagnement individuel.
-- Public exact des ateliers en douceur.
+- Public exact des ateliers Mamas & enfants.
 - Photos disponibles et autorisations de droit à l'image.
 - Diplômes et formations à afficher.
 - Adresse email et numéro de téléphone officiels.

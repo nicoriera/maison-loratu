@@ -10,7 +10,7 @@ const offerings = computed(() => [
     id: "offer-collective",
     order: 1,
     title: "Les Petits Explorateurs",
-    audience: "Pour enfants · 45 min · 20 €",
+    audience: "Pour enfants · 45 min · 22 €",
     image: "/images/children-studio-sun-markers.webp",
     description:
       "Des ateliers joyeux pour aider les petits cœurs à grandir sereinement.",
@@ -27,16 +27,17 @@ const offerings = computed(() => [
   {
     id: "offer-duo",
     order: 3,
-    title: "Grandir ensemble",
-    audience: "Pour mamans et enfants · 1 h 15 · 42 € pour 2",
+    title: "DUO Mama & enfant",
+    audience: "Atelier privé · 1 h 15 · 60 € · Disponible en carte cadeau",
     image: "/images/duo-mother-daughter-back-stretch.webp",
     description:
-      "Un atelier qui accueille 4 duos de mamans et d’enfants, pour partager une parenthèse de douceur.",
+      "Un atelier privé pour une mama et son enfant, à vivre ou à offrir en carte cadeau.",
     bullets: [
-      "4 duos de mamans et d’enfants",
+      "Un duo : une mama et son enfant",
       "Respiration et relaxation",
       "Visualisation et mouvements doux",
       "Une pratique accessible à tous les âges",
+      "Disponible en carte cadeau",
     ],
     to: "/ateliers/duo",
     action: "Je découvre",
@@ -44,17 +45,17 @@ const offerings = computed(() => [
   {
     id: "offer-seniors",
     order: 2,
-    title: "En douceur",
-    audience: "Pour femmes · 1 h 15 · 25 €",
+    title: "Mamas & enfants",
+    audience: "Pour les mamas et les enfants · 1 h 15 · 38 €",
     image: "/images/seniors-session.webp",
     description:
-      "Des séances pensées pour entretenir la concentration, la vitalité et la mobilité tout en douceur.",
+      "Respiration, relaxation et visualisation positive dans une ambiance joyeuse à partager entre mamas et enfants.",
     bullets: [
       "8 participants maximum",
-      "Respiration et relaxation",
-      "Mouvements adaptés et mobilisation douce",
-      "Concentration, équilibre et mémoire",
-      "Un moment convivial à partager",
+      "Yoga en duo, histoires et jeux de respiration",
+      "Mouvements doux et temps de relaxation",
+      "Accueillir les émotions et retrouver son calme ensemble",
+      "Renforcer la complicité et la confiance",
     ],
     to: "/ateliers/seniors",
     action: "Je découvre",
@@ -150,7 +151,7 @@ onMounted(async () => {
           <h2 class="mt-4 text-3xl md:text-4xl">Besoin d’en savoir plus ?</h2>
           <p class="mt-4 leading-relaxed text-cream-100">
             Retrouvez les réponses aux questions les plus fréquentes sur la
-            sophrologie, les enfants, En douceur et le fonctionnement des
+            sophrologie, les enfants, Mamas & enfants et le fonctionnement des
             ateliers.
           </p>
           <p class="mt-4 leading-relaxed text-cream-100">

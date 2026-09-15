@@ -26,7 +26,7 @@ test('create admin draft factories returns lightweight local defaults', () => {
       enabled: true,
       label: 'En ce moment',
       title: 'Atelier & sophrologie',
-      summary: '45 min · 20 € par personne · 8 participants maximum.',
+      summary: '45 min · 22 € par personne · 8 participants maximum.',
       ctaLabel: 'Voir les ateliers',
       ctaHref: '/ateliers',
     },
@@ -119,15 +119,15 @@ test('migrateLegacyContent updates only known legacy workshop and FAQ copy', () 
 
   assert.deepEqual(migrated.offers[0], {
     id: 'offer-duo',
-    title: 'Grandir ensemble',
-    audience: 'Pour mamans et enfants · 1 h 15 · 42 € pour 2',
-    summary: 'Un atelier qui accueille 4 duos de mamans et d’enfants, pour partager un moment à deux.',
+    title: 'DUO Mama & enfant',
+    audience: 'Atelier privé · 1 h 15 · 60 € · Disponible en carte cadeau',
+    summary: 'Un atelier privé pour une mama et son enfant, pour partager un moment à deux.',
   })
   assert.deepEqual(migrated.offers[1], { id: 'custom-offer', title: 'Offre personnalisée', audience: 'Sur mesure', summary: 'À conserver' })
   assert.deepEqual(migrated.faq[0], {
     id: 'duo',
-    question: 'Avec qui peut-on participer à Grandir ensemble ?',
-    answer: 'Grandir ensemble accueille 4 duos de mamans et d’enfants. L’atelier invite à ralentir ensemble, partager un moment privilégié et créer des souvenirs dans une ambiance ludique et relaxante.',
+    question: 'Avec qui peut-on participer au DUO Mama & enfant ?',
+    answer: 'Le DUO Mama & enfant est un atelier privé pour une mama et son enfant. Il invite à ralentir ensemble, partager un moment privilégié et créer des souvenirs dans une ambiance ludique et relaxante.',
   })
   assert.deepEqual(migrated.faq[1], { id: 'custom', question: 'Question personnalisée', answer: 'Réponse personnalisée' })
 })

@@ -22,7 +22,7 @@
 ### Offres
 
 - Afficher le public, la durée, le tarif et la capacité lorsqu’ils sont validés.
-- Fournir une page détaillée distincte pour les ateliers enfants, duo et ateliers en douceur.
+- Fournir une page détaillée distincte pour les ateliers enfants, duo et Mamas & enfants.
 - Présenter sur l’accompagnement le déroulé en cinq temps et les quatre fondements sous la forme d’une maison.
 - Ne pas publier une information commerciale non confirmée.
 - Conserver un lien cohérent entre les cartes d’accueil et les pages détaillées.

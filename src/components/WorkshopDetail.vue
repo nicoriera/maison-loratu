@@ -10,6 +10,7 @@ defineProps({
   highlights: { type: Array, default: () => [] },
   image: { type: String, required: true },
   imageAlt: { type: String, required: true },
+  giftCardTo: { type: String, default: '' },
 })
 
 </script>
@@ -23,8 +24,9 @@ defineProps({
           <h1 class="page-title mt-4">{{ title }}</h1>
           <p class="mt-5 text-xl text-terracotta-800">{{ meta }}</p>
           <p class="body-copy mt-6">{{ intro }}</p>
-          <div class="mt-8 flex flex-col gap-3 sm:flex-row">
+          <div class="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
             <CTAButton to="/reservation">Je réserve</CTAButton>
+            <CTAButton v-if="giftCardTo" :to="giftCardTo" variant="secondary">Offrir une carte cadeau</CTAButton>
             <CTAButton to="/ateliers" variant="secondary">Tous les ateliers</CTAButton>
           </div>
         </div>

@@ -9,23 +9,23 @@ const audiences = [
   {
     order: 1,
     title: "Les Petits Explorateurs",
-    detail: "45 min · 20 €",
+    detail: "45 min · 22 €",
     image: "/images/children-studio-sun-markers.webp",
     href: "/ateliers/enfants",
     cta: "Je découvre",
   },
   {
     order: 3,
-    title: "Grandir ensemble",
-    detail: "1 h 15 · 42 € pour 2",
+    title: "DUO Mama & enfant",
+    detail: "1 h 15 · 60 € · atelier privé · carte cadeau",
     image: "/images/duo-mother-daughter-back-stretch.webp",
     href: "/ateliers/duo",
     cta: "Je découvre",
   },
   {
     order: 2,
-    title: "En douceur",
-    detail: "1 h 15 · 25 €",
+    title: "Mamas & enfants",
+    detail: "1 h 15 · 38 €",
     image: "/images/seniors-session.webp",
     href: "/ateliers/seniors",
     cta: "Je découvre",
@@ -212,7 +212,7 @@ onMounted(loadPublicContent);
             Fleurir à son rythme
           </h2>
           <p class="mt-5 text-lg leading-relaxed text-gray-700">
-            Je m’appelle Sandra. J’ai 38 ans et je suis maman de deux enfants.
+            Je m’appelle Sandra. J’ai 38 ans et je suis mama de deux enfants.
             J’ai découvert la sophrologie pendant ma première grossesse, puis je
             me suis formée pour devenir sophrologue certifiée et me spécialiser
             en relaxation ludique pour les enfants.

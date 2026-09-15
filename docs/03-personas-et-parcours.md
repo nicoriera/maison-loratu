@@ -24,13 +24,13 @@ Parcours : accueil → ateliers duo → tarif pour deux personnes → réservati
 
 Cherche un atelier accessible autour de la respiration, de la mobilité douce, de la concentration et de la convivialité.
 
-Parcours : accueil → ateliers en douceur → capacité et contenu → réservation ou contact.
+Parcours : accueil → Mamas & enfants → capacité et contenu → réservation ou contact.
 
 ## Personne qui offre
 
 Cherche un cadeau de bien-être simple à comprendre.
 
-Parcours : accueil ou menu → carte cadeau → Atelier Duo et conditions → contact.
+Parcours : accueil ou menu → carte cadeau → DUO Mama & enfant et conditions → contact.
 
 ## Exigences communes
 

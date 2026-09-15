@@ -65,7 +65,7 @@ export const createInitialPublicDraft = () => ({
     enabled: true,
     label: 'En ce moment',
     title: 'Atelier & sophrologie',
-    summary: '45 min · 20 € par personne · 8 participants maximum.',
+    summary: '45 min · 22 € par personne · 8 participants maximum.',
     ctaLabel: 'Voir les ateliers',
     ctaHref: '/ateliers',
   },
@@ -75,20 +75,20 @@ export const createInitialOffersDraft = () => ([
   {
     id: 'offer-collective',
     title: 'Les Petits Explorateurs',
-    audience: 'Pour enfants · 45 min · 8 participants · 20 €',
+    audience: 'Pour enfants · 45 min · 8 participants · 22 €',
     summary: 'Respiration, relaxation et visualisation positive dans une ambiance conviviale.',
   },
   {
     id: 'offer-duo',
-    title: 'Grandir ensemble',
-    audience: 'Pour mamans et enfants · 1 h 15 · 42 € pour 2',
-    summary: 'Un atelier qui accueille 4 duos de mamans et d’enfants, pour partager un moment à deux.',
+    title: 'DUO Mama & enfant',
+    audience: 'Atelier privé · 1 h 15 · 60 € · Disponible en carte cadeau',
+    summary: 'Un atelier privé pour une mama et son enfant, pour partager un moment à deux.',
   },
   {
     id: 'offer-seniors',
-    title: 'En douceur',
-    audience: 'Pour femmes · 1 h 15 · 8 participants · 25 €',
-    summary: 'Respirer, bouger doucement et cultiver la sérénité dans un petit groupe.',
+    title: 'Mamas & enfants',
+    audience: 'Pour les mamas et les enfants · 1 h 15 · 8 participants · 38 €',
+    summary: 'Respiration, relaxation et visualisation positive dans une ambiance joyeuse à partager entre mamas et enfants.',
   },
   {
     id: 'offer-individual',
@@ -119,21 +119,50 @@ export const createInitialFaqDraft = () => ([
 const legacyOfferTitles = new Set([
   'Ateliers enfants — émotions, sommeil, apaisement',
   'Atelier Duo — sérénité, partage',
+  'Grandir ensemble',
+  'DUO Maman & enfant',
   'Ateliers en douceur — vitalité, relaxation, concentration',
+  'En douceur',
+  'Mamans & enfants',
+  'Mama & enfants',
+])
+
+const legacyOfferSummaries = new Set([
+  'Respirer, bouger doucement et cultiver la sérénité dans un petit groupe.',
 ])
 
 const legacyFaqUpdates = {
+  'À qui s’adresse Mama & enfants ?': {
+    question: 'À qui s’adresse Mamas & enfants ?',
+    answer: 'Mamas & enfants s’adresse aux mamas et à leurs enfants qui souhaitent respirer, bouger en douceur et partager un moment ensemble, dans le respect de leur rythme.',
+  },
+  'À qui s’adresse Mamans & enfants ?': {
+    question: 'À qui s’adresse Mamas & enfants ?',
+    answer: 'Mamas & enfants s’adresse aux mamas et à leurs enfants qui souhaitent respirer, bouger en douceur et partager un moment ensemble, dans le respect de leur rythme.',
+  },
+  'Avec qui peut-on participer au DUO Maman & enfant ?': {
+    question: 'Avec qui peut-on participer au DUO Mama & enfant ?',
+    answer: 'Le DUO Mama & enfant est un atelier privé pour une mama et son enfant. Il invite à ralentir ensemble, partager un moment privilégié et créer des souvenirs dans une ambiance ludique et relaxante.',
+  },
   'À qui s’adressent les ateliers en douceur ?': {
-    question: 'À qui s’adresse En douceur ?',
-    answer: 'En douceur s’adresse aux femmes qui souhaitent respirer, bouger en douceur et entretenir leur concentration ou leur vitalité, dans le respect de leur rythme.',
+    question: 'À qui s’adresse Mamas & enfants ?',
+    answer: 'Mamas & enfants s’adresse aux mamas et à leurs enfants qui souhaitent respirer, bouger en douceur et partager un moment ensemble, dans le respect de leur rythme.',
+  },
+  'À qui s’adresse En douceur ?': {
+    question: 'À qui s’adresse Mamas & enfants ?',
+    answer: 'Mamas & enfants s’adresse aux mamas et à leurs enfants qui souhaitent respirer, bouger en douceur et partager un moment ensemble, dans le respect de leur rythme.',
   },
   'Avec qui peut-on participer à l’Atelier Duo ?': {
-    question: 'Avec qui peut-on participer à Grandir ensemble ?',
-    answer: 'Grandir ensemble accueille 4 duos de mamans et d’enfants. L’atelier invite à ralentir ensemble, partager un moment privilégié et créer des souvenirs dans une ambiance ludique et relaxante.',
+    question: 'Avec qui peut-on participer au DUO Mama & enfant ?',
+    answer: 'Le DUO Mama & enfant est un atelier privé pour une mama et son enfant. Il invite à ralentir ensemble, partager un moment privilégié et créer des souvenirs dans une ambiance ludique et relaxante.',
+  },
+  'Avec qui peut-on participer à Grandir ensemble ?': {
+    question: 'Avec qui peut-on participer au DUO Mama & enfant ?',
+    answer: 'Le DUO Mama & enfant est un atelier privé pour une mama et son enfant. Il invite à ralentir ensemble, partager un moment privilégié et créer des souvenirs dans une ambiance ludique et relaxante.',
   },
   'Puis-je offrir un atelier ?': {
     question: 'Puis-je offrir un atelier ?',
-    answer: 'Oui. La carte cadeau À deux donne accès à un atelier privatif pour 49 €, valable deux mois à partir de la date d’achat. Elle existe en version numérique ou Signature, envoyée par courrier avec un mot personnalisé.',
+    answer: 'Oui. La carte cadeau DUO Mama & enfant donne accès à cet atelier privé pour 60 €, valable deux mois à partir de la date d’achat. Elle existe en version numérique ou Signature, envoyée par courrier avec un mot personnalisé.',
   },
 }
 
@@ -142,7 +171,10 @@ export const migrateLegacyContent = (content = {}) => {
   const offers = Array.isArray(content.offers)
     ? content.offers.map((offer) => {
         const defaultOffer = defaultOffersById.get(offer?.id)
-        return defaultOffer && legacyOfferTitles.has(trimText(offer?.title))
+        return defaultOffer && (
+          legacyOfferTitles.has(trimText(offer?.title)) ||
+          legacyOfferSummaries.has(trimText(offer?.summary))
+        )
           ? { ...offer, ...defaultOffer }
           : offer
       })

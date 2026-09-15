@@ -7,7 +7,7 @@
     "node": ">=20.19.0"
   },
   "scripts": {
-    "dev": "netlify dev --port 5173 --target-port 5174 --command \"vite --port 5174\"",
+    "dev": "NETLIFY_DEV_SERVER_CHECK_SSG_ENDPOINTS=true netlify dev --port 5173 --target-port 5174 --command \"vite --port 5174\"",
     "build": "vite build",
     "preview": "vite preview"
   },
