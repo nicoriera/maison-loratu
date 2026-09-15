@@ -8,7 +8,7 @@
 2. Ateliers — `/ateliers`
    - Ateliers enfants — `/ateliers/enfants`
    - Ateliers duo — `/ateliers/duo`
-   - Ateliers en douceur — `/ateliers/seniors`
+   - Mamas & enfants — `/ateliers/seniors`
 3. Accompagnement personnalisé — `/accompagnement`
 4. Carte cadeau — `/carte-cadeau`
 5. Contact — `/contact`

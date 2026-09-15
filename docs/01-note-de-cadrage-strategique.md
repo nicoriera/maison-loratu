@@ -10,7 +10,7 @@ Maison Loratu accompagne les enfants et les femmes en quête de sérénité et d
 ## Positionnement
 
 - Une approche naturelle, humaine, chaleureuse et adaptée aux enfants.
-- Un univers familial qui relie petites filles, adolescentes, femmes, mamans et grand-mères.
+- Un univers familial qui relie petites filles, adolescentes, femmes, mama et grand-mères.
 - Des formats simples à comprendre, avec durée, tarif et capacité visibles.
 - Une consultation principalement mobile, orientée vers la réservation.
 
@@ -25,7 +25,7 @@ Maison Loratu accompagne les enfants et les femmes en quête de sérénité et d
 
 - Ateliers enfants.
 - Ateliers duo.
-- Ateliers en douceur.
+- Mamas & enfants.
 - Accompagnement individuel pour enfants et femmes.
 - Carte cadeau.
 

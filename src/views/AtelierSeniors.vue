@@ -4,21 +4,21 @@ import WorkshopDetail from '../components/WorkshopDetail.vue'
 
 <template>
   <WorkshopDetail
-    eyebrow="Pour femmes"
-    title="En douceur"
-    meta="1 h 15 · 25 € · 8 participants maximum"
-    intro="Des ateliers pensés pour respirer, bouger en douceur et partager un moment convivial."
+    eyebrow="Pour les mamas et les enfants"
+    title="Mamas & enfants"
+    meta="1 h 15 · 38 € · 8 participants maximum"
+    intro="Un atelier joyeux pour respirer, bouger et se détendre ensemble."
     :paragraphs="[
-      'Chacun évolue à son rythme dans une ambiance bienveillante et chaleureuse.',
-      'Au programme : des exercices de respiration, de relaxation, de mobilisation douce et des activités favorisant la concentration, l’équilibre et la stabilité.',
-      'Un rendez-vous pour prendre soin de soi, entretenir ses capacités, retrouver de la vitalité et cultiver le plaisir d’être ensemble.',
+      'À travers le yoga en duo, des histoires, des jeux de respiration et des mouvements doux, mamas et enfants découvrent des outils simples pour accueillir leurs émotions et retrouver leur calme.',
+      'Chaque proposition invite à s’écouter, à prendre confiance et à partager un moment de détente dans une ambiance bienveillante et ludique.',
+      'Une parenthèse complice pour rire, respirer et repartir avec des exercices à refaire ensemble à la maison.',
     ]"
     :highlights="[
-      'Respiration et relaxation',
-      'Mobilisation douce',
-      'Concentration, équilibre et stabilité',
-      'Mémoire, vitalité et convivialité',
+      'Yoga en duo, histoires et jeux de respiration',
+      'Mouvements doux et temps de relaxation',
+      'Accueillir les émotions et retrouver son calme ensemble',
+      'Complicité, confiance et bien-être',
     ]"
     image="/images/seniors-session.webp"
-    image-alt="Personnes participant à un atelier de sophrologie en douceur" />
+    image-alt="Mamas et enfants participant ensemble à un atelier de sophrologie" />
 </template>
