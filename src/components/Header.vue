@@ -19,7 +19,7 @@ const isActive = (item) => {
 </script>
 
 <template>
-  <header class="sticky top-0 z-50 border-b border-terracotta-100/70 bg-white/92 shadow-sm backdrop-blur safe-area-top">
+  <header class="border-b border-terracotta-100/70 bg-cream-50 shadow-sm safe-area-top">
     <nav class="container mx-auto px-4 py-3 md:py-4" aria-label="Navigation principale">
       <div class="flex items-center justify-between gap-4">
         <router-link

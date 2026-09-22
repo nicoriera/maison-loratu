@@ -30,7 +30,7 @@
 @layer base {
   #app {
     min-height: 100vh;
-    overflow-x: hidden;
+    overflow-x: clip;
   }
 
   html {
@@ -40,7 +40,7 @@
   body {
     @apply bg-cream-50 text-gray-900;
     @apply font-sans antialiased;
-    overflow-x: hidden;
+    overflow-x: clip;
     background-image:
       radial-gradient(circle at top left, rgba(193, 106, 70, 0.06), transparent 32%),
       radial-gradient(circle at top right, rgba(138, 170, 138, 0.08), transparent 28%);
