@@ -71,6 +71,9 @@ import UiIcon from "./UiIcon.vue";
           <p class="mt-2 text-sm leading-relaxed text-gray-600">
             Prise de rendez-vous par <a href="tel:+33666883302" class="footer-link font-semibold text-terracotta-700 hover:text-terracotta-600">téléphone</a> ou <router-link to="/reservation" class="footer-link font-semibold text-terracotta-700 hover:text-terracotta-600">en ligne</router-link>.
           </p>
+          <p class="mt-2 text-sm leading-relaxed text-gray-600">
+            Paiement sur place par carte bancaire ou en espèces.
+          </p>
           <a
             href="mailto:maisonloratu@gmail.com"
             class="footer-link mt-2 inline-block w-fit text-sm text-gray-600 hover:text-terracotta-600">

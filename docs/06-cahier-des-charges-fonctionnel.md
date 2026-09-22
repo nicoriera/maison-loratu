@@ -30,7 +30,7 @@
 ### Réservation
 
 - Rediriger les actions « Réserver » vers la page intégrant SimplyBook.
-- Administrer les disponibilités, capacités et paiements dans SimplyBook.
+- Administrer les disponibilités et capacités dans SimplyBook ; indiquer le paiement sur place par carte bancaire ou en espèces.
 - Afficher dans le footer le téléphone, l’email et un lien vers la réservation en ligne.
 
 ### Formulaires

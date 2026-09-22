@@ -110,7 +110,7 @@ src/
 
 - **Landing page** avec sections explicatives sur la sophrologie
 - **Formulaire de contact** simple, avec consentement et envoi vers Formspree
-- **Réservations en ligne** : widget SimplyBook intégré à la page de réservation ; les dates et capacités sont administrées dans SimplyBook
+- **Réservations en ligne** : widget SimplyBook intégré à la page de réservation ; les dates et capacités sont administrées dans SimplyBook ; paiement sur place par carte bancaire ou en espèces
 - **Contenus administrables** pour l’atelier mis en avant, les offres et la FAQ
 - **Conformité RGPD** avec mentions légales et politique de confidentialité
 - **Design responsive** et moderne

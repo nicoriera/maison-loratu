@@ -7,7 +7,7 @@ const event = {
   audience: "Pour les enfants de 5 à 8 ans",
   date: "Les 26 et 28 octobre 2026",
   time: "15 h – 16 h 30",
-  price: "22 € · goûter inclus",
+  price: "30 € · goûter inclus",
   location: "Parc du Maharin, 64600 Anglet",
   mapsUrl:
     "https://www.google.com/maps/search/?api=1&query=Parc+du+Maharin+64600+Anglet",
@@ -231,7 +231,7 @@ watch(isOpen, (open) => {
                   </div>
                   <div>
                     <dt class="font-semibold text-terracotta-700">Tarif</dt>
-                    <dd class="mt-0.5">22 €<br />Goûter inclus</dd>
+                    <dd class="mt-0.5">30 €<br />Goûter inclus</dd>
                   </div>
                   <div class="col-span-2">
                     <dt><a :href="event.mapsUrl" target="_blank" rel="noopener noreferrer" class="font-semibold text-terracotta-700 underline decoration-terracotta-300 underline-offset-2">Parc du Maharin, Anglet</a></dt>

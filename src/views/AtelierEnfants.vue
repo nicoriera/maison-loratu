@@ -6,7 +6,7 @@ import WorkshopDetail from '../components/WorkshopDetail.vue'
   <WorkshopDetail
     eyebrow="Pour enfants"
     title="Les Petits Explorateurs"
-    meta="45 min · 22 € · 8 participants maximum"
+    meta="45 min · 30 € · groupe de 4 enfants maximum"
     intro="Des ateliers ludiques pour apprivoiser les émotions et favoriser un sommeil plus serein."
     :paragraphs="[
       'À travers le yoga kids, des histoires, des jeux de respiration, des mouvements et des temps de relaxation, les enfants apprennent à accueillir leurs émotions, à retrouver leur calme, à prendre confiance et à mieux dormir.',

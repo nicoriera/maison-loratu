@@ -47,8 +47,8 @@ La grossesse n’est pas une offre ou un parcours dédié au lancement. Elle peu
 ### Ateliers en studio
 
 - Durée : 1 h 15.
-- Les Petits Explorateurs, pour enfants : 45 min, 22 €, 8 participants maximum.
-- Mamas & enfants : 1 h 15, 38 €, 8 participants maximum.
+- Les Petits Explorateurs, pour enfants : 45 min, 30 €, groupe de 4 enfants maximum.
+- Mamas & enfants : 1 h 15, 38 €, 4 familles maximum.
 - DUO Mama & enfant : atelier privé de 1 h 15 à 60 €, disponible en carte cadeau.
 - Lieu : Studio Loratu.
 
@@ -91,9 +91,9 @@ Sandra a demandé le 21/07/2026 de retirer toute la partie « structures et proj
 | Sujet | Décision actuelle | Statut |
 |---|---|---|
 | Localisation | À définir | En attente |
-| Réservation | Widget SimplyBook intégré ; dates, capacités et paiements à administrer dans SimplyBook | En cours |
+| Réservation | Widget SimplyBook intégré ; dates et capacités à administrer dans SimplyBook | En cours |
 | Annulation | Règles à définir | En attente |
-| Paiement au lancement | Paiement sur place | Décidé provisoirement |
+| Paiement au lancement | Paiement sur place par carte bancaire ou en espèces | Décidé provisoirement |
 | Paiement en ligne | À étudier ultérieurement | À cadrer avec sécurité et RGPD |
 | Contenus | À fournir | En attente |
 | Coordonnées | Téléphone et email publics dans le footer | Configuré |

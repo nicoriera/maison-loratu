@@ -10,12 +10,12 @@ const offerings = computed(() => [
     id: "offer-collective",
     order: 1,
     title: "Les Petits Explorateurs",
-    audience: "Pour enfants · 45 min · 22 €",
+    audience: "Pour enfants · 45 min · 30 €",
     image: "/images/children-studio-sun-markers.webp",
     description:
       "Des ateliers joyeux pour aider les petits cœurs à grandir sereinement.",
     bullets: [
-      "8 participants maximum",
+      "Groupe de 4 enfants maximum",
       "Yoga kids, histoires et jeux de respiration",
       "Mouvements doux et temps de relaxation",
       "Accueillir les émotions et retrouver son calme",
@@ -51,7 +51,7 @@ const offerings = computed(() => [
     description:
       "Respiration, relaxation et visualisation positive dans une ambiance joyeuse à partager entre mamas et enfants.",
     bullets: [
-      "8 participants maximum",
+      "4 familles maximum",
       "Yoga en duo, histoires et jeux de respiration",
       "Mouvements doux et temps de relaxation",
       "Accueillir les émotions et retrouver son calme ensemble",

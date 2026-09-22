@@ -86,7 +86,7 @@ Une réservation vient d’être annulée.
 
 [Détails de la réservation annulée]
 
-## Paiement confirmé — cliente
+## Paiement confirmé — cliente (si le paiement en ligne est activé)
 
 À activer lorsque Stripe sera connecté.
 
@@ -94,7 +94,7 @@ Une réservation vient d’être annulée.
 
 Bonjour [prénom],
 
-Votre paiement a bien été reçu. Votre place est réservée.
+Votre paiement en ligne a bien été reçu. Votre place est réservée.
 
 [Détails de la réservation et du paiement]
 

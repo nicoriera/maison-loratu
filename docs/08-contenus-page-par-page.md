@@ -16,9 +16,9 @@
 
 Présenter séparément dans l’index puis dans une page dédiée :
 
-- Les Petits Explorateurs, pour enfants — 45 min, 22 €, 8 participants maximum ;
+- Les Petits Explorateurs, pour enfants — 45 min, 30 €, groupe de 4 enfants maximum ;
 - DUO Mama & enfant — atelier privé, 1 h 15, 60 €, disponible en carte cadeau ;
-- Mamas & enfants — 1 h 15, 38 €, 8 participants maximum ;
+- Mamas & enfants — 1 h 15, 38 €, 4 familles maximum ;
 - accompagnement individuel — 1 h, 60 €.
 
 Chaque entrée comporte une photo, une description courte, les bénéfices proposés sans promesse médicale et une action de réservation.

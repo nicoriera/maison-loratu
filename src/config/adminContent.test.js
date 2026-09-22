@@ -26,7 +26,7 @@ test('create admin draft factories returns lightweight local defaults', () => {
       enabled: true,
       label: 'En ce moment',
       title: 'Atelier & sophrologie',
-      summary: '45 min · 22 € par personne · 8 participants maximum.',
+      summary: '45 min · 30 € par personne · groupe de 4 enfants maximum.',
       ctaLabel: 'Voir les ateliers',
       ctaHref: '/ateliers',
     },

@@ -9,7 +9,7 @@ const audiences = [
   {
     order: 1,
     title: "Les Petits Explorateurs",
-    detail: "45 min · 22 €",
+    detail: "45 min · 30 € · groupe de 4 enfants maximum",
     image: "/images/children-studio-sun-markers.webp",
     href: "/ateliers/enfants",
     cta: "Je découvre",

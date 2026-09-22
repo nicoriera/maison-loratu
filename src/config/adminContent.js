@@ -65,7 +65,7 @@ export const createInitialPublicDraft = () => ({
     enabled: true,
     label: 'En ce moment',
     title: 'Atelier & sophrologie',
-    summary: '45 min · 22 € par personne · 8 participants maximum.',
+    summary: '45 min · 30 € par personne · groupe de 4 enfants maximum.',
     ctaLabel: 'Voir les ateliers',
     ctaHref: '/ateliers',
   },
@@ -75,7 +75,7 @@ export const createInitialOffersDraft = () => ([
   {
     id: 'offer-collective',
     title: 'Les Petits Explorateurs',
-    audience: 'Pour enfants · 45 min · 8 participants · 22 €',
+    audience: 'Pour enfants · 45 min · groupe de 4 enfants maximum · 30 €',
     summary: 'Respiration, relaxation et visualisation positive dans une ambiance conviviale.',
   },
   {
@@ -87,7 +87,7 @@ export const createInitialOffersDraft = () => ([
   {
     id: 'offer-seniors',
     title: 'Mamas & enfants',
-    audience: 'Pour les mamas et les enfants · 1 h 15 · 8 participants · 38 €',
+    audience: 'Pour les mamas et les enfants · 1 h 15 · 4 familles maximum · 38 €',
     summary: 'Respiration, relaxation et visualisation positive dans une ambiance joyeuse à partager entre mamas et enfants.',
   },
   {

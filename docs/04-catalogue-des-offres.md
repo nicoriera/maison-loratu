@@ -4,9 +4,9 @@
 
 | Offre | Public | Durée | Tarif | Capacité |
 |---|---|---:|---:|---:|
-| Les Petits Explorateurs | Enfants | 45 min | 22 € | 8 maximum |
+| Les Petits Explorateurs | Enfants | 45 min | 30 € | Groupe de 4 enfants maximum |
 | DUO Mama & enfant | Une mama et son enfant | 1 h 15 | 60 € | Privé |
-| Mamas & enfants | Mamas et enfants | 1 h 15 | 38 € | 8 maximum |
+| Mamas & enfants | Mamas et enfants | 1 h 15 | 38 € | 4 familles maximum |
 | Accompagnement individuel | Enfants et femmes | 1 h | 60 € | Individuel |
 
 ## Les Petits Explorateurs

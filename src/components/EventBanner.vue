@@ -16,7 +16,7 @@ const dismissBanner = () => {
 const event = {
   label: 'Événement à venir',
   title: 'Atelier relaxation ludique · 5–8 ans',
-  details: '26 et 28 octobre 2026 · 15 h–16 h 30 · 22 € · goûter inclus',
+  details: '26 et 28 octobre 2026 · 15 h–16 h 30 · 30 € · goûter inclus',
   location: 'Parc du Maharin, Anglet',
   mapsUrl: 'https://www.google.com/maps/search/?api=1&query=Parc+du+Maharin+64600+Anglet',
   illustration: '/images/pop-up.png',
