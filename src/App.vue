@@ -5,7 +5,6 @@ import { useRoute } from 'vue-router'
 import Header from './components/Header.vue'
 import Footer from './components/Footer.vue'
 import MobileNavigation from './components/MobileNavigation.vue'
-import ReservationNotice from './components/ReservationNotice.vue'
 import EventPopup from './components/EventPopup.vue'
 import EventBanner from './components/EventBanner.vue'
 import { applyRouteSeo } from './utils/seo.js'
@@ -36,7 +35,6 @@ watch(
     </a>
     <div class="lg:sticky lg:top-0 lg:z-50">
       <Header />
-      <ReservationNotice v-if="route.name !== 'reservation'" />
       <EventBanner v-if="route.name === 'home'" />
     </div>
     <EventPopup v-if="route.name === 'home'" />
