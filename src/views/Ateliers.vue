@@ -10,7 +10,7 @@ const offerings = computed(() => [
     id: "offer-collective",
     order: 1,
     title: "Les Petits Explorateurs",
-    audience: "Pour enfants · 45 min · 30 €",
+    audience: "Pour enfants de 5 à 11 ans · 45 min · 30 €",
     image: "/images/children-studio-sun-markers.webp",
     description:
       "Des ateliers joyeux pour aider les petits cœurs à grandir sereinement.",

@@ -75,7 +75,7 @@ export const createInitialOffersDraft = () => ([
   {
     id: 'offer-collective',
     title: 'Les Petits Explorateurs',
-    audience: 'Pour enfants · 45 min · groupe de 4 enfants maximum · 30 €',
+    audience: 'Pour enfants de 5 à 11 ans · 45 min · groupe de 4 enfants maximum · 30 €',
     summary: 'Respiration, relaxation et visualisation positive dans une ambiance conviviale.',
   },
   {
