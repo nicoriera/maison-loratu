@@ -57,9 +57,18 @@ const foundations = [
       <div class="container mx-auto max-w-5xl">
         <div class="grid gap-10 md:grid-cols-[0.8fr_1.2fr] md:items-start">
           <div>
-            <p class="text-service-label text-terracotta-600">Une séance</p>
-            <p class="mt-3 text-5xl text-terracotta-800">1 h · 60 €</p>
-            <p class="mt-3 text-gray-600">Un format individuel, sur rendez-vous.</p>
+            <p class="text-service-label text-terracotta-600">Les formats</p>
+            <div class="mt-4 space-y-5 text-terracotta-800">
+              <div>
+                <p class="text-xl font-semibold">Femmes</p>
+                <p class="mt-1 text-4xl">1 h · 60 €</p>
+              </div>
+              <div>
+                <p class="text-xl font-semibold">Enfants de 5 à 16 ans</p>
+                <p class="mt-1 text-4xl">45 min · 55 €</p>
+              </div>
+            </div>
+            <p class="mt-4 text-gray-600">Un accompagnement individuel, sur rendez-vous.</p>
           </div>
           <div class="rounded-[2rem] bg-white p-8 shadow-soft-lg">
             <h2 class="text-3xl text-terracotta-800">Des ressources concrètes pour avancer</h2>
@@ -136,7 +145,7 @@ const foundations = [
 
         <div class="mx-auto mt-10 flex max-w-2xl flex-col items-center text-center">
           <p class="text-lg leading-relaxed text-gray-700">
-            Une séance individuelle de 1 h, adaptée à votre rythme et à vos besoins.
+            Des séances adaptées à votre âge, votre rythme et vos besoins.
           </p>
           <div class="mt-6">
             <CTAButton to="/reservation">Je réserve mon accompagnement</CTAButton>
