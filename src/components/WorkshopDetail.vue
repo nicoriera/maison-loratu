@@ -1,5 +1,6 @@
 <script setup>
 import CTAButton from './CTAButton.vue'
+import { siteConfig } from '../config/site.js'
 
 defineProps({
   eyebrow: { type: String, required: true },
@@ -25,7 +26,7 @@ defineProps({
           <p class="mt-5 text-xl text-terracotta-800">{{ meta }}</p>
           <p class="body-copy mt-6">{{ intro }}</p>
           <div class="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
-            <CTAButton to="/reservation">Je réserve</CTAButton>
+            <CTAButton :to="siteConfig.resalibUrl">Je réserve sur Resalib</CTAButton>
             <CTAButton v-if="giftCardTo" :to="giftCardTo" variant="secondary">Offrir une carte cadeau</CTAButton>
             <CTAButton to="/ateliers" variant="secondary">Tous les ateliers</CTAButton>
           </div>

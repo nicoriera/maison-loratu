@@ -1,5 +1,6 @@
 <script setup>
 import { useRoute } from 'vue-router'
+import { siteConfig } from '../config/site.js'
 import UiIcon from './UiIcon.vue'
 
 const route = useRoute()
@@ -30,16 +31,16 @@ const isActive = (item) => route.name === item.activeRoute && !route.hash
         <span>{{ item.shortLabel }}</span>
       </router-link>
 
-      <router-link
-        to="/reservation"
+      <a
+        :href="siteConfig.resalibUrl"
+        target="_blank"
+        rel="noopener noreferrer"
         class="flex min-h-12 flex-col items-center justify-center rounded-xl bg-terracotta-500 px-1 py-2 text-center text-xs font-semibold leading-tight text-white transition duration-[var(--duration-ui)] ease-[var(--ease-warm-out)] hover:bg-terracotta-600 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-terracotta-500 focus-visible:ring-offset-2"
-        :class="{ 'ring-2 ring-terracotta-700 ring-offset-2': route.name === 'reservation' }"
-        aria-label="Réserver une séance ou un atelier"
-        :aria-current="route.name === 'reservation' ? 'page' : undefined"
+        aria-label="Réserver une séance ou un atelier sur Resalib, nouvel onglet"
       >
         <span class="mb-1 leading-none" aria-hidden="true"><UiIcon name="reserve" :size="22" /></span>
         <span>Réserver</span>
-      </router-link>
+      </a>
     </div>
   </nav>
 </template>

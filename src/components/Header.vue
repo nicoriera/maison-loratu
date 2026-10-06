@@ -66,14 +66,15 @@ const isActive = (item) => {
             <UiIcon name="instagram" :size="22" />
           </a>
 
-          <router-link
-            to="/reservation"
+          <a
+            :href="siteConfig.resalibUrl"
+            target="_blank"
+            rel="noopener noreferrer"
             class="ml-2 inline-flex min-h-11 items-center justify-center rounded-full bg-terracotta-500 px-4 py-2 text-sm font-semibold text-white transition duration-[var(--duration-ui)] ease-[var(--ease-warm-out)] hover:bg-terracotta-600 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-terracotta-500 focus-visible:ring-offset-2"
-            aria-label="Réserver un atelier"
-            :aria-current="route.name === 'reservation' ? 'page' : undefined"
+            aria-label="Réserver une séance ou un atelier sur Resalib, nouvel onglet"
           >
             Réserver
-          </router-link>
+          </a>
         </div>
 
       </div>
