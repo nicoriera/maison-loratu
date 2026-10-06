@@ -1,5 +1,6 @@
 <script setup>
 import CTAButton from "../components/CTAButton.vue";
+import { siteConfig } from "../config/site.js";
 import OfferingCard from "../components/OfferingCard.vue";
 import { computed, onMounted, ref } from "vue";
 
@@ -73,7 +74,7 @@ const offerings = computed(() => [
       "Préparation aux examens, à la grossesse ou à un événement",
       "Concentration et étapes de vie",
     ],
-    to: "/reservation",
+    to: siteConfig.resalibUrl,
     action: "Je réserve",
   },
 ].map((offer) => {

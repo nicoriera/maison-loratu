@@ -32,8 +32,8 @@ export const seoByRoute = {
     description: 'Retrouvez les réponses aux questions fréquentes sur les séances et ateliers de sophrologie de Maison Loratu.',
   },
   reservation: {
-    title: 'Réservations bientôt disponibles | Maison Loratu',
-    description: 'Maison Loratu prépare l’ouverture des réservations. Inscrivez-vous pour recevoir les dates des premiers ateliers.',
+    title: 'Réserver une séance ou un atelier | Maison Loratu',
+    description: 'Réservez une séance de sophrologie ou un atelier Maison Loratu directement sur Resalib.',
     noindex: true,
   },
   'carte-cadeau': {

@@ -3,6 +3,7 @@ import CTAButton from "../components/CTAButton.vue";
 import ScrollReveal from "../components/ScrollReveal.vue";
 import ScrollRevealStagger from "../components/ScrollRevealStagger.vue";
 import OfferingCard from "../components/OfferingCard.vue";
+import { siteConfig } from "../config/site.js";
 import { onMounted, ref } from "vue";
 
 const audiences = [
@@ -172,7 +173,7 @@ onMounted(loadPublicContent);
             {{ featuredWorkshop.title }}
           </h2>
           <div class="mt-5">
-            <CTAButton to="/reservation" variant="secondary">{{
+            <CTAButton :to="siteConfig.resalibUrl" variant="secondary">{{
               featuredWorkshop.ctaLabel
             }}</CTAButton>
           </div>

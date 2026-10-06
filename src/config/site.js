@@ -26,6 +26,9 @@ export const createSiteConfig = (env = import.meta.env ?? process.env) => {
   return {
     siteUrl: "https://maisonloratu.com",
     siteName: "Maison Loratu",
+    resalibUrl: "https://www.resalib.fr/agenda/136767?src=profile#/",
+    address: "29 rue Charles Floquet, 64100 Bayonne",
+    accessInstructions: "Entrée principale par le cabinet Kiné Côte Basque. Se rendre à la salle d’attente du 2ᵉ étage.",
     primaryCity: "Anglet",
     serviceArea: ["Anglet", "Bayonne", "Biarritz"],
     instagramUrl: "https://www.instagram.com/maison__loratu/",

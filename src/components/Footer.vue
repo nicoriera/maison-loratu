@@ -69,7 +69,10 @@ import UiIcon from "./UiIcon.vue";
             06 66 88 33 02
           </a>
           <p class="mt-2 text-sm leading-relaxed text-gray-600">
-            Prise de rendez-vous par <a href="tel:+33666883302" class="footer-link font-semibold text-terracotta-700 hover:text-terracotta-600">téléphone</a> ou <router-link to="/reservation" class="footer-link font-semibold text-terracotta-700 hover:text-terracotta-600">en ligne</router-link>.
+            Toutes les réservations se font sur <a :href="siteConfig.resalibUrl" target="_blank" rel="noopener noreferrer" class="footer-link font-semibold text-terracotta-700 hover:text-terracotta-600">Resalib</a> ou par <a href="tel:+33666883302" class="footer-link font-semibold text-terracotta-700 hover:text-terracotta-600">téléphone</a>.
+          </p>
+          <p class="mt-2 text-sm leading-relaxed text-gray-600">
+            {{ siteConfig.address }}<br />{{ siteConfig.accessInstructions }}
           </p>
           <p class="mt-2 text-sm leading-relaxed text-gray-600">
             Paiement sur place par carte bancaire ou en espèces.
