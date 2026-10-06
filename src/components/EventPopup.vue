@@ -239,7 +239,7 @@ watch(isOpen, (open) => {
                   </div>
                 </dl>
                 <div class="sticky bottom-0 -mx-5 mt-4 border-t border-cream-700 bg-cream-50 px-5 pb-[calc(0.75rem+env(safe-area-inset-bottom))] pt-3">
-                  <a href="https://www.resalib.fr/agenda/136767?src=profile#/" target="_blank" rel="noopener noreferrer" class="inline-flex min-h-12 w-full items-center justify-center rounded-full bg-terracotta-500 px-6 py-3 text-center font-semibold text-white shadow-soft transition hover:bg-terracotta-600 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-terracotta-500 focus-visible:ring-offset-2">Je réserve ma place sur Resalib</a>
+                  <button type="button" class="inline-flex min-h-12 w-full items-center justify-center rounded-full bg-terracotta-500 px-6 py-3 text-center font-semibold text-white shadow-soft transition hover:bg-terracotta-600 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-terracotta-500 focus-visible:ring-offset-2" @click="showForm">Je réserve ma place</button>
                 </div>
               </div>
 
