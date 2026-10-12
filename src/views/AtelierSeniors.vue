@@ -6,7 +6,7 @@ import WorkshopDetail from '../components/WorkshopDetail.vue'
   <WorkshopDetail
     eyebrow="Pour les mamas et les enfants"
     title="Mamas & enfants"
-    meta="1 h 15 · 38 € · 4 familles maximum"
+    meta="45 min · 45 € par binôme mère-fille · 4 binômes maximum"
     intro="Un atelier joyeux pour respirer, bouger et se détendre ensemble."
     :paragraphs="[
       'À travers le yoga en duo, des histoires, des jeux de respiration et des mouvements doux, mamas et enfants découvrent des outils simples pour accueillir leurs émotions et retrouver leur calme.',

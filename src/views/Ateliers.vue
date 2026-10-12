@@ -11,8 +11,8 @@ const offerings = computed(() => [
     id: "offer-collective",
     order: 1,
     title: "Les Petits Explorateurs",
-    audience: "Pour enfants de 5 à 11 ans · 45 min · 30 €",
-    image: "/images/children-studio-sun-markers.webp",
+    audience: "Pour enfants de 5 à 11 ans · 45 min · 45 €",
+    image: "/images/children-atelier-mother-kids.jpg",
     description:
       "Des ateliers joyeux pour aider les petits cœurs à grandir sereinement.",
     bullets: [
@@ -29,7 +29,7 @@ const offerings = computed(() => [
     id: "offer-duo",
     order: 3,
     title: "DUO Mama & enfant",
-    audience: "Atelier privé · 1 h 15 · 60 € · Disponible en carte cadeau",
+    audience: "Atelier privé · 1 h 15 · 80 € · Disponible en carte cadeau",
     image: "/images/duo-mother-daughter-back-stretch.webp",
     description:
       "Un atelier privé pour une mama et son enfant, à vivre ou à offrir en carte cadeau.",
@@ -47,7 +47,7 @@ const offerings = computed(() => [
     id: "offer-seniors",
     order: 2,
     title: "Mamas & enfants",
-    audience: "Pour les mamas et les enfants · 1 h 15 · 38 €",
+    audience: "Pour les mamas et les enfants · 45 min · 45 € par binôme mère-fille · 4 binômes maximum",
     image: "/images/seniors-session.webp",
     description:
       "Respiration, relaxation et visualisation positive dans une ambiance joyeuse à partager entre mamas et enfants.",
@@ -64,8 +64,8 @@ const offerings = computed(() => [
   {
     order: 4,
     title: "Accompagnement individuel pour enfants et femmes",
-    audience: "1 h · 60 €",
-    image: "/images/individual-session.webp",
+    audience: "1 h · 70 €",
+    image: "/images/individual-appointments.jpg",
     description:
       "Un temps rien que pour vous, pour souffler, vous recentrer et avancer à votre rythme.",
     bullets: [
@@ -99,7 +99,7 @@ onMounted(async () => {
 <template>
   <div class="bg-cream-50">
     <section
-      class="bg-gradient-to-b from-cream-200 to-cream-50 px-4 py-16 md:py-24">
+      class="bg-gradient-to-b from-cream-200 to-cream-50 px-4 py-12 md:py-16">
       <div
         class="container mx-auto grid max-w-6xl items-center gap-10 md:grid-cols-[0.95fr_1.05fr]">
         <div class="max-w-2xl text-center md:text-left">
@@ -122,18 +122,18 @@ onMounted(async () => {
         </div>
         <div class="hidden overflow-hidden rounded-[2rem] shadow-soft-lg md:block">
           <img
-            src="/images/duo-mother-daughter-back-stretch.webp"
+            src="/images/ateliers-hero.jpg"
             width="1200"
             height="900"
-            alt="Une femme et un enfant partageant un atelier de sophrologie"
-            class="block aspect-[4/3] w-full object-cover"
+            alt="Une femme animant un atelier de sophrologie avec des enfants"
+            class="photo-tone block aspect-[4/3] w-full object-cover"
             loading="eager"
             fetchpriority="high" />
         </div>
       </div>
     </section>
 
-    <section id="formats" class="scroll-mt-28 px-4 py-16 md:py-24">
+    <section id="formats" class="scroll-mt-28 px-4 py-10 md:py-16">
       <div
         class="container mx-auto grid max-w-6xl gap-6 md:grid-cols-2 xl:grid-cols-4">
         <OfferingCard

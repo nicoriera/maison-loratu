@@ -16,10 +16,10 @@
 
 Présenter séparément dans l’index puis dans une page dédiée :
 
-- Les Petits Explorateurs, pour enfants — 45 min, 30 €, groupe de 4 enfants maximum ;
-- DUO Mama & enfant — atelier privé, 1 h 15, 60 €, disponible en carte cadeau ;
-- Mamas & enfants — 1 h 15, 38 €, 4 familles maximum ;
-- accompagnement individuel — 1 h, 60 €.
+- Les Petits Explorateurs, pour enfants — 45 min, 45 €, groupe de 4 enfants maximum ;
+- DUO Mama & enfant — atelier privé, 1 h 15, 80 €, disponible en carte cadeau ;
+- Mamas & enfants — 45 min, 45 € par binôme mère-fille, 4 binômes maximum ;
+- accompagnement individuel — 1 h, 70 €.
 
 Chaque entrée comporte une photo, une description courte, les bénéfices proposés sans promesse médicale et une action de réservation.
 
@@ -47,8 +47,8 @@ Présenter le yoga en duo, les histoires, les jeux de respiration, les mouvement
 ## Carte cadeau
 
 - Présenter DUO Mama & enfant comme un atelier privé à partager entre une mama et son enfant.
-- Afficher DUO Mama & enfant (atelier privé, 1 h 15, 60 €), valable deux mois à partir de la date d’achat.
-- Proposer deux formats : carte cadeau numérique à 60 € (envoi offert par e-mail après achat) ou carte cadeau Signature à 65 € (+5 €, envoyée par courrier dans une enveloppe avec mot personnalisé).
+- Afficher DUO Mama & enfant (atelier privé, 1 h 15, 80 €), valable deux mois à partir de la date d’achat.
+- Proposer deux formats : carte cadeau numérique à 80 € (envoi offert par e-mail après achat) ou carte cadeau Signature à 85 € (+5 €, envoyée par courrier dans une enveloppe avec mot personnalisé).
 - Recueillir le prénom de la personne qui reçoit la carte et un message personnalisé.
 
 ## Contact

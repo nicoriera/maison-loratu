@@ -50,7 +50,7 @@ const foundations = [
           </p>
           <div class="mt-8"><CTAButton :to="siteConfig.resalibUrl">Je réserve sur Resalib</CTAButton></div>
         </div>
-        <img src="/images/individual-session.webp" width="1200" height="900" alt="Petit bureau calme pour un accompagnement individuel" class="block aspect-[4/3] h-auto w-full rounded-[2rem] object-cover shadow-soft-lg" fetchpriority="high" decoding="async" />
+        <img src="/images/individual-appointments.jpg" width="1200" height="900" alt="Espace lumineux dédié aux rendez-vous individuels" class="photo-tone block aspect-[4/3] h-auto w-full rounded-[2rem] object-cover shadow-soft-lg" fetchpriority="high" decoding="async" />
       </div>
     </section>
 
@@ -62,7 +62,7 @@ const foundations = [
             <div class="mt-4 space-y-5 text-terracotta-800">
               <div>
                 <p class="text-xl font-semibold">Femmes</p>
-                <p class="mt-1 text-4xl">1 h · 60 €</p>
+                <p class="mt-1 text-4xl">1 h · 70 €</p>
               </div>
               <div>
                 <p class="text-xl font-semibold">Enfants de 5 à 16 ans</p>

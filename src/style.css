@@ -130,6 +130,9 @@
   .shadow-soft-lg {
     box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08), 0 4px 12px rgba(0, 0, 0, 0.05);
   }
+  .photo-tone {
+    filter: saturate(0.9) sepia(0.04) contrast(0.96) brightness(1.02);
+  }
 }
 
 @keyframes hero-fade-in {

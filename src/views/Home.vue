@@ -10,15 +10,15 @@ const audiences = [
   {
     order: 1,
     title: "Les Petits Explorateurs",
-    detail: "5 à 11 ans · 45 min · 30 € · groupe de 4 enfants maximum",
-    image: "/images/children-studio-sun-markers.webp",
+    detail: "5 à 11 ans · 45 min · 45 € · groupe de 4 enfants maximum",
+    image: "/images/children-atelier-mother-kids.jpg",
     href: "/ateliers/enfants",
     cta: "Je découvre",
   },
   {
     order: 3,
     title: "DUO Mama & enfant",
-    detail: "1 h 15 · 60 € · atelier privé · carte cadeau",
+    detail: "1 h 15 · 80 € · atelier privé · carte cadeau",
     image: "/images/duo-mother-daughter-back-stretch.webp",
     href: "/ateliers/duo",
     cta: "Je découvre",
@@ -26,7 +26,7 @@ const audiences = [
   {
     order: 2,
     title: "Mamas & enfants",
-    detail: "1 h 15 · 38 €",
+    detail: "45 min · 45 € par binôme mère-fille",
     image: "/images/seniors-session.webp",
     href: "/ateliers/seniors",
     cta: "Je découvre",
@@ -34,8 +34,8 @@ const audiences = [
   {
     order: 4,
     title: "Accompagnement individuel pour enfants et femmes",
-    detail: "1 h · 60 €",
-    image: "/images/individual-session.webp",
+    detail: "1 h · 70 €",
+    image: "/images/individual-appointments.jpg",
     href: "/accompagnement",
     cta: "Je découvre",
   },
@@ -113,7 +113,7 @@ onMounted(loadPublicContent);
             width="1200"
             height="1500"
             alt="Trois femmes réunies dans un moment calme, les visages rapprochés"
-            class="relative block aspect-[4/3] w-full rounded-[2rem] object-cover object-center shadow-soft-lg"
+            class="photo-tone relative block aspect-[4/3] w-full rounded-[2rem] object-cover object-center shadow-soft-lg"
             fetchpriority="high" />
         </div>
       </div>
@@ -185,7 +185,7 @@ onMounted(loadPublicContent);
             width="1920"
             height="1280"
             alt="Une femme sur un paddle au large, face aux montagnes"
-            class="block aspect-[4/3] w-full object-cover object-center"
+            class="photo-tone block aspect-[4/3] w-full object-cover object-center"
             loading="lazy"
             decoding="async" />
         </div>
@@ -204,7 +204,7 @@ onMounted(loadPublicContent);
             width="900"
             height="1352"
             alt="Sandra, sophrologue et fondatrice de Maison Loratu"
-            class="aspect-[4/5] w-full object-cover"
+            class="photo-tone aspect-[4/5] w-full object-cover"
             loading="lazy" />
         </ScrollReveal>
         <ScrollReveal direction="right" tag="div" class="max-w-xl">
