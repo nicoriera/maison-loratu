@@ -19,7 +19,7 @@ const audiences = [
     order: 3,
     title: "DUO Mama & enfant",
     detail: "1 h 15 · 80 € · atelier privé · carte cadeau",
-    image: "/images/duo-mother-daughter-back-stretch.webp",
+    image: "/images/duo-mama-enfant-confettis.jpg",
     href: "/ateliers/duo",
     cta: "Je découvre",
   },

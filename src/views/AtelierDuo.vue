@@ -20,7 +20,7 @@ import WorkshopDetail from '../components/WorkshopDetail.vue'
       'Un moment doux à partager',
       'Disponible en carte cadeau',
     ]"
-    image="/images/duo-mother-daughter-back-stretch.webp"
-    image-alt="Une femme et un enfant partageant un atelier de sophrologie"
+    image="/images/duo-mama-enfant-confettis.jpg"
+    image-alt="Une mama et son enfant partagent un moment joyeux avec des confettis"
     gift-card-to="/carte-cadeau" />
 </template>

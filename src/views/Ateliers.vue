@@ -31,7 +31,7 @@ const offerings = computed(() => [
     order: 3,
     title: "DUO Mama & enfant",
     audience: "Atelier privé · 1 h 15 · 80 € · Disponible en carte cadeau",
-    image: "/images/duo-mother-daughter-back-stretch.webp",
+    image: "/images/duo-mama-enfant-confettis.jpg",
     description:
       "Un atelier privé pour une mama et son enfant, à vivre ou à offrir en carte cadeau.",
     bullets: [
