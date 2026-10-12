@@ -12,13 +12,14 @@ const props = defineProps({
 })
 
 const isDetailed = props.variant === 'detailed'
+
 </script>
 
 <template>
   <article class="group flex h-full flex-col overflow-hidden rounded-[1.75rem] bg-white shadow-soft transition-transform duration-300 hover:-translate-y-1">
     <img :src="offering.image" :alt="offering.title" class="photo-tone block aspect-[4/3] w-full object-cover transition-transform duration-500 group-hover:scale-105" loading="lazy" decoding="async" />
     <div class="flex flex-1 flex-col p-6 md:p-7">
-      <p v-if="isDetailed" class="text-sm font-semibold uppercase leading-relaxed tracking-[0.08em] text-terracotta-600">{{ offering.audience }}</p>
+      <p v-if="isDetailed" class="offer-label text-sm font-semibold uppercase leading-relaxed tracking-[0.08em] text-terracotta-600">{{ offering.audience }}</p>
       <h2 v-if="isDetailed" class="mt-3 text-2xl text-terracotta-800">{{ offering.title }}</h2>
       <h3 v-else class="text-2xl text-terracotta-800">{{ offering.title }}</h3>
       <p v-if="!isDetailed" class="mt-3 font-semibold text-terracotta-600">{{ offering.detail }}</p>

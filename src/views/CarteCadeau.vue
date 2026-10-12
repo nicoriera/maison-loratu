@@ -23,8 +23,8 @@ const giftOptions = {
   },
   signature: {
     label: 'Carte cadeau Signature',
-    detail: '65 € · envoyée par courrier dans une belle enveloppe avec un mot personnalisé',
-    price: '65 €',
+    detail: '85 € · envoyée par courrier dans une belle enveloppe avec un mot personnalisé',
+    price: '85 €',
   },
 }
 
