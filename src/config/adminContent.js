@@ -65,7 +65,7 @@ export const createInitialPublicDraft = () => ({
     enabled: true,
     label: 'En ce moment',
     title: 'Atelier & sophrologie',
-    summary: '45 min · 30 € par personne · groupe de 4 enfants maximum.',
+    summary: '45 min · 45 € par personne · groupe de 4 enfants maximum.',
     ctaLabel: 'Voir les ateliers',
     ctaHref: '/ateliers',
   },
@@ -75,25 +75,25 @@ export const createInitialOffersDraft = () => ([
   {
     id: 'offer-collective',
     title: 'Les Petits Explorateurs',
-    audience: 'Pour enfants de 5 à 11 ans · 45 min · groupe de 4 enfants maximum · 30 €',
+    audience: 'Pour enfants de 5 à 11 ans · 45 min · groupe de 4 enfants maximum · 45 €',
     summary: 'Respiration, relaxation et visualisation positive dans une ambiance conviviale.',
   },
   {
     id: 'offer-duo',
     title: 'DUO Mama & enfant',
-    audience: 'Atelier privé · 1 h 15 · 60 € · Disponible en carte cadeau',
+    audience: 'Atelier privé · 1 h 15 · 80 € · Disponible en carte cadeau',
     summary: 'Un atelier privé pour une mama et son enfant, pour partager un moment à deux.',
   },
   {
     id: 'offer-seniors',
     title: 'Mamas & enfants',
-    audience: 'Pour les mamas et les enfants · 1 h 15 · 4 familles maximum · 38 €',
+    audience: 'Pour les mamas et les enfants · 45 min · 4 binômes mère-fille maximum · 45 € par binôme',
     summary: 'Respiration, relaxation et visualisation positive dans une ambiance joyeuse à partager entre mamas et enfants.',
   },
   {
     id: 'offer-individual',
     title: 'Accompagnement individuel',
-    audience: '1 h · 60 €',
+    audience: '1 h · 70 €',
     summary: 'Un accompagnement adapté au rythme, aux besoins et au parcours de chacun.',
   },
 ])
@@ -162,7 +162,7 @@ const legacyFaqUpdates = {
   },
   'Puis-je offrir un atelier ?': {
     question: 'Puis-je offrir un atelier ?',
-    answer: 'Oui. La carte cadeau DUO Mama & enfant donne accès à cet atelier privé pour 60 €, valable deux mois à partir de la date d’achat. Elle existe en version numérique ou Signature, envoyée par courrier avec un mot personnalisé.',
+    answer: 'Oui. La carte cadeau DUO Mama & enfant donne accès à cet atelier privé pour 80 €, valable deux mois à partir de la date d’achat. Elle existe en version numérique ou Signature, envoyée par courrier avec un mot personnalisé.',
   },
 }
 

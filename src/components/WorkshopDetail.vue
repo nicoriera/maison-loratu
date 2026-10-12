@@ -36,7 +36,7 @@ defineProps({
           width="1200"
           height="900"
           :alt="imageAlt"
-          class="block aspect-[4/3] h-auto w-full rounded-[2rem] object-cover shadow-soft-lg"
+          class="photo-tone block aspect-[4/3] h-auto w-full rounded-[2rem] object-cover shadow-soft-lg"
           loading="eager"
           fetchpriority="high" />
       </div>

@@ -26,7 +26,7 @@ test('create admin draft factories returns lightweight local defaults', () => {
       enabled: true,
       label: 'En ce moment',
       title: 'Atelier & sophrologie',
-      summary: '45 min · 30 € par personne · groupe de 4 enfants maximum.',
+      summary: '45 min · 45 € par personne · groupe de 4 enfants maximum.',
       ctaLabel: 'Voir les ateliers',
       ctaHref: '/ateliers',
     },
@@ -120,7 +120,7 @@ test('migrateLegacyContent updates only known legacy workshop and FAQ copy', () 
   assert.deepEqual(migrated.offers[0], {
     id: 'offer-duo',
     title: 'DUO Mama & enfant',
-    audience: 'Atelier privé · 1 h 15 · 60 € · Disponible en carte cadeau',
+    audience: 'Atelier privé · 1 h 15 · 80 € · Disponible en carte cadeau',
     summary: 'Un atelier privé pour une mama et son enfant, pour partager un moment à deux.',
   })
   assert.deepEqual(migrated.offers[1], { id: 'custom-offer', title: 'Offre personnalisée', audience: 'Sur mesure', summary: 'À conserver' })

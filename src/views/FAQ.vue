@@ -15,7 +15,7 @@ const questions = ref([
   { question: 'Peuvent-ils soutenir la concentration et la vitalité ?', answer: 'Les exercices d’attention, de respiration et de visualisation peuvent favoriser la clarté mentale, la récupération et une sensation de vitalité. Ils s’inscrivent dans une démarche de bien-être.' },
   { question: 'Comment se déroulent les ateliers collectifs ?', answer: 'Ils se déroulent en petits groupes pendant 1 h 15, sans prérequis. Sandra guide des exercices de respiration, relaxation et visualisation, pour repartir détendue et avec des outils simples à utiliser au quotidien.' },
   { question: 'Avec qui peut-on participer au DUO Mama & enfant ?', answer: 'Le DUO Mama & enfant est un atelier privé pour une mama et son enfant. Il invite à ralentir ensemble, partager un moment privilégié et créer des souvenirs dans une ambiance ludique et relaxante.' },
-  { question: 'Puis-je offrir un atelier ?', answer: 'Oui. La carte cadeau DUO Mama & enfant donne accès à cet atelier privé pour 60 €, valable deux mois à partir de la date d’achat. Elle existe en version numérique ou Signature, envoyée par courrier avec un mot personnalisé.' },
+  { question: 'Puis-je offrir un atelier ?', answer: 'Oui. La carte cadeau DUO Mama & enfant donne accès à cet atelier privé pour 80 €, valable deux mois à partir de la date d’achat. Elle existe en version numérique ou Signature, envoyée par courrier avec un mot personnalisé.' },
 ])
 
 onMounted(async () => {

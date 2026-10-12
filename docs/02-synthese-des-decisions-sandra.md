@@ -41,15 +41,15 @@ La grossesse n’est pas une offre ou un parcours dédié au lancement. Elle peu
 
 ### Accompagnement individuel
 
-- Tarif indicatif : 60 €.
+- Tarif indicatif : 70 €.
 - Modalité de réservation : widget SimplyBook intégré au site ; inscription e-mail conservée pour être prévenue des prochaines dates.
 
 ### Ateliers en studio
 
 - Durée : 1 h 15.
-- Les Petits Explorateurs, pour enfants : 45 min, 30 €, groupe de 4 enfants maximum.
-- Mamas & enfants : 1 h 15, 38 €, 4 familles maximum.
-- DUO Mama & enfant : atelier privé de 1 h 15 à 60 €, disponible en carte cadeau.
+- Les Petits Explorateurs, pour enfants : 45 min, 45 €, groupe de 4 enfants maximum.
+- Mamas & enfants : 45 min, 45 € par binôme mère-fille, 4 binômes maximum.
+- DUO Mama & enfant : atelier privé de 1 h 15 à 80 €, disponible en carte cadeau.
 - Lieu : Studio Loratu.
 
 ### Cours de sophrologie en plein air

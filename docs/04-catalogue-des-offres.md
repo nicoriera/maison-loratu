@@ -4,10 +4,10 @@
 
 | Offre | Public | Durée | Tarif | Capacité |
 |---|---|---:|---:|---:|
-| Les Petits Explorateurs | Enfants | 45 min | 30 € | Groupe de 4 enfants maximum |
-| DUO Mama & enfant | Une mama et son enfant | 1 h 15 | 60 € | Privé |
-| Mamas & enfants | Mamas et enfants | 1 h 15 | 38 € | 4 familles maximum |
-| Accompagnement individuel | Enfants et femmes | 1 h | 60 € | Individuel |
+| Les Petits Explorateurs | Enfants | 45 min | 45 € | Groupe de 4 enfants maximum |
+| DUO Mama & enfant | Une mama et son enfant | 1 h 15 | 80 € | Privé |
+| Mamas & enfants | Mamas et enfants | 45 min | 45 € par binôme mère-fille | 4 binômes maximum |
+| Accompagnement individuel | Enfants et femmes | 1 h | 70 € | Individuel |
 
 ## Les Petits Explorateurs
 
@@ -27,9 +27,9 @@ Une séance adaptée aux besoins du moment : stress, anxiété, sommeil, confian
 
 ## Carte cadeau
 
-- Formule : DUO Mama & enfant, atelier privé (1 h 15) — 60 €.
+- Formule : DUO Mama & enfant, atelier privé (1 h 15) — 80 €.
 - Carte cadeau numérique : envoi numérique offert, reçue immédiatement par e-mail après achat.
-- Carte cadeau Signature : 65 €, envoyée par courrier dans une belle enveloppe avec un mot personnalisé.
+- Carte cadeau Signature : 85 €, envoyée par courrier dans une belle enveloppe avec un mot personnalisé.
 - Informations à recueillir : prénom de la personne qui reçoit la carte et message personnalisé.
 - Intention : une parenthèse de douceur à partager des petits-enfants à la grand-mère, pour ralentir et respirer.
 - Validité : deux mois à partir de la date d’achat.
