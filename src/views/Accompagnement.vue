@@ -1,5 +1,6 @@
 <script setup>
 import CTAButton from '../components/CTAButton.vue'
+import ResalibBadge from '../components/ResalibBadge.vue'
 import { siteConfig } from '../config/site.js'
 
 const subjects = [
@@ -48,7 +49,10 @@ const foundations = [
             Un temps rien que pour vous, pour souffler, vous recentrer et avancer à votre rythme.
             Chaque accompagnement est personnalisé selon vos besoins du moment.
           </p>
-          <div class="mt-8"><CTAButton :to="siteConfig.resalibUrl">Je réserve sur Resalib</CTAButton></div>
+          <div class="mt-8 flex flex-col items-start gap-4">
+            <CTAButton :to="siteConfig.resalibUrl">Je réserve sur Resalib</CTAButton>
+            <ResalibBadge />
+          </div>
         </div>
         <img src="/images/individual-appointments.jpg" width="1200" height="900" alt="Espace lumineux dédié aux rendez-vous individuels" class="photo-tone block aspect-[4/3] h-auto w-full rounded-[2rem] object-cover shadow-soft-lg" fetchpriority="high" decoding="async" />
       </div>
