@@ -10,7 +10,7 @@ const audiences = [
   {
     order: 1,
     title: "Les Petits Explorateurs",
-    detail: "5 à 11 ans · 45 min · 45 € · groupe de 4 enfants maximum",
+    detail: "5 à 11 ans · 45 min · 45 € · groupe de 4 enfants maximum",
     image: "/images/children-atelier-mother-kids.jpg",
     href: "/ateliers/enfants",
     cta: "Je découvre",
@@ -18,7 +18,7 @@ const audiences = [
   {
     order: 3,
     title: "DUO Mama & enfant",
-    detail: "1 h 15 · 80 € · atelier privé · carte cadeau",
+    detail: "1 h 15 · 80 € · atelier privé · carte cadeau",
     image: "/images/duo-mother-daughter-back-stretch.webp",
     href: "/ateliers/duo",
     cta: "Je découvre",
@@ -26,7 +26,7 @@ const audiences = [
   {
     order: 2,
     title: "Mamas & enfants",
-    detail: "45 min · 45 € par binôme mère-fille",
+    detail: "45 min · 45 € par binôme mère-fille",
     image: "/images/seniors-session.webp",
     href: "/ateliers/seniors",
     cta: "Je découvre",
@@ -34,7 +34,7 @@ const audiences = [
   {
     order: 4,
     title: "Accompagnement individuel pour enfants et femmes",
-    detail: "1 h · 70 €",
+    detail: "1 h · 70 €",
     image: "/images/individual-appointments.jpg",
     href: "/accompagnement",
     cta: "Je découvre",

@@ -11,7 +11,7 @@ const offerings = computed(() => [
     id: "offer-collective",
     order: 1,
     title: "Les Petits Explorateurs",
-    audience: "Pour enfants de 5 à 11 ans · 45 min · 45 €",
+    audience: "Pour enfants de 5 à 11 ans · 45 min · 45 €",
     image: "/images/children-atelier-mother-kids.jpg",
     description:
       "Des ateliers joyeux pour aider les petits cœurs à grandir sereinement.",
@@ -29,7 +29,7 @@ const offerings = computed(() => [
     id: "offer-duo",
     order: 3,
     title: "DUO Mama & enfant",
-    audience: "Atelier privé · 1 h 15 · 80 € · Disponible en carte cadeau",
+    audience: "Atelier privé · 1 h 15 · 80 € · Disponible en carte cadeau",
     image: "/images/duo-mother-daughter-back-stretch.webp",
     description:
       "Un atelier privé pour une mama et son enfant, à vivre ou à offrir en carte cadeau.",
@@ -47,7 +47,7 @@ const offerings = computed(() => [
     id: "offer-seniors",
     order: 2,
     title: "Mamas & enfants",
-    audience: "Pour les mamas et les enfants · 45 min · 45 € par binôme mère-fille · 4 binômes maximum",
+    audience: "Pour les mamas et les enfants · 45 min · 45 € par binôme mère-fille · 4 binômes maximum",
     image: "/images/seniors-session.webp",
     description:
       "Respiration, relaxation et visualisation positive dans une ambiance joyeuse à partager entre mamas et enfants.",
@@ -64,7 +64,7 @@ const offerings = computed(() => [
   {
     order: 4,
     title: "Accompagnement individuel pour enfants et femmes",
-    audience: "1 h · 70 €",
+    audience: "1 h · 70 €",
     image: "/images/individual-appointments.jpg",
     description:
       "Un temps rien que pour vous, pour souffler, vous recentrer et avancer à votre rythme.",

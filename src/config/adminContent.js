@@ -93,7 +93,7 @@ export const createInitialOffersDraft = () => ([
   {
     id: 'offer-individual',
     title: 'Accompagnement individuel',
-    audience: '1 h · 70 €',
+    audience: 'Femmes · 1 h · 70 € · Enfants · 45 min · 60 €',
     summary: 'Un accompagnement adapté au rythme, aux besoins et au parcours de chacun.',
   },
 ])

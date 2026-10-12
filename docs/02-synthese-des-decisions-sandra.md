@@ -41,7 +41,7 @@ La grossesse n’est pas une offre ou un parcours dédié au lancement. Elle peu
 
 ### Accompagnement individuel
 
-- Tarif indicatif : 70 €.
+- Tarifs : femmes, 1 h à 70 € ; enfants de 5 à 16 ans, 45 min à 60 €.
 - Modalité de réservation : widget SimplyBook intégré au site ; inscription e-mail conservée pour être prévenue des prochaines dates.
 
 ### Ateliers en studio

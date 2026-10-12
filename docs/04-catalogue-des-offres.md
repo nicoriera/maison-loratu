@@ -7,7 +7,7 @@
 | Les Petits Explorateurs | Enfants | 45 min | 45 € | Groupe de 4 enfants maximum |
 | DUO Mama & enfant | Une mama et son enfant | 1 h 15 | 80 € | Privé |
 | Mamas & enfants | Mamas et enfants | 45 min | 45 € par binôme mère-fille | 4 binômes maximum |
-| Accompagnement individuel | Enfants et femmes | 1 h | 70 € | Individuel |
+| Accompagnement individuel | Enfants et femmes | Femmes : 1 h / enfants : 45 min | 70 € / 60 € | Individuel |
 
 ## Les Petits Explorateurs
 

@@ -62,11 +62,11 @@ const foundations = [
             <div class="mt-4 space-y-5 text-terracotta-800">
               <div>
                 <p class="text-xl font-semibold">Femmes</p>
-                <p class="mt-1 text-4xl">1 h · 70 €</p>
+                <p class="mt-1 text-4xl">1 h · <span class="price-lock">70&nbsp;€</span></p>
               </div>
               <div>
                 <p class="text-xl font-semibold">Enfants de 5 à 16 ans</p>
-                <p class="mt-1 text-4xl">45 min · 55 €</p>
+                <p class="mt-1 text-4xl">45 min · <span class="price-lock">60&nbsp;€</span></p>
               </div>
             </div>
             <p class="mt-4 text-gray-600">Un accompagnement individuel, sur rendez-vous.</p>

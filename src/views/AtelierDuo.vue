@@ -6,7 +6,7 @@ import WorkshopDetail from '../components/WorkshopDetail.vue'
   <WorkshopDetail
     eyebrow="Pour une mama et son enfant"
     title="DUO Mama & enfant"
-    meta="1 h 15 · 80 € · atelier privé · Disponible en carte cadeau"
+    meta="1 h 15 · 80 € · atelier privé · Disponible en carte cadeau"
     intro="Une parenthèse de douceur à vivre à deux."
     :paragraphs="[
       'Cet atelier privé accueille une mama et son enfant. C’est une invitation à ralentir, à partager un moment précieux et à tisser de jolis souvenirs ensemble.',

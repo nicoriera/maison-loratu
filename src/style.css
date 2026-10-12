@@ -133,6 +133,22 @@
   .photo-tone {
     filter: saturate(0.9) sepia(0.04) contrast(0.96) brightness(1.02);
   }
+
+  .offer-label {
+    hyphens: none;
+    overflow-wrap: normal;
+    word-break: normal;
+    text-wrap: balance;
+  }
+
+  .price-lock {
+    white-space: nowrap;
+  }
+
+  .price-line {
+    white-space: normal;
+    text-wrap: balance;
+  }
 }
 
 @keyframes hero-fade-in {
