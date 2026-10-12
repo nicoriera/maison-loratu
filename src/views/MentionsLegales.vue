@@ -17,17 +17,19 @@
             </p>
             <p class="text-gray-700">
               Maison Loratu<br>
-              Adresse : [À compléter]<br>
+              Sandra Diaz de Cerio — Entrepreneur individuel<br>
+              29 rue Charles Floquet<br>
+              64100 Bayonne, France<br>
               Téléphone : 06 66 88 33 02<br>
-              Email : <a href="mailto:maisonloratu@gmail.com" class="text-terracotta-700 underline">maisonloratu@gmail.com</a>
+              Email : <a href="mailto:maisonloratu@gmail.com" class="text-terracotta-700 underline">maisonloratu@gmail.com</a><br>
+              SIRET : 109 998 146 00012
             </p>
           </section>
 
           <section>
             <h2 class="text-2xl font-semibold text-gray-900 mb-4">2. Directeur de publication</h2>
             <p class="text-gray-700">
-              <!-- À compléter avec le nom du directeur de publication -->
-              [Nom du directeur de publication]
+              Sandra Diaz de Cerio, représentante de Maison Loratu.
             </p>
           </section>
 
@@ -37,9 +39,9 @@
               Le site est hébergé par :
             </p>
             <p class="text-gray-700">
-              <!-- À compléter avec les informations d'hébergement -->
-              [Nom de l'hébergeur]<br>
-              [Adresse de l'hébergeur]
+              Netlify, Inc.<br>
+              101 2nd Street<br>
+              San Francisco, CA 94105, États-Unis
             </p>
           </section>
 

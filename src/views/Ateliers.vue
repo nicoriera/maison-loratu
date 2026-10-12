@@ -2,6 +2,7 @@
 import CTAButton from "../components/CTAButton.vue";
 import { siteConfig } from "../config/site.js";
 import OfferingCard from "../components/OfferingCard.vue";
+import ResalibBadge from "../components/ResalibBadge.vue";
 import { computed, onMounted, ref } from "vue";
 
 const publicOffers = ref([]);
@@ -30,7 +31,7 @@ const offerings = computed(() => [
     order: 3,
     title: "DUO Mama & enfant",
     audience: "Atelier privé · 1 h 15 · 80 € · Disponible en carte cadeau",
-    image: "/images/duo-mother-daughter-back-stretch.webp",
+    image: "/images/duo-mama-enfant-confettis.jpg",
     description:
       "Un atelier privé pour une mama et son enfant, à vivre ou à offrir en carte cadeau.",
     bullets: [
@@ -118,6 +119,9 @@ onMounted(async () => {
               class="inline-flex min-h-11 items-center justify-center rounded-full border-2 border-terracotta-300 px-7 py-3 text-center font-semibold text-terracotta-700 transition duration-[var(--duration-ui)] ease-[var(--ease-warm-out)] hover:bg-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-terracotta-500 focus-visible:ring-offset-2">
               Être recontacté
             </router-link>
+          </div>
+          <div class="mt-5 flex justify-center md:justify-start">
+            <ResalibBadge />
           </div>
         </div>
         <div class="hidden overflow-hidden rounded-[2rem] shadow-soft-lg md:block">

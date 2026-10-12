@@ -26,7 +26,7 @@ export const createSiteConfig = (env = import.meta.env ?? process.env) => {
   return {
     siteUrl: "https://maisonloratu.com",
     siteName: "Maison Loratu",
-    resalibUrl: "https://www.resalib.fr/agenda/136767?src=profile#/",
+    resalibUrl: "https://www.resalib.fr/praticien/136767-maison-loratu-sophrologue-certifiee-sophrologue-bayonne#newrdvmodal",
     address: "29 rue Charles Floquet, 64100 Bayonne",
     accessInstructions: "Entrée principale par le cabinet Kiné Côte Basque. Se rendre à la salle d’attente du 2ᵉ étage.",
     primaryCity: "Anglet",
