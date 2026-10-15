@@ -21,11 +21,6 @@ const giftOptions = {
     detail: '80 € · envoi numérique offert par e-mail après confirmation',
     price: '80 €',
   },
-  signature: {
-    label: 'Carte cadeau Signature',
-    detail: '85 € · envoyée par courrier dans une belle enveloppe avec un mot personnalisé',
-    price: '85 €',
-  },
 }
 
 const onSubmit = async () => {
@@ -70,15 +65,15 @@ const onSubmit = async () => {
           <p class="text-service-label text-terracotta-600">Carte cadeau</p>
           <h1 class="page-title mt-4">Une idée cadeau pleine de douceur</h1>
           <p class="body-copy mt-6 max-w-xl">
-            Offrez le DUO Mama & enfant, un atelier privé à partager à deux. La carte numérique est à 80 € ; l’envoi Signature, à 85 €, comprend une belle enveloppe et un mot personnalisé.
+            Offrez un atelier DUO à partager à deux, au choix entre papa & enfant ou maman & enfant. La carte numérique est à 80 €.
           </p>
         </div>
         <div class="overflow-hidden rounded-[2rem] bg-terracotta-800 text-center text-white shadow-soft-lg">
           <img src="/images/gift-envelope-heart.webp" width="1200" height="675" alt="Enveloppe ivoire ornée d’un cœur terracotta" class="block aspect-[16/9] h-auto w-full object-cover" loading="lazy" decoding="async" />
           <div class="p-8 md:p-12">
             <p class="text-service-label text-cream-200">Carte cadeau</p>
-            <h2 class="mt-4 text-3xl text-cream-100 sm:text-4xl">DUO Mama & enfant</h2>
-            <p class="mt-3 text-lg text-cream-100">Une mama et son enfant</p>
+            <h2 class="mt-4 text-3xl text-cream-100 sm:text-4xl">Parent-hèses à deux</h2>
+            <p class="mt-3 text-lg text-cream-100">Un parent et son enfant</p>
             <p class="mt-5 text-lg text-cream-100">Atelier privé · 1 h 15 · 80 € · valable 2 mois à partir de la date d’achat</p>
           </div>
         </div>
@@ -88,7 +83,7 @@ const onSubmit = async () => {
       <div class="container mx-auto max-w-2xl">
         <h2 class="text-3xl text-terracotta-800 sm:text-4xl">Un cadeau qui laisse de la place</h2>
         <p class="mt-5 text-lg leading-relaxed text-gray-700">
-          Une parenthèse de douceur à vivre à deux, pour ralentir, apaiser les tensions et se retrouver. Un atelier privé pour une mama et son enfant, pour tisser de jolis souvenirs.
+          Une parenthèse de douceur à vivre à deux, pour ralentir, apaiser les tensions et se retrouver. Un atelier privé pour un papa et son enfant ou une maman et son enfant, pour tisser de jolis souvenirs.
         </p>
       </div>
     </section>
@@ -96,23 +91,11 @@ const onSubmit = async () => {
     <section class="bg-cream-100 px-4 py-16 md:py-24">
       <div class="container mx-auto grid max-w-5xl gap-10 lg:grid-cols-[0.82fr_1.18fr]">
         <div>
-          <p class="text-service-label text-terracotta-600">Choisir votre format</p>
           <h2 class="mt-4 text-3xl text-terracotta-800 sm:text-4xl">Offrir une carte cadeau</h2>
-          <p class="mt-5 leading-relaxed text-gray-700">Choisissez une carte numérique à 80 € ou une attention Signature à 85 €, envoyée par courrier.</p>
+          <p class="mt-5 leading-relaxed text-gray-700">Choisissez une carte numérique à 80 €.</p>
         </div>
 
         <form v-if="!submitted" ref="giftForm" class="rounded-[2rem] bg-white p-6 shadow-soft-lg md:p-8" @submit.prevent="onSubmit">
-          <fieldset>
-            <legend class="form-label">Format de la carte cadeau *</legend>
-            <div class="mt-3 grid gap-3 sm:grid-cols-2">
-              <label v-for="(option, key) in giftOptions" :key="key" class="cursor-pointer rounded-2xl border-2 p-4 transition" :class="gift.format === key ? 'border-terracotta-500 bg-terracotta-50' : 'border-cream-300 hover:border-terracotta-300'">
-                <input v-model="gift.format" class="sr-only" type="radio" name="gift-format" :value="key" />
-                <span class="block font-semibold text-terracotta-800">{{ option.label }}</span>
-                <span class="mt-2 block text-sm leading-relaxed text-gray-700">{{ option.detail }}</span>
-              </label>
-            </div>
-          </fieldset>
-
           <div class="mt-6 grid gap-5 sm:grid-cols-2">
             <label class="form-label" for="gift-buyer-name">Votre prénom et nom *<input id="gift-buyer-name" v-model.trim="gift.buyerName" class="form-input mt-2" type="text" autocomplete="name" required /></label>
             <label class="form-label" for="gift-buyer-email">Votre adresse e-mail *<input id="gift-buyer-email" v-model.trim="gift.buyerEmail" class="form-input mt-2" type="email" autocomplete="email" required /></label>
@@ -122,6 +105,7 @@ const onSubmit = async () => {
             <label class="form-label" for="gift-message">Message personnalisé <textarea id="gift-message" v-model.trim="gift.message" class="form-input mt-2 min-h-28" maxlength="500" placeholder="Quelques mots à glisser avec la carte…"></textarea></label>
             <label class="flex items-start gap-3 text-sm leading-relaxed text-gray-700"><input v-model="gift.consent" class="mt-1 h-4 w-4 accent-terracotta-500" type="checkbox" required /><span>J’accepte que Maison Loratu utilise ces informations uniquement pour préparer ma carte cadeau. *</span></label>
           </div>
+          <p class="mt-6 rounded-2xl bg-cream-50 px-4 py-3 text-sm leading-relaxed text-gray-700">Après l’envoi de votre demande, vous recevrez le RIB par e-mail afin de procéder directement au paiement. Seul le paiement garantit la réservation de la séance DUO.</p>
           <p v-if="submitError" class="mt-5 rounded-2xl bg-red-50 px-4 py-3 text-sm text-red-800" role="alert">{{ submitError }}</p>
           <button class="mt-7 inline-flex min-h-11 w-full items-center justify-center rounded-full bg-terracotta-500 px-8 py-3 font-semibold text-white shadow-soft transition hover:bg-terracotta-600 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-terracotta-500 focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-60 sm:w-auto" type="submit" :disabled="isSubmitting">{{ isSubmitting ? 'Envoi en cours…' : `Envoyer ma demande de carte à ${giftOptions[gift.format].price}` }}</button>
         </form>

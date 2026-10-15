@@ -14,8 +14,8 @@ const questions = ref([
   { question: 'À qui s’adresse Mamas & enfants ?', answer: 'Mamas & enfants s’adresse aux mamas et à leurs enfants qui souhaitent respirer, bouger en douceur et partager un moment ensemble, dans le respect de leur rythme.' },
   { question: 'Peuvent-ils soutenir la concentration et la vitalité ?', answer: 'Les exercices d’attention, de respiration et de visualisation peuvent favoriser la clarté mentale, la récupération et une sensation de vitalité. Ils s’inscrivent dans une démarche de bien-être.' },
   { question: 'Comment se déroulent les ateliers collectifs ?', answer: 'Ils se déroulent en petits groupes pendant 1 h 15, sans prérequis. Sandra guide des exercices de respiration, relaxation et visualisation, pour repartir détendue et avec des outils simples à utiliser au quotidien.' },
-  { question: 'Avec qui peut-on participer au DUO Mama & enfant ?', answer: 'Le DUO Mama & enfant est un atelier privé pour une mama et son enfant. Il invite à ralentir ensemble, partager un moment privilégié et créer des souvenirs dans une ambiance ludique et relaxante.' },
-  { question: 'Puis-je offrir un atelier ?', answer: 'Oui. La carte cadeau DUO Mama & enfant donne accès à cet atelier privé pour 80 €, valable deux mois à partir de la date d’achat. Elle existe en version numérique ou Signature, envoyée par courrier avec un mot personnalisé.' },
+  { question: 'Avec qui peut-on participer au DUO ?', answer: 'Le DUO est un atelier privé au choix pour un papa et son enfant ou pour une maman et son enfant. Il invite à ralentir ensemble, partager un moment privilégié et créer des souvenirs dans une ambiance ludique et relaxante.' },
+  { question: 'Puis-je offrir un atelier ?', answer: 'Oui. La carte cadeau DUO donne accès à l’atelier privé au choix pour un papa et son enfant ou une maman et son enfant, pour 80 €, valable deux mois à partir de la date d’achat. Elle existe en version numérique ou Signature, envoyée par courrier avec un mot personnalisé.' },
 ])
 
 onMounted(async () => {

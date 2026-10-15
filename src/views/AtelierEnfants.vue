@@ -6,7 +6,7 @@ import WorkshopDetail from '../components/WorkshopDetail.vue'
   <WorkshopDetail
     eyebrow="Pour enfants"
     title="Les Petits Explorateurs"
-    meta="45 min · 45 € · groupe de 4 enfants maximum"
+    meta="45 min · 45 € · groupe de 4 enfants"
     intro="Des ateliers ludiques pour apprivoiser les émotions et favoriser un sommeil plus serein."
     :paragraphs="[
       'À travers le yoga kids, des histoires, des jeux de respiration, des mouvements et des temps de relaxation, les enfants apprennent à accueillir leurs émotions, à retrouver leur calme, à prendre confiance et à mieux dormir.',
@@ -14,10 +14,11 @@ import WorkshopDetail from '../components/WorkshopDetail.vue'
       'Un moment pour rire, explorer, se détendre et repartir avec des outils à emporter partout avec soi.',
     ]"
     :highlights="[
-      'Apprivoiser les émotions et favoriser un sommeil plus serein',
-      'Mouvements doux et respiration ludique',
-      'Jeux de visualisation',
-      'Thématiques : animaux de la savane, mission dans l’espace, petit koala et sa mama',
+      'Groupe de 4 enfants maximum',
+      'Yoga kids, histoires et jeux de respiration',
+      'Mouvements doux et temps de relaxation',
+      'Accueillir les émotions et retrouver son calme',
+      'Prendre confiance et mieux dormir',
     ]"
     image="/images/children-atelier-mother-kids.jpg"
     image-alt="Mains d’enfants autour de coloriages de soleils sur des tapis de yoga" />

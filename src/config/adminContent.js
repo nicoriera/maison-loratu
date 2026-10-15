@@ -65,7 +65,7 @@ export const createInitialPublicDraft = () => ({
     enabled: true,
     label: 'En ce moment',
     title: 'Atelier & sophrologie',
-    summary: '45 min · 45 € par personne · groupe de 4 enfants maximum.',
+    summary: '45 min · 45 € par personne · groupe de 4 enfants.',
     ctaLabel: 'Voir les ateliers',
     ctaHref: '/ateliers',
   },
@@ -75,19 +75,19 @@ export const createInitialOffersDraft = () => ([
   {
     id: 'offer-collective',
     title: 'Les Petits Explorateurs',
-    audience: 'Pour enfants de 5 à 11 ans · 45 min · groupe de 4 enfants maximum · 45 €',
+    audience: 'Pour enfants de 5 à 11 ans · 45 min · groupe de 4 enfants · 45 €',
     summary: 'Respiration, relaxation et visualisation positive dans une ambiance conviviale.',
   },
   {
     id: 'offer-duo',
-    title: 'DUO Mama & enfant',
+    title: 'Parent-hèses à deux',
     audience: 'Atelier privé · 1 h 15 · 80 € · Disponible en carte cadeau',
-    summary: 'Un atelier privé pour une mama et son enfant, pour partager un moment à deux.',
+    summary: 'Un atelier privé pour un papa et son enfant ou une maman et son enfant, pour partager un moment à deux.',
   },
   {
     id: 'offer-seniors',
     title: 'Mamas & enfants',
-    audience: 'Pour les mamas et les enfants · 45 min · 4 binômes mère-fille maximum · 45 € par binôme',
+    audience: 'Pour les mamas et les enfants · 45 min · 4 binômes mère-fille · 45 € par binôme',
     summary: 'Respiration, relaxation et visualisation positive dans une ambiance joyeuse à partager entre mamas et enfants.',
   },
   {
@@ -120,7 +120,7 @@ const legacyOfferTitles = new Set([
   'Ateliers enfants — émotions, sommeil, apaisement',
   'Atelier Duo — sérénité, partage',
   'Grandir ensemble',
-  'DUO Maman & enfant',
+  'DUO Mama & enfant',
   'Ateliers en douceur — vitalité, relaxation, concentration',
   'En douceur',
   'Mamans & enfants',
@@ -141,8 +141,8 @@ const legacyFaqUpdates = {
     answer: 'Mamas & enfants s’adresse aux mamas et à leurs enfants qui souhaitent respirer, bouger en douceur et partager un moment ensemble, dans le respect de leur rythme.',
   },
   'Avec qui peut-on participer au DUO Maman & enfant ?': {
-    question: 'Avec qui peut-on participer au DUO Mama & enfant ?',
-    answer: 'Le DUO Mama & enfant est un atelier privé pour une mama et son enfant. Il invite à ralentir ensemble, partager un moment privilégié et créer des souvenirs dans une ambiance ludique et relaxante.',
+    question: 'Avec qui peut-on participer au DUO ?',
+    answer: 'Le DUO est un atelier privé au choix pour un papa et son enfant ou pour une maman et son enfant. Il invite à ralentir ensemble, partager un moment privilégié et créer des souvenirs dans une ambiance ludique et relaxante.',
   },
   'À qui s’adressent les ateliers en douceur ?': {
     question: 'À qui s’adresse Mamas & enfants ?',
@@ -153,16 +153,16 @@ const legacyFaqUpdates = {
     answer: 'Mamas & enfants s’adresse aux mamas et à leurs enfants qui souhaitent respirer, bouger en douceur et partager un moment ensemble, dans le respect de leur rythme.',
   },
   'Avec qui peut-on participer à l’Atelier Duo ?': {
-    question: 'Avec qui peut-on participer au DUO Mama & enfant ?',
-    answer: 'Le DUO Mama & enfant est un atelier privé pour une mama et son enfant. Il invite à ralentir ensemble, partager un moment privilégié et créer des souvenirs dans une ambiance ludique et relaxante.',
+    question: 'Avec qui peut-on participer au DUO ?',
+    answer: 'Le DUO est un atelier privé au choix pour un papa et son enfant ou pour une maman et son enfant. Il invite à ralentir ensemble, partager un moment privilégié et créer des souvenirs dans une ambiance ludique et relaxante.',
   },
   'Avec qui peut-on participer à Grandir ensemble ?': {
-    question: 'Avec qui peut-on participer au DUO Mama & enfant ?',
-    answer: 'Le DUO Mama & enfant est un atelier privé pour une mama et son enfant. Il invite à ralentir ensemble, partager un moment privilégié et créer des souvenirs dans une ambiance ludique et relaxante.',
+    question: 'Avec qui peut-on participer au DUO ?',
+    answer: 'Le DUO est un atelier privé au choix pour un papa et son enfant ou pour une maman et son enfant. Il invite à ralentir ensemble, partager un moment privilégié et créer des souvenirs dans une ambiance ludique et relaxante.',
   },
   'Puis-je offrir un atelier ?': {
     question: 'Puis-je offrir un atelier ?',
-    answer: 'Oui. La carte cadeau DUO Mama & enfant donne accès à cet atelier privé pour 80 €, valable deux mois à partir de la date d’achat. Elle existe en version numérique ou Signature, envoyée par courrier avec un mot personnalisé.',
+    answer: 'Oui. La carte cadeau DUO donne accès à l’atelier privé au choix pour un papa et son enfant ou une maman et son enfant, pour 80 €, valable deux mois à partir de la date d’achat. Elle existe en version numérique ou Signature, envoyée par courrier avec un mot personnalisé.',
   },
 }
 

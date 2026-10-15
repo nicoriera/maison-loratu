@@ -5,15 +5,15 @@ export const seoByRoute = {
   },
   ateliers: {
     title: 'Ateliers de sophrologie à Anglet | Maison Loratu',
-    description: 'Découvrez Les Petits Explorateurs, Mamas & enfants et le DUO Mama & enfant, un atelier privé disponible en carte cadeau à Anglet et dans le BAB.',
+    description: 'Découvrez Les Petits Explorateurs, Mamas & enfants et les ateliers DUO Papa & enfant ou Maman & enfant, disponibles en carte cadeau à Anglet et dans le BAB.',
   },
   'atelier-enfants': {
     title: 'Les Petits Explorateurs | Sophrologie enfants à Anglet | Maison Loratu',
     description: 'Des ateliers ludiques de sophrologie pour aider les enfants à accueillir leurs émotions, retrouver leur calme et mieux dormir.',
   },
   'atelier-duo': {
-    title: 'DUO Mama & enfant | Sophrologie à Anglet | Maison Loratu',
-    description: 'Un atelier privé de sophrologie pour une mama et son enfant, au tarif de 80 € et disponible en carte cadeau.',
+    title: 'Parent-hèses à deux | Sophrologie à Anglet | Maison Loratu',
+    description: 'Un atelier privé de sophrologie pour un papa et son enfant ou une maman et son enfant, au tarif de 80 € et disponible en carte cadeau.',
   },
   'atelier-seniors': {
     title: 'Mamas & enfants | Sophrologie à Anglet | Maison Loratu',
@@ -38,7 +38,7 @@ export const seoByRoute = {
   },
   'carte-cadeau': {
     title: 'Carte cadeau sophrologie à Anglet | Maison Loratu',
-    description: 'Offrez le DUO Mama & enfant, un atelier privé de sophrologie à 80 € avec la carte cadeau Maison Loratu.',
+    description: 'Offrez un atelier DUO Papa & enfant ou Maman & enfant, un atelier privé de sophrologie à 80 € avec la carte cadeau Maison Loratu.',
   },
   'mentions-legales': {
     title: 'Mentions légales | Maison Loratu',

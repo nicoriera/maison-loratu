@@ -10,14 +10,14 @@ const audiences = [
   {
     order: 1,
     title: "Les Petits Explorateurs",
-    detail: "5 à 11 ans · 45 min · 45 € · groupe de 4 enfants maximum",
+    detail: "5 à 11 ans · 45 min · 45 € · groupe de 4 enfants",
     image: "/images/children-atelier-mother-kids.jpg",
     href: "/ateliers/enfants",
     cta: "Je découvre",
   },
   {
     order: 3,
-    title: "DUO Mama & enfant",
+    title: "Parent-hèses à deux",
     detail: "1 h 15 · 80 € · atelier privé · carte cadeau",
     image: "/images/duo-mama-enfant-confettis.jpg",
     href: "/ateliers/duo",
