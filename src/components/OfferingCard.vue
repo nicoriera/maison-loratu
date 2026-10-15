@@ -9,6 +9,8 @@ const props = defineProps({
     validator: (value) => ['compact', 'detailed'].includes(value),
   },
   ctaLabel: { type: String, default: '' },
+  showAudience: { type: Boolean, default: true },
+  showBullets: { type: Boolean, default: true },
 })
 
 const isDetailed = props.variant === 'detailed'
@@ -19,12 +21,12 @@ const isDetailed = props.variant === 'detailed'
   <article class="group flex h-full flex-col overflow-hidden rounded-[1.75rem] bg-white shadow-soft transition-transform duration-300 hover:-translate-y-1">
     <img :src="offering.image" :alt="offering.title" class="photo-tone block aspect-[4/3] w-full object-cover transition-transform duration-500 group-hover:scale-105" loading="lazy" decoding="async" />
     <div class="flex flex-1 flex-col p-6 md:p-7">
-      <p v-if="isDetailed" class="offer-label text-sm font-semibold uppercase leading-relaxed tracking-[0.08em] text-terracotta-600">{{ offering.audience }}</p>
+      <p v-if="isDetailed && showAudience" class="offer-label text-sm font-semibold uppercase leading-relaxed tracking-[0.08em] text-terracotta-600">{{ offering.audience }}</p>
       <h2 v-if="isDetailed" class="mt-3 text-2xl text-terracotta-800">{{ offering.title }}</h2>
       <h3 v-else class="text-2xl text-terracotta-800">{{ offering.title }}</h3>
       <p v-if="!isDetailed" class="mt-3 font-semibold text-terracotta-600">{{ offering.detail }}</p>
       <p v-if="isDetailed ? offering.description : offering.text" class="mt-3 leading-relaxed text-gray-700">{{ isDetailed ? offering.description : offering.text }}</p>
-      <ul v-if="isDetailed" class="mt-5 space-y-2 text-sm text-gray-600">
+      <ul v-if="isDetailed && showBullets" class="mt-5 space-y-2 text-sm text-gray-600">
         <li v-for="bullet in offering.bullets" :key="bullet" class="flex items-start gap-2">
           <span class="mt-1 h-2.5 w-2.5 shrink-0 rounded-full bg-terracotta-300" aria-hidden="true" />
           <span>{{ bullet }}</span>

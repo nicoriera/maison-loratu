@@ -49,10 +49,9 @@ defineProps({
         </div>
         <aside class="rounded-[2rem] bg-sauge-100 p-8">
           <h2 class="text-3xl text-terracotta-800">Au programme</h2>
-          <ul class="mt-6 space-y-4">
-            <li v-for="highlight in highlights" :key="highlight" class="flex gap-3 text-gray-700">
-              <span class="mt-2 h-2.5 w-2.5 shrink-0 rounded-full bg-terracotta-400" aria-hidden="true" />
-              <span>{{ highlight }}</span>
+          <ul class="mt-6 space-y-3">
+            <li v-for="highlight in highlights" :key="highlight" class="rounded-2xl bg-white px-4 py-3 text-gray-700 shadow-sm">
+              {{ highlight }}
             </li>
           </ul>
         </aside>

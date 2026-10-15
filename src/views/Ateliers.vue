@@ -15,7 +15,7 @@ const offerings = computed(() => [
     audience: "Pour enfants de 5 à 11 ans · 45 min · 45 €",
     image: "/images/children-atelier-mother-kids.jpg",
     description:
-      "Des ateliers joyeux pour aider les petits cœurs à grandir sereinement.",
+      "Respiration, relaxation et visualisation positive à travers des jeux d’imagination. Les enfants apprennent ainsi à réguler leurs émotions en jouant.",
     bullets: [
       "Groupe de 4 enfants maximum",
       "Yoga kids, histoires et jeux de respiration",
@@ -29,17 +29,17 @@ const offerings = computed(() => [
   {
     id: "offer-duo",
     order: 3,
-    title: "DUO Mama & enfant",
+    title: "Parent-hèses à deux",
     audience: "Atelier privé · 1 h 15 · 80 € · Disponible en carte cadeau",
     image: "/images/duo-mama-enfant-confettis.jpg",
     description:
-      "Un atelier privé pour une mama et son enfant, à vivre ou à offrir en carte cadeau.",
+      "Une séance privée de sophrologie à partager entre un parent et son enfant, pour renforcer la présence à soi, l’apaisement et la complicité.",
     bullets: [
-      "Un duo : une mama et son enfant",
-      "Respiration et relaxation",
-      "Visualisation et mouvements doux",
-      "Une pratique accessible à tous les âges",
-      "Disponible en carte cadeau",
+      "Un papa et son enfant ou une maman et son enfant",
+      "Des exercices simples de respiration et de relaxation à deux",
+      "Des rituels doux pour les temps calmes et le sommeil",
+      "Des outils pour accueillir les émotions ensemble",
+      "Disponible en carte cadeau à offrir",
     ],
     to: "/ateliers/duo",
     action: "Je découvre",
@@ -48,16 +48,16 @@ const offerings = computed(() => [
     id: "offer-seniors",
     order: 2,
     title: "Mamas & enfants",
-    audience: "Pour les mamas et les enfants · 45 min · 45 € par binôme mère-fille · 4 binômes maximum",
+    audience: "Pour les mamas et les enfants · 45 min · 45 € par binôme mère-fille · 4 binômes",
     image: "/images/seniors-session.webp",
     description:
-      "Respiration, relaxation et visualisation positive dans une ambiance joyeuse à partager entre mamas et enfants.",
+      "Un atelier collectif de sophrologie pour expérimenter la respiration, la relaxation et la gestion des émotions en duo, dans un cadre bienveillant.",
     bullets: [
-      "4 familles maximum",
-      "Yoga en duo, histoires et jeux de respiration",
-      "Mouvements doux et temps de relaxation",
-      "Accueillir les émotions et retrouver son calme ensemble",
-      "Renforcer la complicité et la confiance",
+      "Un enfant accompagné de sa maman ou de sa grand-mère",
+      "Des jeux pour apprendre à respirer, souffler et relâcher les tensions",
+      "Des mouvements doux adaptés aux enfants",
+      "Des outils pour accueillir les émotions et retrouver le calme ensemble",
+      "Un moment pour renforcer la complicité et la confiance",
     ],
     to: "/ateliers/seniors",
     action: "Je découvre",
@@ -68,7 +68,7 @@ const offerings = computed(() => [
     audience: "1 h · 70 €",
     image: "/images/individual-appointments.jpg",
     description:
-      "Un temps rien que pour vous, pour souffler, vous recentrer et avancer à votre rythme.",
+      "Un accompagnement individuel en sophrologie pour mieux gérer le stress, les émotions et les périodes de transition, à votre rythme.",
     bullets: [
       "Stress, anxiété et troubles du sommeil",
       "Confiance en soi et émotions",
@@ -144,7 +144,9 @@ onMounted(async () => {
           v-for="offer in offerings"
           :key="offer.title"
           :offering="offer"
-          variant="detailed" />
+          variant="detailed"
+          :show-audience="false"
+          :show-bullets="false" />
       </div>
     </section>
 

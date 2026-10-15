@@ -53,7 +53,7 @@ const createLocalBusinessSchema = () => ({
   serviceType: [
     'Atelier de sophrologie pour enfants',
     'Atelier de sophrologie Mamas & enfants',
-    'DUO Mama & enfant',
+    'Parent-hèses à deux',
     'Accompagnement individuel en sophrologie',
   ],
 })
