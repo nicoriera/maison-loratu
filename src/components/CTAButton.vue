@@ -15,6 +15,13 @@ const props = defineProps({
 
 const isExternal = computed(() => props.to.startsWith('http://') || props.to.startsWith('https://'))
 
+// N'envoyer que les attributs utiles : un href undefined écraserait celui généré par RouterLink.
+const linkAttributes = computed(() =>
+  isExternal.value
+    ? { href: props.to, target: '_blank', rel: 'noopener noreferrer' }
+    : { to: props.to },
+)
+
 const variantClass = computed(() =>
   props.variant === 'primary'
     ? 'bg-terracotta-500 text-white shadow-soft hover:bg-terracotta-600 hover:shadow-soft-lg'
@@ -30,10 +37,7 @@ const buttonClasses = computed(() => [
 <template>
   <component
     :is="isExternal ? 'a' : 'router-link'"
-    :to="!isExternal ? to : undefined"
-    :href="isExternal ? to : undefined"
-    :target="isExternal ? '_blank' : undefined"
-    :rel="isExternal ? 'noopener noreferrer' : undefined"
+    v-bind="linkAttributes"
     :class="buttonClasses"
   >
     <slot />

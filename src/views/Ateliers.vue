@@ -59,7 +59,7 @@ const offerings = computed(() => [
       "Des outils pour accueillir les émotions et retrouver le calme ensemble",
       "Un moment pour renforcer la complicité et la confiance",
     ],
-    to: "/ateliers/seniors",
+    to: "/ateliers/mamas-enfants",
     action: "Je découvre",
   },
   {

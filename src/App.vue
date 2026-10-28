@@ -1,21 +1,18 @@
 <script setup>
-import { inject, nextTick, ref, watch } from 'vue'
+import { computed, inject, nextTick, ref, watch } from 'vue'
 import { RouterView } from 'vue-router'
 import { useRoute } from 'vue-router'
+import { useHead } from '@unhead/vue'
 import Header from './components/Header.vue'
 import Footer from './components/Footer.vue'
 import MobileNavigation from './components/MobileNavigation.vue'
-import { applyRouteSeo } from './utils/seo.js'
+import { buildRouteHead } from './utils/seo.js'
 
 const transitionName = inject('transitionName', ref('page-fade'))
 const route = useRoute()
 const mainContent = ref(null)
 
-watch(
-  () => route.fullPath,
-  () => applyRouteSeo(route),
-  { immediate: true },
-)
+useHead(computed(() => buildRouteHead(route)))
 
 watch(
   () => route.fullPath,

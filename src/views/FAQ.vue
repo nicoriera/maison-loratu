@@ -1,6 +1,8 @@
 <script setup>
-import { onMounted, ref } from 'vue'
+import { computed, onMounted, ref } from 'vue'
+import { useHead } from '@unhead/vue'
 import UiIcon from '../components/UiIcon.vue'
+import { createFaqSchema } from '../utils/seo.js'
 
 const questions = ref([
   { question: 'Qu’est-ce que la sophrologie ?', answer: 'C’est une méthode douce qui associe respiration, relaxation et visualisation positive. Elle aide à mieux gérer le stress, apaiser les émotions et retrouver un équilibre entre le corps et l’esprit, avec des outils simples au quotidien.' },
@@ -17,6 +19,10 @@ const questions = ref([
   { question: 'Avec qui peut-on participer au DUO ?', answer: 'Le DUO est un atelier privé au choix pour un papa et son enfant ou pour une maman et son enfant. Il invite à ralentir ensemble, partager un moment privilégié et créer des souvenirs dans une ambiance ludique et relaxante.' },
   { question: 'Puis-je offrir un atelier ?', answer: 'Oui. La carte cadeau DUO donne accès à l’atelier privé au choix pour un papa et son enfant ou une maman et son enfant, pour 80 €, valable deux mois à partir de la date d’achat. Elle existe en version numérique ou Signature, envoyée par courrier avec un mot personnalisé.' },
 ])
+
+useHead(computed(() => ({
+  script: [{ key: 'faq-schema', type: 'application/ld+json', innerHTML: JSON.stringify(createFaqSchema(questions.value)) }],
+})))
 
 onMounted(async () => {
   try {

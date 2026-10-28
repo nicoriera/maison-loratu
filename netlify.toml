@@ -6,6 +6,27 @@
 [build.environment]
   NODE_VERSION = "22.12.0"
 
+# Anciennes URL : redirections permanentes pour conserver le référencement.
+[[redirects]]
+  from = "/ateliers/seniors"
+  to = "/ateliers/mamas-enfants"
+  status = 301
+
+[[redirects]]
+  from = "/questionnaire"
+  to = "/contact"
+  status = 301
+
+[[redirects]]
+  from = "/devis-structure"
+  to = "/contact"
+  status = 301
+
+[[redirects]]
+  from = "/structures"
+  to = "/contact"
+  status = 301
+
 [[redirects]]
   from = "/*"
   to = "/index.html"
