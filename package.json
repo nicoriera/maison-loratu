@@ -9,6 +9,7 @@
   "scripts": {
     "dev": "NETLIFY_DEV_SERVER_CHECK_SSG_ENDPOINTS=true netlify dev --port 5173 --target-port 5174 --command \"vite --port 5174\"",
     "build": "vite build",
+    "test": "node --test \"src/**/*.test.js\"",
     "preview": "vite preview"
   },
   "dependencies": {
