@@ -1,22 +1,29 @@
-import { createApp, ref } from 'vue'
+import { ref } from 'vue'
+import { ViteSSG } from 'vite-ssg'
 import './style.css'
 import App from './App.vue'
-import router from './router'
+import { routes, scrollBehavior, guardAdminRoutes } from './router'
 import { initializeLocale, i18n } from './i18n/index.js'
 
-const transitionName = ref('page-fade')
-router.beforeEach((to, from, next) => {
-  if (to.path === '/' && from.name) {
-    transitionName.value = 'page-slide-right'
-  } else {
-    transitionName.value = to.meta.transition || 'page-fade'
-  }
-  next()
-})
+export const createApp = ViteSSG(
+  App,
+  { routes, scrollBehavior },
+  ({ app, router, isClient }) => {
+    const transitionName = ref('page-fade')
+    router.beforeEach((to, from, next) => {
+      if (to.path === '/' && from.name) {
+        transitionName.value = 'page-slide-right'
+      } else {
+        transitionName.value = to.meta.transition || 'page-fade'
+      }
+      next()
+    })
 
-const app = createApp(App)
-app.use(router)
-app.use(i18n)
-app.provide('transitionName', transitionName)
-initializeLocale()
-app.mount('#app')
+    // Identity n'existe que dans le navigateur : la garde admin ne tourne pas au pré-rendu.
+    if (isClient) router.beforeEach(guardAdminRoutes)
+
+    app.use(i18n)
+    app.provide('transitionName', transitionName)
+    if (isClient) initializeLocale()
+  },
+)

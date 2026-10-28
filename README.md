@@ -6,6 +6,7 @@ Landing page pour le cabinet de sophrologie Maison Loratu.
 
 - **Vue 3** avec Composition API (`<script setup>`)
 - **Vite** pour le build et le développement
+- **vite-ssg** + **@unhead/vue** pour le pré-rendu des pages et les balises SEO
 - **Vue Router** pour la navigation
 - **Tailwind CSS** pour le styling
 - **vee-validate** + **yup** pour la validation des formulaires
@@ -69,7 +70,7 @@ Puis mettez `VITE_ADMIN_LOCAL_PREVIEW=true` dans `.env.local` et lancez `npm run
 npm run build
 ```
 
-Les fichiers de production seront générés dans le dossier `dist/`
+Les fichiers de production seront générés dans le dossier `dist/`. Chaque page publique y est pré-rendue en HTML (`dist/<page>.html`) avec son titre, sa description, son URL canonique, son image de partage et ses données structurées (`src/utils/seo.js`). Les anciennes URL sont redirigées en 301 dans `netlify.toml`.
 
 ## ✅ Vérifications
 

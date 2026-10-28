@@ -28,7 +28,7 @@ const audiences = [
     title: "Mamas & enfants",
     detail: "45 min · 45 € par binôme mère-fille",
     image: "/images/seniors-session.webp",
-    href: "/ateliers/seniors",
+    href: "/ateliers/mamas-enfants",
     cta: "Je découvre",
   },
   {
