@@ -74,11 +74,11 @@ Les fichiers de production seront générés dans le dossier `dist/`
 ## ✅ Vérifications
 
 ```bash
-node --test src/config/*.test.js
+npm test
 npm run build
 ```
 
-Le projet ne définit pas de commande `npm test` : les tests de configuration sont exécutés directement avec le runner natif de Node.js.
+`npm test` exécute tous les fichiers `src/**/*.test.js` avec le runner natif de Node.js. La CI GitHub Actions (`.github/workflows/ci.yml`) lance ces deux commandes sous Node 22 à chaque pull request et à chaque push sur `main`.
 
 ## 📁 Structure du projet
 
