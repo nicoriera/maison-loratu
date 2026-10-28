@@ -274,7 +274,7 @@ export const validateOffersDraft = (offers = []) => {
       issues.push(`${prefix} : complétez le titre, le public et le résumé.`)
     }
 
-    if (offer.title.length > 80 || offer.audience.length > 60 || offer.summary.length > 180) {
+    if (offer.title.length > 80 || offer.audience.length > 90 || offer.summary.length > 180) {
       issues.push(`${prefix} : gardez un format éditorial court et lisible.`)
     }
 
