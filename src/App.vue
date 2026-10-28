@@ -5,8 +5,6 @@ import { useRoute } from 'vue-router'
 import Header from './components/Header.vue'
 import Footer from './components/Footer.vue'
 import MobileNavigation from './components/MobileNavigation.vue'
-import EventPopup from './components/EventPopup.vue'
-import EventBanner from './components/EventBanner.vue'
 import { applyRouteSeo } from './utils/seo.js'
 
 const transitionName = inject('transitionName', ref('page-fade'))
@@ -35,9 +33,7 @@ watch(
     </a>
     <div class="lg:sticky lg:top-0 lg:z-50">
       <Header />
-      <EventBanner v-if="route.name === 'home'" />
     </div>
-    <EventPopup v-if="route.name === 'home'" />
     <main id="contenu-principal" ref="mainContent" tabindex="-1" class="flex-grow pb-[calc(5rem+env(safe-area-inset-bottom))] outline-none lg:pb-0">
       <RouterView v-slot="{ Component, route }">
         <Transition
